@@ -73,7 +73,7 @@ CMAKE_BINARY_DIR = /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/untitled4.dir/all
+all: CMakeFiles/e-chess.dir/all
 
 .PHONY : all
 
@@ -83,36 +83,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/untitled4.dir/clean
+clean: CMakeFiles/e-chess.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/untitled4.dir
+# Target rules for target CMakeFiles/e-chess.dir
 
 # All Build rule for target.
-CMakeFiles/untitled4.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target untitled4"
-.PHONY : CMakeFiles/untitled4.dir/all
+CMakeFiles/e-chess.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target e-chess"
+.PHONY : CMakeFiles/e-chess.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/untitled4.dir/rule: cmake_check_build_system
+CMakeFiles/e-chess.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/untitled4.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/e-chess.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/untitled4.dir/rule
+.PHONY : CMakeFiles/e-chess.dir/rule
 
 # Convenience name for target.
-untitled4: CMakeFiles/untitled4.dir/rule
+e-chess: CMakeFiles/e-chess.dir/rule
 
-.PHONY : untitled4
+.PHONY : e-chess
 
 # clean rule for target.
-CMakeFiles/untitled4.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/clean
-.PHONY : CMakeFiles/untitled4.dir/clean
+CMakeFiles/e-chess.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/clean
+.PHONY : CMakeFiles/e-chess.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
