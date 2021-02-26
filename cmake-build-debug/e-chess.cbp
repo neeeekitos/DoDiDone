@@ -140,6 +140,36 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/api.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/board.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/ia.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/move.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/square.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/utils.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/api.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/board.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/move.cpp">
+			<Option target="e-chess"/>
+		</Unit>
 		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/main.cpp">
 			<Option target="e-chess"/>
 		</Unit>

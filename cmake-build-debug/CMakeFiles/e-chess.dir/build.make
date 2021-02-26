@@ -77,9 +77,61 @@ include CMakeFiles/e-chess.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/e-chess.dir/flags.make
 
+CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: CMakeFiles/e-chess.dir/flags.make
+CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o -c /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+
+CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp > CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp -o CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+CMakeFiles/e-chess.dir/src/engine/api.cpp.o: CMakeFiles/e-chess.dir/flags.make
+CMakeFiles/e-chess.dir/src/engine/api.cpp.o: ../src/engine/api.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/e-chess.dir/src/engine/api.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e-chess.dir/src/engine/api.cpp.o -c /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/api.cpp
+
+CMakeFiles/e-chess.dir/src/engine/api.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e-chess.dir/src/engine/api.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/api.cpp > CMakeFiles/e-chess.dir/src/engine/api.cpp.i
+
+CMakeFiles/e-chess.dir/src/engine/api.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e-chess.dir/src/engine/api.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/api.cpp -o CMakeFiles/e-chess.dir/src/engine/api.cpp.s
+
+CMakeFiles/e-chess.dir/src/engine/board.cpp.o: CMakeFiles/e-chess.dir/flags.make
+CMakeFiles/e-chess.dir/src/engine/board.cpp.o: ../src/engine/board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/e-chess.dir/src/engine/board.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e-chess.dir/src/engine/board.cpp.o -c /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/board.cpp
+
+CMakeFiles/e-chess.dir/src/engine/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e-chess.dir/src/engine/board.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/board.cpp > CMakeFiles/e-chess.dir/src/engine/board.cpp.i
+
+CMakeFiles/e-chess.dir/src/engine/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e-chess.dir/src/engine/board.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/board.cpp -o CMakeFiles/e-chess.dir/src/engine/board.cpp.s
+
+CMakeFiles/e-chess.dir/src/engine/move.cpp.o: CMakeFiles/e-chess.dir/flags.make
+CMakeFiles/e-chess.dir/src/engine/move.cpp.o: ../src/engine/move.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/e-chess.dir/src/engine/move.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e-chess.dir/src/engine/move.cpp.o -c /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/move.cpp
+
+CMakeFiles/e-chess.dir/src/engine/move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e-chess.dir/src/engine/move.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/move.cpp > CMakeFiles/e-chess.dir/src/engine/move.cpp.i
+
+CMakeFiles/e-chess.dir/src/engine/move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e-chess.dir/src/engine/move.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nikitaterekhov/CLionProjects/e-chess/src/engine/move.cpp -o CMakeFiles/e-chess.dir/src/engine/move.cpp.s
+
 CMakeFiles/e-chess.dir/src/main.cpp.o: CMakeFiles/e-chess.dir/flags.make
 CMakeFiles/e-chess.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/e-chess.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/e-chess.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e-chess.dir/src/main.cpp.o -c /Users/nikitaterekhov/CLionProjects/e-chess/src/main.cpp
 
 CMakeFiles/e-chess.dir/src/main.cpp.i: cmake_force
@@ -92,15 +144,23 @@ CMakeFiles/e-chess.dir/src/main.cpp.s: cmake_force
 
 # Object files for target e-chess
 e__chess_OBJECTS = \
+"CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o" \
+"CMakeFiles/e-chess.dir/src/engine/api.cpp.o" \
+"CMakeFiles/e-chess.dir/src/engine/board.cpp.o" \
+"CMakeFiles/e-chess.dir/src/engine/move.cpp.o" \
 "CMakeFiles/e-chess.dir/src/main.cpp.o"
 
 # External object files for target e-chess
 e__chess_EXTERNAL_OBJECTS =
 
+build/e-chess: CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+build/e-chess: CMakeFiles/e-chess.dir/src/engine/api.cpp.o
+build/e-chess: CMakeFiles/e-chess.dir/src/engine/board.cpp.o
+build/e-chess: CMakeFiles/e-chess.dir/src/engine/move.cpp.o
 build/e-chess: CMakeFiles/e-chess.dir/src/main.cpp.o
 build/e-chess: CMakeFiles/e-chess.dir/build.make
 build/e-chess: CMakeFiles/e-chess.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable build/e-chess"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable build/e-chess"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/e-chess.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

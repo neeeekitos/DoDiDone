@@ -94,12 +94,12 @@ clean: CMakeFiles/e-chess.dir/clean
 CMakeFiles/e-chess.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target e-chess"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target e-chess"
 .PHONY : CMakeFiles/e-chess.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/e-chess.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/e-chess.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/e-chess.dir/rule
