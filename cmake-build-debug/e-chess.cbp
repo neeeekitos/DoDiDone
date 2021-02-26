@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="e-chess"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 package_source"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 package"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="e-chess">
+				<Option output="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/build/e-chess" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 e-chess"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="e-chess/fast">
+				<Option output="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/build/e-chess" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 e-chess/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/api.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/board.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/ia.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/move.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/square.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/utils.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/api.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/board.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/engine/move.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/main.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

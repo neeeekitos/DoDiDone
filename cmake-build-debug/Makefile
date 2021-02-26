@@ -76,6 +76,63 @@ CMAKE_BINARY_DIR = /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +154,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,44 +199,152 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled4
+# Target rules for targets named e-chess
 
 # Build rule for target.
-untitled4: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled4
-.PHONY : untitled4
+e-chess: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 e-chess
+.PHONY : e-chess
 
 # fast build rule for target.
-untitled4/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/build
-.PHONY : untitled4/fast
+e-chess/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/build
+.PHONY : e-chess/fast
 
-main.o: main.cpp.o
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.o: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
 
-.PHONY : main.o
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/main.cpp.o
-.PHONY : main.cpp.o
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
 
-main.i: main.cpp.i
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
 
-.PHONY : main.i
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/main.cpp.i
-.PHONY : main.cpp.i
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
 
-main.s: main.cpp.s
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
 
-.PHONY : main.s
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/main.cpp.s
-.PHONY : main.cpp.s
+CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+src/engine/api.o: src/engine/api.cpp.o
+
+.PHONY : src/engine/api.o
+
+# target to build an object file
+src/engine/api.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/api.cpp.o
+.PHONY : src/engine/api.cpp.o
+
+src/engine/api.i: src/engine/api.cpp.i
+
+.PHONY : src/engine/api.i
+
+# target to preprocess a source file
+src/engine/api.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/api.cpp.i
+.PHONY : src/engine/api.cpp.i
+
+src/engine/api.s: src/engine/api.cpp.s
+
+.PHONY : src/engine/api.s
+
+# target to generate assembly for a file
+src/engine/api.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/api.cpp.s
+.PHONY : src/engine/api.cpp.s
+
+src/engine/board.o: src/engine/board.cpp.o
+
+.PHONY : src/engine/board.o
+
+# target to build an object file
+src/engine/board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/board.cpp.o
+.PHONY : src/engine/board.cpp.o
+
+src/engine/board.i: src/engine/board.cpp.i
+
+.PHONY : src/engine/board.i
+
+# target to preprocess a source file
+src/engine/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/board.cpp.i
+.PHONY : src/engine/board.cpp.i
+
+src/engine/board.s: src/engine/board.cpp.s
+
+.PHONY : src/engine/board.s
+
+# target to generate assembly for a file
+src/engine/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/board.cpp.s
+.PHONY : src/engine/board.cpp.s
+
+src/engine/move.o: src/engine/move.cpp.o
+
+.PHONY : src/engine/move.o
+
+# target to build an object file
+src/engine/move.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/move.cpp.o
+.PHONY : src/engine/move.cpp.o
+
+src/engine/move.i: src/engine/move.cpp.i
+
+.PHONY : src/engine/move.i
+
+# target to preprocess a source file
+src/engine/move.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/move.cpp.i
+.PHONY : src/engine/move.cpp.i
+
+src/engine/move.s: src/engine/move.cpp.s
+
+.PHONY : src/engine/move.s
+
+# target to generate assembly for a file
+src/engine/move.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/engine/move.cpp.s
+.PHONY : src/engine/move.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -177,11 +353,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... untitled4"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... e-chess"
+	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.o"
+	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.i"
+	@echo "... CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.s"
+	@echo "... src/engine/api.o"
+	@echo "... src/engine/api.i"
+	@echo "... src/engine/api.s"
+	@echo "... src/engine/board.o"
+	@echo "... src/engine/board.i"
+	@echo "... src/engine/board.s"
+	@echo "... src/engine/move.o"
+	@echo "... src/engine/move.i"
+	@echo "... src/engine/move.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
