@@ -14,7 +14,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 
 # Adds an executable target called <name> to be built from the source files listed
-add_executable(e-chess  ${sources} ${headers})
+add_executable(e-chess  ${sources} ${headers} include/model/constantesDeplacement.h src/model/Piece.cpp include/model/Piece.h src/model/Pawn.cpp include/model/Pawn.h src/model/King.cpp include/model/King.h src/model/Bishop.cpp include/model/Bishop.h src/model/Knight.cpp include/model/Knight.h src/model/Queen.cpp include/model/Queen.h src/model/Tower.cpp include/model/Tower.h src/model/Chessboard.cpp include/model/Chessboard.h src/controller/GameController.cpp include/controller/GameController.h)
 
 ###############################################################################
 ## dependencies ###############################################################

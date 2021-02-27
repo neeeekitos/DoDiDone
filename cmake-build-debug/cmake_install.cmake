@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nikitaterekhov/CLionProjects/e-chess
+# Install script for directory: /home/lpietropao/etu/s2/GL/e-chess
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,17 +27,28 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
+endif()
+
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/build" TYPE EXECUTABLE FILES "/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/build/e-chess")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/build" TYPE EXECUTABLE FILES "/home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug/build/e-chess")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/e-chess")
     endif()
   endif()
 endif()
@@ -50,5 +61,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/nikitaterekhov/CLionProjects/e-chess/main.cpp" "/Users/nikitaterekhov/CLionProjects/e-chess/cmake-build-debug/CMakeFiles/untitled4.dir/main.cpp.o"
+  "/home/lpietropao/etu/s2/GL/e-chess/main.cpp" "/home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug/CMakeFiles/untitled4.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
