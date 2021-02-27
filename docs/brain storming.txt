@@ -1,8 +1,8 @@
 [[1,1],
- [1,2]]
+ [1,2]] => Move
 
 
-[1,1]
+[1,1] => Coordinate
 
 
 ChessBoard : 
@@ -13,6 +13,8 @@ ChessBoard :
 	int nbOfTurns;
 	
 	vector <vector <Pices>> eatenPieces;
+	    eatenPieces[0] : pieces eaten by the player 1
+	    eatenPieces[1] : Pieces eaten by the player 2
 	
 	Piece getSquare (Coordinates cor);
 

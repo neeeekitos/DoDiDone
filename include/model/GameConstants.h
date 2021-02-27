@@ -14,6 +14,12 @@ typedef pair <Coordinate, Coordinate> Move;
 
 typedef vector<Move> MoveSet;
 
+enum PieceColor {
+    EMPTY,
+    BLACK,
+    WHITE
+};
+
 enum GameStatus {
     Check,
     Mate,

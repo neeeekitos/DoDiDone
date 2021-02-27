@@ -7,9 +7,25 @@
 
 #include <string>
 
+#include "GameConstants.h"
+
 class Piece {
 
+public:
+
     virtual string getImage() = 0;
+
+    Piece(PieceColor aColor);
+
+    boolean isEmpty();
+
+    virtual char PieceToFEN();
+
+private :
+    /**
+     * This represents the color of the piece
+     */
+    PieceColor color = EMPTY;
 
 };
 
