@@ -13,25 +13,35 @@
 
 class View {
 public:
-    View(Chessboard * const chessBoard);
+    View(Chessboard *const chessBoard);
+
     ~View();
-    void update (Chessboard & cb);
+
+    void update(Chessboard &cb);
+
+    void MenuChoices();
+
     void MainLoop();
 
 
 private:
     void interfaceInitialisation(int step);
+
     void gameInitialisation();
 
     void displayGameIn(sf::RenderWindow &w);
+
     void displayInterfaceIn(sf::RenderWindow &w);
+
     void notifyInterface(const sf::Event &event);
+
     void notifyGame(const sf::Event &event);
+
     void newGame();
 
     sf::RenderWindow *window;
-    std::vector<GraphicElement*> interface ;
-    std::vector<ClickableElement*> boutons ;
+    std::vector<GraphicElement *> interface;
+    std::vector<ClickableElement *> boutons;
     Chessboard *chessboardModel;
 };
 
