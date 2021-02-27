@@ -18,7 +18,7 @@ public:
 
     Piece(PieceColor aColor);
 
-    boolean isEmpty();
+    bool isEmpty();
 
     virtual char PieceToFEN();
 
@@ -30,9 +30,9 @@ private :
 
 protected:
     vector <int> moveDirections;
-    boolean directionIsLimited;
+    bool directionIsLimited;
 
-    Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited);
+    //Piece(Piece aColor, std::vector aMoveDirections, bool aDirectionIsLimited);
 
 };
 

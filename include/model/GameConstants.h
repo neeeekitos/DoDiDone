@@ -5,7 +5,7 @@
 #ifndef E_CHESS_CONSTANTESDEPLACEMENT_H
 #define E_CHESS_CONSTANTESDEPLACEMENT_H
 
-#include <pair>
+using namespace  std;
 #include <vector>
 
 typedef pair<int, int> Coordinate;

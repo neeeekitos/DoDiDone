@@ -6,13 +6,13 @@
 
 Piece::Piece(PieceColor aColor): color(aColor) {}
 
-Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited):
-    color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
+//Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited):
+  //  color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
 
-boolean Piece::isEmpty() {
+bool Piece::isEmpty() {
     return (this->color == EMPTY);
 }
 
 char Piece::PieceToFEN() {
-    return '';
+    return ' ';
 }
