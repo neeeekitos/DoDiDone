@@ -33,6 +33,8 @@ public:
      */
     Pawn(PieceColor aColor);
 
+    virtual char PieceToFEN();
+
 };
 
 

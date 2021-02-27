@@ -35,7 +35,7 @@ private :
 protected:
     vector <int> moveDirections;
     bool directionIsLimited;
-    //Piece(Piece aColor, std::vector aMoveDirections, bool aDirectionIsLimited);
+    Piece(PieceColor aColor, vector<int> aMoveDirections, bool aDirectionIsLimited);
 
 };
 

@@ -26,6 +26,8 @@ enum GameStatus {
     CastlingPossible
 };
 
+
+
 class constantesDeplacement {
 
 };

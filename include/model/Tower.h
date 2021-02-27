@@ -5,8 +5,14 @@
 #ifndef E_CHESS_TOWER_H
 #define E_CHESS_TOWER_H
 
+#include "GameConstants.h"
+#include "Piece.h"
 
-class Tower {
+class Tower : public Piece {
+
+    Tower(PieceColor aColor);
+
+    virtual char PieceToFEN();
 
 };
 

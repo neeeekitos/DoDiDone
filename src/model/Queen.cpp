@@ -10,9 +10,15 @@
 
 using namespace std;
 
-/*Queen::Queen(PieceColor aColor) {
-    vector <int> directions {-9, -8, -7, -1, 1, 7, 8, 9};
-    bool directionIsLimited = false;
-    Piece(aColor, directions, directionIsLimited);
-}*/
 
+
+Queen::Queen(PieceColor aColor): Piece(
+        aColor,
+        vector <int> {-11, -10, -9, -1, 1, 9, 10, 11},
+        false
+        ) {}
+
+
+char Queen::PieceToFEN() {
+    return (this->GetColor() == WHITE ? 'q' : 'Q');
+}

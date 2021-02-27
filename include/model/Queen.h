@@ -10,7 +10,10 @@
 
 class Queen : public Piece {
 
-   // Queen(PieceColor aColor);
+public:
+    Queen(PieceColor aColor);
+
+    virtual char PieceToFEN();
 
 };
 

@@ -9,8 +9,8 @@ using namespace std;
 
 Piece::Piece(PieceColor aColor): color(aColor) {}
 
-// Piece::Piece (Piece aColor, vector<int> aMoveDirections, bool aDirectionIsLimited):
-//        color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
+Piece::Piece(PieceColor aColor, vector<int> aMoveDirections, bool aDirectionIsLimited):
+        color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
 
 bool Piece::isEmpty() {
     return (this->color == EMPTY);

@@ -12,9 +12,12 @@ Pawn::Pawn(PieceColor aColor)
     : Piece(aColor){
 
     int direction = (aColor == WHITE ? -1 : 1);
-    bool directionIsLimited = true;
-    vector<int> directions {direction * 8, direction *16};
+    this->moveDirections = {direction * 8, direction *16};
+    this->directionIsLimited = true;
 
-    //Piece(aColor, directions, directionIsLimited);
+}
 
+
+char Pawn::PieceToFEN() {
+    return (this->GetColor() == WHITE ? 'p' : 'P');
 }
