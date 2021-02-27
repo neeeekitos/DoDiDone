@@ -1,5 +1,1 @@
-/home/lpietropao/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lpietropao/etu/s2/GL/e-chess
--- Could NOT find GTest (missing: GTEST_LIBRARY GTEST_INCLUDE_DIR GTEST_MAIN_LIBRARY) 
--- Configuring done
--- Generating done
--- Build files have been written to: /home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug
+CMakeLists.txt not found in /home/rdesouza/CLionProjects/e-chess Select CMakeLists.txt
