@@ -24,6 +24,8 @@ public:
 
     virtual char PieceToFEN();
 
+    PieceColor GetColor ();
+
 private :
     /**
      * This represents the color of the piece

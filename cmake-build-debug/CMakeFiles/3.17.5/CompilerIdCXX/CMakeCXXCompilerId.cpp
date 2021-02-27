@@ -634,7 +634,7 @@ const char* info_language_dialect_default = "INFO" ":" "dialect_default["
 
 /*--------------------------------------------------------------------------*/
 
-/*int main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
   int require = 0;
   require += info_compiler[argc];
@@ -657,4 +657,4 @@ const char* info_language_dialect_default = "INFO" ":" "dialect_default["
   require += info_language_dialect_default[argc];
   (void)argv;
   return require;
-}*/
+}

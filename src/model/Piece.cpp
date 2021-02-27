@@ -9,14 +9,17 @@ using namespace std;
 
 Piece::Piece(PieceColor aColor): color(aColor) {}
 
-
-//Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited):
-  //  color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
+// Piece::Piece (Piece aColor, vector<int> aMoveDirections, bool aDirectionIsLimited):
+//        color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
 
 bool Piece::isEmpty() {
     return (this->color == EMPTY);
 }
 
 char Piece::PieceToFEN() {
-    return ' ';
+    return '';
+}
+
+PieceColor Piece::GetColor() {
+    return this->color;
 }
