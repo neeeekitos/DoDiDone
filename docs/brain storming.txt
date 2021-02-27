@@ -1,0 +1,48 @@
+[[1,1],
+ [1,2]]
+
+
+[1,1]
+
+
+ChessBoard : 
+	Piece board [];
+
+	int currentPlayer;
+
+	int nbOfTurns;
+	
+	vector <vector <Pices>> eatenPieces;
+	
+	Piece getSquare (Coordinates cor);
+
+	boolean isGameFinished();
+	
+	boolean isRoquePossible();
+
+
+Controler : 
+	
+	Coordinates currentSelectedSquare;
+	
+	MoveSet currentValidMoves;
+	
+	MoveSet getValidMoves(Coordinates cor);
+
+	// Cette méthode retourne 1 si le mouvement a été effectué
+	// -1 sinon
+	// Contrat :
+	//	The given move is valid
+	int makeMove(Move mv);
+
+	// Tells wether the given move is valid or not
+	boolean isValidMove(Move mv);
+
+	
+	void updateView ();
+
+
+
+View :
+	// Updating the interface
+	update(  );

@@ -5,8 +5,11 @@
 #ifndef E_CHESS_PIECE_H
 #define E_CHESS_PIECE_H
 
+#include <string>
 
 class Piece {
+
+    virtual string getImage() = 0;
 
 };
 
