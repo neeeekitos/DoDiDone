@@ -147,16 +147,10 @@
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp">
 			<Option target="e-chess"/>
 		</Unit>
-		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/controller/GameController.cpp">
-			<Option target="e-chess"/>
-		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/controller/GameController.h">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/Bishop.h">
-			<Option target="e-chess"/>
-		</Unit>
-		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/Chessboard.cpp">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/Chessboard.h">
@@ -183,10 +177,19 @@
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/constantesDeplacement.h">
 			<Option target="e-chess"/>
 		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/View.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/controller/GameController.cpp">
+			<Option target="e-chess"/>
+		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/main.cpp">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/model/Bishop.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/model/Chessboard.cpp">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/model/King.cpp">

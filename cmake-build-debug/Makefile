@@ -238,59 +238,32 @@ CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
 .PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
 
-include/controller/GameController.o: include/controller/GameController.cpp.o
+src/controller/GameController.o: src/controller/GameController.cpp.o
 
-.PHONY : include/controller/GameController.o
-
-# target to build an object file
-include/controller/GameController.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/controller/GameController.cpp.o
-.PHONY : include/controller/GameController.cpp.o
-
-include/controller/GameController.i: include/controller/GameController.cpp.i
-
-.PHONY : include/controller/GameController.i
-
-# target to preprocess a source file
-include/controller/GameController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/controller/GameController.cpp.i
-.PHONY : include/controller/GameController.cpp.i
-
-include/controller/GameController.s: include/controller/GameController.cpp.s
-
-.PHONY : include/controller/GameController.s
-
-# target to generate assembly for a file
-include/controller/GameController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/controller/GameController.cpp.s
-.PHONY : include/controller/GameController.cpp.s
-
-include/model/Chessboard.o: include/model/Chessboard.cpp.o
-
-.PHONY : include/model/Chessboard.o
+.PHONY : src/controller/GameController.o
 
 # target to build an object file
-include/model/Chessboard.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/model/Chessboard.cpp.o
-.PHONY : include/model/Chessboard.cpp.o
+src/controller/GameController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/controller/GameController.cpp.o
+.PHONY : src/controller/GameController.cpp.o
 
-include/model/Chessboard.i: include/model/Chessboard.cpp.i
+src/controller/GameController.i: src/controller/GameController.cpp.i
 
-.PHONY : include/model/Chessboard.i
+.PHONY : src/controller/GameController.i
 
 # target to preprocess a source file
-include/model/Chessboard.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/model/Chessboard.cpp.i
-.PHONY : include/model/Chessboard.cpp.i
+src/controller/GameController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/controller/GameController.cpp.i
+.PHONY : src/controller/GameController.cpp.i
 
-include/model/Chessboard.s: include/model/Chessboard.cpp.s
+src/controller/GameController.s: src/controller/GameController.cpp.s
 
-.PHONY : include/model/Chessboard.s
+.PHONY : src/controller/GameController.s
 
 # target to generate assembly for a file
-include/model/Chessboard.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/include/model/Chessboard.cpp.s
-.PHONY : include/model/Chessboard.cpp.s
+src/controller/GameController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/controller/GameController.cpp.s
+.PHONY : src/controller/GameController.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -345,6 +318,33 @@ src/model/Bishop.s: src/model/Bishop.cpp.s
 src/model/Bishop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/model/Bishop.cpp.s
 .PHONY : src/model/Bishop.cpp.s
+
+src/model/Chessboard.o: src/model/Chessboard.cpp.o
+
+.PHONY : src/model/Chessboard.o
+
+# target to build an object file
+src/model/Chessboard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/model/Chessboard.cpp.o
+.PHONY : src/model/Chessboard.cpp.o
+
+src/model/Chessboard.i: src/model/Chessboard.cpp.i
+
+.PHONY : src/model/Chessboard.i
+
+# target to preprocess a source file
+src/model/Chessboard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/model/Chessboard.cpp.i
+.PHONY : src/model/Chessboard.cpp.i
+
+src/model/Chessboard.s: src/model/Chessboard.cpp.s
+
+.PHONY : src/model/Chessboard.s
+
+# target to generate assembly for a file
+src/model/Chessboard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/model/Chessboard.cpp.s
+.PHONY : src/model/Chessboard.cpp.s
 
 src/model/King.o: src/model/King.cpp.o
 
@@ -526,18 +526,18 @@ help:
 	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.o"
 	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.i"
 	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.s"
-	@echo "... include/controller/GameController.o"
-	@echo "... include/controller/GameController.i"
-	@echo "... include/controller/GameController.s"
-	@echo "... include/model/Chessboard.o"
-	@echo "... include/model/Chessboard.i"
-	@echo "... include/model/Chessboard.s"
+	@echo "... src/controller/GameController.o"
+	@echo "... src/controller/GameController.i"
+	@echo "... src/controller/GameController.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/model/Bishop.o"
 	@echo "... src/model/Bishop.i"
 	@echo "... src/model/Bishop.s"
+	@echo "... src/model/Chessboard.o"
+	@echo "... src/model/Chessboard.i"
+	@echo "... src/model/Chessboard.s"
 	@echo "... src/model/King.o"
 	@echo "... src/model/King.i"
 	@echo "... src/model/King.s"
