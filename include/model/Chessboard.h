@@ -17,7 +17,7 @@ public:
     //currentPiece;
 
 public:
-    MoveSet getPossibleMoved(Coordinate coor, boolean justEatableMoves);
+    MoveSet getPossibleMoved(Coordinate coor, bool justEatableMoves);
 
 };
 

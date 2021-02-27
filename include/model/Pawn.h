@@ -25,7 +25,7 @@ public:
      * (initial status). If the pawn is in its first move status, it can
      * move two squares forward. Else, it can only move one square
      */
-    boolean firstMove;
+    bool firstMove;
 
     /**
      * Default constructor for a pawn

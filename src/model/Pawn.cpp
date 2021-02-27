@@ -15,6 +15,6 @@ Pawn::Pawn(PieceColor aColor)
     bool directionIsLimited = true;
     vector<int> directions {direction * 8, direction *16};
 
-    Piece (aColor, directions, directionIsLimited);
+    //Piece(aColor, directions, directionIsLimited);
 
 }

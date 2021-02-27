@@ -6,9 +6,11 @@
 #define E_CHESS_QUEEN_H
 
 
+#include "Piece.h"
+
 class Queen : public Piece {
 
-    Queen(PieceColor aColor);
+   // Queen(PieceColor aColor);
 
 };
 
