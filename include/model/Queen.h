@@ -6,7 +6,9 @@
 #define E_CHESS_QUEEN_H
 
 
-class Queen {
+class Queen : public Piece {
+
+    Queen(PieceColor aColor);
 
 };
 

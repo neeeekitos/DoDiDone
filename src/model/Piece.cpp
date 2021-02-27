@@ -3,11 +3,14 @@
 //
 
 #include "../../include/model/Piece.h"
+#include <vector>
+
+using namespace std;
 
 Piece::Piece(PieceColor aColor): color(aColor) {}
 
-Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited):
-    color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
+Piece::Piece (Piece aColor, vector<int> aMoveDirections, bool aDirectionIsLimited):
+        color(aColor), moveDirections(aMoveDirections), directionIsLimited(aDirectionIsLimited) {}
 
 boolean Piece::isEmpty() {
     return (this->color == EMPTY);

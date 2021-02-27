@@ -10,6 +10,8 @@
 
 #include "GameConstants.h"
 
+using namespace std;
+
 class Piece {
 
 public:
@@ -32,7 +34,7 @@ protected:
     vector <int> moveDirections;
     boolean directionIsLimited;
 
-    Piece (Piece aColor, vector aMoveDirections, boolean aDirectionIsLimited);
+    Piece (Piece aColor, vector<int> aMoveDirections, bool aDirectionIsLimited);
 
 };
 
