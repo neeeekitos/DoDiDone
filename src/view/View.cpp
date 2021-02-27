@@ -30,8 +30,8 @@ void View::MainLoop() {
         }
         window->clear();
 
-        displayGameIn(*window);
-        displayInterfaceIn(*window);
+//        displayGameIn(*window);
+  //      displayInterfaceIn(*window);
         window->display();
 
     }
@@ -96,7 +96,7 @@ void View::interfaceInitialisation(int step){
             boutons.push_back(new TwoPlayersButton(p1, p2));
             break;
         case 2:
-            gameInitialisation();
+//            gameInitialisation();
             break;
     }
 }

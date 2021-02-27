@@ -156,6 +156,9 @@
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/Chessboard.h">
 			<Option target="e-chess"/>
 		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/GameConstants.h">
+			<Option target="e-chess"/>
+		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/King.h">
 			<Option target="e-chess"/>
 		</Unit>
@@ -172,9 +175,6 @@
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/Tower.h">
-			<Option target="e-chess"/>
-		</Unit>
-		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/constantesDeplacement.h">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/ClickableElement.h">
