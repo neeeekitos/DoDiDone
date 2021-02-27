@@ -7,7 +7,7 @@
 // Edited by Rivaldo
 #include <algorithm>
 
-Knight::Knight(PieceColor aColor): Piece(aColor) {}
+/*Knight::Knight(PieceColor aColor): Piece(aColor) {}
 
 char Knight::PieceToFEN() {
     if(this->getColor()==BLACK)
@@ -54,4 +54,4 @@ vector<int> Knight::eatableCase(Chessboard board) {
     }
 
     return list;
-}
+}*/

@@ -42,7 +42,7 @@ void View::MenuChoices() {
             } else if (event.type == sf::Event::MouseButtonPressed) {
 
                 if (!newGamePressed) {
-                    if (!boutons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                    if (boutons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         newGamePressed = true;
                         interfaceInitialisation(1);
                     }

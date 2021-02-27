@@ -7,7 +7,7 @@
 // Edited by Rivaldo
 #include <algorithm>
 
-King::King(PieceColor aColor): Piece(aColor) {}
+/*King::King(PieceColor aColor): Piece(aColor) {}
 
 char King::PieceToFEN() {
     if(this->getColor()==BLACK)
@@ -68,3 +68,4 @@ vector<int> King::movements(Chessboard board) {
     return list;
 }
 
+*/

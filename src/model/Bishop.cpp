@@ -7,7 +7,7 @@
 // Edited by Rivaldo
 #include <algorithm>
 
-Bishop::Bishop(PieceColor aColor): Piece(aColor) {}
+/*Bishop::Bishop(PieceColor aColor): Piece(aColor) {}
 
 char Bishop::PieceToFEN() {
     if(this->getColor()==BLACK)
@@ -59,4 +59,4 @@ vector<int> Bishop::eatableCase(Chessboard board) {
         }
     }
     return list;
-}
+}*/
