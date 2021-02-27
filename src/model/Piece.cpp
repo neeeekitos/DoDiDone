@@ -7,6 +7,10 @@
 
 using namespace std;
 
+Piece::Piece() {
+    this->color = EMPTY;
+}
+
 Piece::Piece(PieceColor aColor): color(aColor) {}
 
 Piece::Piece(PieceColor aColor, vector<int> aMoveDirections, bool aDirectionIsLimited):
@@ -22,4 +26,12 @@ char Piece::PieceToFEN() {
 
 PieceColor Piece::GetColor() {
     return this->color;
+}
+
+const vector<int> & Piece::GetMoveDirections() const {
+    return this->moveDirections;
+}
+
+bool Piece::DirectionIsLimited() {
+    return this->directionIsLimited;
 }

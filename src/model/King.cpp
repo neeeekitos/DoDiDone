@@ -3,14 +3,18 @@
 //
 
 #include "../../include/model/King.h"
+#include "../../include/model/GameConstants.h"
 
 // Edited by Rivaldo
 #include <algorithm>
 
-/*King::King(PieceColor aColor): Piece(aColor) {}
+King::King(PieceColor aColor): Piece(aColor) {
+    this->moveDirections = {-11, -10, -9, -1, 1, 9, 10, 11};
+    this->directionIsLimited = true;
+}
 
 char King::PieceToFEN() {
-    if(this->getColor()==BLACK)
+    if(this->GetColor()==BLACK)
     {
         return 'K';
     }
@@ -20,6 +24,10 @@ char King::PieceToFEN() {
     }
 
 }
+
+/*
+
+
 
 bool King::isValidMove(Chessboard board, int pos) {
     vector<int> validMoves = this->movements(board);

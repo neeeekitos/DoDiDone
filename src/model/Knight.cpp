@@ -7,7 +7,16 @@
 // Edited by Rivaldo
 #include <algorithm>
 
-/*Knight::Knight(PieceColor aColor): Piece(aColor) {}
+Knight::Knight(PieceColor aColor): Piece(aColor) {
+    this->moveDirections = {-21, -19, -12, -8, 8, 12, 19, 21};
+    this->directionIsLimited = true;
+}
+
+char Knight::PieceToFEN() {
+    return (this->GetColor() == WHITE ? 'n' : 'N');
+}
+
+/*
 
 char Knight::PieceToFEN() {
     if(this->getColor()==BLACK)

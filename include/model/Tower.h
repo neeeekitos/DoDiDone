@@ -10,6 +10,7 @@
 
 class Tower : public Piece {
 
+public:
     Tower(PieceColor aColor);
 
     virtual char PieceToFEN();

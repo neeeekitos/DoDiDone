@@ -16,7 +16,9 @@ class Piece {
 
 public:
 
-    virtual string getImage() = 0;
+    //virtual string getImage();
+
+    Piece();
 
     Piece(PieceColor aColor);
 
@@ -25,6 +27,10 @@ public:
     virtual char PieceToFEN();
 
     PieceColor GetColor ();
+
+    const vector <int> & GetMoveDirections() const ;
+
+    bool DirectionIsLimited();
 
 private :
     /**

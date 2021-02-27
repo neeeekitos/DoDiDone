@@ -7,7 +7,23 @@
 // Edited by Rivaldo
 #include <algorithm>
 
-/*Bishop::Bishop(PieceColor aColor): Piece(aColor) {}
+Bishop::Bishop(PieceColor aColor): Piece(aColor) {
+    this->moveDirections = {-11, -9, 9, 11};
+    this->directionIsLimited = false;
+}
+
+char Bishop::PieceToFEN() {
+    if(this->GetColor()==BLACK)
+    {
+        return 'B';
+    }
+    else
+    {
+        return 'b';
+    }
+}
+
+/*
 
 char Bishop::PieceToFEN() {
     if(this->getColor()==BLACK)
