@@ -211,33 +211,6 @@ e-chess/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/build
 .PHONY : e-chess/fast
 
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.o: CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
-
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.o
-
-# target to build an object file
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
-
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.i: CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
-
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.i
-
-# target to preprocess a source file
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
-
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
-
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.s
-
-# target to generate assembly for a file
-CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
-.PHONY : CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
-
 src/controller/GameController.o: src/controller/GameController.cpp.o
 
 .PHONY : src/controller/GameController.o
@@ -793,9 +766,6 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... e-chess"
-	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.o"
-	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.i"
-	@echo "... CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.s"
 	@echo "... src/controller/GameController.o"
 	@echo "... src/controller/GameController.i"
 	@echo "... src/controller/GameController.s"

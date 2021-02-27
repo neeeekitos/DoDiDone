@@ -1,41 +1,5 @@
-"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Users\manso\Desktop\Scolaire\INSA\Cours\GL - Génie logiciel\e-chess"
--- The C compiler identification is MSVC 19.26.28806.0
--- The CXX compiler identification is MSVC 19.26.28806.0
--- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx86/x86/cl.exe
--- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx86/x86/cl.exe - broken
-CMake Error at C:/Program Files/JetBrains/CLion 2020.3.2/bin/cmake/win/share/cmake-3.17/Modules/CMakeTestCCompiler.cmake:60 (message):
-  The C compiler
-
-    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx86/x86/cl.exe"
-
-  is not able to compile a simple test program.
-
-  It fails with the following output:
-
-    Change Dir: C:/Users/manso/Desktop/Scolaire/INSA/Cours/GL - GÃ©nie logiciel/e-chess/cmake-build-debug/CMakeFiles/CMakeTmp
-    
-    Run Build Command(s):nmake /nologo cmTC_525dd\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_525dd.dir\build.make /nologo -L                  CMakeFiles\cmTC_525dd.dir\build
-    Building C object CMakeFiles/cmTC_525dd.dir/testCCompiler.c.obj
-    	C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\cl.exe @C:\Users\manso\AppData\Local\Temp\nmCBC3.tmp
-    testCCompiler.c
-    Linking C executable cmTC_525dd.exe
-    	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_525dd.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_525dd.dir\objects1.rsp @C:\Users\manso\AppData\Local\Temp\nmCD1C.tmp
-    LINK Pass 1: command "C:\PROGRA~2\MIB055~1\2019\COMMUN~1\VC\Tools\MSVC\1426~1.288\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_525dd.dir\objects1.rsp /out:cmTC_525dd.exe /implib:cmTC_525dd.lib /pdb:C:\Users\manso\Desktop\Scolaire\INSA\Cours\GL - G?nie logiciel\e-chess\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_525dd.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_525dd.dir/intermediate.manifest CMakeFiles\cmTC_525dd.dir/manifest.res" failed (exit code 1201) with the following output:
-    LINK : fatal error LNK1201: erreur lors de l'Ã©criture dans la base de donnÃ©es 'C:\Users\manso\Desktop\Scolaire\INSA\Cours\GL - G?nie logiciel\e-chess\cmake-build-debug\CMakeFiles\CMakeTmp\cmTC_525dd.pdb' du programmeÂ ; vÃ©rifiez l'espace disque, le chemin d'accÃ¨s ou les privilÃ¨ges
-    NMAKE : fatal error U1077: '"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"'Ã¡: code retour '0xffffffff'
-    Stop.
-    NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\bin\HostX86\x86\nmake.exe"'Ã¡: code retour '0x2'
-    Stop.
-    
-    
-
-  
-
-  CMake will not be able to correctly generate this project.
-Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/manso/Desktop/Scolaire/INSA/Cours/GL - GÃ©nie logiciel/e-chess/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/manso/Desktop/Scolaire/INSA/Cours/GL - GÃ©nie logiciel/e-chess/cmake-build-debug/CMakeFiles/CMakeError.log".
+/home/lpietropao/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/lpietropao/etu/s2/GL/e-chess
+-- Could NOT find GTest (missing: GTEST_LIBRARY GTEST_INCLUDE_DIR GTEST_MAIN_LIBRARY) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug

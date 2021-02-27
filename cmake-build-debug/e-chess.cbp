@@ -144,9 +144,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp">
-			<Option target="e-chess"/>
-		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/controller/GameController.h">
 			<Option target="e-chess"/>
 		</Unit>
