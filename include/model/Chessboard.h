@@ -7,11 +7,13 @@
 
 
 class Chessboard {
+public:
+    Chessboard();
     //les spots du plateau où la pièce courante peut aller
-    validSpots;
+    //validSpots;
 
     //la pièce courante sélectionnée
-    currentPiece;
+    //currentPiece;
 
 };
 

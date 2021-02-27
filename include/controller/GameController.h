@@ -5,13 +5,13 @@
 #ifndef E_CHESS_GAMECONTROLLER_H
 #define E_CHESS_GAMECONTROLLER_H
 
-include <string.h>
+#include <string.h>
 
 class GameController {
 
 public:
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
-    void NewGame();
+   /* void NewGame();
 
     //toute la durée du jeu
     //lance la vue
@@ -36,7 +36,7 @@ public:
     void SwitchPlayer();
 
 
-    updateView();
+    updateView();*/
 
 };
 

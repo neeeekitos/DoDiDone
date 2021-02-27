@@ -22,5 +22,5 @@ int GameController::makeMove(int move) {
 
 int GameController::updateView() {
     view.update(chessBoard);
-}
+}*/
 

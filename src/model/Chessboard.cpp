@@ -3,3 +3,5 @@
 //
 
 #include "../../include/model/Chessboard.h"
+
+Chessboard::Chessboard() {}

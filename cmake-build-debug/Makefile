@@ -508,6 +508,276 @@ src/model/Tower.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/model/Tower.cpp.s
 .PHONY : src/model/Tower.cpp.s
 
+src/view/ClickableElement.o: src/view/ClickableElement.cpp.o
+
+.PHONY : src/view/ClickableElement.o
+
+# target to build an object file
+src/view/ClickableElement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/ClickableElement.cpp.o
+.PHONY : src/view/ClickableElement.cpp.o
+
+src/view/ClickableElement.i: src/view/ClickableElement.cpp.i
+
+.PHONY : src/view/ClickableElement.i
+
+# target to preprocess a source file
+src/view/ClickableElement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/ClickableElement.cpp.i
+.PHONY : src/view/ClickableElement.cpp.i
+
+src/view/ClickableElement.s: src/view/ClickableElement.cpp.s
+
+.PHONY : src/view/ClickableElement.s
+
+# target to generate assembly for a file
+src/view/ClickableElement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/ClickableElement.cpp.s
+.PHONY : src/view/ClickableElement.cpp.s
+
+src/view/GraphicElement.o: src/view/GraphicElement.cpp.o
+
+.PHONY : src/view/GraphicElement.o
+
+# target to build an object file
+src/view/GraphicElement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/GraphicElement.cpp.o
+.PHONY : src/view/GraphicElement.cpp.o
+
+src/view/GraphicElement.i: src/view/GraphicElement.cpp.i
+
+.PHONY : src/view/GraphicElement.i
+
+# target to preprocess a source file
+src/view/GraphicElement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/GraphicElement.cpp.i
+.PHONY : src/view/GraphicElement.cpp.i
+
+src/view/GraphicElement.s: src/view/GraphicElement.cpp.s
+
+.PHONY : src/view/GraphicElement.s
+
+# target to generate assembly for a file
+src/view/GraphicElement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/GraphicElement.cpp.s
+.PHONY : src/view/GraphicElement.cpp.s
+
+src/view/LoadGameButton.o: src/view/LoadGameButton.cpp.o
+
+.PHONY : src/view/LoadGameButton.o
+
+# target to build an object file
+src/view/LoadGameButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/LoadGameButton.cpp.o
+.PHONY : src/view/LoadGameButton.cpp.o
+
+src/view/LoadGameButton.i: src/view/LoadGameButton.cpp.i
+
+.PHONY : src/view/LoadGameButton.i
+
+# target to preprocess a source file
+src/view/LoadGameButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/LoadGameButton.cpp.i
+.PHONY : src/view/LoadGameButton.cpp.i
+
+src/view/LoadGameButton.s: src/view/LoadGameButton.cpp.s
+
+.PHONY : src/view/LoadGameButton.s
+
+# target to generate assembly for a file
+src/view/LoadGameButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/LoadGameButton.cpp.s
+.PHONY : src/view/LoadGameButton.cpp.s
+
+src/view/NewGameButton.o: src/view/NewGameButton.cpp.o
+
+.PHONY : src/view/NewGameButton.o
+
+# target to build an object file
+src/view/NewGameButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/NewGameButton.cpp.o
+.PHONY : src/view/NewGameButton.cpp.o
+
+src/view/NewGameButton.i: src/view/NewGameButton.cpp.i
+
+.PHONY : src/view/NewGameButton.i
+
+# target to preprocess a source file
+src/view/NewGameButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/NewGameButton.cpp.i
+.PHONY : src/view/NewGameButton.cpp.i
+
+src/view/NewGameButton.s: src/view/NewGameButton.cpp.s
+
+.PHONY : src/view/NewGameButton.s
+
+# target to generate assembly for a file
+src/view/NewGameButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/NewGameButton.cpp.s
+.PHONY : src/view/NewGameButton.cpp.s
+
+src/view/OnePlayerButton.o: src/view/OnePlayerButton.cpp.o
+
+.PHONY : src/view/OnePlayerButton.o
+
+# target to build an object file
+src/view/OnePlayerButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/OnePlayerButton.cpp.o
+.PHONY : src/view/OnePlayerButton.cpp.o
+
+src/view/OnePlayerButton.i: src/view/OnePlayerButton.cpp.i
+
+.PHONY : src/view/OnePlayerButton.i
+
+# target to preprocess a source file
+src/view/OnePlayerButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/OnePlayerButton.cpp.i
+.PHONY : src/view/OnePlayerButton.cpp.i
+
+src/view/OnePlayerButton.s: src/view/OnePlayerButton.cpp.s
+
+.PHONY : src/view/OnePlayerButton.s
+
+# target to generate assembly for a file
+src/view/OnePlayerButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/OnePlayerButton.cpp.s
+.PHONY : src/view/OnePlayerButton.cpp.s
+
+src/view/Point2I.o: src/view/Point2I.cpp.o
+
+.PHONY : src/view/Point2I.o
+
+# target to build an object file
+src/view/Point2I.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/Point2I.cpp.o
+.PHONY : src/view/Point2I.cpp.o
+
+src/view/Point2I.i: src/view/Point2I.cpp.i
+
+.PHONY : src/view/Point2I.i
+
+# target to preprocess a source file
+src/view/Point2I.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/Point2I.cpp.i
+.PHONY : src/view/Point2I.cpp.i
+
+src/view/Point2I.s: src/view/Point2I.cpp.s
+
+.PHONY : src/view/Point2I.s
+
+# target to generate assembly for a file
+src/view/Point2I.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/Point2I.cpp.s
+.PHONY : src/view/Point2I.cpp.s
+
+src/view/SaveGameButton.o: src/view/SaveGameButton.cpp.o
+
+.PHONY : src/view/SaveGameButton.o
+
+# target to build an object file
+src/view/SaveGameButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SaveGameButton.cpp.o
+.PHONY : src/view/SaveGameButton.cpp.o
+
+src/view/SaveGameButton.i: src/view/SaveGameButton.cpp.i
+
+.PHONY : src/view/SaveGameButton.i
+
+# target to preprocess a source file
+src/view/SaveGameButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SaveGameButton.cpp.i
+.PHONY : src/view/SaveGameButton.cpp.i
+
+src/view/SaveGameButton.s: src/view/SaveGameButton.cpp.s
+
+.PHONY : src/view/SaveGameButton.s
+
+# target to generate assembly for a file
+src/view/SaveGameButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SaveGameButton.cpp.s
+.PHONY : src/view/SaveGameButton.cpp.s
+
+src/view/SquareButton.o: src/view/SquareButton.cpp.o
+
+.PHONY : src/view/SquareButton.o
+
+# target to build an object file
+src/view/SquareButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SquareButton.cpp.o
+.PHONY : src/view/SquareButton.cpp.o
+
+src/view/SquareButton.i: src/view/SquareButton.cpp.i
+
+.PHONY : src/view/SquareButton.i
+
+# target to preprocess a source file
+src/view/SquareButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SquareButton.cpp.i
+.PHONY : src/view/SquareButton.cpp.i
+
+src/view/SquareButton.s: src/view/SquareButton.cpp.s
+
+.PHONY : src/view/SquareButton.s
+
+# target to generate assembly for a file
+src/view/SquareButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/SquareButton.cpp.s
+.PHONY : src/view/SquareButton.cpp.s
+
+src/view/TwoPlayersButton.o: src/view/TwoPlayersButton.cpp.o
+
+.PHONY : src/view/TwoPlayersButton.o
+
+# target to build an object file
+src/view/TwoPlayersButton.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/TwoPlayersButton.cpp.o
+.PHONY : src/view/TwoPlayersButton.cpp.o
+
+src/view/TwoPlayersButton.i: src/view/TwoPlayersButton.cpp.i
+
+.PHONY : src/view/TwoPlayersButton.i
+
+# target to preprocess a source file
+src/view/TwoPlayersButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/TwoPlayersButton.cpp.i
+.PHONY : src/view/TwoPlayersButton.cpp.i
+
+src/view/TwoPlayersButton.s: src/view/TwoPlayersButton.cpp.s
+
+.PHONY : src/view/TwoPlayersButton.s
+
+# target to generate assembly for a file
+src/view/TwoPlayersButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/TwoPlayersButton.cpp.s
+.PHONY : src/view/TwoPlayersButton.cpp.s
+
+src/view/View.o: src/view/View.cpp.o
+
+.PHONY : src/view/View.o
+
+# target to build an object file
+src/view/View.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/View.cpp.o
+.PHONY : src/view/View.cpp.o
+
+src/view/View.i: src/view/View.cpp.i
+
+.PHONY : src/view/View.i
+
+# target to preprocess a source file
+src/view/View.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/View.cpp.i
+.PHONY : src/view/View.cpp.i
+
+src/view/View.s: src/view/View.cpp.s
+
+.PHONY : src/view/View.s
+
+# target to generate assembly for a file
+src/view/View.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e-chess.dir/build.make CMakeFiles/e-chess.dir/src/view/View.cpp.s
+.PHONY : src/view/View.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -556,6 +826,36 @@ help:
 	@echo "... src/model/Tower.o"
 	@echo "... src/model/Tower.i"
 	@echo "... src/model/Tower.s"
+	@echo "... src/view/ClickableElement.o"
+	@echo "... src/view/ClickableElement.i"
+	@echo "... src/view/ClickableElement.s"
+	@echo "... src/view/GraphicElement.o"
+	@echo "... src/view/GraphicElement.i"
+	@echo "... src/view/GraphicElement.s"
+	@echo "... src/view/LoadGameButton.o"
+	@echo "... src/view/LoadGameButton.i"
+	@echo "... src/view/LoadGameButton.s"
+	@echo "... src/view/NewGameButton.o"
+	@echo "... src/view/NewGameButton.i"
+	@echo "... src/view/NewGameButton.s"
+	@echo "... src/view/OnePlayerButton.o"
+	@echo "... src/view/OnePlayerButton.i"
+	@echo "... src/view/OnePlayerButton.s"
+	@echo "... src/view/Point2I.o"
+	@echo "... src/view/Point2I.i"
+	@echo "... src/view/Point2I.s"
+	@echo "... src/view/SaveGameButton.o"
+	@echo "... src/view/SaveGameButton.i"
+	@echo "... src/view/SaveGameButton.s"
+	@echo "... src/view/SquareButton.o"
+	@echo "... src/view/SquareButton.i"
+	@echo "... src/view/SquareButton.s"
+	@echo "... src/view/TwoPlayersButton.o"
+	@echo "... src/view/TwoPlayersButton.i"
+	@echo "... src/view/TwoPlayersButton.s"
+	@echo "... src/view/View.o"
+	@echo "... src/view/View.i"
+	@echo "... src/view/View.s"
 .PHONY : help
 
 

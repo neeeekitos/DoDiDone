@@ -177,6 +177,33 @@
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/model/constantesDeplacement.h">
 			<Option target="e-chess"/>
 		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/ClickableElement.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/GraphicElement.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/LoadGameButton.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/NewGameButton.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/OnePlayerButton.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/Point2I.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/SaveGameButton.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/SquareButton.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/TwoPlayersButton.h">
+			<Option target="e-chess"/>
+		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/include/view/View.h">
 			<Option target="e-chess"/>
 		</Unit>
@@ -208,6 +235,36 @@
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/model/Tower.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/ClickableElement.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/GraphicElement.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/LoadGameButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/NewGameButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/OnePlayerButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/Point2I.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/SaveGameButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/SquareButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/TwoPlayersButton.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/src/view/View.cpp">
 			<Option target="e-chess"/>
 		</Unit>
 		<Unit filename="/home/lpietropao/etu/s2/GL/e-chess/CMakeLists.txt">
