@@ -5,8 +5,18 @@
 #include "../../include/controller/GameController.h"
 
 int GameController::makeMove(int move) {
+    // Making the move
     chessBoard.makeMove(coordonnees);
     view.update(chessBoard);
+
+    // If we are in the player mode
+    if (/*condition*/) {
+        this->SwitchPlayer();
+    } else {    // If we are in the AI mode
+        // mv = InstanceOfAI.GenerateMove( chessBoard )
+        // chessBoard.makeMove(mv);
+        // view.update();
+    }
 }
 
 
