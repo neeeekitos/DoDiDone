@@ -20,6 +20,8 @@ public:
     void operator= (const GameController & aGameController) = delete;
 
     ~GameController();
+
+    void Start();
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
    /* void NewGame();
 

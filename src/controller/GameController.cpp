@@ -24,6 +24,12 @@ GameController::~GameController() {
     delete(gameController_);
 }
 
+void GameController::Start(){
+    view->MenuChoices();
+    view->MainLoop();
+}
+
+
 //int GameController::makeMove(int move) {
     // Making the move
    /* chessBoard.makeMove(coordonnees);

@@ -12,6 +12,5 @@ int main() {
         cout << mv.first << "\t" << mv.second << endl;
     }
     GameController *gameControl = GameController::GetInstance();
-    View::GetInstance()->MenuChoices();
-    View::GetInstance()->MainLoop();
+    gameControl->Start();
 }
