@@ -10,10 +10,17 @@
 #include "../model/Chessboard.h"
 #include "GraphicElement.h"
 #include "ClickableElement.h"
+#include "Button.h"
+#include "../controller/GameController.h"
 
 class View {
 public:
-    View(Chessboard *const chessBoard);
+
+    static View * GetInstance();
+
+    View(const View& anotherView) = delete;
+
+    void operator= (const View & aView) = delete;
 
     ~View();
 
@@ -25,6 +32,8 @@ public:
 
 
 private:
+    View();
+
     void interfaceInitialisation(int step);
 
     void gameInitialisation();
@@ -37,12 +46,18 @@ private:
 
     void notifyGame(const sf::Event &event);
 
-    void newGame();
+    Button *getButtonClicked(const sf::Event &event);
+
+    void deleteButtonElements();
+    void deleteInterfaceElements();
+
 
     sf::RenderWindow *window;
     std::vector<GraphicElement *> interface;
-    std::vector<ClickableElement *> boutons;
-    Chessboard *chessboardModel;
+    std::vector<Button *> buttons;
+
+    static View * view_;
+
 };
 
 

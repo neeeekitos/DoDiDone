@@ -24,21 +24,20 @@ public:
     ~ClickableElement();
 
 
-
     void setStartPoint(Point2I p);
 
     void setEndPoint(Point2I p);
 
-    Point2I getEndPoint();
+    virtual Point2I getEndPoint();
 
-    Point2I getStartPoint();
+    virtual Point2I getStartPoint();
 
-    bool isInside(sf::Event event);
+    virtual bool isInside(sf::Event event);
+
 
     bool checkPosition(int x, int y);
 
-
-private:
+protected:
     Point2I pointDebut, pointFin;
 
     virtual void action();

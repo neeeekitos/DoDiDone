@@ -4,6 +4,13 @@
 
 #include "../../include/controller/GameController.h"
 
+GameController::GameController(): chessBoard(Chessboard::GetInstance()) {
+
+}
+
+GameController::~GameController() {
+}
+
 //int GameController::makeMove(int move) {
     // Making the move
    /* chessBoard.makeMove(coordonnees);

@@ -6,10 +6,14 @@
 #define E_CHESS_GAMECONTROLLER_H
 
 #include <string.h>
+#include "../model/Chessboard.h"
+#include "../view/View.h"
 
 class GameController {
 
 public:
+    GameController();
+    ~GameController();
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
    /* void NewGame();
 
@@ -37,6 +41,10 @@ public:
 
 
     updateView();*/
+
+private:
+//    View *view;
+    Chessboard *chessBoard;
 
 };
 

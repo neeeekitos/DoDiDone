@@ -10,8 +10,8 @@ int main() {
     for (Coordinate mv : dest) {
         cout << mv.first << "\t" << mv.second << endl;
     }
-    View v(&c);
-    v.MenuChoices();
+    GameController gameControl;
+//    v.MenuChoices();
 
 
 }
