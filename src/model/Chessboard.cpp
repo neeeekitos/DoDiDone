@@ -19,14 +19,14 @@ Chessboard* Chessboard::chessBoard_ = nullptr;
 
 Chessboard::Chessboard() {
     this->board = {
-        Tower(BLACK), Knight(BLACK), Bishop(BLACK), King(BLACK), Bishop(BLACK), Knight(BLACK), Tower(BLACK),
+        Tower(BLACK), Knight(BLACK), Bishop(BLACK),Queen(BLACK), King(BLACK), Bishop(BLACK), Knight(BLACK), Tower(BLACK),
         Pawn(BLACK), Pawn(BLACK), Pawn(BLACK), Pawn(BLACK), Pawn(BLACK), Pawn(BLACK), Pawn(BLACK), Pawn(BLACK),
         Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(),
         Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(),
         Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(),
         Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(), Piece(),
         Pawn(WHITE), Pawn(WHITE), Pawn(WHITE), Pawn(WHITE), Pawn(WHITE), Pawn(WHITE), Pawn(WHITE), Pawn(WHITE),
-        Tower(WHITE), Knight(WHITE), Bishop(WHITE), King(WHITE), Bishop(WHITE), Knight(WHITE), Tower(WHITE)
+        Tower(WHITE), Knight(WHITE), Bishop(WHITE), Queen(WHITE), King(WHITE), Bishop(WHITE), Knight(WHITE), Tower(WHITE)
     };
 
     this->currentPLayer = WHITE;
@@ -72,14 +72,34 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool justEatableMo
     int currentPiecePositionInBoundariesTable = this->GetPositionInBoundariesTable(oneDimentionPosition);
 
     for (int direction : directions) {
-        int destinationSquareValueInBoundariesTable = this->GetValueInBoundariesTable(currentPiecePositionInBoundariesTable + direction);
-
-        if ( destinationSquareValueInBoundariesTable != -1 &&
-            (this->getPiece(destinationSquareValueInBoundariesTable).isEmpty() || this->getPiece(destinationSquareValueInBoundariesTable).GetColor() != currentPieceColor)
-            ) {
-            Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(destinationSquareValueInBoundariesTable);
-            mvSet.push_back(destinationCoordinates);
+        if ( ! directionIsLimited ) {       // If the direction of the piece is unlimited
+            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
+            int nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            while (nextDestinationValueInBoundariesTable != -1 &&
+                   this->getPiece(nextDestinationValueInBoundariesTable).GetColor() == EMPTY
+                    ) {
+                cout << nextDestinationValueInBoundariesTable << endl;
+                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+                nextDestinationPositionInBoundariesTable += direction;
+                nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            }
+            if (nextDestinationValueInBoundariesTable != -1 && this->getPiece(nextDestinationValueInBoundariesTable).GetColor() != currentPieceColor) {
+                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+            }
+        } else {
+            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
+            int nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            if (
+                    nextDestinationValueInBoundariesTable != -1 &&
+                    this->getPiece(nextDestinationValueInBoundariesTable).GetColor() != currentPieceColor
+                    ) {
+                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+            }
         }
+
     }
     return mvSet;
 }

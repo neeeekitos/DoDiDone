@@ -7,7 +7,7 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
     Chessboard & c = *(Chessboard::GetInstance());
-    DestinationsSet dest = c.GetPossibleMoves(make_pair(6,0), false);
+    DestinationsSet dest = c.GetPossibleMoves(make_pair(1,0), false);
     for (Coordinate mv : dest) {
         cout << mv.first << "\t" << mv.second << endl;
     }
