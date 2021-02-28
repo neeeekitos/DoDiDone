@@ -43,7 +43,7 @@ public:
     updateView();*/
 
 private:
-//    View *view;
+    View *view;
     Chessboard *chessBoard;
 
 };

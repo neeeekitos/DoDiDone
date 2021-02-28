@@ -4,7 +4,7 @@
 
 #include "../../include/controller/GameController.h"
 
-GameController::GameController(): chessBoard(Chessboard::GetInstance()) {
+GameController::GameController(): view(View::GetInstance()), chessBoard(Chessboard::GetInstance()) {
 
 }
 

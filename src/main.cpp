@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "../include/model/Chessboard.h"
 #include "../include/view/View.h"
+#include "../include/controller/GameController.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;

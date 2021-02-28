@@ -11,7 +11,6 @@
 #include "GraphicElement.h"
 #include "ClickableElement.h"
 #include "Button.h"
-#include "../controller/GameController.h"
 
 class View {
 public:
