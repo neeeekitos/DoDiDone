@@ -1,15 +1,34 @@
-//
+///home/lpietropao/etu/s2/GL/ChessXIV
 // Created by lpietropao on 27/02/2021.
 //
 
 #include "../../include/controller/GameController.h"
+
+GameController* GameController::gameController_ = nullptr;
+
+
+GameController * GameController::GetInstance() {
+    if (GameController::gameController_ == nullptr) {
+        GameController::gameController_ = new GameController;
+    }
+    return GameController::gameController_;
+}
 
 GameController::GameController(): view(View::GetInstance()), chessBoard(Chessboard::GetInstance()) {
 
 }
 
 GameController::~GameController() {
+    delete(View::GetInstance());
+    delete(Chessboard::GetInstance());
+    delete(gameController_);
 }
+
+void GameController::Start(){
+    view->MenuChoices();
+    view->MainLoop();
+}
+
 
 //int GameController::makeMove(int move) {
     // Making the move

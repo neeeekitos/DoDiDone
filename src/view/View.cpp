@@ -58,7 +58,7 @@ void View::MenuChoices() {
     } catch (exception) {
     }
     while (!newGamePressed || playerCount == -1) {
-        while (window->pollEvent(event)) {
+        while (window->pollEvent(event) && (!newGamePressed || playerCount == -1)) {
             if (event.type == sf::Event::Closed) {
                 window->close();
                 exit(0);
@@ -96,13 +96,8 @@ void View::MainLoop() {
                 //getButtonClicked(event);
             }
         }
-        window->clear();
-
-        //displayInterfaceIn(*window);
-
+        interfaceInitialisation(2);
         displayGameIn(*window);
-        displayInterfaceIn(*window);
-        window->display();
     }
 }
 

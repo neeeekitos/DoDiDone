@@ -11,8 +11,6 @@ int main() {
     for (Coordinate mv : dest) {
         cout << mv.first << "\t" << mv.second << endl;
     }
-    GameController gameControl;
-    View::GetInstance()->MenuChoices();
-
-
+    GameController *gameControl = GameController::GetInstance();
+    gameControl->Start();
 }

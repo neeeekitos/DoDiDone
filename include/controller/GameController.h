@@ -12,8 +12,16 @@
 class GameController {
 
 public:
-    GameController();
+
+    static GameController * GetInstance();
+
+    GameController(const GameController& anotherGameController) = delete;
+
+    void operator= (const GameController & aGameController) = delete;
+
     ~GameController();
+
+    void Start();
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
    /* void NewGame();
 
@@ -43,8 +51,13 @@ public:
     updateView();*/
 
 private:
+
+    GameController();
     View *view;
     Chessboard *chessBoard;
+
+    static GameController * gameController_;
+
 
 };
 
