@@ -79,6 +79,7 @@ void View::MenuChoices() {
                 }
             }
         }
+        displayGameIn(*window);
     }
 }
 

@@ -12,7 +12,7 @@ int main() {
         cout << mv.first << "\t" << mv.second << endl;
     }
     GameController gameControl;
-//    v.MenuChoices();
+    View::GetInstance()->MenuChoices();
 
 
 }
