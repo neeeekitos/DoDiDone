@@ -12,7 +12,7 @@ Bishop::Bishop(PieceColor aColor): Piece(aColor) {
     this->directionIsLimited = false;
 }
 
-char Bishop::PieceToFEN() {
+char Bishop::PieceToFEN()  {
     if(this->GetColor()==BLACK)
     {
         return 'B';

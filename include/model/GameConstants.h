@@ -45,6 +45,11 @@ const int positionInBoundariesTable[64] = {
         91, 92, 93, 94, 95, 96, 97, 98
 };
 
+enum GameMode {
+    MultiPlayer,
+    AI
+};
+
 enum PieceColor {
     EMPTY,
     BLACK,

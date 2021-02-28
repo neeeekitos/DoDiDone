@@ -8,6 +8,7 @@
 #include <string.h>
 #include "../model/Chessboard.h"
 #include "../view/View.h"
+#include "../model/GameConstants.h"
 
 class GameController {
 
@@ -22,6 +23,12 @@ public:
     ~GameController();
 
     void Start();
+
+    void  SetGameMode (GameMode gm);
+
+    GameMode GetGameMode ();
+
+    void MakeMove(Move mv);
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
    /* void NewGame();
 
@@ -55,6 +62,7 @@ private:
     GameController();
     View *view;
     Chessboard *chessBoard;
+    GameMode gameMode;
 
     static GameController * gameController_;
 

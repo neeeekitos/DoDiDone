@@ -23,7 +23,7 @@ class Bishop : public Piece {
          * builder de Bishop
          */
 
-        virtual char PieceToFEN();
+        char PieceToFEN();
         /*
          * get the FEN representation of a Piece
          */

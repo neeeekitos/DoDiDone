@@ -38,11 +38,19 @@ public:
 
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
+    bool IsValidMove(Move mv);
+
+    Piece * GetPiece(Coordinate cor);
+
+    void SetPiece(Coordinate& cor, Piece * piece);
+
+    friend ostream & operator << (ostream & out, Chessboard & cb);
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;
 
-    Piece& getPiece (int position);
+    Piece * getPiece (int position);
 
     Chessboard();
 
@@ -58,7 +66,9 @@ private:
     PieceColor currentPLayer;
 
     //Piece board[CHESSGAMESIZE];
-    vector <Piece> board;
+    vector <Piece*> board;
+
+    vector <Piece*> eatenPieces[2];
 
 };
 

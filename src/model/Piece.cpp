@@ -21,7 +21,7 @@ bool Piece::isEmpty() {
 }
 
 char Piece::PieceToFEN() {
-    return ' ';
+    return '-';
 }
 
 PieceColor Piece::GetColor() {

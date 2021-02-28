@@ -29,6 +29,22 @@ void GameController::Start(){
     view->MainLoop();
 }
 
+void GameController::SetGameMode(GameMode gm) {
+    this->gameMode = gm;
+}
+
+
+GameMode GameController::GetGameMode() {
+    return this->gameMode;
+}
+
+void GameController::MakeMove(Move mv) {
+    Chessboard & c = *Chessboard::GetInstance();
+    Piece * temp = c.GetPiece(mv.first);
+    c.SetPiece(mv.first, c.GetPiece(mv.second));
+    c.SetPiece(mv.second, temp);
+}
+
 
 //int GameController::makeMove(int move) {
     // Making the move
