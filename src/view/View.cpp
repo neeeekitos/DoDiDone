@@ -10,6 +10,10 @@
 #include "../../include/controller/GameController.h"
 
 const string IMG_BASE_PATH = "./../../img/";
+const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
+const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
+const int BOARD_LEFT_TOP_CORNER_X = 323;
+const int BOARD_LEFT_TOP_CORNER_Y = 135;
 
 typedef enum {
     SAVE,
@@ -139,6 +143,8 @@ void View::interfaceInitialisation(int step) {
     Point2I p1;
     Point2I p2;
     sf::Vector2u v;
+    int shiftY = 0;
+    GraphicElement img;
 
     switch (step) {
         case 0:
@@ -172,7 +178,23 @@ void View::interfaceInitialisation(int step) {
         case 2:
             //gameInitialisation();
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
+            img = GraphicElement(IMG_BASE_PATH + "noir-pion.png");
+            img.setScale(0.7);
+
+            v = img.getSprite(0).getTexture()->getSize();
+            for (int i = 0; i < 3 ; i++)
+            {
+                for (int j = 0 ; j<6 ; j++) {
+                    interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
+                    interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
+                    interface[interface.size() - 1]->setScale(0.7);
+                }
+                shiftY += v.y;
+            }
+
+
             break;
+
         default:
             break;
     }
