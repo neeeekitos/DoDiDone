@@ -9,6 +9,8 @@
 #include "../../include/view/TwoPlayersButton.h"
 #include "../../include/controller/GameController.h"
 
+const string IMG_BASE_PATH = "./../../img/";
+
 typedef enum {
     SAVE,
     LOAD,
@@ -48,15 +50,7 @@ void View::MenuChoices() {
 
     sf::Event event;
     interfaceInitialisation(0);
-    window->clear();
-    sf::Texture texture;
-    sf::Sprite sprite;
-    try {
-        texture.loadFromFile("./../../data/accueil.png");
-        sprite.setTexture(texture);
-        window->draw(sprite);
-    } catch (exception) {
-    }
+
     while (!newGamePressed || playerCount == -1) {
         while (window->pollEvent(event) && (!newGamePressed || playerCount == -1)) {
             if (event.type == sf::Event::Closed) {
@@ -134,6 +128,7 @@ void View::deleteButtonElements() {
 }
 
 void View::displayGameIn(sf::RenderWindow &w) {
+    w.clear();
     displayInterfaceIn(w);
     w.display();
 }
@@ -147,7 +142,7 @@ void View::interfaceInitialisation(int step) {
 
     switch (step) {
         case 0:
-            interface.push_back(new GraphicElement("./../../data/accueil.png"));
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement("./../../data/bouton-newGame.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
@@ -158,7 +153,7 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 1:
-            interface.push_back(new GraphicElement("./../../data/accueil.png"));
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement("./../../data/bouton-2Players.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
@@ -176,7 +171,7 @@ void View::interfaceInitialisation(int step) {
             break;
         case 2:
             //gameInitialisation();
-            interface.push_back(new GraphicElement("./../../data/plateau.png"));
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background.png"));
             break;
         default:
             break;
