@@ -13,4 +13,5 @@ int main() {
     }
     GameController *gameControl = GameController::GetInstance();
     View::GetInstance()->MenuChoices();
+    View::GetInstance()->MainLoop();
 }
