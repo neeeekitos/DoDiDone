@@ -47,13 +47,19 @@ private:
 
     Button *getButtonClicked(const sf::Event &event);
 
+    void initBoardSquares();
+    int getSquareClickedIndex(int x, int y);
+
+
     void deleteButtonElements();
     void deleteInterfaceElements();
+    void deleteBoardSquares();
 
 
     sf::RenderWindow *window;
     std::vector<GraphicElement *> interface;
     std::vector<Button *> buttons;
+    std::vector<sf::RectangleShape *> boardSquares;
 
     static View * view_;
 

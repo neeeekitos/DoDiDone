@@ -3,7 +3,11 @@
 //
 
 #include "../../include/view/View.h"
+#include "../../include/model/GameConstants.h"
 #include "../../include/model/Chessboard.h"
+#include "../../include/model/Piece.h"
+#include "../../include/model/Pawn.h"
+#include "../../include/model/Tower.h"
 #include "../../include/view/NewGameButton.h"
 #include "../../include/view/OnePlayerButton.h"
 #include "../../include/view/TwoPlayersButton.h"
@@ -14,6 +18,7 @@ const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
 const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
 const int BOARD_LEFT_TOP_CORNER_X = 323;
 const int BOARD_LEFT_TOP_CORNER_Y = 135;
+const int SQUARE_WIDTH = 25;
 
 typedef enum {
     SAVE,
@@ -46,6 +51,7 @@ View::~View() {
     delete window;
     deleteButtonElements();
     deleteInterfaceElements();
+    deleteBoardSquares();
 }
 
 void View::MenuChoices() {
@@ -91,10 +97,10 @@ void View::MainLoop() {
                 window->close();
                 exit(0);
             } else if (event.type == sf::Event::MouseButtonPressed) {
-                //getButtonClicked(event);
+                getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
             }
         }
-        interfaceInitialisation(2);
+        //interfaceInitialisation(2);
         displayGameIn(*window);
     }
 }
@@ -123,6 +129,14 @@ void View::deleteInterfaceElements() {
     interface.clear();
 }
 
+void View::deleteBoardSquares() {
+    int size = boardSquares.size();
+    for (int i = 0; i < size; i++) {
+        delete (boardSquares.at(i));
+    }
+    boardSquares.clear();
+}
+
 void View::deleteButtonElements() {
     int size = buttons.size();
     for (int i = 0; i < size; i++) {
@@ -133,7 +147,13 @@ void View::deleteButtonElements() {
 
 void View::displayGameIn(sf::RenderWindow &w) {
     w.clear();
+    //interface elements
     displayInterfaceIn(w);
+    //board squares
+    int size = boardSquares.size();
+    for (int i = 0; i < size; i++) {
+        w.draw(*(boardSquares.at(i)));
+    }
     w.display();
 }
 
@@ -143,7 +163,6 @@ void View::interfaceInitialisation(int step) {
     Point2I p1;
     Point2I p2;
     sf::Vector2u v;
-    int shiftY = 0;
     GraphicElement img;
 
     switch (step) {
@@ -177,7 +196,7 @@ void View::interfaceInitialisation(int step) {
             break;
         case 2:
             //gameInitialisation();
-            interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
+            /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
             img = GraphicElement(IMG_BASE_PATH + "noir-pion.png");
             img.setScale(0.7);
 
@@ -190,7 +209,9 @@ void View::interfaceInitialisation(int step) {
                     interface[interface.size() - 1]->setScale(0.7);
                 }
                 shiftY += v.y;
-            }
+            }*/
+            initBoardSquares();
+            displayGameIn(*window);
 
 
             break;
@@ -198,6 +219,38 @@ void View::interfaceInitialisation(int step) {
         default:
             break;
     }
+}
+
+void View::initBoardSquares() {
+    boardSquares.clear();
+
+    for (int i = 0; i < 1 ; i++)
+    {
+        boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH, SQUARE_WIDTH)));
+        boardSquares.at(i)->setFillColor(sf::Color::Blue);
+        boardSquares.at(i)->setPosition(sf::Vector2f(100,100));
+
+        /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
+        interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
+        interface[interface.size() - 1]->setScale(0.7);*/
+    }
+}
+
+int View::getSquareClickedIndex(int x, int y)
+{
+    int size = boardSquares.size();
+    int i = 0;
+    while (i < size) {
+        if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
+            boardSquares.at(i)->setFillColor(sf::Color::Red);
+            const Piece &piece = Chessboard::GetInstance()->GetPiece(i);
+            cout << "piece == KING? " << (piece.GetType() == PIECE_TYPE::KING) << endl;
+            cout << "piece == TOWER? " << (piece.GetType() == PIECE_TYPE::TOWER) << endl;
+        }
+        i++;
+    }
+    return -1;
+
 }
 
 
