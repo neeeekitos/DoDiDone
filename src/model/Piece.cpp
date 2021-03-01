@@ -9,6 +9,7 @@ using namespace std;
 
 Piece::Piece() {
     this->color = EMPTY;
+    this->type = NONE;
 }
 
 Piece::Piece(PieceColor aColor): color(aColor) {}
@@ -26,6 +27,10 @@ char Piece::PieceToFEN() {
 
 PieceColor Piece::GetColor() {
     return this->color;
+}
+
+int Piece::GetType() const {
+    return this->type;
 }
 
 const vector<int> & Piece::GetMoveDirections() const {

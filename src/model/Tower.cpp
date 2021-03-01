@@ -9,8 +9,10 @@ Tower::Tower(PieceColor aColor):
     Piece(
             aColor,
             vector<int> {-10, -1, 1, 10},
-            false
-            ){}
+            false)
+        {
+    this->type = TOWER;
+}
 
 
 

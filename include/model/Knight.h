@@ -18,7 +18,7 @@ using namespace std;
 
 class Knight: public Piece {
     public:
-        Knight(PieceColor color);
+    Knight(PieceColor color);
         /*
          * builder de Knight
          */

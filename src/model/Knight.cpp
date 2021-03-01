@@ -10,6 +10,7 @@
 Knight::Knight(PieceColor aColor): Piece(aColor) {
     this->moveDirections = {-21, -19, -12, -8, 8, 12, 19, 21};
     this->directionIsLimited = true;
+    this->type = KNIGHT;
 }
 
 char Knight::PieceToFEN() {

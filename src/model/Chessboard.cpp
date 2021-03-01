@@ -44,6 +44,10 @@ Piece * Chessboard::getPiece(int position) {
     return this->board[position];
 }
 
+const Piece & Chessboard::GetPiece(int position) const {
+    return this->board[position];
+}
+
 int Chessboard::convertCoordinates(const Coordinate &coor) const {
     return coor.first * 8 + coor.second;
 }

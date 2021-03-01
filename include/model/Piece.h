@@ -10,6 +10,16 @@
 
 #include "GameConstants.h"
 
+enum PIECE_TYPE {
+    PAWN,
+    TOWER,
+    KING,
+    KNIGHT,
+    QUEEN,
+    BISHOP,
+    NONE
+};
+
 using namespace std;
 
 class Piece {
@@ -28,6 +38,8 @@ public:
 
     PieceColor GetColor ();
 
+    int GetType() const;
+
     const vector <int> & GetMoveDirections() const ;
 
     bool DirectionIsLimited();
@@ -41,7 +53,10 @@ private :
 protected:
     vector <int> moveDirections;
     bool directionIsLimited;
+    int type;
+
     Piece(PieceColor aColor, vector<int> aMoveDirections, bool aDirectionIsLimited);
+
 
 };
 

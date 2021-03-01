@@ -18,7 +18,8 @@ using namespace std;
 
 class Bishop : public Piece {
     public:
-        Bishop(PieceColor color);
+
+    Bishop(PieceColor color);
         /*
          * builder de Bishop
          */
@@ -44,7 +45,7 @@ class Bishop : public Piece {
          */
 
     private:
-        vector<int> movelists{-11, -9, 9, 11};
+    vector<int> movelists{-11, -9, 9, 11};
 };
 
 

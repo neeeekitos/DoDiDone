@@ -14,7 +14,7 @@ Pawn::Pawn(PieceColor aColor)
     int direction = (aColor == WHITE ? -1 : 1);
     this->moveDirections = {direction * 10, direction *20};
     this->directionIsLimited = true;
-
+    this->type = PAWN;
 }
 
 

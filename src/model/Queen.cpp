@@ -11,12 +11,12 @@
 using namespace std;
 
 
-
-Queen::Queen(PieceColor aColor): Piece(
+Queen::Queen(PieceColor aColor) : Piece(
         aColor,
-        vector <int> {-11, -10, -9, -1, 1, 9, 10, 11},
-        false
-        ) {}
+        vector<int>{-11, -10, -9, -1, 1, 9, 10, 11},
+        false) {
+    this->type = QUEEN;
+}
 
 
 char Queen::PieceToFEN() {

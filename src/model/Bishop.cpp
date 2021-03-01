@@ -10,6 +10,7 @@
 Bishop::Bishop(PieceColor aColor): Piece(aColor) {
     this->moveDirections = {-11, -9, 9, 11};
     this->directionIsLimited = false;
+    this->type = BISHOP;
 }
 
 char Bishop::PieceToFEN()  {
@@ -22,6 +23,7 @@ char Bishop::PieceToFEN()  {
         return 'b';
     }
 }
+
 
 /*
 
