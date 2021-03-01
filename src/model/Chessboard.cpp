@@ -44,7 +44,7 @@ Piece * Chessboard::getPiece(int position) {
     return this->board[position];
 }
 
-const Piece & Chessboard::GetPiece(int position) const {
+const Piece * const Chessboard::GetPiece(int position) const {
     return this->board[position];
 }
 

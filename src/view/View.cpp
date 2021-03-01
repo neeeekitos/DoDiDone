@@ -243,9 +243,9 @@ int View::getSquareClickedIndex(int x, int y)
     while (i < size) {
         if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
             boardSquares.at(i)->setFillColor(sf::Color::Red);
-            const Piece &piece = Chessboard::GetInstance()->GetPiece(i);
-            cout << "piece == KING? " << (piece.GetType() == PIECE_TYPE::KING) << endl;
-            cout << "piece == TOWER? " << (piece.GetType() == PIECE_TYPE::TOWER) << endl;
+            const Piece *piece = Chessboard::GetInstance()->GetPiece(i);
+            cout << "piece == KING? " << (piece->GetType() == PIECE_TYPE::KING) << endl;
+            cout << "piece == TOWER? " << (piece->GetType() == PIECE_TYPE::TOWER) << endl;
         }
         i++;
     }

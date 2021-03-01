@@ -46,7 +46,7 @@ public:
 
     friend ostream & operator << (ostream & out, Chessboard & cb);
 
-    const Piece& GetPiece (int position) const;
+    const Piece* const GetPiece (int position) const;
 
 
 private:
