@@ -196,8 +196,8 @@ void View::interfaceInitialisation(int step) {
             break;
         case 2:
             //gameInitialisation();
-            /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
-            img = GraphicElement(IMG_BASE_PATH + "noir-pion.png");
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
+            /*img = GraphicElement(IMG_BASE_PATH + "noir-pion.png");
             img.setScale(0.7);
 
             v = img.getSprite(0).getTexture()->getSize();
