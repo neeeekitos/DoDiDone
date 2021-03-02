@@ -11,8 +11,6 @@
 #include "../../include/controller/GameController.h"
 
 const string IMG_BASE_PATH = "./../../img/";
-const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
-const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
 const int BOARD_LEFT_TOP_CORNER_X = 294;
 const int BOARD_LEFT_TOP_CORNER_Y = 107;
 const float SQUARE_OUTLINE_THICKNESS = 10;
@@ -30,13 +28,7 @@ typedef enum {
     DEFAULT
 } ButtonType;
 
-typedef enum {
-    BOARD,
-    HOME
-} InterfaceElements;
-
 View* View::view_ = nullptr;
-
 
 View * View::GetInstance() {
     if (View::view_ == nullptr) {
