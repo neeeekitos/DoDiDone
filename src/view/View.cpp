@@ -3,12 +3,6 @@
 //
 
 #include "../../include/view/View.h"
-#include "../../include/model/GameConstants.h"
-#include "../../include/model/Chessboard.h"
-#include "../../include/model/Piece.h"
-#include "../../include/model/Pawn.h"
-#include "../../include/model/Tower.h"
-#include "../../include/controller/GameController.h"
 
 const string IMG_BASE_PATH = "./../../img/";
 const int BOARD_LEFT_TOP_CORNER_X = 294;
