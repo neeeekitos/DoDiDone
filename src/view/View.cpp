@@ -16,9 +16,11 @@
 const string IMG_BASE_PATH = "./../../img/";
 const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
 const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
-const int BOARD_LEFT_TOP_CORNER_X = 323;
-const int BOARD_LEFT_TOP_CORNER_Y = 135;
-const int SQUARE_WIDTH = 25;
+const int BOARD_LEFT_TOP_CORNER_X = 295;
+const int BOARD_LEFT_TOP_CORNER_Y = 106;
+const float SQUARE_OUTLINE_THICKNESS = 10;
+const int SQUARE_WIDTH = 70;
+const sf::Color SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
 
 typedef enum {
     SAVE,
@@ -97,7 +99,16 @@ void View::MainLoop() {
                 window->close();
                 exit(0);
             } else if (event.type == sf::Event::MouseButtonPressed) {
-                getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
+                int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
+                if (i != -1 && i < boardSquares.size()) {
+                    cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
+                    boardSquares.at(0)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
+                    boardSquares.at(0)->setOutlineColor(SQUARE_OUTLINE_COLOR);
+                } else {
+                    boardSquares.at(0)->setOutlineThickness(0);
+                    boardSquares.at(0)->setPosition(event.mouseButton.x, event.mouseButton.y);
+                    cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
+                }
             }
         }
         //interfaceInitialisation(2);
@@ -246,6 +257,8 @@ int View::getSquareClickedIndex(int x, int y)
             const Piece *piece = Chessboard::GetInstance()->GetPiece(i);
             cout << "piece == KING? " << (piece->GetType() == PIECE_TYPE::KING) << endl;
             cout << "piece == TOWER? " << (piece->GetType() == PIECE_TYPE::TOWER) << endl;
+            cout << "i= " << i << endl;
+            return  i;
         }
         i++;
     }
