@@ -16,11 +16,12 @@
 const string IMG_BASE_PATH = "./../../img/";
 const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
 const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
-const int BOARD_LEFT_TOP_CORNER_X = 295;
+const int BOARD_LEFT_TOP_CORNER_X = 294;
 const int BOARD_LEFT_TOP_CORNER_Y = 106;
 const float SQUARE_OUTLINE_THICKNESS = 10;
-const int SQUARE_WIDTH = 70;
-const sf::Color SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
+const float SQUARE_WIDTH = 69.5;
+const sf::Color DESTINATION_SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
+const sf::Color CLICKED_SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
 
 typedef enum {
     SAVE,
@@ -103,7 +104,7 @@ void View::MainLoop() {
                 if (i != -1 && i < boardSquares.size()) {
                     cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
                     boardSquares.at(0)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
-                    boardSquares.at(0)->setOutlineColor(SQUARE_OUTLINE_COLOR);
+                    boardSquares.at(0)->setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
                 } else {
                     boardSquares.at(0)->setOutlineThickness(0);
                     boardSquares.at(0)->setPosition(event.mouseButton.x, event.mouseButton.y);
@@ -235,11 +236,13 @@ void View::interfaceInitialisation(int step) {
 void View::initBoardSquares() {
     boardSquares.clear();
 
-    for (int i = 0; i < 1 ; i++)
+    for (int i = 0; i < 8 ; i++)
     {
         boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH, SQUARE_WIDTH)));
-        boardSquares.at(i)->setFillColor(sf::Color::Blue);
-        boardSquares.at(i)->setPosition(sf::Vector2f(100,100));
+        if (i%2 == 0) boardSquares.at(i)->setFillColor(sf::Color::Blue);
+        else boardSquares.at(i)->setFillColor(sf::Color::Magenta);
+        boardSquares.at(i)->setPosition(sf::Vector2f(BOARD_LEFT_TOP_CORNER_X+i*SQUARE_WIDTH,BOARD_LEFT_TOP_CORNER_Y));
+        boardSquares.at(0)->setOutlineThickness(0);
 
         /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
         interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
@@ -253,7 +256,8 @@ int View::getSquareClickedIndex(int x, int y)
     int i = 0;
     while (i < size) {
         if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
-            boardSquares.at(i)->setFillColor(sf::Color::Red);
+            boardSquares.at(0)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
+
             const Piece *piece = Chessboard::GetInstance()->GetPiece(i);
             cout << "piece == KING? " << (piece->GetType() == PIECE_TYPE::KING) << endl;
             cout << "piece == TOWER? " << (piece->GetType() == PIECE_TYPE::TOWER) << endl;
@@ -263,7 +267,17 @@ int View::getSquareClickedIndex(int x, int y)
         i++;
     }
     return -1;
-
 }
+
+void View::cleanSquareOutlines() {
+    int size = boardSquares.size();
+
+    for (int i = 0; size < 1 ; i++)
+    {
+        boardSquares.at(0)->setOutlineThickness(0);
+    }
+}
+
+
 
 

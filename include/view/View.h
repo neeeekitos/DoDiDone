@@ -49,9 +49,10 @@ private:
 
     void initBoardSquares();
     int getSquareClickedIndex(int x, int y);
+    void cleanSquareOutlines();
 
 
-    void deleteButtonElements();
+        void deleteButtonElements();
     void deleteInterfaceElements();
     void deleteBoardSquares();
 
