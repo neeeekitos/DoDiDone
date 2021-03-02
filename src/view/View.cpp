@@ -125,10 +125,7 @@ void View::notifyGame(const sf::Event &event) {}
 
 
 void View::displayInterfaceIn(sf::RenderWindow &w) {
-    int size = interface.size();
-    for (int i = 0; i < size; i++) {
-        interface.at(i)->draw(w);
-    }
+
 }
 
 void View::deleteInterfaceElements() {
@@ -157,13 +154,31 @@ void View::deleteButtonElements() {
 
 void View::displayGameIn(sf::RenderWindow &w) {
     w.clear();
-    //interface elements
-    displayInterfaceIn(w);
-    //board squares
-    int size = boardSquares.size();
+    //interface elements first
+    int size = interface.size();
     for (int i = 0; i < size; i++) {
+        interface.at(i)->draw(w);
+    }
+    //board squares with pieces
+    size = boardSquares.size();
+    for (int i = 0; i < size; i++) {
+        sf::Texture texture;
+        string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
+        if (pieceName != PIECE_NAME[NONE]){
+            string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
+            if (!texture.loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))
+            {
+                cerr << "error" << endl;
+            }
+            boardSquares.at(i)->setTexture(&texture);
+        } else {
+            boardSquares.at(i)->setFillColor(sf::Color::Transparent);
+        }
+
         w.draw(*(boardSquares.at(i)));
     }
+
+
     w.display();
 }
 
@@ -205,25 +220,9 @@ void View::interfaceInitialisation(int step) {
             buttons.push_back(new Button(p1, p2, ButtonType::ONE_PLAYER));
             break;
         case 2:
-            //gameInitialisation();
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
-            /*img = GraphicElement(IMG_BASE_PATH + "noir-pion.png");
-            img.setScale(0.7);
-
-            v = img.getSprite(0).getTexture()->getSize();
-            for (int i = 0; i < 3 ; i++)
-            {
-                for (int j = 0 ; j<6 ; j++) {
-                    interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
-                    interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
-                    interface[interface.size() - 1]->setScale(0.7);
-                }
-                shiftY += v.y;
-            }*/
             initBoardSquares();
             displayGameIn(*window);
-
-
             break;
 
         default:
@@ -235,24 +234,17 @@ void View::initBoardSquares() {
     boardSquares.clear();
     int shiftY = BOARD_LEFT_TOP_CORNER_Y;
     int index1D = 0;
-    int colorOne = true;
     for (int line = 0; line < 8 ; line++) {
         for (int col = 0; col < 8; col++) {
             index1D = 8 * line + col;
+            const Piece *piece = Chessboard::GetInstance()->GetPiece(index1D);
+
             boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH-SQUARE_OUTLINE_THICKNESS*2, SQUARE_HEIGHT-SQUARE_OUTLINE_THICKNESS*2)));
-            if (colorOne) boardSquares.at(index1D)->setFillColor(sf::Color::Blue);
-            else boardSquares.at(index1D)->setFillColor(sf::Color::Magenta);
-            colorOne = !colorOne;
             boardSquares.at(index1D)->setPosition(
                     sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + col * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS, shiftY + SQUARE_OUTLINE_THICKNESS));
             boardSquares.at(index1D)->setOutlineThickness(0);
-
-            /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
-            interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
-            interface[interface.size() - 1]->setScale(0.7);*/
         }
         shiftY += SQUARE_HEIGHT;
-        colorOne = !colorOne;
     }
 }
 

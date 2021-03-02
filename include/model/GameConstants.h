@@ -6,6 +6,7 @@
 #define E_CHESS_CONSTANTESDEPLACEMENT_H
 
 #include <vector>
+#include <string>
 
 using namespace  std;
 
@@ -54,6 +55,12 @@ enum PieceColor {
     EMPTY,
     BLACK,
     WHITE
+};
+
+const string PIECE_COLOR_NAME[3] = {
+        "empty",
+        "black",
+        "white"
 };
 
 enum GameStatus {

@@ -25,7 +25,7 @@ char Piece::PieceToFEN() {
     return '-';
 }
 
-PieceColor Piece::GetColor() {
+PieceColor Piece::GetColor() const{
     return this->color;
 }
 

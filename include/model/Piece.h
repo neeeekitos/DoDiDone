@@ -20,6 +20,16 @@ enum PIECE_TYPE {
     NONE
 };
 
+const string PIECE_NAME[7] = {
+        "Pawn",
+        "Tower",
+        "King",
+        "Knight",
+        "Queen",
+        "Bishop",
+        "None"
+};
+
 using namespace std;
 
 class Piece {
@@ -36,7 +46,7 @@ public:
 
     virtual char PieceToFEN();
 
-    PieceColor GetColor ();
+    PieceColor GetColor() const;
 
     int GetType() const;
 
