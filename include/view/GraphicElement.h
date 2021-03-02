@@ -9,12 +9,6 @@
 #ifndef GRAPHICS
 #define GRAPHICS
 
-#define BLANC 101
-#define NOIR 102
-#define VIDE 104
-
-#define MARGE_H 40
-#define MARGE_W 230 
 #define SPRITE_SIZE 80
 #define WINDOW_W 1100
 #define WINDOW_H 720
@@ -30,7 +24,7 @@
 
 using namespace std; 
 
-class GraphicElement/*: public sf::Drawable*/{
+class GraphicElement {
 
 
 	public:	GraphicElement();
