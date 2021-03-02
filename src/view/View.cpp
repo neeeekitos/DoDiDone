@@ -104,6 +104,7 @@ void View::MainLoop() {
                 cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
                 if (i != -1 && i < boardSquares.size()) {
                     cleanSquareOutlines();
+                    //highlight clicked squares
                     boardSquares.at(i)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
                     boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
                     //highlight possible moves
