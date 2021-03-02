@@ -13,7 +13,6 @@
 #include <sstream>
 
 using namespace std;
-string intToString(int x);
 class Point2I{
 	private:
 		int x;
