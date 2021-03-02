@@ -15,11 +15,11 @@
 class View {
 public:
 
-    static View * GetInstance();
+    static View *GetInstance();
 
-    View(const View& anotherView) = delete;
+    View(const View &anotherView) = delete;
 
-    void operator= (const View & aView) = delete;
+    void operator=(const View &aView) = delete;
 
     ~View();
 
@@ -35,25 +35,23 @@ private:
 
     void interfaceInitialisation(int step);
 
-    void gameInitialisation();
-
     void displayGameIn(sf::RenderWindow &w);
 
-    void displayInterfaceIn(sf::RenderWindow &w);
-
-    void notifyInterface(const sf::Event &event);
-
-    void notifyGame(const sf::Event &event);
-
-    Button *getButtonClicked(const sf::Event &event);
-
     void initBoardSquares();
-    int getSquareClickedIndex(int x, int y);
+
     void cleanSquareOutlines();
 
+    void displayEatenPieces(sf::RenderWindow &w);
 
-        void deleteButtonElements();
+    void displayPossibleMoves(sf::RenderWindow &w);
+
+
+    int getSquareClickedIndex(int x, int y);
+
+    void deleteButtonElements();
+
     void deleteInterfaceElements();
+
     void deleteBoardSquares();
 
 
@@ -62,7 +60,7 @@ private:
     std::vector<Button *> buttons;
     std::vector<sf::RectangleShape *> boardSquares;
 
-    static View * view_;
+    static View *view_;
 
 };
 
