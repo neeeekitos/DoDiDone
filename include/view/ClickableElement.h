@@ -20,7 +20,9 @@
 class ClickableElement {
 public:
     ClickableElement();
+
     ClickableElement(Point2I d, Point2I f);
+
     ~ClickableElement();
 
 
@@ -32,13 +34,10 @@ public:
 
     virtual Point2I getStartPoint();
 
-    virtual bool isInside(sf::Event event);
-
-
     bool checkPosition(int x, int y);
 
 protected:
-    Point2I pointDebut, pointFin;
+    Point2I startPoint, endPoint;
 
     virtual void action();
 };

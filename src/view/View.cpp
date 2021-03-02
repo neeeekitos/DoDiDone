@@ -8,9 +8,6 @@
 #include "../../include/model/Piece.h"
 #include "../../include/model/Pawn.h"
 #include "../../include/model/Tower.h"
-#include "../../include/view/NewGameButton.h"
-#include "../../include/view/OnePlayerButton.h"
-#include "../../include/view/TwoPlayersButton.h"
 #include "../../include/controller/GameController.h"
 
 const string IMG_BASE_PATH = "./../../img/";
@@ -186,7 +183,6 @@ void View::displayPossibleMoves(sf::RenderWindow &w) {
 
 }
 
-
 void View::displayGameIn(sf::RenderWindow &w) {
     w.clear();
     //interface elements first
@@ -216,11 +212,8 @@ void View::displayGameIn(sf::RenderWindow &w) {
 
         //display turn count
 
-
         w.draw(*(boardSquares.at(i)));
     }
-
-
     w.display();
 }
 
@@ -263,6 +256,7 @@ void View::interfaceInitialisation(int step) {
             break;
         case 2:
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
+
             initBoardSquares();
             displayGameIn(*window);
             break;
@@ -278,10 +272,6 @@ int View::getSquareClickedIndex(int x, int y)
     int i = 0;
     while (i < size) {
         if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
-            const Piece *piece = Chessboard::GetInstance()->GetPiece(i);
-            cout << "piece == KING? " << (piece->GetType() == PIECE_TYPE::KING) << endl;
-            cout << "piece == TOWER? " << (piece->GetType() == PIECE_TYPE::TOWER) << endl;
-            cout << "i= " << i << endl;
             return  i;
         }
         i++;

@@ -31,29 +31,24 @@
 using namespace std; 
 
 class GraphicElement/*: public sf::Drawable*/{
-	protected:
-		//sf::Sprite *imgs;
-		sf::Sprite img;
-		sf::Texture t;
-		Point2I p;
-		char nbState;
-		char state;
-		void *action;
-		
+
 
 	public:	GraphicElement();
 		~GraphicElement();
 		GraphicElement(const string s);
 		void draw(sf::RenderWindow & window);
 		void setSprite(string fileName, int lvl);
-		void setSprite(sf::Sprite sp, int lvl);
 		sf::Sprite& getSprite(char state);
-		void putIntoVector(std::vector<GraphicElement> v);
 		void setPosition(Point2I p);
 		Point2I getPosition();
 		void setRotation(float angle);
 		void setScale(float size);
 		void checkPosition();
+
+protected:
+    sf::Sprite img;
+    sf::Texture t;
+    Point2I p;
 };
 
 #endif

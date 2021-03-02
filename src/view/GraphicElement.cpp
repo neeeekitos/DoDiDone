@@ -9,46 +9,24 @@
 #include "../../include/view/GraphicElement.h"
 
 GraphicElement::GraphicElement(const string s){
-	nbState = 1;
-	state = 0;
 	setSprite(s, 0);
 }
 
-GraphicElement::GraphicElement(){
-	nbState = 1;
-	state = 0;
-	//imgs = (sf::Sprite*)malloc(sizeof(sf::Sprite));
-}
+GraphicElement::GraphicElement(){}
+
+GraphicElement::~GraphicElement(){}
 
 void GraphicElement::setSprite(string fileName, int lvl){
 	t.loadFromFile(fileName);
-
-	
-	//loadFromMemory (const void *data, std::size_t size, const IntRect &area=IntRect());
 	img = sf::Sprite(t);
-}
-
-void GraphicElement::setSprite(sf::Sprite sp, int lvl){
-	//imgs[lvl] = sp;
-	img = sp;
 }
 
 void GraphicElement::draw(sf::RenderWindow & window){
 	window.draw(img);
 }
 
-GraphicElement::~GraphicElement(){
-    /*free(imgs);
-	free(p);*/
-}
-
 sf::Sprite& GraphicElement::getSprite(char state){
-	//return imgs[state];
     return img;
-}
-
-void GraphicElement::putIntoVector(std::vector<GraphicElement> v){
-    //v.push_back(this);
 }
 
 void GraphicElement::setPosition(Point2I p){
