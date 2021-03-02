@@ -17,9 +17,10 @@ const string IMG_BASE_PATH = "./../../img/";
 const float MARGIN_BETWEEN_PIECE_FACTOR_X = 0.9;
 const float MARGIN_BETWEEN_PIECE_FACTOR_Y = 0.85;
 const int BOARD_LEFT_TOP_CORNER_X = 294;
-const int BOARD_LEFT_TOP_CORNER_Y = 106;
+const int BOARD_LEFT_TOP_CORNER_Y = 107;
 const float SQUARE_OUTLINE_THICKNESS = 10;
 const float SQUARE_WIDTH = 69.5;
+const float SQUARE_HEIGHT = 66.999;
 const sf::Color DESTINATION_SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
 const sf::Color CLICKED_SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
 
@@ -235,18 +236,26 @@ void View::interfaceInitialisation(int step) {
 
 void View::initBoardSquares() {
     boardSquares.clear();
+    int shiftY = BOARD_LEFT_TOP_CORNER_Y;
+    int index1D = 0;
+    int colorOne = true;
+    for (int line = 0; line < 8 ; line++) {
+        for (int col = 0; col < 8; col++) {
+            index1D = 8 * line + col;
+            boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH, SQUARE_HEIGHT)));
+            if (colorOne) boardSquares.at(index1D)->setFillColor(sf::Color::Blue);
+            else boardSquares.at(index1D)->setFillColor(sf::Color::Magenta);
+            colorOne = !colorOne;
+            boardSquares.at(index1D)->setPosition(
+                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + col * SQUARE_WIDTH, shiftY));
+            boardSquares.at(index1D)->setOutlineThickness(0);
 
-    for (int i = 0; i < 8 ; i++)
-    {
-        boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH, SQUARE_WIDTH)));
-        if (i%2 == 0) boardSquares.at(i)->setFillColor(sf::Color::Blue);
-        else boardSquares.at(i)->setFillColor(sf::Color::Magenta);
-        boardSquares.at(i)->setPosition(sf::Vector2f(BOARD_LEFT_TOP_CORNER_X+i*SQUARE_WIDTH,BOARD_LEFT_TOP_CORNER_Y));
-        boardSquares.at(0)->setOutlineThickness(0);
-
-        /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
-        interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
-        interface[interface.size() - 1]->setScale(0.7);*/
+            /*interface.push_back(new GraphicElement(IMG_BASE_PATH + "noir-pion.png"));
+            interface[interface.size() - 1]->setPosition(Point2I(BOARD_LEFT_TOP_CORNER_X+MARGIN_BETWEEN_PIECE_FACTOR_X*j*v.x, BOARD_LEFT_TOP_CORNER_Y+MARGIN_BETWEEN_PIECE_FACTOR_Y*shiftY));
+            interface[interface.size() - 1]->setScale(0.7);*/
+        }
+        shiftY += SQUARE_HEIGHT;
+        colorOne = !colorOne;
     }
 }
 
