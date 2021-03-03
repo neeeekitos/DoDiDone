@@ -10,8 +10,6 @@
 
 ClickableElement::ClickableElement(){}
 
-void ClickableElement::action(){}
-
 void ClickableElement::setStartPoint(Point2I p){
 	startPoint = p;
 }
