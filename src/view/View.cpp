@@ -1,6 +1,8 @@
 //
 // Created by lpietropao on 27/02/2021.
 //
+#define WINDOW_W 1100
+#define WINDOW_H 720
 
 #include "../../include/view/View.h"
 
