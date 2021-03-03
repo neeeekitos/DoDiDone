@@ -1,11 +1,5 @@
 .idea
 build
-cmake-build-debug/CMakeCache.txt
-cmake-build-debug/CPackConfig.cmake
-cmake-build-debug/CPackSourceConfig.cmake
-cmake-build-debug/Makefile
-cmake-build-debug/CMakeFiles/*
-cmake-build-debug/cmake_install.cmake
-cmake-build-debug/e-chess.cbp
 cmake-build-debug
+CMakeFiles
 tmpLog.txt
