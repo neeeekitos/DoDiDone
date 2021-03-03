@@ -3,12 +3,14 @@ project(e-chess VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 14)
 
+find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
+
 # Recursive CMake search for header and source files, and also libs
 file(GLOB_RECURSE sources      "src/*.cpp")
 file(GLOB_RECURSE headers      "include/*.h")
 file(GLOB_RECURSE sources_test src/test/*.cpp)
 
-file(GLOB_RECURSE REMOVE_CMAKE "cmake-build-debug/*")
+#file(GLOB_RECURSE REMOVE_CMAKE "cmake-build-debug/*")
 #list(REMOVE_ITEM sources ${REMOVE_CMAKE})
 
 
