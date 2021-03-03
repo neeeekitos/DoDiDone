@@ -1,15 +1,15 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.16)
 project(e-chess VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 14)
 
 # Recursive CMake search for header and source files, and also libs
-file(GLOB_RECURSE sources      "*.cpp")
-file(GLOB_RECURSE headers      *.h)
+file(GLOB_RECURSE sources      "src/*.cpp")
+file(GLOB_RECURSE headers      "include/*.h")
 file(GLOB_RECURSE sources_test src/test/*.cpp)
 
 file(GLOB_RECURSE REMOVE_CMAKE "cmake-build-debug/*")
-list(REMOVE_ITEM sources ${REMOVE_CMAKE})
+#list(REMOVE_ITEM sources ${REMOVE_CMAKE})
 
 
 # setting output directories to store our executables
