@@ -11,6 +11,7 @@ file(GLOB_RECURSE sources_test src/test/*.cpp)
 file(GLOB_RECURSE REMOVE_CMAKE "cmake-build-debug/*")
 list(REMOVE_ITEM sources ${REMOVE_CMAKE})
 
+find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 # setting output directories to store our executables
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
