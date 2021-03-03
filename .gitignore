@@ -3,3 +3,6 @@ build
 cmake-build-debug
 CMakeFiles
 tmpLog.txt
+Makefile
+e-chess.cbp
+CMakeCache.txt
