@@ -7,3 +7,6 @@ Makefile
 e-chess.cbp
 CMakeCache.txt
 cmake_install.cmake
+CPackConfig.cmake
+
+CPackSourceConfig.cmake
