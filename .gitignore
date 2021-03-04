@@ -6,3 +6,4 @@ tmpLog.txt
 Makefile
 e-chess.cbp
 CMakeCache.txt
+cmake_install.cmake
