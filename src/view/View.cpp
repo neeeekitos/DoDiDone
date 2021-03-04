@@ -6,7 +6,7 @@
 
 #include "../../include/view/View.h"
 
-const string IMG_BASE_PATH = "./../../img/";
+const string IMG_BASE_PATH = "./img/";
 const int BOARD_LEFT_TOP_CORNER_X = 294;
 const int BOARD_LEFT_TOP_CORNER_Y = 107;
 const float SQUARE_OUTLINE_THICKNESS = 10;
