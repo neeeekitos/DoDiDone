@@ -1,6 +1,6 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/nikitaterekhov/CLionProjects/e-chess
--- Found SFML 2.5.1 in /usr/local/lib/cmake/SFML
+/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess
+-- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
 -- Could NOT find GTest (missing: GTEST_LIBRARY GTEST_INCLUDE_DIR GTEST_MAIN_LIBRARY) 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/nikitaterekhov/CLionProjects/e-chess
+-- Build files have been written to: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/cmake-build-debug

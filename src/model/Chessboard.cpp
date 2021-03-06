@@ -23,7 +23,7 @@ Chessboard::Chessboard() {
         new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
-        new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
+        new Piece(), new Piece(), new Pawn(BLACK), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE),
         new Tower(WHITE), new Knight(WHITE), new Bishop(WHITE), new Queen(WHITE), new King(WHITE), new Bishop(WHITE), new Knight(WHITE), new Tower(WHITE)
@@ -67,45 +67,8 @@ Coordinate Chessboard::ConvertOneDimensionPositionToCoordinate(int position) {
 }
 
 DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool justEatableMoves) {
-    DestinationsSet mvSet;
     int oneDimentionPosition = convertCoordinates(coor);
-    Piece * piece = this->getPiece(oneDimentionPosition);
-    PieceColor currentPieceColor = piece->GetColor();
-    const vector<int> directions = piece->GetMoveDirections();
-    bool directionIsLimited = piece->DirectionIsLimited();
-    int currentPiecePositionInBoundariesTable = this->GetPositionInBoundariesTable(oneDimentionPosition);
-
-    for (int direction : directions) {
-        if ( ! directionIsLimited ) {       // If the direction of the piece is unlimited
-            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
-            int nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
-            while (nextDestinationValueInBoundariesTable != -1 &&
-                   this->getPiece(nextDestinationValueInBoundariesTable)->GetColor() == EMPTY
-                    ) {
-                cout << nextDestinationValueInBoundariesTable << endl;
-                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
-                mvSet.push_back(destinationCoordinates);
-                nextDestinationPositionInBoundariesTable += direction;
-                nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
-            }
-            if (nextDestinationValueInBoundariesTable != -1 && this->getPiece(nextDestinationValueInBoundariesTable)->GetColor() != currentPieceColor) {
-                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
-                mvSet.push_back(destinationCoordinates);
-            }
-        } else {
-            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
-            int nextDestinationValueInBoundariesTable = GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
-            if (
-                    nextDestinationValueInBoundariesTable != -1 &&
-                    this->getPiece(nextDestinationValueInBoundariesTable)->GetColor() != currentPieceColor
-                    ) {
-                Coordinate destinationCoordinates = this->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
-                mvSet.push_back(destinationCoordinates);
-            }
-        }
-
-    }
-    return mvSet;
+    return this->getPiece(oneDimentionPosition)->GetPossibleMoves();
 }
 
 bool Chessboard::IsValidMove(Move mv) {
@@ -140,4 +103,25 @@ ostream & operator << (ostream & out, Chessboard & cb) {
         out << endl;
     }
     out << endl;
+    return out;
+}
+
+int Chessboard::GetPosition(const Piece *p) const {
+    for (int i = 0; i < CHESSBOARDSIZE; ++i)  {
+        if (this->board[i] == p) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
+    int position = this->convertCoordinates(coordinate);
+    if (pieceColor == BLACK) {
+        eatenByBlack.push_back(this->GetPiece(coordinate));
+    }
+    if (pieceColor == WHITE) {
+        eatenByWhite.push_back(this->GetPiece(coordinate));
+    }
+    this->board[position] = new Piece();
 }

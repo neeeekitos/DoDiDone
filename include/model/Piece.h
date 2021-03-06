@@ -54,6 +54,10 @@ public:
 
     bool DirectionIsLimited();
 
+    virtual DestinationsSet GetPossibleMoves ();
+
+    virtual void NotifyMove (Move mv);
+
 private :
     /**
      * This represents the color of the piece

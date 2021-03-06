@@ -8,8 +8,9 @@
 #include <string>
 #include "GameConstants.h"
 #include "Piece.h"
+#include "Pawn.h"
 
-
+#define CHESSBOARDSIZE 64
 
 class Chessboard {
 public:
@@ -48,12 +49,25 @@ public:
 
     const Piece* const GetPiece (int position) const;
 
+    /**
+     * Returns the position of the given piece in the board of pieces
+     * @param p : a pointer to a given piece
+     * @return : the 1-dimension position of the piece in the chessboard
+     */
+    int GetPosition(const Piece * p) const;
+
+
+    Piece * getPiece (int position);
+
+    void EatPiece (Coordinate coordinate, PieceColor pieceColor);
+
+    Pawn * inPassingAuthorised;
+
+    bool nextMoveIsPassingAuthorized;
 
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;
-
-    Piece * getPiece (int position);
 
     Chessboard();
 
@@ -71,7 +85,8 @@ private:
     //Piece board[CHESSGAMESIZE];
     vector <Piece*> board;
 
-    vector <Piece*> eatenPieces[2];
+    vector <Piece*> eatenByBlack;
+    vector <Piece*> eatenByWhite;
 
 };
 
