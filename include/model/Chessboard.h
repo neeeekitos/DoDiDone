@@ -69,6 +69,8 @@ public:
 
     PieceColor GetCurrentPlayer();
 
+    DestinationsSet GetMovablePieces (PieceColor);
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;

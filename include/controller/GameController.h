@@ -29,6 +29,10 @@ public:
     GameMode GetGameMode ();
 
     void MakeMove(Move mv);
+
+
+    DestinationsSet GetMoveablePeaces (PieceColor);
+
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
    /* void NewGame();
 
