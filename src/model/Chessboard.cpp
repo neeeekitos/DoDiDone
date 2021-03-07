@@ -133,3 +133,18 @@ void Chessboard::ChangePlayer() {
 PieceColor Chessboard::GetCurrentPlayer() {
     return this->currentPlayer;
 }
+
+
+DestinationsSet Chessboard::GetMovablePieces(PieceColor color) {
+    DestinationsSet movablePieces;
+    for (int i = 0; i < CHESSBOARDSIZE; ++i) {
+        if (this->board[i]->GetColor() == color) {
+            Coordinate cor = ConvertOneDimensionPositionToCoordinate(i);
+            if ( ! this->GetPossibleMoves(cor, false).empty() ) {
+                movablePieces.push_back(cor);
+            }
+        }
+    }
+    return movablePieces;
+}
+
