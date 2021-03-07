@@ -331,7 +331,6 @@ const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor color) const {
     }
 }
 
-
 string Chessboard::chessboardToFen() {
     string str;
     // Generate the FEN string
@@ -379,7 +378,7 @@ string Chessboard::chessboardToFen() {
 
     str += " " + to_string(this->halfShots) + " " + to_string(this->shots);
 
-    if (GameController::GetInstance()->GetGameMode() == AI) {
+    if (GameController::GetInstance()->GetGameMode() == AIPLAYER) {
         str += " a";
     } else {
         str += " m";
@@ -638,7 +637,7 @@ void Chessboard::Load(string fen) {
     ++i;
 
     if (fen[i] == 'a') {
-        GameController::GetInstance()->SetGameMode(AI);
+        GameController::GetInstance()->SetGameMode(AIPLAYER);
     } else {
         GameController::GetInstance()->SetGameMode(MULTIPLAYER);
     }
@@ -660,6 +659,20 @@ Chessboard::~Chessboard() {
 }
 
 bool Chessboard::IsEatingMove(Move mv) {
-    return ( ! this->GetPiece(mv.second)->isEmpty() && this->GetPiece(mv.second)->GetColor() != this->GetPiece(mv.second)->GetColor() );
+    return (!this->GetPiece(mv.second)->isEmpty() &&
+            this->GetPiece(mv.second)->GetColor() != this->GetPiece(mv.second)->GetColor());
 }
 
+vector<Piece> Chessboard::GetAllPieces(PieceColor color) {
+    vector<Piece> allPieces;
+    for (int i = 0; i < CHESSBOARDSIZE; ++i) {
+        if (this->board[i]->GetColor() == color) {
+            allPieces.push_back(*board[i]);
+        }
+    }
+    return allPieces;
+}
+
+bool Chessboard::GameOver(PieceColor pieceColor) {
+    return false;
+}

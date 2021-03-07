@@ -53,6 +53,8 @@ public:
 
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
+    bool GameOver(PieceColor pieceColor);
+
     bool IsValidMove(Move mv);
 
     GameStatus GetGameStatus() const;
@@ -127,6 +129,9 @@ public:
     bool IsGameOver();
 
     WINNER GetWinner();
+
+    vector<Piece> GetAllPieces(PieceColor color);
+
 
 private:
 

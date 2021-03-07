@@ -8,27 +8,44 @@
 #include "../model/GameConstants.h"
 #include "../model/Chessboard.h"
 
+const int DEPTH_MINIMAX = 3;
+
+const int PAWN_W = 10;
+const int BISHOP_W = 30;
+const int TOWER_W = 30;
+const int KNIGHT_W = 50;
+const int QUEEN_W = 90;
+const int KING_W = 900;
+
+struct node
+{
+    Chessboard * chessboard;
+    vector< node* > suc;
+    node() {};
+    node(Chessboard* cb) : chessboard(cb) {}
+};
 
 class AI {
 public:
     static AI * GetInstance();
-    bool doMove();
-    int randomMove();
-
-
+    void DoMove(Chessboard& chessboard);
+    static void CalculateMove(Chessboard& chessboard, Move move);
+    Move RandomMove(Chessboard& chessboard);
+    int Minimax(Chessboard& board, int depth, bool maximizingPlayer);
 
     ~AI();
     AI(const AI&) = delete;
     void operator= (const AI&) = delete;
 
-
-
 private:
     AI();
-    vector<Move> AIMoves;
-    vector<Move> HumanMoves;
-    Chessboard
+    int getScore(Chessboard& chessboard, PieceColor currentPlayer);
+    int evaluate(Chessboard& chessboard, PieceColor currentPlayer);
 
+    vector<Move> AIMovesPath;
+    vector<Move> HumanMovesPath;
+    AIMode aiMode;
+    static AI * ai_;
 };
 
 #endif //E_CHESS_AI_H
