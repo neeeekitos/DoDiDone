@@ -35,6 +35,19 @@ public:
 
     virtual char PieceToFEN();
 
+    virtual DestinationsSet GetPossibleMoves ();
+
+    virtual void NotifyMove (Move mv);
+
+
+private:
+
+    vector <int> eatingDirections;
+
+    Coordinate inPassingMove;
+
+    Coordinate inPassingEatablePawn;
+
 };
 
 

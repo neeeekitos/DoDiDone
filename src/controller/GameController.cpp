@@ -40,9 +40,14 @@ GameMode GameController::GetGameMode() {
 
 void GameController::MakeMove(Move mv) {
     Chessboard & c = *Chessboard::GetInstance();
+    c.nextMoveIsPassingAuthorized = false;
     Piece * temp = c.GetPiece(mv.first);
     c.SetPiece(mv.first, c.GetPiece(mv.second));
     c.SetPiece(mv.second, temp);
+    temp->NotifyMove(mv);
+    if ( ! c.nextMoveIsPassingAuthorized ) {
+        c.inPassingAuthorised = nullptr;
+    }
 }
 
 

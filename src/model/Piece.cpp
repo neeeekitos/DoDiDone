@@ -3,7 +3,9 @@
 //
 
 #include "../../include/model/Piece.h"
+#include <iostream>
 #include <vector>
+#include "../../include/model/Chessboard.h"
 
 using namespace std;
 
@@ -40,3 +42,47 @@ const vector<int> & Piece::GetMoveDirections() const {
 bool Piece::DirectionIsLimited() {
     return this->directionIsLimited;
 }
+
+DestinationsSet Piece::GetPossibleMoves() {
+    Chessboard * cb = Chessboard::GetInstance();
+    DestinationsSet mvSet;
+    int oneDimentionPosition = cb->GetPosition(this);
+    PieceColor currentPieceColor = this->GetColor();
+    const vector<int> directions = this->GetMoveDirections();
+    bool directionIsLimited = this->DirectionIsLimited();
+    int currentPiecePositionInBoundariesTable = cb->GetPositionInBoundariesTable(oneDimentionPosition);
+
+    for (int direction : directions) {
+        if ( ! directionIsLimited ) {       // If the direction of the piece is unlimited
+            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
+            int nextDestinationValueInBoundariesTable = cb->GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            while (nextDestinationValueInBoundariesTable != -1 &&
+                   cb->getPiece(nextDestinationValueInBoundariesTable)->GetColor() == EMPTY
+                    ) {
+                cout << nextDestinationValueInBoundariesTable << endl;
+                Coordinate destinationCoordinates = cb->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+                nextDestinationPositionInBoundariesTable += direction;
+                nextDestinationValueInBoundariesTable = cb->GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            }
+            if (nextDestinationValueInBoundariesTable != -1 && cb->getPiece(nextDestinationValueInBoundariesTable)->GetColor() != currentPieceColor) {
+                Coordinate destinationCoordinates = cb->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+            }
+        } else {
+            int nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
+            int nextDestinationValueInBoundariesTable = cb->GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
+            if (
+                    nextDestinationValueInBoundariesTable != -1 &&
+                    cb->getPiece(nextDestinationValueInBoundariesTable)->GetColor() != currentPieceColor
+                    ) {
+                Coordinate destinationCoordinates = cb->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
+                mvSet.push_back(destinationCoordinates);
+            }
+        }
+
+    }
+    return mvSet;
+}
+
+void Piece::NotifyMove(Move mv) {}
