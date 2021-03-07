@@ -67,6 +67,8 @@ public:
 
     bool nextMoveIsPassingAuthorized;
 
+    PieceColor GetCurrentPlayer();
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;
