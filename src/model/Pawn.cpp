@@ -71,7 +71,6 @@ DestinationsSet Pawn::GetPossibleMoves() {
 }
 
 void Pawn::NotifyMove(Move mv) {
-    cout << "the pawn moved" << endl;
     int moveLength = mv.second.first - mv.first.first;
     moveLength = (moveLength < 0 ? - moveLength : moveLength);
     Chessboard * cb = Chessboard::GetInstance();
@@ -85,21 +84,16 @@ void Pawn::NotifyMove(Move mv) {
             if (valueInBoundariesTable != 1) {
                 Pawn * p = dynamic_cast<Pawn *> (cb->getPiece(valueInBoundariesTable));
                 if (p != NULL && p->GetColor() != this->GetColor()) {
-                    cout << "pawn detected" << endl;
                     p->inPassingMove = make_pair((mv.first.first + mv.second.first) / 2, mv.first.second);
                     p->inPassingEatablePawn = mv.second;
                     p->inPassing = true;
                     cb->inPassingAuthorised = p;
                     cb->nextMoveIsPassingAuthorized = true;
-                    cout << "allowing passing : " << p << endl;
                 }
             }
         }
     }
-    cout << "passing authorized : " << cb->inPassingAuthorised << endl;
-    cout << "this : " << this << endl;
     if (cb->inPassingAuthorised == this && mv.second == this->inPassingMove) {
-        cout << "inPassingMove" << endl;
         cb->EatPiece(this->inPassingEatablePawn, this->GetColor());
     }
 

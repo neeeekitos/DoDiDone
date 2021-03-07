@@ -61,6 +61,8 @@ public:
 
     void EatPiece (Coordinate coordinate, PieceColor pieceColor);
 
+    void ChangePlayer();
+
     Pawn * inPassingAuthorised;
 
     bool nextMoveIsPassingAuthorized;
@@ -80,7 +82,7 @@ private:
      * This is the same thing as a color of a piece
      * This variable cannot be = EMPTY
      */
-    PieceColor currentPLayer;
+    PieceColor currentPlayer;
 
     //Piece board[CHESSGAMESIZE];
     vector <Piece*> board;

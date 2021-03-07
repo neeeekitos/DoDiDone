@@ -29,7 +29,7 @@ Chessboard::Chessboard() {
         new Tower(WHITE), new Knight(WHITE), new Bishop(WHITE), new Queen(WHITE), new King(WHITE), new Bishop(WHITE), new Knight(WHITE), new Tower(WHITE)
     };
 
-    this->currentPLayer = WHITE;
+    this->currentPlayer = WHITE;
 
 }
 
@@ -124,4 +124,8 @@ void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
         eatenByWhite.push_back(this->GetPiece(coordinate));
     }
     this->board[position] = new Piece();
+}
+
+void Chessboard::ChangePlayer() {
+    this->currentPlayer = (this->currentPlayer == BLACK ? WHITE : BLACK);
 }
