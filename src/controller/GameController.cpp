@@ -48,6 +48,11 @@ void GameController::MakeMove(Move mv) {
     if ( ! c.nextMoveIsPassingAuthorized ) {
         c.inPassingAuthorised = nullptr;
     }
+    c.ChangePlayer();       // Change the current player turn
+    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+        // Generate a move
+        // this->MakeMove(the generated move)
+    }
 }
 
 

@@ -129,3 +129,7 @@ void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
 void Chessboard::ChangePlayer() {
     this->currentPlayer = (this->currentPlayer == BLACK ? WHITE : BLACK);
 }
+
+PieceColor Chessboard::GetCurrentPlayer() {
+    return this->currentPlayer;
+}
