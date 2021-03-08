@@ -11,6 +11,6 @@ Debian:
 - (**) Build docker container and runs it : `sudo docker run -it --name e-chess -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro coderon98/e-chess:beta`
 
 - Rerun (*) each time docker-files are updated
-- Rerun (**) each time you want to launch the app
+- Rerun `sudo docker rm e-chess && sudo docker run -it --name e-chess -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro coderon98/e-chess:beta` each time you want to launch the app (remove container and rebuild it)
 
 
