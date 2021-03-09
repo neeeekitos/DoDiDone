@@ -98,25 +98,6 @@ void View::MenuChoices() {
                         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
                         interface[2]->setPosition(p1);
                     }
-                    /*else if (buttons[2]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
-                        //next game
-                        *itPartiesSauvegardees++;
-                        //si on arrive à la fin de la liste
-                        if(itPartiesSauvegardees == partiesSauvegardees.end()){
-                            //on revient au début de la liste
-                            itPartiesSauvegardees = partiesSauvegardees.begin();
-                        }
-                        txtNomJeu.setString(sf::String::fromUtf8((*itPartiesSauvegardees).first.begin(),(*itPartiesSauvegardees).first.end()));
-                    } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
-                        //previous game
-                        *itPartiesSauvegardees++;
-                        //si on arrive à la fin de la liste
-                        if(itPartiesSauvegardees == partiesSauvegardees.end()){
-                            //on revient au début de la liste
-                            itPartiesSauvegardees = partiesSauvegardees.begin();
-                        }
-                        txtNomJeu.setString(sf::String::fromUtf8((*itPartiesSauvegardees).first.begin(),(*itPartiesSauvegardees).first.end()));
-                    }*/
                 }else {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         playerCount = 2;
