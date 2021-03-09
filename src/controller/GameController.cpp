@@ -56,7 +56,7 @@ void GameController::MakeMove(Move mv) {
     }
 }
 
-const std::vector<string> &GameController::GetSavedGamesNames() const {}
+const std::vector<int> &GameController::GetSavedGamesIds() const {}
 
 void GameController::SaveGame() {}
 
