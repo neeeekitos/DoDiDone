@@ -7,6 +7,8 @@
 #include "../../include/view/View.h"
 
 const string IMG_BASE_PATH = "./img/";
+const string BUTTONS_IMG_BASE_PATH = "./img/buttons/";
+const string FONT_BASE_PATH = "./font/";
 const int BOARD_LEFT_TOP_CORNER_X = 294;
 const int BOARD_LEFT_TOP_CORNER_Y = 107;
 const float SQUARE_OUTLINE_THICKNESS = 10;
@@ -15,13 +17,16 @@ const float SQUARE_HEIGHT = 66.999;
 const sf::Color CLICKED_SQUARE_OUTLINE_COLOR = sf::Color::Yellow;
 const sf::Color DESTINATION_SQUARE_OUTLINE_COLOR = sf::Color::Green;
 
+std::vector<int> tab = {1,2,3, 4, 5};
+
 typedef enum {
     SAVE,
     LOAD,
     NEW_GAME,
     ONE_PLAYER,
     TWO_PLAYERS,
-    DEFAULT
+    PREVIOUS,
+    NEXT
 } ButtonType;
 
 View* View::view_ = nullptr;
@@ -45,10 +50,12 @@ View::~View() {
 
 void View::MenuChoices() {
     bool newGamePressed = false;
+    bool changeLoadedGame = false;
     int playerCount = -1;
 
     sf::Event event;
     interfaceInitialisation(0);
+    auto savedGamesIterator = tab.begin();
 
     while (!newGamePressed || playerCount == -1) {
         while (window->pollEvent(event) && (!newGamePressed || playerCount == -1)) {
@@ -58,10 +65,59 @@ void View::MenuChoices() {
             } else if (event.type == sf::Event::MouseButtonPressed) {
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //new game
                         newGamePressed = true;
                         interfaceInitialisation(1);
+                    } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //load game
+                        newGamePressed = true;
+                        cout << "PREVIOUS " << *savedGamesIterator << endl;
+                        interfaceInitialisation(2);
                     }
-                } else {
+                    //next and previous buttons -> circular course of game ids
+                    else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //previous game
+                        changeLoadedGame = true;
+                        if (savedGamesIterator == tab.begin()) {
+                            savedGamesIterator = tab.end();
+                        }
+                        savedGamesIterator--;
+                    } else if (buttons[2]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //next game
+                        changeLoadedGame = true;
+                        savedGamesIterator++;
+                        if (savedGamesIterator == tab.end()) {
+                            savedGamesIterator = tab.begin();
+                        }
+                    }
+                    //load new game id button image
+                    if (changeLoadedGame)
+                    {
+                        interface[2]->setSprite(BUTTONS_IMG_BASE_PATH + "games/game-" + to_string(*savedGamesIterator) + ".png", 0);
+                        sf::Vector2<unsigned int> v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+                        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
+                        interface[2]->setPosition(p1);
+                    }
+                    /*else if (buttons[2]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //next game
+                        *itPartiesSauvegardees++;
+                        //si on arrive à la fin de la liste
+                        if(itPartiesSauvegardees == partiesSauvegardees.end()){
+                            //on revient au début de la liste
+                            itPartiesSauvegardees = partiesSauvegardees.begin();
+                        }
+                        txtNomJeu.setString(sf::String::fromUtf8((*itPartiesSauvegardees).first.begin(),(*itPartiesSauvegardees).first.end()));
+                    } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //previous game
+                        *itPartiesSauvegardees++;
+                        //si on arrive à la fin de la liste
+                        if(itPartiesSauvegardees == partiesSauvegardees.end()){
+                            //on revient au début de la liste
+                            itPartiesSauvegardees = partiesSauvegardees.begin();
+                        }
+                        txtNomJeu.setString(sf::String::fromUtf8((*itPartiesSauvegardees).first.begin(),(*itPartiesSauvegardees).first.end()));
+                    }*/
+                }else {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         playerCount = 2;
                         interfaceInitialisation(2);
@@ -178,6 +234,7 @@ void View::displayGameIn(sf::RenderWindow &w) {
     for (int i = 0; i < size; i++) {
         interface.at(i)->draw(w);
     }
+
     //board squares with pieces
     size = boardSquares.size();
     for (int i = 0; i < size; i++) {
@@ -212,33 +269,65 @@ void View::interfaceInitialisation(int step) {
     Point2I p2;
     sf::Vector2u v;
     GraphicElement img;
+//    font.loadFromFile(FONT_BASE_PATH + "OpenSans-Regular.ttf");
+
 
     switch (step) {
         case 0:
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
-            interface.push_back(new GraphicElement(IMG_BASE_PATH + "new-game-button.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/new-game.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
-            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 100);
-            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 100);
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 400);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 400);
             interface[interface.size() - 1]->setPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::NEW_GAME));
+
+
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "games/game-1.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
+            interface[interface.size() - 1]->setPosition(p1);
+
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "previous.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2 - 173, WINDOW_H - v.y - 225);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2 - 150, WINDOW_H - 225);
+            interface[interface.size() - 1]->setPosition(p1);
+            buttons.push_back(new Button(p1, p2, ButtonType::PREVIOUS));
+
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "next.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 173, WINDOW_H - v.y - 225);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2 + 200, WINDOW_H - 225);
+            interface[interface.size() - 1]->setPosition(p1);
+            buttons.push_back(new Button(p1, p2, ButtonType::NEXT));
+
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "load-game.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 150);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 150);
+            interface[interface.size() - 1]->setPosition(p1);
+            buttons.push_back(new Button(p1, p2, ButtonType::LOAD));
+
+            //game
             break;
+
 
         case 1:
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
-            interface.push_back(new GraphicElement(IMG_BASE_PATH + "/2-players-button.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/2-players.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 200);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 200);
             interface[interface.size() - 1]->setPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::TWO_PLAYERS));
 
-            interface.push_back(new GraphicElement(IMG_BASE_PATH + "1-player-button.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "player-vs-bot.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
-            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 500);
-            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 500);
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 400);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 400);
             interface[interface.size() - 1]->setPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::ONE_PLAYER));
             break;
