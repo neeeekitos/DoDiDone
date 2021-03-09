@@ -11,7 +11,9 @@
 #include "../../include/model/Queen.h"
 #include "../../include/model/Tower.h"
 #include "../../include/model/GameConstants.h"
+
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -23,12 +25,14 @@ Chessboard::Chessboard() {
         new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
-        new Piece(), new Piece(), new Pawn(BLACK), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
+        new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(), new Piece(),
         new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE), new Pawn(WHITE),
         new Tower(WHITE), new Knight(WHITE), new Bishop(WHITE), new Queen(WHITE), new King(WHITE), new Bishop(WHITE), new Knight(WHITE), new Tower(WHITE)
     };
 
+    this->halfShots = 0;
+    this->shots = 1;
     this->currentPlayer = WHITE;
 
 }
@@ -146,5 +150,109 @@ DestinationsSet Chessboard::GetMovablePieces(PieceColor color) {
         }
     }
     return movablePieces;
+}
+
+
+string Chessboard::chessboardToFen() {
+    string str;
+    // Generate the FEN string
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            char c = this->GetPiece(make_pair(i,j))->PieceToFEN();
+            if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+                str += c;
+            } else {
+                int counter = 0;
+                for ( ; j < 8 ; j++) {
+                    char c = this->GetPiece(make_pair(i,j))->PieceToFEN();
+                    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+                        --j;
+                        break;
+                    }
+                    ++ counter;
+                }
+                str += to_string(counter);
+            }
+        }
+        if (i != 7) str += '/';
+    }
+
+    // next player
+    char currentPlayerCar = (this->currentPlayer == BLACK ? 'b' : 'w');
+    str += " ";
+    str += currentPlayerCar;
+
+    string castlingString;
+    if (this->FenCastlingIsPossible(WHITE, KINGSIDE)) castlingString += "K";
+    if (this->FenCastlingIsPossible(WHITE, QUEENSIDE)) castlingString += "Q";
+    if (this->FenCastlingIsPossible(BLACK, KINGSIDE)) castlingString += "k";
+    if (this->FenCastlingIsPossible(BLACK, QUEENSIDE)) castlingString += "q";
+    if (castlingString != "") {
+        str += " " + castlingString;
+    }
+
+    str += " " + to_string(this->halfShots) + " " + to_string(this->shots);
+
+    return str;
+}
+
+void Chessboard::NotifyMove() {
+    ++this->halfShots;
+    this->shots = this->halfShots / 2;
+}
+
+void Chessboard::SaveGame() {
+    vector <string> savedFen = this->GetBackupFileInformations();
+    if ( savedFen.size() >= 10 ) {
+        savedFen.erase(savedFen.begin());
+    }
+    string line = this->chessboardToFen();
+    savedFen.push_back( line );
+    ofstream file (SAVING_FILE);
+    cout << "trying to push" << endl;
+    for (string st : savedFen) {
+        cout << "pushing string line" << endl;
+        file << st << "\n";
+    }
+    file.close();
+}
+
+bool Chessboard::castlingIsPossible(PieceColor color, CastlingSide castlingSide) {
+    int kingInitialIndex = (color == BLACK ? 4 : 58);
+    King * k = dynamic_cast<King *> (this->board[kingInitialIndex]);
+    if (k == NULL || k->IsFirstMoveDone() ) return false;
+    int towerRelativeIndex = (castlingSide == QUEENSIDE ? -4 : 3);
+    Tower * t = dynamic_cast <Tower*> (this->board[kingInitialIndex + towerRelativeIndex]);
+    if (t == NULL || t->IsFirstMoveDone() ) return false;
+    int minIndex = (kingInitialIndex < kingInitialIndex + towerRelativeIndex ? kingInitialIndex : kingInitialIndex + towerRelativeIndex);
+    int maxIndex = (kingInitialIndex < kingInitialIndex + towerRelativeIndex ? kingInitialIndex + towerRelativeIndex : kingInitialIndex);
+    for (int i = minIndex; i <= maxIndex; ++i) {
+        if ( ! this->board[i]->isEmpty() ) return false;
+    }
+    return true;
+}
+
+bool Chessboard::FenCastlingIsPossible(PieceColor color, CastlingSide castlingSide) {
+    int kingInitialIndex = (color == BLACK ? 4 : 60);
+    King * k = dynamic_cast<King *> (this->board[kingInitialIndex]);
+    if (k == NULL || k->IsFirstMoveDone() ) return false;
+    int towerRelativeIndex = (castlingSide == QUEENSIDE ? -4 : 3);
+    Tower * t = dynamic_cast <Tower*> (this->board[kingInitialIndex + towerRelativeIndex]);
+    if (t == NULL || t->IsFirstMoveDone() ) return false;
+    return true;
+}
+
+vector<string> Chessboard::GetBackupFileInformations() {
+    string line;
+    vector <string> fenLines;
+    ifstream file( SAVING_FILE );
+
+    if ( file.is_open() ) {
+        while ( getline(file, line) ) {
+            fenLines.push_back(line);
+        }
+    }
+
+    return fenLines;
 }
 

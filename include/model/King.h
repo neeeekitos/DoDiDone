@@ -39,9 +39,21 @@ public:
     /*
      * List of all the possible moves
      */
+
+    virtual void NotifyMove (Move mv) override;
+
+    bool IsFirstMoveDone();
+
+
+
 private:
     vector<int> movelists{-11, -10, -9, -1, 1, 9, 10, 11};
     vector<int> moveroques{-2, 2};
+
+    /**
+     * This variable is set to false as long as the king has not moved
+     */
+    bool firstMoveDone;
 };
 
 

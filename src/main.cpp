@@ -18,13 +18,11 @@ int main() {
     cout << "affichage du plateau" << endl;
     cout << c;
 
+    cout << c.chessboardToFen() << endl;
 
     GameController *gameControl = GameController::GetInstance();
-    make_pair(make_pair(1,0), dest[0]);
-    gameControl->MakeMove(make_pair(make_pair(6,3), make_pair(4, 3)));
-    cout << "making another move" << endl;
-    gameControl->MakeMove(make_pair(make_pair(4,2), make_pair(5, 3)));
-    cout << c;
+    c.SaveGame();
+    c.GetBackupFileInformations();
     gameControl->Start();
 
 }

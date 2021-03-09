@@ -71,6 +71,16 @@ public:
 
     DestinationsSet GetMovablePieces (PieceColor);
 
+    string chessboardToFen();
+
+    void NotifyMove();
+
+    void SaveGame();
+
+    bool FenCastlingIsPossible(PieceColor color, CastlingSide castlingSide);
+
+    vector<string> GetBackupFileInformations();
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;
@@ -79,8 +89,8 @@ private:
 
     static Chessboard * chessBoard_;
 
-    int shot;
-    int halfShot;
+    int shots;
+    int halfShots;
     /**
      * This determines which player is allowed to play
      * This is the same thing as a color of a piece
@@ -93,6 +103,12 @@ private:
 
     vector <Piece*> eatenByBlack;
     vector <Piece*> eatenByWhite;
+
+    bool castlingIsPossible(PieceColor color, CastlingSide castlingSide);
+
+    static inline const string SAVING_PATH = "files/backup/";
+
+    static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
 
 };
 

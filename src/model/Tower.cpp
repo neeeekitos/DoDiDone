@@ -12,10 +12,20 @@ Tower::Tower(PieceColor aColor):
             false)
         {
     this->type = TOWER;
+    this->firstMoveDone = false;
 }
 
 
 
 char Tower::PieceToFEN() {
     return (this->GetColor() == WHITE ? 't' : 'T');
+}
+
+void Tower::NotifyMove(Move mv) {
+    this->firstMoveDone = true;
+}
+
+
+bool Tower::IsFirstMoveDone() {
+    return this->firstMoveDone;
 }

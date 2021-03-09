@@ -12,6 +12,7 @@ King::King(PieceColor aColor): Piece(aColor) {
     this->moveDirections = {-11, -10, -9, -1, 1, 9, 10, 11};
     this->directionIsLimited = true;
     this->type = PIECE_TYPE::KING;
+    this->firstMoveDone = false;
 }
 
 char King::PieceToFEN() {
@@ -24,6 +25,14 @@ char King::PieceToFEN() {
         return 'k';
     }
 
+}
+
+void King::NotifyMove(Move mv) {
+    this->firstMoveDone = true;
+}
+
+bool King::IsFirstMoveDone() {
+    return this->firstMoveDone;
 }
 
 /*

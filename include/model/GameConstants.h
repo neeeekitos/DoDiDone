@@ -20,6 +20,11 @@ typedef vector<Move> MoveSet;
 
 typedef vector<Coordinate> DestinationsSet;
 
+enum CastlingSide{
+    QUEENSIDE,
+    KINGSIDE
+};
+
 const int boundaries [120] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
