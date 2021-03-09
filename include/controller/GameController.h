@@ -33,7 +33,7 @@ public:
 
     DestinationsSet GetMoveablePieces (PieceColor);
 
-    const std::vector<string> &GetSavedGamesNames() const;
+    const std::vector<int> &GetSavedGamesIds() const;
 
     void SaveGame();
 
