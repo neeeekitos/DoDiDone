@@ -39,13 +39,15 @@ View *View::GetInstance() {
     return View::view_;
 }
 
-View::View() : window(new sf::RenderWindow(sf::VideoMode(WINDOW_W, WINDOW_H), "GUI chess")) {
+View::View() : window(new sf::RenderWindow(sf::VideoMode(WINDOW_W, WINDOW_H), "GUI chess", sf::Style::Close)),
+               selectedSquare(make_pair(-1, -1)) {
 }
 
 View::~View() {
     delete window;
     deleteButtonElements();
     deleteInterfaceElements();
+    deleteTextElements();
     deleteBoardSquares();
 }
 
@@ -56,7 +58,9 @@ void View::MenuChoices() {
 
     sf::Event event;
     interfaceInitialisation(0);
-    auto savedGamesIterator = tab.begin();
+    vector<int> savedGames;
+    savedGames = GameController::GetInstance()->GetSavedGamesIds(savedGames);
+    auto savedGamesIterator = savedGames.begin();
 
     while (!newGamePressed || playerCount == -1) {
         while (window->pollEvent(event) && (!newGamePressed || playerCount == -1)) {
@@ -79,16 +83,16 @@ void View::MenuChoices() {
                     else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //previous game
                         changeLoadedGame = true;
-                        if (savedGamesIterator == tab.begin()) {
-                            savedGamesIterator = tab.end();
+                        if (savedGamesIterator == savedGames.begin()) {
+                            savedGamesIterator = savedGames.end();
                         }
                         savedGamesIterator--;
                     } else if (buttons[2]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //next game
                         changeLoadedGame = true;
                         savedGamesIterator++;
-                        if (savedGamesIterator == tab.end()) {
-                            savedGamesIterator = tab.begin();
+                        if (savedGamesIterator == savedGames.end()) {
+                            savedGamesIterator = savedGames.begin();
                         }
                     }
                     //load new game id button image
@@ -124,22 +128,49 @@ void View::MainLoop() {
                 window->close();
                 exit(0);
             } else if (event.type == sf::Event::MouseButtonPressed) {
+                Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
+                pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                 cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
                 if (i != -1 && i < boardSquares.size()) {
                     cleanSquareOutlines();
-                    //highlight clicked squares
-                    boardSquares.at(i)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
-                    boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
-                    //highlight possible moves
-                    Chessboard *chessBoard = Chessboard::GetInstance();
-                    DestinationsSet possibleMoves = chessBoard->GetPossibleMoves(
-                            chessBoard->ConvertOneDimensionPositionToCoordinate(i), false);
-                    int size = possibleMoves.size();
-                    for (int i = 0; i < size; i++) {
-                        int index1D = 8 * possibleMoves.at(i).first + possibleMoves.at(i).second;
-                        boardSquares.at(index1D)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
-                        boardSquares.at(index1D)->setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
+
+                    //a square is already selected
+                    if (selectedSquare != make_pair(-1, -1)) {
+                        //get possible moves of selected square (not clicked square)
+                        DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
+                                selectedSquare, false);
+                        //user clicks on a possible move
+                        cout << "clicked=" << clickedSquare.first << "-" << clickedSquare.second << endl;
+                        cout << "clicked===== " << (possibleMovesSelectedSquare.size() >= 1 &&
+                                                    clickedSquare == possibleMovesSelectedSquare.at(1)) << endl;
+                        for (auto it = possibleMovesSelectedSquare.begin();
+                             it != possibleMovesSelectedSquare.end(); ++it)
+                            cout << "  ||  " << it->first << "-" << it->second;
+                        cout << endl;
+
+                        if (std::find(possibleMovesSelectedSquare.begin(), possibleMovesSelectedSquare.end(),
+                                      clickedSquare) != possibleMovesSelectedSquare.end()) {
+                            cout << "makeMove " << clickedSquare.first << " - " << clickedSquare.second << endl;
+                            GameController::GetInstance()->MakeMove(make_pair(selectedSquare, clickedSquare));
+                        }
+                    } else {
+                        //set selected square
+                        selectedSquare = clickedSquare;
+                        //highlight selected square
+                        boardSquares.at(i)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
+                        boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
+
+                        //get possible moves of selected square
+                        DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
+                                selectedSquare, false);
+                        int size = possibleMovesSelectedSquare.size();
+                        //highlight possible moves
+                        for (int i = 0; i < size; i++) {
+                            int index1D = 8 * possibleMovesSelectedSquare.at(i).first + possibleMovesSelectedSquare.at(i).second;
+                            boardSquares.at(index1D)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
+                            boardSquares.at(index1D)->setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
+                        }
                     }
                 }
             }
@@ -215,9 +246,6 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 
 }
 
-void View::displayPossibleMoves(sf::RenderWindow &w) {
-
-}
 
 void View::displayGameIn(sf::RenderWindow &w) {
     w.clear();
@@ -250,10 +278,25 @@ void View::displayGameIn(sf::RenderWindow &w) {
 
         displayEatenPieces(w);
 
+        if (GameController::GetInstance()->GetCurrentPlayer() == PieceColor::BLACK) {
+            interface[4]->setSprite(
+                    IMG_BASE_PATH + "current-player-black.png", 0);
+        } else {
+            interface[4]->setSprite(
+                    IMG_BASE_PATH + "current-player-white.png", 0);
+        }
 
+        sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
+        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
+        interface[interface.size() - 1]->setPosition(p1);
 
+        /*sf::Vector2<unsigned int> v = interface[interface.size() - 1]->getSprite(
+                0).getTexture()->getSize();
+        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
+        interface[2]->setPosition(p1);*/
 
         //display turn count
+        texts.at(0)->setString(to_string(GameController::GetInstance()->GetTurnCount()));
 
         w.draw(*(boardSquares.at(i)));
     }
@@ -349,7 +392,7 @@ void View::interfaceInitialisation(int step) {
             texts.push_back(new sf::Text);
             texts[texts.size() - 1]->setFont(font);
             texts[texts.size() - 1]->setCharacterSize(28);
-            texts[texts.size() - 1]->setString("0");
+            texts[texts.size() - 1]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
             texts[texts.size() - 1]->setFillColor(sf::Color::White);
             texts[texts.size() - 1]->setPosition(170, 22);
 
@@ -359,7 +402,7 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, 0);
             interface[interface.size() - 1]->setPosition(p1);
 
-            interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player-white.png"));
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player-black.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
             interface[interface.size() - 1]->setPosition(p1);

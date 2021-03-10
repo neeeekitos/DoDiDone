@@ -63,6 +63,7 @@ private:
     std::vector<sf::RectangleShape *> boardSquares;
     std::vector<sf::Text *> texts;
     sf::Font font;
+    std::pair<int, int> selectedSquare;
 
     static View *view_;
 
