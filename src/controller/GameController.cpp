@@ -60,6 +60,11 @@ const std::vector<int> &GameController::GetSavedGamesIds() const {}
 
 void GameController::SaveGame() {}
 
+void GameController::LoadGame(int gameId) {}
+
+PieceColor GameController::GetCurrentPlayer() const {}
+
+
 //int GameController::makeMove(int move) {
 // Making the move
 /* chessBoard.makeMove(coordonnees);

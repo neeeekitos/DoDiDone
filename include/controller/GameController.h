@@ -14,65 +14,85 @@ class GameController {
 
 public:
 
-    static GameController * GetInstance();
+    static GameController *GetInstance();
 
-    GameController(const GameController& anotherGameController) = delete;
+    GameController(const GameController &anotherGameController) = delete;
 
-    void operator= (const GameController & aGameController) = delete;
+    void operator=(const GameController &aGameController) = delete;
 
     ~GameController();
 
     void Start();
 
-    void  SetGameMode (GameMode gm);
+    void SetGameMode(GameMode gm);
 
-    GameMode GetGameMode ();
+    GameMode GetGameMode();
 
     void MakeMove(Move mv);
 
 
-    DestinationsSet GetMoveablePieces (PieceColor);
+    DestinationsSet GetMoveablePieces(PieceColor);
 
     const std::vector<int> &GetSavedGamesIds() const;
 
     void SaveGame();
 
+    /**
+     * @brief Load game number <gameId> into the chessboard
+     * Set game mode
+     * @param gameId
+    */
+    void LoadGame(int gameId);
+
+    /**
+     * @brief Get color of current player
+     * @return
+     */
+    PieceColor GetCurrentPlayer() const;
+
+    /**
+     * @brief Get number of turns played
+     * @return
+     */
+    unsigned  int GetTurnCount() const;
+
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
-   /* void NewGame();
+    /* void NewGame();
 
-    //toute la durée du jeu
-    //lance la vue
-    void Play();
+     //toute la durée du jeu
+     //lance la vue
+     void Play();
 
-    //chargement partie
-    void LoadGame();
+     //chargement partie
+     void LoadGame();
 
-    //sauvegarde partie
-    void SaveGame();
-
-
+     //sauvegarde partie
+     void SaveGame();
 
 
 
-    void MoveValid();
-    //retourne les cases où la pièce peut se déplacer
-    void GetValidSpots();
-    // Les mouvements seront définis par une chaine de caractères qui représente
-    // la coordonnée de départ er la coordonnée d'arrivée ex: a1a2
-    void MakeMove(string move);
-    void SwitchPlayer();
 
 
-    updateView();*/
+     void MoveValid();
+     //retourne les cases où la pièce peut se déplacer
+     void GetValidSpots();
+     // Les mouvements seront définis par une chaine de caractères qui représente
+     // la coordonnée de départ er la coordonnée d'arrivée ex: a1a2
+     void MakeMove(string move);
+     void SwitchPlayer();
+
+
+     updateView();*/
 
 private:
 
     GameController();
+
     View *view;
     Chessboard *chessBoard;
     GameMode gameMode;
 
-    static GameController * gameController_;
+    static GameController *gameController_;
 
 
 };
