@@ -52,6 +52,8 @@ private:
 
     void deleteInterfaceElements();
 
+    void deleteTextElements();
+
     void deleteBoardSquares();
 
 
@@ -59,6 +61,8 @@ private:
     std::vector<GraphicElement *> interface;
     std::vector<Button *> buttons;
     std::vector<sf::RectangleShape *> boardSquares;
+    std::vector<sf::Text *> texts;
+    sf::Font font;
 
     static View *view_;
 
