@@ -56,7 +56,15 @@ void GameController::MakeMove(Move mv) {
     }
 }
 
-const std::vector<int> &GameController::GetSavedGamesIds() const {}
+const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) const {
+    result = {1, 4, 5, 6, 7};
+    return result;
+}
+
+unsigned  int GameController::GetTurnCount() const {
+    return 2;
+}
+
 
 void GameController::SaveGame() {
     Chessboard * c = Chessboard::GetInstance();
@@ -69,7 +77,9 @@ void GameController::LoadGame(int gameId) {
     c->Load(vect[gameId]);
 }
 
-PieceColor GameController::GetCurrentPlayer() const {}
+PieceColor GameController::GetCurrentPlayer() const {
+    return PieceColor::BLACK;
+}
 
 
 //int GameController::makeMove(int move) {
