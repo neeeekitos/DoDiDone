@@ -66,6 +66,7 @@ private:
     std::vector<sf::Text *> texts;
     sf::Font font;
     std::pair<int, int> selectedSquare;
+    DestinationsSet possibleMovesSelectedSquare;
 
     static View *view_;
 

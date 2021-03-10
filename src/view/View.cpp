@@ -146,7 +146,7 @@ void View::MainLoop() {
                     //a square is already selected
                     if (selectedSquare != make_pair(-1, -1)) {
                         //get possible moves of selected square (not clicked square)
-                        DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
+                        possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
                                 selectedSquare, false);
                         //user clicks on a possible move
                         cout << "clicked=" << clickedSquare.first << "-" << clickedSquare.second << endl;
@@ -177,7 +177,7 @@ void View::MainLoop() {
                         //boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
 
                         //get possible moves of selected square
-                        DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
+                        possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
                                 selectedSquare, false);
 
                         cout << "****clicked=" << clickedSquare.first << "-" << clickedSquare.second << endl;
@@ -311,6 +311,19 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
     if (gameGoesOn) {
         //board squares with pieces
         int size = boardSquares.size();
+        if (selectedSquare != make_pair(-1, -1)) {
+            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
+                                                                            SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
+            int shiftY = BOARD_LEFT_TOP_CORNER_Y + selectedSquare.first * SQUARE_HEIGHT;
+            int index1D = 8 * selectedSquare.first + selectedSquare.second;
+            selectedRect.setPosition(
+                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + selectedSquare.second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
+                                 shiftY + SQUARE_OUTLINE_THICKNESS));
+            selectedRect.setOutlineThickness(10);
+            selectedRect.setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
+            selectedRect.setFillColor(sf::Color::Transparent);
+            w.draw(selectedRect);
+        }
         for (int i = 0; i < size; i++) {
             string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
             if (pieceName != PIECE_NAME[NONE]) {
