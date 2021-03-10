@@ -278,36 +278,7 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
     w.clear();
 
-    //interface elements first
-    int size = interface.size();
-    for (int i = 0; i < size; i++) {
-        interface.at(i)->draw(w);
-    }
-
-    //text elements first
-    size = texts.size();
-    for (int i = 0; i < size; i++) {
-        w.draw(*(texts.at(i)));
-    }
-
     if (gameGoesOn) {
-        //board squares with pieces
-        size = boardSquares.size();
-        for (int i = 0; i < size; i++) {
-            string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
-            if (pieceName != PIECE_NAME[NONE]) {
-                string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
-
-                if (!(boardSquareTextures.at(i)->loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))) {
-                    cerr << "error" << endl;
-                } else {
-                    boardSquares.at(i)->setTexture(boardSquareTextures.at(i));
-                }
-            } else {
-                boardSquares.at(i)->setFillColor(sf::Color::Transparent);
-            }
-            w.draw(*(boardSquares.at(i)));
-        }
         //display turn count
         texts[0]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
         displayEatenPieces(w);
@@ -324,6 +295,40 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
         interface[interface.size() - 1]->setPosition(p1);
     }
+
+    //interface elements first
+    int size = interface.size();
+    for (int i = 0; i < size; i++) {
+        interface.at(i)->draw(w);
+    }
+
+    //text elements
+    size = texts.size();
+    for (int i = 0; i < size; i++) {
+        w.draw(*(texts.at(i)));
+    }
+
+    if (gameGoesOn) {
+        //board squares with pieces
+        int size = boardSquares.size();
+        for (int i = 0; i < size; i++) {
+            string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
+            if (pieceName != PIECE_NAME[NONE]) {
+                string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
+
+                if (!(boardSquareTextures.at(i)->loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))) {
+                    cerr << "error" << endl;
+                } else {
+                    boardSquares.at(i)->setTexture(boardSquareTextures.at(i));
+                }
+            } else {
+                boardSquares.at(i)->setFillColor(sf::Color::Transparent);
+            }
+            w.draw(*(boardSquares.at(i)));
+        }
+    }
+
+
 
     w.display();
 }
