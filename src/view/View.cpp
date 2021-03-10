@@ -324,6 +324,20 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
             selectedRect.setFillColor(sf::Color::Transparent);
             w.draw(selectedRect);
         }
+
+        for (int i = 0 ; i < possibleMovesSelectedSquare.size() ; i++) {
+            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
+                                                         SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
+            int shiftY = BOARD_LEFT_TOP_CORNER_Y + possibleMovesSelectedSquare[i].first * SQUARE_HEIGHT;
+            selectedRect.setPosition(
+                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + possibleMovesSelectedSquare[i].second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
+                                 shiftY + SQUARE_OUTLINE_THICKNESS));
+            selectedRect.setOutlineThickness(10);
+            selectedRect.setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
+            selectedRect.setFillColor(sf::Color::Transparent);
+            w.draw(selectedRect);
+        }
+
         for (int i = 0; i < size; i++) {
             string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
             if (pieceName != PIECE_NAME[NONE]) {
