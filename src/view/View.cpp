@@ -123,6 +123,8 @@ void View::MainLoop() {
 
     while (window->isOpen()) {
         sf::Event event;
+        displayGameIn(*window, true);
+
         while (window->pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 window->close();
@@ -159,8 +161,8 @@ void View::MainLoop() {
                         //set selected square
                         selectedSquare = clickedSquare;
                         //highlight selected square
-                        boardSquares.at(i)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
-                        boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
+                        //boardSquares.at(i)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
+                        //boardSquares.at(i)->setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
 
                         //get possible moves of selected square
                         DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
@@ -169,14 +171,15 @@ void View::MainLoop() {
                         //highlight possible moves
                         for (int i = 0; i < size; i++) {
                             int index1D = 8 * possibleMovesSelectedSquare.at(i).first + possibleMovesSelectedSquare.at(i).second;
-                            boardSquares.at(index1D)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
-                            boardSquares.at(index1D)->setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
+                            //boardSquares.at(index1D)->setOutlineThickness(SQUARE_OUTLINE_THICKNESS);
+                            //boardSquares.at(index1D)->setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
                         }
                     }
                 }
+                interfaceInitialisation(2);
+                //displayGameIn(*window, true);
             }
         }
-        displayGameIn(*window, true);
     }
 }
 
@@ -193,6 +196,7 @@ void View::initBoardSquares() {
             index1D = 8 * line + col;
             boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
                                                                        SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2)));
+            boardSquareTextures.push_back(new sf::Texture);
             boardSquares.at(index1D)->setPosition(
                     sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + col * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
                                  shiftY + SQUARE_OUTLINE_THICKNESS));
@@ -223,9 +227,11 @@ void View::deleteBoardSquares() {
     int size = boardSquares.size();
     for (int i = 0; i < size; i++) {
         delete (boardSquares.at(i));
+        delete (boardSquareTextures.at(i));
     }
     if (boardSquares.size() > 0)
         boardSquares.clear();
+        boardSquareTextures.clear();
 }
 
 void View::deleteButtonElements() {
@@ -250,6 +256,7 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 
 
 void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
+    cout << "display" << endl;
     w.clear();
 
     //interface elements first
@@ -268,15 +275,14 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
         //board squares with pieces
         size = boardSquares.size();
         for (int i = 0; i < size; i++) {
-            sf::Texture texture;
             string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
             if (pieceName != PIECE_NAME[NONE]) {
                 string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
 
-                if (!texture.loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png")) {
+                if (!(boardSquareTextures.at(i)->loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))) {
                     cerr << "error" << endl;
                 } else {
-                    boardSquares.at(i)->setTexture(&texture);
+                    boardSquares.at(i)->setTexture(boardSquareTextures.at(i));
                 }
             } else {
                 boardSquares.at(i)->setFillColor(sf::Color::Transparent);
