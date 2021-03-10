@@ -59,7 +59,7 @@ void View::MenuChoices() {
     sf::Event event;
     interfaceInitialisation(0);
     vector<int> savedGames;
-    savedGames = GameController::GetInstance()->GetSavedGamesIds(savedGames);
+    GameController::GetInstance()->GetSavedGamesIds(savedGames);
     auto savedGamesIterator = savedGames.begin();
 
     while (!newGamePressed || playerCount == -1) {
@@ -153,6 +153,7 @@ void View::MainLoop() {
                                       clickedSquare) != possibleMovesSelectedSquare.end()) {
                             cout << "makeMove " << clickedSquare.first << " - " << clickedSquare.second << endl;
                             GameController::GetInstance()->MakeMove(make_pair(selectedSquare, clickedSquare));
+                            cout <<*Chessboard::GetInstance() << endl;
                         }
                     } else {
                         //set selected square
@@ -175,7 +176,7 @@ void View::MainLoop() {
                 }
             }
         }
-        displayGameIn(*window);
+        displayGameIn(*window, true);
     }
 }
 
@@ -184,7 +185,7 @@ void View::update(Chessboard &cb) {
 }
 
 void View::initBoardSquares() {
-    boardSquares.clear();
+    deleteBoardSquares();
     int shiftY = BOARD_LEFT_TOP_CORNER_Y;
     int index1D = 0;
     for (int line = 0; line < 8; line++) {
@@ -223,7 +224,8 @@ void View::deleteBoardSquares() {
     for (int i = 0; i < size; i++) {
         delete (boardSquares.at(i));
     }
-    boardSquares.clear();
+    if (boardSquares.size() > 0)
+        boardSquares.clear();
 }
 
 void View::deleteButtonElements() {
@@ -247,8 +249,9 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 }
 
 
-void View::displayGameIn(sf::RenderWindow &w) {
+void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
     w.clear();
+
     //interface elements first
     int size = interface.size();
     for (int i = 0; i < size; i++) {
@@ -261,21 +264,27 @@ void View::displayGameIn(sf::RenderWindow &w) {
         w.draw(*(texts.at(i)));
     }
 
-    //board squares with pieces
-    size = boardSquares.size();
-    for (int i = 0; i < size; i++) {
-        sf::Texture texture;
-        string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
-        if (pieceName != PIECE_NAME[NONE]) {
-            string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
-            if (!texture.loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png")) {
-                cerr << "error" << endl;
-            }
-            boardSquares.at(i)->setTexture(&texture);
-        } else {
-            boardSquares.at(i)->setFillColor(sf::Color::Transparent);
-        }
+    if (gameGoesOn) {
+        //board squares with pieces
+        size = boardSquares.size();
+        for (int i = 0; i < size; i++) {
+            sf::Texture texture;
+            string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
+            if (pieceName != PIECE_NAME[NONE]) {
+                string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
 
+                if (!texture.loadFromFile(IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png")) {
+                    cerr << "error" << endl;
+                } else {
+                    boardSquares.at(i)->setTexture(&texture);
+                }
+            } else {
+                boardSquares.at(i)->setFillColor(sf::Color::Transparent);
+            }
+            w.draw(*(boardSquares.at(i)));
+        }
+        //display turn count
+        texts[0]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
         displayEatenPieces(w);
 
         if (GameController::GetInstance()->GetCurrentPlayer() == PieceColor::BLACK) {
@@ -289,23 +298,15 @@ void View::displayGameIn(sf::RenderWindow &w) {
         sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
         interface[interface.size() - 1]->setPosition(p1);
-
-        /*sf::Vector2<unsigned int> v = interface[interface.size() - 1]->getSprite(
-                0).getTexture()->getSize();
-        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
-        interface[2]->setPosition(p1);*/
-
-        //display turn count
-        texts.at(0)->setString(to_string(GameController::GetInstance()->GetTurnCount()));
-
-        w.draw(*(boardSquares.at(i)));
     }
+
     w.display();
 }
 
 void View::interfaceInitialisation(int step) {
     deleteButtonElements();
     deleteInterfaceElements();
+    deleteTextElements();
     Point2I p1;
     Point2I p2;
     sf::Vector2u v;
@@ -374,7 +375,7 @@ void View::interfaceInitialisation(int step) {
         case 2:
             //chessboard background
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "board-with-background2.png"));
-            initBoardSquares();
+            //initBoardSquares();
 
             //add game mode to interface
             gameModeImg = "2-players.png";
@@ -389,7 +390,8 @@ void View::interfaceInitialisation(int step) {
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "turn-count.png"));
             interface[interface.size() - 1]->setPosition(Point2I(0, 0));
 
-            texts.push_back(new sf::Text);
+            texts.push_back(new sf::Text("bonjour", font, 30));
+            cout << (texts.size()) << "!!!!!!!!!" << endl;
             texts[texts.size() - 1]->setFont(font);
             texts[texts.size() - 1]->setCharacterSize(28);
             texts[texts.size() - 1]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
@@ -407,7 +409,8 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
             interface[interface.size() - 1]->setPosition(p1);
 
-            displayGameIn(*window);
+            deleteBoardSquares();
+            initBoardSquares();
             break;
 
         default:

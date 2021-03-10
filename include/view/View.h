@@ -35,9 +35,10 @@ private:
 
     void interfaceInitialisation(int step);
 
-    void displayGameIn(sf::RenderWindow &w);
+    void displayGameIn(sf::RenderWindow &w, bool gameGoesOn = false);
 
     void initBoardSquares();
+    void updateBoardSquares();
 
     void cleanSquareOutlines();
 
