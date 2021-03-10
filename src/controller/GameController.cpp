@@ -58,9 +58,16 @@ void GameController::MakeMove(Move mv) {
 
 const std::vector<int> &GameController::GetSavedGamesIds() const {}
 
-void GameController::SaveGame() {}
+void GameController::SaveGame() {
+    Chessboard * c = Chessboard::GetInstance();
+    c->SaveGame();
+}
 
-void GameController::LoadGame(int gameId) {}
+void GameController::LoadGame(int gameId) {
+    Chessboard * c = Chessboard::GetInstance();
+    vector <string> vect = c->GetBackupFileInformations();
+    c->Load(vect[gameId]);
+}
 
 PieceColor GameController::GetCurrentPlayer() const {}
 

@@ -11,6 +11,7 @@
 #include "../../include/model/Queen.h"
 #include "../../include/model/Tower.h"
 #include "../../include/model/GameConstants.h"
+#include "../../include/controller/GameController.h"
 
 #include <iostream>
 #include <fstream>
@@ -34,6 +35,7 @@ Chessboard::Chessboard() {
     this->halfShots = 0;
     this->shots = 1;
     this->currentPlayer = WHITE;
+    this->inPassingAuthorised = nullptr;
 
 }
 
@@ -72,6 +74,10 @@ Coordinate Chessboard::ConvertOneDimensionPositionToCoordinate(int position) {
 
 DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool justEatableMoves) {
     int oneDimentionPosition = convertCoordinates(coor);
+    DestinationsSet dest;
+    if (this->getPiece(oneDimentionPosition)->GetColor() != this->currentPlayer) {
+        return dest;
+    }
     return this->getPiece(oneDimentionPosition)->GetPossibleMoves();
 }
 
@@ -191,7 +197,20 @@ string Chessboard::chessboardToFen() {
         str += " " + castlingString;
     }
 
+    if (this->inPassingAuthorised != nullptr) {
+        int position = this->GetPosition(this->inPassingAuthorised);
+        str += " " + to_string(position);
+    } else {
+        str += " -";
+    }
+
     str += " " + to_string(this->halfShots) + " " + to_string(this->shots);
+
+    if (GameController::GetInstance()->GetGameMode() == AI) {
+        str += " a";
+    } else {
+        str += " m";
+    }
 
     return str;
 }
@@ -252,7 +271,60 @@ vector<string> Chessboard::GetBackupFileInformations() {
             fenLines.push_back(line);
         }
     }
-
     return fenLines;
+}
+
+Piece * Chessboard::GeneratePiece(char fenChar) {
+    if ( !(fenChar >= 'A' && fenChar <= 'Z' || fenChar >= 'a' && fenChar <= 'z') || fenChar == ' ' ) return nullptr;
+    PieceColor c;
+    if (fenChar >= 'A' && fenChar <= 'Z') {
+        c = WHITE;
+    } else {
+        c = BLACK;
+    }
+
+    if (fenChar == 'T' || fenChar == 't') return new Tower(c);
+    if (fenChar == 'N' || fenChar == 'n') return new Knight(c);
+    if (fenChar == 'B' || fenChar == 'b') return new Bishop(c);
+    if (fenChar == 'Q' || fenChar == 'q') return new Queen(c);
+    if (fenChar == 'K' || fenChar == 'k') return new King(c);
+    if (fenChar == 'P' || fenChar == 'p') return new Pawn(c);
+
+    return new Piece();
+}
+
+
+void Chessboard::Load(string fen) {
+    int xPos = 7;
+    int yPos = 0;
+    int i = 0;
+
+    while (fen[i] != ' ' && i < fen.length()) {
+        yPos = 0;
+        while ( fen[i] != '/' && fen[i] != ' ') {
+            Coordinate c = make_pair(xPos, yPos);
+            int position = convertCoordinates(c);
+            if ( fen[i] >= 'A' && fen[i] <= 'Z' || fen[i] >= 'a' && fen[i] <= 'z' ) {
+                this->board[position] = this->GeneratePiece(fen[i]);
+                yPos ++;
+            } else {
+                int nbEmptyBlocks = fen[i] - '0';
+                for (int j = 0; j < nbEmptyBlocks; ++j) {
+                    c = make_pair(xPos, yPos);
+                    position = convertCoordinates(c);
+                    this->board[position] = new Piece();
+                    yPos ++;
+                }
+            }
+            ++i;
+        }
+        --xPos;
+        if (fen[i] == '/') {
+            ++i;
+        }
+    }
+    ++i;
+    if (fen[i] == 'w') this->currentPlayer = WHITE;
+
 }
 

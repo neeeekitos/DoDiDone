@@ -21,8 +21,6 @@ int main() {
     cout << c.chessboardToFen() << endl;
 
     GameController *gameControl = GameController::GetInstance();
-    c.SaveGame();
-    c.GetBackupFileInformations();
     gameControl->Start();
 
 }

@@ -81,6 +81,10 @@ public:
 
     vector<string> GetBackupFileInformations();
 
+    void Load(string fen);
+
+    Piece * GeneratePiece (char fenChar);
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;
