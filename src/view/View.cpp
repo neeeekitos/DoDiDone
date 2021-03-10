@@ -120,10 +120,15 @@ void View::MenuChoices() {
 }
 
 void View::MainLoop() {
+    bool displayedOnce = false;
+    bool selectNewSquare = false;
 
     while (window->isOpen()) {
         sf::Event event;
-        displayGameIn(*window, true);
+        if (!displayedOnce) {
+            displayGameIn(*window, true);
+            displayedOnce = true;
+        }
 
         while (window->pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
@@ -132,6 +137,7 @@ void View::MainLoop() {
             } else if (event.type == sf::Event::MouseButtonPressed) {
                 Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
+                cout << "i= " << i << endl;
                 pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                 cout << "click " << event.mouseButton.x << "-" << event.mouseButton.y << endl;
                 if (i != -1 && i < boardSquares.size()) {
@@ -144,8 +150,8 @@ void View::MainLoop() {
                                 selectedSquare, false);
                         //user clicks on a possible move
                         cout << "clicked=" << clickedSquare.first << "-" << clickedSquare.second << endl;
-                        cout << "clicked===== " << (possibleMovesSelectedSquare.size() >= 1 &&
-                                                    clickedSquare == possibleMovesSelectedSquare.at(1)) << endl;
+                        cout << "selected=" << selectedSquare.first << "-" << selectedSquare.second << endl;
+                        cout << "possiblemoves selected:  ";
                         for (auto it = possibleMovesSelectedSquare.begin();
                              it != possibleMovesSelectedSquare.end(); ++it)
                             cout << "  ||  " << it->first << "-" << it->second;
@@ -153,11 +159,17 @@ void View::MainLoop() {
 
                         if (std::find(possibleMovesSelectedSquare.begin(), possibleMovesSelectedSquare.end(),
                                       clickedSquare) != possibleMovesSelectedSquare.end()) {
-                            cout << "makeMove " << clickedSquare.first << " - " << clickedSquare.second << endl;
+                            cout << "makeMove " << selectedSquare.first << "-" << selectedSquare.second << " -> " << clickedSquare.first << " - " << clickedSquare.second << endl;
                             GameController::GetInstance()->MakeMove(make_pair(selectedSquare, clickedSquare));
+                            selectedSquare = make_pair(-1, -1);
                             cout <<*Chessboard::GetInstance() << endl;
+                        } else {
+                            selectNewSquare = true;
                         }
                     } else {
+                        selectNewSquare = true;
+                    }
+                    if (selectNewSquare) {
                         //set selected square
                         selectedSquare = clickedSquare;
                         //highlight selected square
@@ -167,6 +179,14 @@ void View::MainLoop() {
                         //get possible moves of selected square
                         DestinationsSet possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
                                 selectedSquare, false);
+
+                        cout << "****clicked=" << clickedSquare.first << "-" << clickedSquare.second << endl;
+                        cout << "****selected=" << selectedSquare.first << "-" << selectedSquare.second << endl;
+                        cout << "*****possiblemoves selected:  ";
+                        for (auto it = possibleMovesSelectedSquare.begin();
+                             it != possibleMovesSelectedSquare.end(); ++it)
+                            cout << "  ||  " << it->first << "-" << it->second;
+                        cout << endl;
                         int size = possibleMovesSelectedSquare.size();
                         //highlight possible moves
                         for (int i = 0; i < size; i++) {
@@ -256,7 +276,6 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 
 
 void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
-    cout << "display" << endl;
     w.clear();
 
     //interface elements first
@@ -397,7 +416,6 @@ void View::interfaceInitialisation(int step) {
             interface[interface.size() - 1]->setPosition(Point2I(0, 0));
 
             texts.push_back(new sf::Text("bonjour", font, 30));
-            cout << (texts.size()) << "!!!!!!!!!" << endl;
             texts[texts.size() - 1]->setFont(font);
             texts[texts.size() - 1]->setCharacterSize(28);
             texts[texts.size() - 1]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
@@ -415,8 +433,8 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
             interface[interface.size() - 1]->setPosition(p1);
 
-            deleteBoardSquares();
             initBoardSquares();
+            displayGameIn(*window, true);
             break;
 
         default:

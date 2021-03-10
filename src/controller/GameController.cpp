@@ -39,6 +39,8 @@ GameMode GameController::GetGameMode() {
 }
 
 void GameController::MakeMove(Move mv) {
+    cout << "MAKE MOVE ";
+    cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
     Chessboard &c = *Chessboard::GetInstance();
     c.NotifyMove();
     c.nextMoveIsPassingAuthorized = false;
