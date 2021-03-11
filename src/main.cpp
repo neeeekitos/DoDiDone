@@ -20,7 +20,10 @@ int main() {
 
     cout << c.chessboardToFen() << endl;
 
-    //GameController *gameControl = GameController::GetInstance();
-    //gameControl->Start();
+    Move mv = make_pair(make_pair(6, 7), make_pair(4, 7));
+
+    GameController *gameControl = GameController::GetInstance();
+    //gameControl->MakeMove(mv);
+    gameControl->Start();
 
 }

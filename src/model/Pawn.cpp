@@ -81,7 +81,7 @@ void Pawn::NotifyMove(Move mv) {
         for (int direction : inPassingCheck) {
             int targetPositionInBoundariesTable = currentPiecePositionInBoundariesTable + direction;
             int valueInBoundariesTable = cb->GetValueInBoundariesTable(targetPositionInBoundariesTable);
-            if (valueInBoundariesTable != 1) {
+            if (valueInBoundariesTable != -1) {
                 Pawn * p = dynamic_cast<Pawn *> (cb->getPiece(valueInBoundariesTable));
                 if (p != NULL && p->GetColor() != this->GetColor()) {
                     p->inPassingMove = make_pair((mv.first.first + mv.second.first) / 2, mv.first.second);
