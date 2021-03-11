@@ -74,6 +74,8 @@ public:
 
     PieceColor GetCurrentPlayer();
 
+    int GetShots() const;
+
     DestinationsSet GetMovablePieces (PieceColor);
 
     string chessboardToFen();
@@ -122,7 +124,6 @@ private:
     static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
 
     GameStatus status;
-
 };
 
 #endif //E_CHESS_CHESSBOARD_H

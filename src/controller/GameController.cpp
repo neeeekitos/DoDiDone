@@ -80,8 +80,8 @@ const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) co
     return result;
 }
 
-unsigned  int GameController::GetTurnCount() const {
-    return 2;
+int GameController::GetShots() const {
+    return Chessboard::GetInstance()->GetShots();
 }
 
 
