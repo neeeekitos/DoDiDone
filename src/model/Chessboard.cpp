@@ -305,6 +305,7 @@ void Chessboard::Load(string fen) {
             Coordinate c = make_pair(xPos, yPos);
             int position = convertCoordinates(c);
             if ( fen[i] >= 'A' && fen[i] <= 'Z' || fen[i] >= 'a' && fen[i] <= 'z' ) {
+                delete this->board[position];
                 this->board[position] = this->GeneratePiece(fen[i]);
                 yPos ++;
             } else {
@@ -312,6 +313,7 @@ void Chessboard::Load(string fen) {
                 for (int j = 0; j < nbEmptyBlocks; ++j) {
                     c = make_pair(xPos, yPos);
                     position = convertCoordinates(c);
+                    delete this->board[position];
                     this->board[position] = new Piece();
                     yPos ++;
                 }
@@ -329,7 +331,7 @@ void Chessboard::Load(string fen) {
 }
 
 Chessboard::~Chessboard() {
-    for (int i = 0; i < 64; ++i) {
+    for (int i = 0; i < this->board.size(); ++i) {
         delete this->board[i];
     }
 

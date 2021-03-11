@@ -58,6 +58,8 @@ public:
 
     virtual void NotifyMove (Move mv);
 
+    virtual ~ Piece();
+
 private :
     /**
      * This represents the color of the piece
