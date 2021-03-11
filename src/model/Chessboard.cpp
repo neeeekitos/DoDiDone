@@ -231,6 +231,7 @@ void Chessboard::NotifyMove() {
 }
 
 void Chessboard::SaveGame() {
+    cout << "saveGame" << endl;
     vector <string> savedFen = this->GetBackupFileInformations();
     if ( savedFen.size() >= 10 ) {
         savedFen.erase(savedFen.begin());
