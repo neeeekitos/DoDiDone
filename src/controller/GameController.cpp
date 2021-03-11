@@ -90,7 +90,7 @@ void GameController::LoadGame(int gameId) {
 }
 
 PieceColor GameController::GetCurrentPlayer() const {
-    return PieceColor::BLACK;
+    return Chessboard::GetInstance()->GetCurrentPlayer();
 }
 
 
