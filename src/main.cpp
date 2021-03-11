@@ -21,10 +21,10 @@ int main() {
 
     cout << c.chessboardToFen() << endl;
 
-    Move mv = make_pair(make_pair(6, 7), make_pair(4, 7));
-    gm.MakeMove(mv);
-    mv = make_pair(make_pair(1, 0), make_pair(3, 0));
-    gm.MakeMove(mv);
+//    Move mv = make_pair(make_pair(6, 7), make_pair(4, 7));
+//    gm.MakeMove(mv);
+//    mv = make_pair(make_pair(1, 0), make_pair(3, 0));
+//    gm.MakeMove(mv);
 
     //GameController *gameControl = GameController::GetInstance();
     //gameControl->MakeMove(mv);

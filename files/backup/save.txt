@@ -1,3 +1,4 @@
 TNBQKBNT/PPPPPPPP/8/8/8/8/pppppppp/tnbqkbnt w KQkq - 0 1 m
 TNBQKBNT/1PPPPPPP/8/P7/7p/8/ppppppp1/tnbqkbnt w KQkq - 2 1 m
 TNBQKBNT/1PPPPPPP/8/P7/6pp/8/pppppp2/tnbqkbnt b KQkq - 3 1 m
+TNBQKBNT/PPPPPPPP/8/8/8/8/pppppppp/tnbqkbnt w KQkq - 0 1 a
