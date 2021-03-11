@@ -230,8 +230,7 @@ void Chessboard::NotifyMove() {
     this->shots = this->halfShots / 2;
 }
 
-void Chessboard::SaveGame() {
-    cout << "saveGame" << endl;
+int Chessboard::SaveGame() {
     vector <string> savedFen = this->GetBackupFileInformations();
     if ( savedFen.size() >= 10 ) {
         savedFen.erase(savedFen.begin());
@@ -245,6 +244,8 @@ void Chessboard::SaveGame() {
         file << st << "\n";
     }
     file.close();
+    cout << "taille= " << savedFen.size() << endl;
+    return savedFen.size();
 }
 
 bool Chessboard::castlingIsPossible(PieceColor color, CastlingSide castlingSide) {

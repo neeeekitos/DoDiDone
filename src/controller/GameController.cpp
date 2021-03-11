@@ -70,6 +70,15 @@ void GameController::MakeMove(Move mv) {
 
 const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) const {
     result = {1, 4, 5, 6, 7};
+
+     Chessboard * c = Chessboard::GetInstance();
+    vector <string> savedGames = c->GetBackupFileInformations();
+    //result.clear();
+    for (int i = 0; i < savedGames.size(); i++) {
+        //result.push_back(int(savedGames[i]));
+    }
+
+
     return result;
 }
 
@@ -78,9 +87,9 @@ unsigned  int GameController::GetTurnCount() const {
 }
 
 
-void GameController::SaveGame() {
+int GameController::SaveGame() {
     Chessboard * c = Chessboard::GetInstance();
-    c->SaveGame();
+    return c->SaveGame();
 }
 
 void GameController::LoadGame(int gameId) {

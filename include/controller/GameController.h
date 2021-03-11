@@ -37,7 +37,7 @@ public:
 
     const std::vector<int> &GetSavedGamesIds(vector<int> &result) const;
 
-    void SaveGame();
+    int SaveGame();
 
     /**
      * @brief Load game number <gameId> into the chessboard

@@ -80,7 +80,7 @@ public:
 
     void NotifyMove();
 
-    void SaveGame();
+    int SaveGame();
 
     bool FenCastlingIsPossible(PieceColor color, CastlingSide castlingSide);
 

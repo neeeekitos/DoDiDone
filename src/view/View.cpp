@@ -136,6 +136,12 @@ void View::MainLoop() {
                 window->close();
                 exit(0);
             } else if (event.type == sf::Event::MouseButtonPressed) {
+                if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                    //save game and quit
+                    string gameSavedName = "Game " + to_string(GameController::GetInstance()->SaveGame()) +".";
+                    window->close();
+                    cout << "Game saved with name : " << gameSavedName << endl;
+                }
                 Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
                 cout << "i= " << i << endl;
@@ -313,7 +319,7 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
 
         sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
-        interface[interface.size() - 1]->setPosition(p1);
+        interface[4]->setPosition(p1);
     }
 
     //interface elements first
@@ -467,7 +473,7 @@ void View::interfaceInitialisation(int step) {
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "turn-count.png"));
             interface[interface.size() - 1]->setPosition(Point2I(0, 0));
 
-            texts.push_back(new sf::Text("bonjour", font, 30));
+            texts.push_back(new sf::Text("", font, 30));
             texts[texts.size() - 1]->setFont(font);
             texts[texts.size() - 1]->setCharacterSize(28);
             texts[texts.size() - 1]->setString(to_string(GameController::GetInstance()->GetTurnCount()));
@@ -485,8 +491,15 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
             interface[interface.size() - 1]->setPosition(p1);
 
-           // initBoardSquares();
-            //displayGameIn(*window, true);
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "save-game.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y);
+            p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H);
+            interface[interface.size() - 1]->setPosition(p1);
+            buttons.push_back(new Button(p1, p2, ButtonType::LOAD));
+
+
+
             break;
 
         case 3:
