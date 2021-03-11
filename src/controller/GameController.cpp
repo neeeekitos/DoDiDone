@@ -69,15 +69,13 @@ void GameController::MakeMove(Move mv) {
 }
 
 const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) const {
-    result = {1, 4, 5, 6, 7};
-
-     Chessboard * c = Chessboard::GetInstance();
+    int number = 0;
+    Chessboard * c = Chessboard::GetInstance();
     vector <string> savedGames = c->GetBackupFileInformations();
-    //result.clear();
+    result.clear();
     for (int i = 0; i < savedGames.size(); i++) {
-        //result.push_back(int(savedGames[i]));
+        result.push_back(++number);
     }
-
 
     return result;
 }
