@@ -20,7 +20,7 @@ int main() {
 
     cout << c.chessboardToFen() << endl;
 
-    GameController *gameControl = GameController::GetInstance();
-    gameControl->Start();
+    //GameController *gameControl = GameController::GetInstance();
+    //gameControl->Start();
 
 }
