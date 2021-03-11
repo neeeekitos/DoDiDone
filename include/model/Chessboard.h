@@ -37,6 +37,11 @@ public:
 
     int GetValueInBoundariesTable(int position);
 
+    GameStatus GetGameStatus() const;
+
+    void
+    SetStatus(GameStatus s);
+
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
     bool IsValidMove(Move mv);
@@ -115,6 +120,8 @@ private:
     static inline const string SAVING_PATH = "files/backup/";
 
     static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
+
+    GameStatus status;
 
 };
 

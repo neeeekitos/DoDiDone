@@ -196,10 +196,20 @@ void View::MainLoop() {
                         }
                     }
                 }
-                interfaceInitialisation(2);
+                if (GameController::GetInstance()->GetGameStatus() == GameStatus::GoesOn) {
+                    interfaceInitialisation(2);
+                } else {
+
+                }
                 //displayGameIn(*window, true);
             }
         }
+    }
+}
+
+void View::displayStatus(GameStatus s){
+    switch (s) {
+
     }
 }
 

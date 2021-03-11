@@ -57,6 +57,8 @@ private:
 
     void deleteBoardSquares();
 
+    void displayStatus(GameStatus s);
+
 
     sf::RenderWindow *window;
     std::vector<GraphicElement *> interface;
