@@ -56,10 +56,10 @@ void View::MenuChoices() {
     bool newGamePressed = false;
     bool changeLoadedGame = false;
     int playerCount = -1;
-
     sf::Event event;
     interfaceInitialisation(0);
     vector<int> savedGames;
+    int currentSavedGameIndex = 0;
     GameController::GetInstance()->GetSavedGamesIds(savedGames);
     auto savedGamesIterator = savedGames.begin();
 
@@ -69,6 +69,7 @@ void View::MenuChoices() {
                 window->close();
                 exit(0);
             } else if (event.type == sf::Event::MouseButtonPressed) {
+                cout << "taille=" << savedGames.size() << endl;
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //new game
@@ -78,6 +79,8 @@ void View::MenuChoices() {
                         //load game
                         newGamePressed = true;
                         playerCount = 1;
+                        GameController::GetInstance()->LoadGame(savedGames.size() >= currentSavedGameIndex ? savedGames[currentSavedGameIndex] : -1);
+                        cout << "Load " << currentSavedGameIndex << endl;
                         interfaceInitialisation(2);
                     }
                         //next and previous buttons -> circular course of game ids
@@ -88,22 +91,30 @@ void View::MenuChoices() {
                             savedGamesIterator = savedGames.end();
                         }
                         savedGamesIterator--;
+                        currentSavedGameIndex--;
+                        cout << "------ >>    " << currentSavedGameIndex << endl;
+                        if (currentSavedGameIndex < 0) { currentSavedGameIndex = savedGames.size() - 1; }
+                        cout << "------     " << currentSavedGameIndex << endl;
                     } else if (buttons[2]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //next game
                         changeLoadedGame = true;
                         savedGamesIterator++;
+                        currentSavedGameIndex++;
+                        if (currentSavedGameIndex >= savedGames.size()) { currentSavedGameIndex = 0; }
+                        cout << "------     " << currentSavedGameIndex << endl;
                         if (savedGamesIterator == savedGames.end()) {
                             savedGamesIterator = savedGames.begin();
                         }
                     }
                     //load new game id button image
                     if (changeLoadedGame) {
-                        interface[2]->setSprite(
-                                BUTTONS_IMG_BASE_PATH + "games/game-" + to_string(*savedGamesIterator) + ".png", 0);
-                        sf::Vector2<unsigned int> v = interface[interface.size() - 1]->getSprite(
+                        texts[texts.size() - 1]->setString(to_string(*savedGamesIterator + 1) );
+                        /*interface[2]->setSprite(
+                                BUTTONS_IMG_BASE_PATH + "games/game-" + to_string(*savedGamesIterator + 1) + ".png", 0);/*
+                        sf::Vector2<unsigned int> v = interface[2]->getSprite(
                                 0).getTexture()->getSize();
                         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
-                        interface[2]->setPosition(p1);
+                        interface[2]->setPosition(p1);*/
                     }
                 } else {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
@@ -410,10 +421,14 @@ void View::interfaceInitialisation(int step) {
             buttons.push_back(new Button(p1, p2, ButtonType::NEW_GAME));
 
 
-            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "games/game-1.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "games/game-empty.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
             interface[interface.size() - 1]->setPosition(p1);
+
+            texts.push_back(new sf::Text("1", font, 26));
+            texts[texts.size() - 1]->setFillColor(sf::Color(21, 215, 152));
+            texts[texts.size() - 1]->setPosition(585, 439);
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "previous.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
@@ -496,10 +511,7 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H);
             interface[interface.size() - 1]->setPosition(p1);
-            buttons.push_back(new Button(p1, p2, ButtonType::LOAD));
-
-
-
+            buttons.push_back(new Button(p1, p2, ButtonType::SAVE));
             break;
 
         case 3:
