@@ -19,12 +19,12 @@ public:
 
     bool IsFirstMoveDone ();
 
-private :
-
     /**
      * This variable is set to false as long as the tower has not moved
      */
     bool firstMoveDone;
+
+private :
 
 };
 

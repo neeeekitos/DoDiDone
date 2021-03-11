@@ -96,7 +96,6 @@ public:
 
     /**
      * Tells wether the given move allows us to eat a piece
-     * @param color
      * @param mv
      * @return
      */

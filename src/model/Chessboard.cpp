@@ -344,6 +344,145 @@ void Chessboard::Load(string fen) {
     ++i;
     if (fen[i] == 'w') this->currentPlayer = WHITE;
 
+    i+=2;
+    if (fen[i] == 'K') {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 7);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = false;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = false;
+        }
+        ++i;
+    } else {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 7);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = true;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = true;
+        }
+    }
+
+    if (fen[i] == 'Q') {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 0);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = false;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = false;
+        }
+        ++i;
+    } else {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 0);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = true;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = true;
+        }
+    }
+
+    if (fen[i] == 'k') {
+        Coordinate KingCoordinate = make_pair(0, 4);
+        Coordinate towerCoordinate = make_pair(0, 7);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = false;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = false;
+        }
+        ++i;
+    } else {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 0);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = true;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = true;
+        }
+    }
+
+    if (fen[i] == 'q') {
+        Coordinate KingCoordinate = make_pair(0, 4);
+        Coordinate towerCoordinate = make_pair(0, 0);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = false;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = false;
+        }
+        ++i;
+    } else {
+        Coordinate KingCoordinate = make_pair(7, 4);
+        Coordinate towerCoordinate = make_pair(7, 0);
+        King * k = dynamic_cast <King *> (this->GetPiece(KingCoordinate));
+        if (k != nullptr) {
+            k->firstMoveDone = true;
+        }
+        Tower * t = dynamic_cast <Tower *> (this->GetPiece(towerCoordinate));
+        if (t != nullptr) {
+            t->firstMoveDone = true;
+        }
+    }
+
+    ++i;
+
+    if (fen[i] != '-') {
+        string inPassingPosition = "";
+        for (; fen[i] != ' '; ++i) {
+            inPassingPosition += fen[i];
+        }
+        int position = stoi(inPassingPosition);
+        Pawn * p = dynamic_cast <Pawn *> (this->GetPiece(ConvertOneDimensionPositionToCoordinate(position)));
+        this->inPassingAuthorised = p;
+    } else {
+        ++i;
+    }
+
+    ++i;
+
+    string halfShotsStr = "";
+    for ( ; fen[i] != ' '; ++i) {
+        halfShotsStr += fen[i];
+    }
+    this->halfShots = stoi(halfShotsStr);
+
+    ++i;
+
+    string shotsStr;
+    for ( ; fen[i] != ' '; ++i) {
+        shotsStr += fen[i];
+    }
+    this->shots = stoi(shotsStr);
+
+    ++i;
+
+    if (fen[i] == 'a') {
+        GameController::GetInstance()->SetGameMode(AI);
+    } else {
+        GameController::GetInstance()->SetGameMode(MULTIPLAYER);
+    }
+
 }
 
 Chessboard::~Chessboard() {
