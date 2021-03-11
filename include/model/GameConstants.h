@@ -20,6 +20,11 @@ typedef vector<Move> MoveSet;
 
 typedef vector<Coordinate> DestinationsSet;
 
+enum CastlingSide{
+    QUEENSIDE,
+    KINGSIDE
+};
+
 const int boundaries [120] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -47,8 +52,9 @@ const int positionInBoundariesTable[64] = {
 };
 
 enum GameMode {
-    MultiPlayer,
-    AI
+    MULTIPLAYER,
+    AI,
+    UNDEFINED
 };
 
 enum PieceColor {
@@ -66,7 +72,12 @@ const string PIECE_COLOR_NAME[3] = {
 enum GameStatus {
     Check,
     Mate,
-    CastlingPossible
+    CastlingPossible,
+    BlackWin,
+    WhiteWin,
+    Pat,
+    GoesOn,
+    BeforeBegin
 };
 
 

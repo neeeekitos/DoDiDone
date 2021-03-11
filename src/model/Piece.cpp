@@ -86,3 +86,7 @@ DestinationsSet Piece::GetPossibleMoves() {
 }
 
 void Piece::NotifyMove(Move mv) {}
+
+Piece::~Piece() {
+
+}

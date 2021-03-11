@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(e-chess VERSION 0.1)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # Recursive CMake search for header and source files, and also libs
 file(GLOB_RECURSE sources      "src/*.cpp")

@@ -37,6 +37,11 @@ public:
 
     int GetValueInBoundariesTable(int position);
 
+    GameStatus GetGameStatus() const;
+
+    void
+    SetStatus(GameStatus s);
+
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
     bool IsValidMove(Move mv);
@@ -69,7 +74,33 @@ public:
 
     PieceColor GetCurrentPlayer();
 
+    int GetShots() const;
+
     DestinationsSet GetMovablePieces (PieceColor);
+
+    string chessboardToFen();
+
+    void NotifyMove();
+
+    int SaveGame();
+
+    bool FenCastlingIsPossible(PieceColor color, CastlingSide castlingSide);
+
+    vector<string> GetBackupFileInformations();
+
+    void Load(string fen);
+
+    Piece * GeneratePiece (char fenChar);
+
+    virtual ~Chessboard();
+
+    /**
+     * Tells wether the given move allows us to eat a piece
+     * @param color
+     * @param mv
+     * @return
+     */
+    bool IsEatingMove(Move mv);
 
 private:
 
@@ -79,8 +110,8 @@ private:
 
     static Chessboard * chessBoard_;
 
-    int shot;
-    int halfShot;
+    int shots;
+    int halfShots;
     /**
      * This determines which player is allowed to play
      * This is the same thing as a color of a piece
@@ -94,6 +125,13 @@ private:
     vector <Piece*> eatenByBlack;
     vector <Piece*> eatenByWhite;
 
+    bool castlingIsPossible(PieceColor color, CastlingSide castlingSide);
+
+    static inline const string SAVING_PATH = "files/backup/";
+
+    static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
+
+    GameStatus status;
 };
 
 #endif //E_CHESS_CHESSBOARD_H
