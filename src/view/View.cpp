@@ -9,6 +9,7 @@
 
 const string IMG_BASE_PATH = "./img/";
 const string BUTTONS_IMG_BASE_PATH = "./img/buttons/";
+const string STATUS_IMG_BASE_PATH = "./img/status/";
 const string FONT_BASE_PATH = "./font/";
 const int BOARD_LEFT_TOP_CORNER_X = 294;
 const int BOARD_LEFT_TOP_CORNER_Y = 107;
@@ -196,12 +197,17 @@ void View::MainLoop() {
                         }
                     }
                 }
-                if (GameController::GetInstance()->GetGameStatus() == GameStatus::GoesOn) {
-                    interfaceInitialisation(2);
+                GameStatus s = GameController::GetInstance()->GetGameStatus();
+                cout << "blwin " << GameStatus::BlackWin << endl;
+                cout << "whwin " << GameStatus::WhiteWin << endl;
+                cout << "--> " << s << endl;
+                if (s == GameStatus::GoesOn) {
+                    //interfaceInitialisation(2);
+                    displayGameIn(*window, true);
                 } else {
-
+                    displayStatus(s);
+                    displayGameIn(*window, false);
                 }
-                //displayGameIn(*window, true);
             }
         }
     }
@@ -209,7 +215,9 @@ void View::MainLoop() {
 
 void View::displayStatus(GameStatus s){
     switch (s) {
-
+        case BlackWin:
+        case WhiteWin:
+        interfaceInitialisation(3);
     }
 }
 
@@ -286,6 +294,8 @@ void View::displayEatenPieces(sf::RenderWindow &w) {
 
 
 void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
+    initBoardSquares();
+
     w.clear();
 
     if (gameGoesOn) {
@@ -328,7 +338,7 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
             int index1D = 8 * selectedSquare.first + selectedSquare.second;
             selectedRect.setPosition(
                     sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + selectedSquare.second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
-                                 shiftY + SQUARE_OUTLINE_THICKNESS));
+                                 shiftY + SQUARE_OUTLINE_THICKNESS-2));
             selectedRect.setOutlineThickness(10);
             selectedRect.setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
             selectedRect.setFillColor(sf::Color::Transparent);
@@ -341,7 +351,7 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
             int shiftY = BOARD_LEFT_TOP_CORNER_Y + possibleMovesSelectedSquare[i].first * SQUARE_HEIGHT;
             selectedRect.setPosition(
                     sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + possibleMovesSelectedSquare[i].second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
-                                 shiftY + SQUARE_OUTLINE_THICKNESS));
+                                 shiftY + SQUARE_OUTLINE_THICKNESS-2));
             selectedRect.setOutlineThickness(10);
             selectedRect.setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
             selectedRect.setFillColor(sf::Color::Transparent);
@@ -378,7 +388,7 @@ void View::interfaceInitialisation(int step) {
     Point2I p2;
     sf::Vector2u v;
     GraphicElement img;
-    string gameModeImg;
+    string gameModeImg, winner;
     font.loadFromFile(FONT_BASE_PATH + "OpenSans-Bold.ttf");
 
 
@@ -475,8 +485,22 @@ void View::interfaceInitialisation(int step) {
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
             interface[interface.size() - 1]->setPosition(p1);
 
-            initBoardSquares();
-            displayGameIn(*window, true);
+           // initBoardSquares();
+            //displayGameIn(*window, true);
+            break;
+
+        case 3:
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
+            winner = GameController::GetInstance()->GetGameStatus() == GameStatus::WhiteWin ? "white" : "black";
+            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/win.png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
+            interface[interface.size() - 1]->setPosition(p1);
+
+            interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player-" + winner + ".png"));
+            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            p1 = Point2I(WINDOW_W / 2 - v.x - 50 / 2, 345);
+            interface[interface.size() - 1]->setPosition(p1);
             break;
 
         default:
