@@ -152,7 +152,6 @@ void View::MainLoop() {
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
                 pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                 if (i != -1 && i < boardSquares.size()) {
-                    cleanSquareOutlines();
                     //a square is already selected
                     if (selectedSquare != make_pair(-1, -1)) {
                         //get possible moves of selected square (not clicked square)
@@ -182,198 +181,12 @@ void View::MainLoop() {
                 if (s == GameStatus::GoesOn) {
                     displayGameIn(*window, true);
                 } else {
-                    displayStatus(s);
+                    interfaceInitialisationWithStatus(s);
                     displayGameIn(*window, false);
                 }
             }
         }
     }
-}
-
-void View::displayStatus(GameStatus s) {
-    switch (s) {
-        case GameStatus::BlackWin:
-        case GameStatus::WhiteWin:
-            interfaceInitialisation(3);
-            break;
-        case GameStatus::Pat:
-            interfaceInitialisation(4);
-            break;
-        default:
-            break;
-    }
-}
-
-void View::update(Chessboard &cb) {
-    displayGameIn(*window);
-}
-
-int View::getSquareClickedIndex(int x, int y) {
-    int size = boardSquares.size();
-    int i = 0;
-    while (i < size) {
-        if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
-            return i;
-        }
-        i++;
-    }
-    return -1;
-}
-
-void View::initBoardSquares() {
-    deleteBoardSquares();
-    int shiftY = BOARD_LEFT_TOP_CORNER_Y;
-    int index1D = 0;
-    for (int line = 0; line < 8; line++) {
-        for (int col = 0; col < 8; col++) {
-            index1D = 8 * line + col;
-            boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
-                                                                       SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2)));
-            boardSquareTextures.push_back(new sf::Texture);
-            boardSquares.at(index1D)->setPosition(
-                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + col * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
-                                 shiftY + SQUARE_OUTLINE_THICKNESS));
-            boardSquares.at(index1D)->setOutlineThickness(0);
-        }
-        shiftY += SQUARE_HEIGHT;
-    }
-}
-
-
-void View::deleteInterfaceElements() {
-    int size = interface.size();
-    for (int i = 0; i < size; i++) {
-        delete (interface.at(i));
-    }
-    interface.clear();
-}
-
-void View::deleteTextElements() {
-    int size = texts.size();
-    for (int i = 0; i < size; i++) {
-        delete (texts.at(i));
-    }
-    texts.clear();
-}
-
-void View::deleteBoardSquares() {
-    int size = boardSquares.size();
-    for (int i = 0; i < size; i++) {
-        delete (boardSquares.at(i));
-        delete (boardSquareTextures.at(i));
-    }
-    if (boardSquares.size() > 0)
-        boardSquares.clear();
-    boardSquareTextures.clear();
-}
-
-void View::deleteButtonElements() {
-    int size = buttons.size();
-    for (int i = 0; i < size; i++) {
-        delete (buttons.at(i));
-    }
-    buttons.clear();
-}
-
-void View::cleanSquareOutlines() {
-    int size = boardSquares.size();
-
-    for (int i = 0; i < size; i++) {
-        boardSquares.at(i)->setOutlineThickness(0);
-    }
-}
-
-void View::displayEatenPieces(sf::RenderWindow &w) {
-
-}
-
-
-void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
-    initBoardSquares();
-
-    w.clear();
-
-    if (gameGoesOn) {
-        //display turn count
-        texts[0]->setString(to_string(GameController::GetInstance()->GetShots()));
-        displayEatenPieces(w);
-
-        if (GameController::GetInstance()->GetCurrentPlayer() == PieceColor::BLACK) {
-            interface[4]->setSprite(
-                    IMG_BASE_PATH + "current-player-black.png", 0);
-        } else {
-            interface[4]->setSprite(
-                    IMG_BASE_PATH + "current-player-white.png", 0);
-        }
-
-        sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
-        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
-        interface[4]->setPosition(p1);
-    }
-
-    //interface elements first
-    int size = interface.size();
-    for (int i = 0; i < size; i++) {
-        interface.at(i)->draw(w);
-    }
-
-    //text elements
-    size = texts.size();
-    for (int i = 0; i < size; i++) {
-        w.draw(*(texts.at(i)));
-    }
-
-    if (gameGoesOn) {
-        //board squares with pieces
-        int size = boardSquares.size();
-        if (selectedSquare != make_pair(-1, -1)) {
-            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
-                                                         SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
-            int shiftY = BOARD_LEFT_TOP_CORNER_Y + selectedSquare.first * SQUARE_HEIGHT;
-            int index1D = 8 * selectedSquare.first + selectedSquare.second;
-            selectedRect.setPosition(
-                    sf::Vector2f(
-                            BOARD_LEFT_TOP_CORNER_X + selectedSquare.second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
-                            shiftY + SQUARE_OUTLINE_THICKNESS - 2));
-            selectedRect.setOutlineThickness(10);
-            selectedRect.setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
-            selectedRect.setFillColor(sf::Color::Transparent);
-            w.draw(selectedRect);
-        }
-
-        for (int i = 0; i < possibleMovesSelectedSquare.size(); i++) {
-            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
-                                                         SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
-            int shiftY = BOARD_LEFT_TOP_CORNER_Y + possibleMovesSelectedSquare[i].first * SQUARE_HEIGHT;
-            selectedRect.setPosition(
-                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + possibleMovesSelectedSquare[i].second * SQUARE_WIDTH +
-                                 SQUARE_OUTLINE_THICKNESS,
-                                 shiftY + SQUARE_OUTLINE_THICKNESS - 2));
-            selectedRect.setOutlineThickness(10);
-            selectedRect.setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
-            selectedRect.setFillColor(sf::Color::Transparent);
-            w.draw(selectedRect);
-        }
-
-        for (int i = 0; i < size; i++) {
-            string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
-            if (pieceName != PIECE_NAME[NONE]) {
-                string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
-
-                if (!(boardSquareTextures.at(i)->loadFromFile(
-                        IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))) {
-                    cerr << "Error loading file." << endl;
-                } else {
-                    boardSquares.at(i)->setTexture(boardSquareTextures.at(i));
-                }
-            } else {
-                boardSquares.at(i)->setFillColor(sf::Color::Transparent);
-            }
-            w.draw(*(boardSquares.at(i)));
-        }
-    }
-
-    w.display();
 }
 
 void View::interfaceInitialisation(int step) {
@@ -518,6 +331,173 @@ void View::interfaceInitialisation(int step) {
         default:
             break;
     }
+}
+
+void View::interfaceInitialisationWithStatus(GameStatus s) {
+    switch (s) {
+        case GameStatus::BlackWin:
+        case GameStatus::WhiteWin:
+            interfaceInitialisation(3);
+            break;
+        case GameStatus::Pat:
+            interfaceInitialisation(4);
+            break;
+        default:
+            break;
+    }
+}
+
+void View::initBoardSquares() {
+    deleteBoardSquares();
+    int shiftY = BOARD_LEFT_TOP_CORNER_Y;
+    int index1D = 0;
+    for (int line = 0; line < 8; line++) {
+        for (int col = 0; col < 8; col++) {
+            index1D = 8 * line + col;
+            boardSquares.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
+                                                                       SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2)));
+            boardSquareTextures.push_back(new sf::Texture);
+            boardSquares.at(index1D)->setPosition(
+                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + col * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
+                                 shiftY + SQUARE_OUTLINE_THICKNESS));
+            boardSquares.at(index1D)->setOutlineThickness(0);
+        }
+        shiftY += SQUARE_HEIGHT;
+    }
+}
+
+void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
+    initBoardSquares();
+
+    w.clear();
+
+    if (gameGoesOn) {
+        //display turn count
+        texts[0]->setString(to_string(GameController::GetInstance()->GetShots()));
+
+        if (GameController::GetInstance()->GetCurrentPlayer() == PieceColor::BLACK) {
+            interface[4]->setSprite(
+                    IMG_BASE_PATH + "current-player-black.png", 0);
+        } else {
+            interface[4]->setSprite(
+                    IMG_BASE_PATH + "current-player-white.png", 0);
+        }
+
+        sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
+        Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
+        interface[4]->setPosition(p1);
+    }
+
+    //interface elements first
+    int size = interface.size();
+    for (int i = 0; i < size; i++) {
+        interface.at(i)->draw(w);
+    }
+
+    //text elements
+    size = texts.size();
+    for (int i = 0; i < size; i++) {
+        w.draw(*(texts.at(i)));
+    }
+
+    if (gameGoesOn) {
+        //board squares with pieces
+        int size = boardSquares.size();
+        if (selectedSquare != make_pair(-1, -1)) {
+            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
+                                                         SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
+            int shiftY = BOARD_LEFT_TOP_CORNER_Y + selectedSquare.first * SQUARE_HEIGHT;
+            int index1D = 8 * selectedSquare.first + selectedSquare.second;
+            selectedRect.setPosition(
+                    sf::Vector2f(
+                            BOARD_LEFT_TOP_CORNER_X + selectedSquare.second * SQUARE_WIDTH + SQUARE_OUTLINE_THICKNESS,
+                            shiftY + SQUARE_OUTLINE_THICKNESS - 2));
+            selectedRect.setOutlineThickness(10);
+            selectedRect.setOutlineColor(CLICKED_SQUARE_OUTLINE_COLOR);
+            selectedRect.setFillColor(sf::Color::Transparent);
+            w.draw(selectedRect);
+        }
+
+        for (int i = 0; i < possibleMovesSelectedSquare.size(); i++) {
+            sf::RectangleShape selectedRect(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
+                                                         SQUARE_HEIGHT - SQUARE_OUTLINE_THICKNESS * 2));
+            int shiftY = BOARD_LEFT_TOP_CORNER_Y + possibleMovesSelectedSquare[i].first * SQUARE_HEIGHT;
+            selectedRect.setPosition(
+                    sf::Vector2f(BOARD_LEFT_TOP_CORNER_X + possibleMovesSelectedSquare[i].second * SQUARE_WIDTH +
+                                 SQUARE_OUTLINE_THICKNESS,
+                                 shiftY + SQUARE_OUTLINE_THICKNESS - 2));
+            selectedRect.setOutlineThickness(10);
+            selectedRect.setOutlineColor(DESTINATION_SQUARE_OUTLINE_COLOR);
+            selectedRect.setFillColor(sf::Color::Transparent);
+            w.draw(selectedRect);
+        }
+
+        for (int i = 0; i < size; i++) {
+            string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(i)->GetType()];
+            if (pieceName != PIECE_NAME[NONE]) {
+                string pieceColor = PIECE_COLOR_NAME[Chessboard::GetInstance()->GetPiece(i)->GetColor()];
+
+                if (!(boardSquareTextures.at(i)->loadFromFile(
+                        IMG_BASE_PATH + "pieces/" + pieceColor + "/" + pieceName + ".png"))) {
+                    cerr << "Error loading file." << endl;
+                } else {
+                    boardSquares.at(i)->setTexture(boardSquareTextures.at(i));
+                }
+            } else {
+                boardSquares.at(i)->setFillColor(sf::Color::Transparent);
+            }
+            w.draw(*(boardSquares.at(i)));
+        }
+    }
+
+    w.display();
+}
+
+int View::getSquareClickedIndex(int x, int y) {
+    int size = boardSquares.size();
+    int i = 0;
+    while (i < size) {
+        if (boardSquares.at(i)->getGlobalBounds().contains(x, y)) {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+}
+
+void View::deleteInterfaceElements() {
+    int size = interface.size();
+    for (int i = 0; i < size; i++) {
+        delete (interface.at(i));
+    }
+    interface.clear();
+}
+
+void View::deleteTextElements() {
+    int size = texts.size();
+    for (int i = 0; i < size; i++) {
+        delete (texts.at(i));
+    }
+    texts.clear();
+}
+
+void View::deleteBoardSquares() {
+    int size = boardSquares.size();
+    for (int i = 0; i < size; i++) {
+        delete (boardSquares.at(i));
+        delete (boardSquareTextures.at(i));
+    }
+    if (boardSquares.size() > 0)
+        boardSquares.clear();
+    boardSquareTextures.clear();
+}
+
+void View::deleteButtonElements() {
+    int size = buttons.size();
+    for (int i = 0; i < size; i++) {
+        delete (buttons.at(i));
+    }
+    buttons.clear();
 }
 
 
