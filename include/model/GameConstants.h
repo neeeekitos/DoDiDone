@@ -52,7 +52,7 @@ const int positionInBoundariesTable[64] = {
 };
 
 enum GameMode {
-    MultiPlayer,
+    MULTIPLAYER,
     AI,
     UNDEFINED
 };
