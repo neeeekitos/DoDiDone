@@ -92,6 +92,14 @@ public:
 
     virtual ~Chessboard();
 
+    /**
+     * Tells wether the given move allows us to eat a piece
+     * @param color
+     * @param mv
+     * @return
+     */
+    bool IsEatingMove(Move mv);
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;

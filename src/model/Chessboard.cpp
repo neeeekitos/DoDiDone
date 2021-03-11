@@ -358,3 +358,7 @@ Chessboard::~Chessboard() {
     cout << "deleting chessboard finished" << endl;
 }
 
+bool Chessboard::IsEatingMove(Move mv) {
+    return ( ! this->GetPiece(mv.second)->isEmpty() && this->GetPiece(mv.second)->GetColor() != this->GetPiece(mv.second)->GetColor() );
+}
+
