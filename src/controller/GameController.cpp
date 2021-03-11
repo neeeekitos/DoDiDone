@@ -15,13 +15,14 @@ GameController *GameController::GetInstance() {
 }
 
 GameController::GameController() {
-
+    this->gameMode = UNDEFINED;
 }
 
 GameController::~GameController() {
-    delete (View::GetInstance());
+    //delete (View::GetInstance());
     delete (Chessboard::GetInstance());
-    delete (gameController_);
+    //delete (gameController_);
+    gameController_ = nullptr;
 }
 
 void GameController::Start() {

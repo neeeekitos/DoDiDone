@@ -85,6 +85,8 @@ public:
 
     Piece * GeneratePiece (char fenChar);
 
+    virtual ~Chessboard();
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const ;

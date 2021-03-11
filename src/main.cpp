@@ -18,12 +18,15 @@ int main() {
     cout << "affichage du plateau" << endl;
     cout << c;
 
-    cout << c.chessboardToFen() << endl;
+    //cout << c.chessboardToFen() << endl;
 
     Move mv = make_pair(make_pair(6, 7), make_pair(4, 7));
 
-    GameController *gameControl = GameController::GetInstance();
+    //GameController *gameControl = GameController::GetInstance();
     //gameControl->MakeMove(mv);
-    gameControl->Start();
+    //gameControl->Start();
+
+    //delete GameController::GetInstance();
+    delete Chessboard::GetInstance();
 
 }

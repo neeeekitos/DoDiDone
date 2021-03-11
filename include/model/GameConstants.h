@@ -53,7 +53,8 @@ const int positionInBoundariesTable[64] = {
 
 enum GameMode {
     MultiPlayer,
-    AI
+    AI,
+    UNDEFINED
 };
 
 enum PieceColor {

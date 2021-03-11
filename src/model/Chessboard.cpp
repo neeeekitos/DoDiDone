@@ -328,3 +328,19 @@ void Chessboard::Load(string fen) {
 
 }
 
+Chessboard::~Chessboard() {
+    for (int i = 0; i < 64; ++i) {
+        delete this->board[i];
+    }
+
+    for (int i = 0; i < eatenByBlack.size(); ++i) {
+        delete eatenByBlack[i];
+    }
+
+    for (int i = 0; i < eatenByWhite.size(); ++i) {
+        delete eatenByWhite[i];
+    }
+
+    cout << "deleting chessboard finished" << endl;
+}
+
