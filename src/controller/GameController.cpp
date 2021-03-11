@@ -74,7 +74,7 @@ const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) co
     vector <string> savedGames = c->GetBackupFileInformations();
     result.clear();
     for (int i = 0; i < savedGames.size(); i++) {
-        result.push_back(++number);
+        result.push_back(number++);
     }
 
     return result;
@@ -93,7 +93,9 @@ int GameController::SaveGame() {
 void GameController::LoadGame(int gameId) {
     Chessboard * c = Chessboard::GetInstance();
     vector <string> vect = c->GetBackupFileInformations();
-    c->Load(vect[gameId]);
+    if (gameId <= vect.size()) {
+        c->Load(vect[gameId]);
+    }
 }
 
 PieceColor GameController::GetCurrentPlayer() const {
