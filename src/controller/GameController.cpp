@@ -50,9 +50,13 @@ void GameController::MakeMove(Move mv) {
     Chessboard &c = *Chessboard::GetInstance();
     c.NotifyMove();
     c.nextMoveIsPassingAuthorized = false;
-    Piece *temp = c.GetPiece(mv.first);
-    c.SetPiece(mv.first, c.GetPiece(mv.second));
-    c.SetPiece(mv.second, temp);
+    if ( !c.GetPiece(mv.second)->isEmpty() ) {
+        c.EatPiece(mv.second, c.GetPiece(mv.second)->GetColor());
+        c.SetPiece(mv.second, new Piece());
+    }
+    Piece *temp = c.GetPiece(mv.second);
+    c.SetPiece(mv.second, c.GetPiece(mv.first));
+    c.SetPiece(mv.first, temp);
     temp->NotifyMove(mv);
     if (!c.nextMoveIsPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
