@@ -56,7 +56,7 @@ public:
      * @brief Get number of turns played
      * @return
      */
-    unsigned int GetTurnCount() const;
+    int GetShots() const;
 
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
     /* void NewGame();
