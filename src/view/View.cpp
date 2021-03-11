@@ -7,6 +7,7 @@
 #include "../../include/view/View.h"
 #include "../../include/controller/GameController.h"
 
+const string SEPARATION = "--------------------------------\n--------------------------------\n";
 const string IMG_BASE_PATH = "./img/";
 const string BUTTONS_IMG_BASE_PATH = "./img/buttons/";
 const string STATUS_IMG_BASE_PATH = "./img/status/";
@@ -143,7 +144,9 @@ void View::MainLoop() {
                     //save game and quit
                     string gameSavedName = "Game " + to_string(GameController::GetInstance()->SaveGame()) + ".";
                     window->close();
+                    cout << SEPARATION;
                     cout << "Game saved with name : " << gameSavedName << endl;
+                    cout << SEPARATION;
                 }
                 Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
