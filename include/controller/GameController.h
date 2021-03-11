@@ -88,8 +88,7 @@ private:
 
     GameController();
 
-    View *view;
-    Chessboard *chessBoard;
+
     GameMode gameMode;
 
     static GameController *gameController_;

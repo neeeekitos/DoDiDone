@@ -14,7 +14,7 @@ GameController *GameController::GetInstance() {
     return GameController::gameController_;
 }
 
-GameController::GameController() : view(View::GetInstance()), chessBoard(Chessboard::GetInstance()) {
+GameController::GameController() {
 
 }
 
@@ -25,8 +25,8 @@ GameController::~GameController() {
 }
 
 void GameController::Start() {
-    view->MenuChoices();
-    view->MainLoop();
+    View::GetInstance()->MenuChoices();
+    View::GetInstance()->MainLoop();
 }
 
 void GameController::SetGameMode(GameMode gm) {
