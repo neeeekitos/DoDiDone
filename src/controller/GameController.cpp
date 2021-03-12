@@ -44,13 +44,16 @@ GameStatus GameController::GetGameStatus() {
     return Chessboard::GetInstance()->GetGameStatus();
 }
 
-void GameController::MakeMove(Move mv) {
-    cout << "MAKE MOVE ";
+Piece * GameController::MakeMove(Move mv) {
     cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
     Chessboard &c = *Chessboard::GetInstance();
+    bool eat = false;
+    Piece * eatenPiece;
     c.NotifyMove();
     c.nextMoveIsPassingAuthorized = false;
     if ( !c.GetPiece(mv.second)->isEmpty() ) {
+        eat = true;
+        eatenPiece = c.GetPiece(mv.second);
         c.EatPiece(mv.second, c.GetPiece(mv.second)->GetColor());
         c.SetPiece(mv.second, new Piece());
     }
@@ -67,6 +70,16 @@ void GameController::MakeMove(Move mv) {
         // Generate a move
         // this->MakeMove(the generated move)
     }
+    c.UpdateStatus();
+    cout << "check ? " << (c.GetGameStatus1().blackCheck || c.GetGameStatus1().whiteCheck) << endl;
+    cout << "mate ? " << c.GetGameStatus1().mate << endl;
+
+    if (eat) {
+        return eatenPiece;
+    } else{
+        return nullptr;
+    }
+
 }
 
 const std::vector<int> &GameController::GetSavedGamesIds(vector<int> &result) const {

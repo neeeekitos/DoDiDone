@@ -30,7 +30,7 @@ public:
 
     GameStatus GetGameStatus();
 
-    void MakeMove(Move mv);
+    Piece * MakeMove(Move mv);
 
 
     DestinationsSet GetMoveablePieces(PieceColor);

@@ -12,6 +12,20 @@
 
 #define CHESSBOARDSIZE 64
 
+struct Status{
+    bool blackCheck;
+    bool whiteCheck;
+    bool mate;
+    bool stalemate;
+};
+
+struct Transition {
+    Move mv;
+    bool eatenPiece;
+    int positionOfEatenPiece;
+    PieceColor eatenPieceColor;
+};
+
 class Chessboard {
 public:
 
@@ -29,7 +43,7 @@ public:
 
     // string BoardToFen();
 
-    DestinationsSet GetPossibleMoves(Coordinate coor, bool justEatableMoves);
+    DestinationsSet GetPossibleMoves(Coordinate coor, bool allPlayers);
 
     //void MakeMove(Move);
 
@@ -37,14 +51,17 @@ public:
 
     int GetValueInBoundariesTable(int position);
 
-    GameStatus GetGameStatus() const;
+    void UpdateStatus();
 
-    void
-    SetStatus(GameStatus s);
+    Status GetGameStatus1();
 
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
     bool IsValidMove(Move mv);
+
+    GameStatus GetGameStatus() const;
+
+    void SetStatus(GameStatus s);
 
     Piece *GetPiece(Coordinate cor);
 
@@ -53,6 +70,8 @@ public:
     friend ostream &operator<<(ostream &out, Chessboard &cb);
 
     const Piece *const GetPiece(int position) const;
+
+    DestinationsSet GetPossibleMoves( Coordinate coor);
 
     /**
      * Returns the position of the given piece in the board of pieces
@@ -103,6 +122,10 @@ public:
      */
     bool IsEatingMove(Move mv);
 
+    void GetGameState ();
+
+    void undoTransition(Transition& t);
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const;
@@ -133,6 +156,8 @@ private:
     static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
 
     GameStatus status;
+
+    Status state;
 };
 
 #endif //E_CHESS_CHESSBOARD_H
