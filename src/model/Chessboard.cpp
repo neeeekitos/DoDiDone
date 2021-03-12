@@ -150,6 +150,8 @@ void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
     this->board[position] = new Piece();
 }
 
+
+
 void Chessboard::ChangePlayer() {
     this->currentPlayer = (this->currentPlayer == BLACK ? WHITE : BLACK);
 }
@@ -170,6 +172,14 @@ DestinationsSet Chessboard::GetMovablePieces(PieceColor color) {
         }
     }
     return movablePieces;
+}
+
+const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor player) const {
+    if (player == PieceColor::BLACK) {
+        return eatenByBlack;
+    } else {
+        return eatenByWhite;
+    }
 }
 
 
@@ -343,6 +353,7 @@ void Chessboard::Load(string fen) {
     }
     ++i;
     if (fen[i] == 'w') this->currentPlayer = WHITE;
+    else this->currentPlayer = BLACK;
 
     i+=2;
     if (fen[i] == 'K') {

@@ -21,11 +21,11 @@ public:
     //la pièce courante sélectionnée
     //currentPiece;
 
-    static Chessboard * GetInstance();
+    static Chessboard *GetInstance();
 
-    Chessboard(const Chessboard& anotherChessBoard) = delete;
+    Chessboard(const Chessboard &anotherChessBoard) = delete;
 
-    void operator= (const Chessboard & aChessBoard) = delete;
+    void operator=(const Chessboard &aChessBoard) = delete;
 
     // string BoardToFen();
 
@@ -46,29 +46,29 @@ public:
 
     bool IsValidMove(Move mv);
 
-    Piece * GetPiece(Coordinate cor);
+    Piece *GetPiece(Coordinate cor);
 
-    void SetPiece(Coordinate& cor, Piece * piece);
+    void SetPiece(Coordinate &cor, Piece *piece);
 
-    friend ostream & operator << (ostream & out, Chessboard & cb);
+    friend ostream &operator<<(ostream &out, Chessboard &cb);
 
-    const Piece* const GetPiece (int position) const;
+    const Piece *const GetPiece(int position) const;
 
     /**
      * Returns the position of the given piece in the board of pieces
      * @param p : a pointer to a given piece
      * @return : the 1-dimension position of the piece in the chessboard
      */
-    int GetPosition(const Piece * p) const;
+    int GetPosition(const Piece *p) const;
 
 
-    Piece * getPiece (int position);
+    Piece *getPiece(int position);
 
-    void EatPiece (Coordinate coordinate, PieceColor pieceColor);
+    void EatPiece(Coordinate coordinate, PieceColor pieceColor);
 
     void ChangePlayer();
 
-    Pawn * inPassingAuthorised;
+    Pawn *inPassingAuthorised;
 
     bool nextMoveIsPassingAuthorized;
 
@@ -76,7 +76,7 @@ public:
 
     int GetShots() const;
 
-    DestinationsSet GetMovablePieces (PieceColor);
+    DestinationsSet GetMovablePieces(PieceColor);
 
     string chessboardToFen();
 
@@ -90,7 +90,9 @@ public:
 
     void Load(string fen);
 
-    Piece * GeneratePiece (char fenChar);
+    Piece *GeneratePiece(char fenChar);
+
+    const std::vector<Piece *> &GetEatenPieces(PieceColor player) const;
 
     virtual ~Chessboard();
 
@@ -103,11 +105,11 @@ public:
 
 private:
 
-    int convertCoordinates(const Coordinate &coor) const ;
+    int convertCoordinates(const Coordinate &coor) const;
 
     Chessboard();
 
-    static Chessboard * chessBoard_;
+    static Chessboard *chessBoard_;
 
     int shots;
     int halfShots;
@@ -119,10 +121,10 @@ private:
     PieceColor currentPlayer;
 
     //Piece board[CHESSGAMESIZE];
-    vector <Piece*> board;
+    vector<Piece *> board;
 
-    vector <Piece*> eatenByBlack;
-    vector <Piece*> eatenByWhite;
+    vector<Piece *> eatenByBlack;
+    vector<Piece *> eatenByWhite;
 
     bool castlingIsPossible(PieceColor color, CastlingSide castlingSide);
 
