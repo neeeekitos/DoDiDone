@@ -75,6 +75,13 @@ private:
     void initBoardSquares();
 
     /**
+     * @brief Init eaten pieces positions arrays
+     * @param color
+     * @param w Window where drawing elements
+     */
+    void displayEatenPieces(PieceColor color, sf::RenderWindow &w);
+
+    /**
      * @brief Draw all graphic element into the window and display it
      * @param w
      * @param gameGoesOn
@@ -109,12 +116,19 @@ private:
      */
     void deleteBoardSquares();
 
+    /**
+     * @brief Free momory for eaten pieces elements
+     */
+    void deleteEatenPieces();
+
 
     sf::RenderWindow *window;
     std::vector<GraphicElement *> interface;
     std::vector<Button *> buttons;
     std::vector<sf::RectangleShape *> boardSquares;
+    std::vector<sf::RectangleShape *> eatenPieces;
     std::vector<sf::Texture *> boardSquareTextures;
+    std::vector<sf::Texture *> eatenPiecesTextures;
     std::vector<sf::Text *> texts;
     sf::Font font;
     std::pair<int, int> selectedSquare;

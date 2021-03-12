@@ -103,6 +103,10 @@ PieceColor GameController::GetCurrentPlayer() const {
     return Chessboard::GetInstance()->GetCurrentPlayer();
 }
 
+const std::vector<Piece *> &GameController::GetEatenPieces(PieceColor player) {
+    return Chessboard::GetInstance()->GetEatenPieces(player);
+}
+
 
 //int GameController::makeMove(int move) {
 // Making the move

@@ -14,3 +14,4 @@ CPackSourceConfig.cmake
 e-chess.cbp
 cmake-build-debug/CMakeFiles/clion-log.txt
 Testing/Temporary/LastTest.log
+files/backup/save.txt
