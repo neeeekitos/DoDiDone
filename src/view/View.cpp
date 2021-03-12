@@ -267,8 +267,6 @@ void View::interfaceInitialisation(int step) {
 
             //add game mode to interface
             gameModeImg = "2-players.png";
-            cout << "mode= " << GameController::GetInstance()->GetGameMode() << endl;
-            cout << "ia= " << GameMode::AI << endl;
             if (GameController::GetInstance()->GetGameMode() == GameMode::AI) {
                 gameModeImg = "player-vs-bot.png";
             }
@@ -365,20 +363,16 @@ void View::initBoardSquares() {
 }
 
 void View::displayEatenPieces(PieceColor color, sf::RenderWindow &w) {
-    deleteEatenPieces();
-
     int shiftY = BOARD_LEFT_TOP_CORNER_Y;
     const vector<Piece *> eatenPiecesList = GameController::GetInstance()->GetEatenPieces(color);
-    cout << "list size= " << eatenPiecesList.size() << endl;
     for (int line = 0; line < 4; line++) {
         for (int col = 0; col < 3; col++) {
-            int index1D = 4 * line + col;
+            int index1D = 3 * line + col;
             if (index1D < eatenPiecesList.size()) {
                 cout << "index 1D= " << index1D << endl;
                 string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(index1D)->GetType()];
-                cout << "piece= " << pieceName << endl;
 
-                int shiftX = (color == PieceColor::BLACK) ? 0 : 400;
+                int shiftX = (color == PieceColor::WHITE) ? 0 :890;
                 eatenPieces.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
                                                                           SQUARE_HEIGHT -
                                                                           SQUARE_OUTLINE_THICKNESS * 2)));
@@ -489,8 +483,9 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
             w.draw(*(boardSquares.at(i)));
         }
 
+        deleteEatenPieces();
         displayEatenPieces(PieceColor::BLACK, w);
-        //displayEatenPieces(PieceColor::WHITE, w);
+        displayEatenPieces(PieceColor::WHITE, w);
     }
 
     w.display();
