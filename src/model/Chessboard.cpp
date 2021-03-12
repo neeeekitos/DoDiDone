@@ -343,6 +343,7 @@ void Chessboard::Load(string fen) {
     }
     ++i;
     if (fen[i] == 'w') this->currentPlayer = WHITE;
+    else this->currentPlayer = BLACK;
 
     i+=2;
     if (fen[i] == 'K') {
