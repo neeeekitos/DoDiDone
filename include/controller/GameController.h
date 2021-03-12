@@ -58,6 +58,8 @@ public:
      */
     int GetShots() const;
 
+    const std::vector<Piece *> &GetEatenPieces(PieceColor player);
+
     //choix 1 ou 2 joueurs, charger partie ou nouvelle partie, initialisation du plateau
     /* void NewGame();
 
@@ -89,7 +91,6 @@ public:
 private:
 
     GameController();
-
 
     GameMode gameMode;
 
