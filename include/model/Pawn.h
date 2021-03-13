@@ -6,6 +6,10 @@
 
 using namespace std;
 
+
+/**
+ * Represents a move
+ */
 class Pawn : public Piece {
 
 public:
@@ -29,19 +33,43 @@ public:
      */
     Pawn(PieceColor aColor);
 
+    /**
+     * Converts the current piece to its corresponding FEN char
+     * @return The FEN char
+     */
     virtual char PieceToFEN();
 
+    /**
+     * Returns the possible moves of the current pawn
+     * @return
+     */
     virtual DestinationsSet GetPossibleMoves ();
 
+    /**
+     * This is a service method that allows to notify the pawn that it
+     * did a move
+     * @param mv The move
+     */
     virtual void NotifyMove (Move mv);
 
 
 private:
 
+    /**
+     * represents the direction of the pawn
+     */
     vector <int> eatingDirections;
 
+    /**
+     * if this pawn is allowed to do an in passing move, this is
+     * the in passing destination
+     */
     Coordinate inPassingMove;
 
+    /**
+     * If this pawn is allowed to do an in passing move, this is
+     * the piece to it when doing the move
+     */
     Coordinate inPassingEatablePawn;
 
 };

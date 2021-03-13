@@ -10,35 +10,31 @@
 
 using namespace std;
 
+/**
+ * This class represents a bishop
+ */
 class Bishop : public Piece {
-    public:
 
+public:
+
+    /**
+     * The constructor of a bishop
+     * @param color
+     */
     Bishop(PieceColor color);
-        /*
-         * builder de Bishop
-         */
 
-        char PieceToFEN();
-        /*
-         * get the FEN representation of a Piece
-         */
+    /**
+     * Converts the current piece to its corresponding FEN char
+     * @return The FEN char
+     */
+    char PieceToFEN();
 
-        vector<int> eatableCase (Chessboard board);
-        /*
-         * List of all the case that can be eaten
-         */
+private:
 
-        bool isValidMove(Chessboard board, int pos);
-        /*
-         * Check if a move is valid or not
-         */
-
-        vector<int> movements(Chessboard board);
-        /*
-         * List of all the possible moves
-         */
-
-    private:
+    /**
+     * The move list of a bishop. A move list is a relative translation
+     * in the chess board
+     */
     vector<int> movelists{-11, -9, 9, 11};
 };
 

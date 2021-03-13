@@ -9,35 +9,32 @@
 
 using namespace std;
 
+/**
+ * Represents a knight
+ */
 class Knight: public Piece {
-    public:
+public:
+
+    /**
+     * Constructor of a knight
+     * @param color
+     */
     Knight(PieceColor color);
-        /*
-         * builder de Knight
-         */
 
-        virtual char PieceToFEN();
-        /*
-         * get the FEN representation of a Piece
-         */
+    /**
+     * Converts the current piece to its corresponding FEN char
+     * @return The FEN char
+     */
+    virtual char PieceToFEN();
 
-        vector<int> eatableCase (Chessboard board);
-        /*
-         * List of all the case that can be eaten
-         */
 
-        bool isValidMove(Chessboard board, int pos);
-        /*
-         * Check if a move is valid or not
-         */
+private:
 
-        vector<int> movements(Chessboard board);
-        /*
-         * List of all the possible moves
-         */
-
-    private:
-        vector<int> movelists{-21, -19, -12, -8, 8, 12, 19, 21};
+    /**
+     * The move list of a knight. A move list is a relative translation
+     * in the chess board
+     */
+    vector<int> movelists{-21, -19, -12, -8, 8, 12, 19, 21};
 };
 
 
