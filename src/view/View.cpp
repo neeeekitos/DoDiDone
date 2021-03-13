@@ -125,16 +125,12 @@ void View::MenuChoices() {
 }
 
 void View::MainLoop() {
-    bool displayedOnce = false;
     bool selectNewSquare = false;
+    bool refresh = false;
 
+    displayGameIn(*window, true);
     while (window->isOpen()) {
         sf::Event event;
-        if (!displayedOnce) {
-            displayGameIn(*window, true);
-            displayedOnce = true;
-        }
-
         while (window->pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 window->close();
@@ -150,8 +146,9 @@ void View::MainLoop() {
                 }
                 Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
-                pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                 if (i != -1 && i < boardSquares.size()) {
+                    refresh = true;
+                    pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                     //a square is already selected
                     if (selectedSquare != make_pair(-1, -1)) {
                         //get possible moves of selected square (not clicked square)
@@ -174,15 +171,16 @@ void View::MainLoop() {
                         //get possible moves of selected square
                         possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
                                 selectedSquare, false);
-                        int size = possibleMovesSelectedSquare.size();
                     }
                 }
-                GameStatus s = GameController::GetInstance()->GetGameStatus();
-                if (s == GameStatus::GoesOn) {
-                    displayGameIn(*window, true);
-                } else {
-                    interfaceInitialisationWithStatus(s);
-                    displayGameIn(*window, false);
+                if (refresh) {
+                    GameStatus s = GameController::GetInstance()->GetGameStatus();
+                    if (s == GameStatus::GoesOn) {
+                        displayGameIn(*window, true);
+                    } else {
+                        interfaceInitialisationWithStatus(s);
+                        displayGameIn(*window, false);
+                    }
                 }
             }
         }
@@ -369,7 +367,6 @@ void View::displayEatenPieces(PieceColor color, sf::RenderWindow &w) {
         for (int col = 0; col < 3; col++) {
             int index1D = 3 * line + col;
             if (index1D < eatenPiecesList.size()) {
-                cout << "index 1D= " << index1D << endl;
                 string pieceName = PIECE_NAME[eatenPiecesList[index1D]->GetType()];
 
                 int shiftX = (color == PieceColor::WHITE) ? 0 :890;
