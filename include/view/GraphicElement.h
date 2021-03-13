@@ -1,5 +1,5 @@
-#ifndef GRAPHICS
-#define GRAPHICS
+#ifndef E_CHESS_GRAPHICELEMENT_H
+#define E_CHESS_GRAPHICELEMENT_H
 
 #define SPRITE_SIZE 80
 
@@ -46,5 +46,5 @@ sf::Texture t;
 Point2I p;
 };
 
-#endif
+#endif // E_CHESS_GRAPHICELEMENT_H
 

@@ -1,17 +1,10 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
-
 #ifndef E_CHESS_KNIGHT_H
 #define E_CHESS_KNIGHT_H
-
-// Edited by Rivaldo
 
 #include "Piece.h"
 #include "Chessboard.h"
 #include "GameConstants.h"
 
-// Standard library
 #include <vector>
 
 using namespace std;
