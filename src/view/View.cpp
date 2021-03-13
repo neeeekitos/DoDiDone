@@ -186,8 +186,6 @@ void View::MainLoop() {
                 if (refresh) {
                     refresh = false;
                     bool gameOver = Chessboard::GetInstance()->IsGameOver();
-                    cout << gameOver << "----------------------------"
-                         << endl;
                     if (!gameOver) {
                         displayGameIn(*window, true);
                     } else {
