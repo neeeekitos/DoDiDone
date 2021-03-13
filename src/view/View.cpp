@@ -370,7 +370,7 @@ void View::displayEatenPieces(PieceColor color, sf::RenderWindow &w) {
             int index1D = 3 * line + col;
             if (index1D < eatenPiecesList.size()) {
                 cout << "index 1D= " << index1D << endl;
-                string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(index1D)->GetType()];
+                string pieceName = PIECE_NAME[eatenPiecesList[index1D]->GetType()];
 
                 int shiftX = (color == PieceColor::WHITE) ? 0 :890;
                 eatenPieces.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
