@@ -62,6 +62,7 @@ int AI::evaluate(Chessboard& chessboard, PieceColor pieceColor) {
          return getScore(chessboard, WHITE) - getScore(chessboard, BLACK);
      else
          return getScore(chessboard, BLACK) - getScore(chessboard, WHITE);*/
+
 }
 
 int AI::getScore(Chessboard& chessboard, PieceColor pieceColor) {
@@ -98,7 +99,6 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
-                if (board->getPiece(board->convertCoordinates(piece))->GetType() == PAWN) continue;
                 Node node;
 
                 // move piece in the chessboard and remember eated pieces (in some cases)
@@ -140,7 +140,6 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
-                if (board->getPiece(board->convertCoordinates(piece))->GetType() == PAWN) continue;
 
                 Node node;
 
