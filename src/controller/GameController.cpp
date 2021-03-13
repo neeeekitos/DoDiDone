@@ -79,7 +79,7 @@ Piece * GameController::MakeMove(Move mv) {
 
 }
 
-Piece * GameController::MakeMove(Move mv, bool updateGeneralState) {
+Piece * GameController::MakeMove(Move mv, bool updateGeneralState, bool temporaryMove) {
     //cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
     Chessboard &c = *Chessboard::GetInstance();
     bool eat = false;
@@ -95,7 +95,9 @@ Piece * GameController::MakeMove(Move mv, bool updateGeneralState) {
     Piece *temp = c.GetPiece(mv.second);
     c.SetPiece(mv.second, c.GetPiece(mv.first));
     c.SetPiece(mv.first, temp);
-    c.GetPiece(mv.second)->NotifyMove(mv);
+    if (!temporaryMove) {
+        c.GetPiece(mv.second)->NotifyMove(mv);
+    }
     //cout << "notified" << endl;
     if (!c.nextMoveIsPassingAuthorized) {
         c.inPassingAuthorised = nullptr;

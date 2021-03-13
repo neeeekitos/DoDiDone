@@ -146,7 +146,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             Move mv = make_pair(coor, d);
             t.mv = mv;
             t.eatenPiece = false;
-            Piece * p = gc->MakeMove(mv, false);
+            Piece * p = gc->MakeMove(mv, false, true);
             if (p != nullptr) {
                 t.eatenPiece = true;
                 t.positionOfEatenPiece = this->convertCoordinates(d);
@@ -170,7 +170,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             Move mv = make_pair(coor, d);
             t.mv = mv;
             t.eatenPiece = false;
-            Piece * p = gc->MakeMove(mv, false);
+            Piece * p = gc->MakeMove(mv, false, true);
             if (p != nullptr) {
                 t.eatenPiece = true;
                 t.positionOfEatenPiece = this->convertCoordinates(d);
