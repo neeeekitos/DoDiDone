@@ -665,4 +665,3 @@ DestinationsSet Chessboard::GetAllPieces(PieceColor color) {
 bool Chessboard::GameOver(PieceColor pieceColor) {
     return false;
 }
-

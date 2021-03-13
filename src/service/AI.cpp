@@ -2,6 +2,7 @@
 // Created by Nikita TEREKHOV on 06/03/2021.
 //
 #include "../../include/service/AI.h"
+#include "limits.h"
 
 using namespace std;
 
@@ -17,20 +18,21 @@ AI * AI::GetInstance() {
 AI::AI() : aiMode(RANDOM) {}
 
 Move AI::DoMove(Chessboard& chessboard) {
+
     aiMode = MINIMAX;
     Move move;
     if (aiMode == RANDOM) move = RandomMove(chessboard);
     else if (aiMode == MINIMAX) {
         cout << "generating move " << endl;
         bool maxOrMinPlayer = chessboard.GetCurrentPlayer() == WHITE;
-        cout << "player is maximiwing (white)" << maxOrMinPlayer << endl;
+        cout << "player is maximiwing (white)  " << maxOrMinPlayer << endl;
         list<Transition> bestPath;
-        list<Transition> path;
-        Minimax(path, bestPath, DEPTH_MINIMAX, maxOrMinPlayer);
+        Minimax(bestPath, DEPTH_MINIMAX, maxOrMinPlayer);
         auto lastElementIt = bestPath.end();
         --lastElementIt;
         move = lastElementIt->mv;
     }
+    chessboard.ChangePlayer();
     return move;
 }
 
@@ -81,9 +83,11 @@ int AI::getScore(Chessboard& chessboard, PieceColor pieceColor) {
     return weightCounter;
 }
 
-int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, bool maximizingPlayer) {
+int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
 
     Chessboard * board = Chessboard::GetInstance();
+
+    int cpt = 0;
 
     PieceColor pieceColor = maximizingPlayer ? WHITE : BLACK;
     cout << "piece color is " << pieceColor << endl;
@@ -99,6 +103,9 @@ int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, b
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
+                cout << "depth is : " << depth << " , id is :" << cpt << endl;
+
+                cpt++;
                 Transition t;
 
                 // move piece in the chessboard and remember eated pieces (in some cases)
@@ -108,15 +115,13 @@ int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, b
                 t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                int eval = Minimax(bestPath, path, depth - 1, false);
+                int eval = Minimax(bestPath, depth - 1, false);
                 cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
                      << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
 
                 maxEval = max(maxEval, eval);
                 if (maxEval == eval) bestMove = possibleMove;
 
-                // undo move
-//                cout << "undoing move" << endl;
                 board->undoTransition(t);
 
             }
@@ -141,15 +146,13 @@ int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, b
                 t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                int eval = Minimax(bestPath, path, depth - 1, true);
+                int eval = Minimax(bestPath, depth - 1, true);
                 cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
                      << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
 
                 /*if (possibleMove.first.first == 0 && possibleMove.first.second == 1
                     && possibleMove.second.first == 0 && possibleMove.second.second == 0) exit(-1);*/
 
-                // undo move
-                cout << "undoing move" << endl;
                 board->undoTransition(t);
 
                 minEval = min(minEval, eval);

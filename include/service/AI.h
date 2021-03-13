@@ -16,7 +16,7 @@
 
 using namespace std;
 
-const int DEPTH_MINIMAX = 2;
+const int DEPTH_MINIMAX = 3;
 
 const int PAWN_W = 10;
 const int BISHOP_W = 30;
@@ -31,7 +31,7 @@ public:
     Move DoMove(Chessboard& chessboard);
     static Transition CalculateMove(Move move);
     Move RandomMove(Chessboard& chessboard);
-    int Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, bool maximizingPlayer);
+    int Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer);
 
     ~AI();
     AI(const AI&) = delete;

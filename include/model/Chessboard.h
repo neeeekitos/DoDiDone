@@ -20,6 +20,13 @@ struct Transition {
     bool eatenPiece;
     int positionOfEatenPiece;
     PieceColor eatenPieceColor;
+    bool operator==(const Transition& tr) const{
+
+        return (this->mv.first.first == tr.mv.first.first
+            && this->mv.first.second == tr.mv.first.second
+            && this->mv.second.first == tr.mv.second.first
+            && this->mv.second.second == tr.mv.second.second);
+    }
 };
 
 class Chessboard {
