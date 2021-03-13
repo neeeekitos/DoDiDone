@@ -1,3 +1,6 @@
+#ifndef E_CHESS_POINT2I_H
+#define E_CHESS_POINT2I_H
+
 #include <iostream>
 #include <sstream>
 
@@ -25,3 +28,5 @@ private:
     int x;
     int y;
 };
+
+#endif // E_CHESS_POINT2I_H

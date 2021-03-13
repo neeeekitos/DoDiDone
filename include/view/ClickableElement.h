@@ -1,13 +1,12 @@
-#include "GraphicElement.h"
-
-#ifndef CLICKABLE
-#define CLICKABLE
+#ifndef E_CHESS_CLICKABLEELEMENT_H
+#define E_CHESS_CLICKABLEELEMENT_H
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include "GraphicElement.h"
 
 class ClickableElement {
 public:
@@ -33,4 +32,4 @@ Point2I startPoint;
 Point2I endPoint;
 };
 
-#endif
+#endif // E_CHESS_CLICKABLEELEMENT_H

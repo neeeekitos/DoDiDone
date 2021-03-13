@@ -55,10 +55,14 @@ void View::MenuChoices() {
     bool newGamePressed = false;
     bool changeLoadedGame = false;
     int playerCount = -1;
-    sf::Event event;
-    interfaceInitialisation(0);
+    bool refresh = false;
     vector<int> savedGames;
     int currentSavedGameIndex = 0;
+    sf::Event event;
+
+    interfaceInitialisation(0);
+    displayGameIn(*window);
+
     GameController::GetInstance()->GetSavedGamesIds(savedGames);
     auto savedGamesIterator = savedGames.begin();
 
@@ -71,6 +75,8 @@ void View::MenuChoices() {
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //new game
+                        refresh = true;
+
                         newGamePressed = true;
                         interfaceInitialisation(1);
                     } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
@@ -81,8 +87,8 @@ void View::MenuChoices() {
                                 savedGames.size() >= currentSavedGameIndex ? savedGames[currentSavedGameIndex] : -1);
                         interfaceInitialisation(2);
                     }
-                        //next and previous buttons -> circular course of game ids
                     else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //next and previous buttons -> circular course of game ids
                         //previous game
                         changeLoadedGame = true;
                         if (savedGamesIterator == savedGames.begin()) {
@@ -105,6 +111,8 @@ void View::MenuChoices() {
                     }
                     //load new game id button image
                     if (changeLoadedGame) {
+                        refresh = true;
+                        changeLoadedGame = false;
                         texts[texts.size() - 1]->setString(to_string(*savedGamesIterator + 1));
                     }
                 } else {
@@ -118,23 +126,22 @@ void View::MenuChoices() {
                         interfaceInitialisation(2);
                     }
                 }
+                if (refresh) {
+                    refresh = false;
+                    displayGameIn(*window);
+                }
             }
         }
-        displayGameIn(*window);
     }
 }
 
 void View::MainLoop() {
-    bool displayedOnce = false;
     bool selectNewSquare = false;
+    bool refresh = false;
 
+    displayGameIn(*window, true);
     while (window->isOpen()) {
         sf::Event event;
-        if (!displayedOnce) {
-            displayGameIn(*window, true);
-            displayedOnce = true;
-        }
-
         while (window->pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 window->close();
@@ -150,8 +157,9 @@ void View::MainLoop() {
                 }
                 Chessboard *chessBoard = Chessboard::GetInstance();
                 int i = getSquareClickedIndex(event.mouseButton.x, event.mouseButton.y);
-                pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                 if (i != -1 && i < boardSquares.size()) {
+                    refresh = true;
+                    pair<int, int> clickedSquare = chessBoard->ConvertOneDimensionPositionToCoordinate(i);
                     //a square is already selected
                     if (selectedSquare != make_pair(-1, -1)) {
                         //get possible moves of selected square (not clicked square)
@@ -174,15 +182,17 @@ void View::MainLoop() {
                         //get possible moves of selected square
                         possibleMovesSelectedSquare = chessBoard->GetPossibleMoves(
                                 selectedSquare, false);
-                        int size = possibleMovesSelectedSquare.size();
                     }
                 }
-                GameStatus s = GameController::GetInstance()->GetGameStatus();
-                if (s == GameStatus::GoesOn) {
-                    displayGameIn(*window, true);
-                } else {
-                    interfaceInitialisationWithStatus(s);
-                    displayGameIn(*window, false);
+                if (refresh) {
+                    refresh = false;
+                    bool gameOver = Chessboard::GetInstance()->IsGameOver();
+                    if (!gameOver) {
+                        displayGameIn(*window, true);
+                    } else {
+                        interfaceInitialisationWithStatus();
+                        displayGameIn(*window, false);
+                    }
                 }
             }
         }
@@ -212,7 +222,7 @@ void View::interfaceInitialisation(int step) {
             buttons.push_back(new Button(p1, p2, ButtonType::NEW_GAME));
 
 
-            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "games/game-empty.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "game-empty.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
             interface[interface.size() - 1]->setPosition(p1);
@@ -244,6 +254,7 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 1:
+            cout << "ok3" << endl;
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/2-players.png"));
@@ -304,9 +315,10 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 3:
+            //black or white wins
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
-            winner = GameController::GetInstance()->GetGameStatus() == GameStatus::WhiteWin ? "white" : "black";
-            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/win.png"));
+            winner = Chessboard::GetInstance()->GetWinner() == WINNER::WHITEWINNER ? "white" : "black";
+            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/wins.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
             interface[interface.size() - 1]->setPosition(p1);
@@ -318,8 +330,9 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 4:
+            //stalemate
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
-            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/pat.png"));
+            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/stalemate.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
             interface[interface.size() - 1]->setPosition(p1);
@@ -330,13 +343,14 @@ void View::interfaceInitialisation(int step) {
     }
 }
 
-void View::interfaceInitialisationWithStatus(GameStatus s) {
-    switch (s) {
-        case GameStatus::BlackWin:
-        case GameStatus::WhiteWin:
+void View::interfaceInitialisationWithStatus() {
+    WINNER winner = Chessboard::GetInstance()->GetWinner();
+    switch (winner) {
+        case WINNER::BLACKWINNER:
+        case WINNER::WHITEWINNER:
             interfaceInitialisation(3);
             break;
-        case GameStatus::Pat:
+        case WINNER::EQUAL:
             interfaceInitialisation(4);
             break;
         default:
@@ -369,8 +383,7 @@ void View::displayEatenPieces(PieceColor color, sf::RenderWindow &w) {
         for (int col = 0; col < 3; col++) {
             int index1D = 3 * line + col;
             if (index1D < eatenPiecesList.size()) {
-                cout << "index 1D= " << index1D << endl;
-                string pieceName = PIECE_NAME[Chessboard::GetInstance()->GetPiece(index1D)->GetType()];
+                string pieceName = PIECE_NAME[eatenPiecesList[index1D]->GetType()];
 
                 int shiftX = (color == PieceColor::WHITE) ? 0 :890;
                 eatenPieces.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,

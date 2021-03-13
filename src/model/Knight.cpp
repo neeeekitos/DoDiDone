@@ -1,10 +1,5 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
-
 #include "../../include/model/Knight.h"
 
-// Edited by Rivaldo
 #include <algorithm>
 
 Knight::Knight(PieceColor aColor): Piece(aColor) {

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include "../../include/model/Chessboard.h"
+#include "../../include/controller/GameController.h"
 
 using namespace std;
 
@@ -45,6 +46,7 @@ bool Piece::DirectionIsLimited() {
 
 DestinationsSet Piece::GetPossibleMoves() {
     Chessboard * cb = Chessboard::GetInstance();
+    GameController * controller = GameController::GetInstance();
     DestinationsSet mvSet;
     int oneDimentionPosition = cb->GetPosition(this);
     PieceColor currentPieceColor = this->GetColor();
@@ -59,7 +61,6 @@ DestinationsSet Piece::GetPossibleMoves() {
             while (nextDestinationValueInBoundariesTable != -1 &&
                    cb->getPiece(nextDestinationValueInBoundariesTable)->GetColor() == EMPTY
                     ) {
-                cout << nextDestinationValueInBoundariesTable << endl;
                 Coordinate destinationCoordinates = cb->ConvertOneDimensionPositionToCoordinate(nextDestinationValueInBoundariesTable);
                 mvSet.push_back(destinationCoordinates);
                 nextDestinationPositionInBoundariesTable += direction;
@@ -82,6 +83,19 @@ DestinationsSet Piece::GetPossibleMoves() {
         }
 
     }
+
+//    if (this->color == BLACK && cb->GetGameStatus1().blackCheck || this->color == WHITE && cb->GetGameStatus1().whiteCheck) {
+//        DestinationsSet filtered;
+//        for (pair<int, int> destination : mvSet) {
+//            Coordinate currentPiecePosition = cb->ConvertOneDimensionPositionToCoordinate(oneDimentionPosition);
+//            controller->MakeMove(make_pair(currentPiecePosition, destination));
+//            if (this->color == BLACK && !cb->GetGameStatus1().blackCheck || this->color == WHITE && !cb->GetGameStatus1().whiteCheck) {
+//                filtered.push_back(destination);
+//            }
+//        }
+//        return filtered;
+//    }
+
     return mvSet;
 }
 

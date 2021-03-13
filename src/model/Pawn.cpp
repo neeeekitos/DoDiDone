@@ -4,6 +4,7 @@
 
 #include "../../include/model/Pawn.h"
 #include "../../include/model/Chessboard.h"
+#include "../../include/controller/GameController.h"
 
 #include <vector>
 #include <iostream>
@@ -42,7 +43,6 @@ DestinationsSet Pawn::GetPossibleMoves() {
         mvSet.push_back(destinationCoordinates);
     }
 
-    cout << "is it the firs move ? " << this->firstMove << endl;
     if (this->firstMove && !mvSet.empty()) {
         nextDestinationPositionInBoundariesTable = currentPiecePositionInBoundariesTable + this->moveDirections[1];
         nextDestinationValueInBoundariesTable = cb->GetValueInBoundariesTable(nextDestinationPositionInBoundariesTable);
@@ -67,12 +67,28 @@ DestinationsSet Pawn::GetPossibleMoves() {
         mvSet.push_back(inPassingMove);
     }
 
+//    if (this->GetColor() == BLACK && cb->GetGameStatus1().blackCheck || this->GetColor() == WHITE && cb->GetGameStatus1().whiteCheck) {
+//        GameController * controller = GameController::GetInstance();
+//        DestinationsSet filtered;
+//        for (pair<int, int> destination : mvSet) {
+//            cout << "move" << endl;
+//            Coordinate currentPiecePosition = cb->ConvertOneDimensionPositionToCoordinate(position);
+//            controller->MakeMove(make_pair(currentPiecePosition, destination));
+//            cout << "out of makemove" << endl;
+//            if (this->GetColor() == BLACK && !cb->GetGameStatus1().blackCheck || this->GetColor() == WHITE && !cb->GetGameStatus1().whiteCheck) {
+//                filtered.push_back(destination);
+//            }
+//            Transition t;
+//            t.mv = make_pair(currentPiecePosition, destination);
+//        }
+//        return filtered;
+//    }
+
     return mvSet;
 
 }
 
 void Pawn::NotifyMove(Move mv) {
-    cout << "pawn notifying move" << endl;
     int moveLength = mv.second.first - mv.first.first;
     moveLength = (moveLength < 0 ? - moveLength : moveLength);
     Chessboard * cb = Chessboard::GetInstance();

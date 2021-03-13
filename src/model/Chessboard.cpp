@@ -68,13 +68,56 @@ int Chessboard::GetPositionInBoundariesTable(int position) {
 }
 
 GameStatus Chessboard::GetGameStatus() const {
-    return status;
+    return this->status;
 }
+
+Status Chessboard::GetGameStatus1() {
+
+    return this->state;
+
+}
+
+void Chessboard::UpdateStatus() {
+    this->UpdateCheckStatus();
+
+    if (this->GetMovablePieces(this->currentPlayer).size() == 0) {
+        this->state.stalemate = true;
+        if ((this->currentPlayer == BLACK && this->state.blackCheck) || (this->currentPlayer == WHITE && this->state.whiteCheck)) {
+            this->state.mate = true;
+        }
+    }
+
+}
+
+void Chessboard::UpdateCheckStatus() {
+
+    this->state.whiteCheck = false;
+    this->state.blackCheck = false;
+    for (int i = 0; i < CHESSBOARDSIZE; ++i ) {
+        Piece * p = this->getPiece(i);
+        if ( !p->isEmpty() ) {
+            Coordinate cor = ConvertOneDimensionPositionToCoordinate(i);
+            DestinationsSet moves = this->GetPossibleMoves(cor);
+            for (pair<int, int> dest : moves) {
+                Piece * destPiece = this->GetPiece(dest);
+                King * k = dynamic_cast <King *> (destPiece);
+                if (k != nullptr) {
+                    if (k->GetColor() == WHITE) {
+                        this->state.whiteCheck = true;
+                    } else {
+                        this->state.blackCheck = true;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 
 void Chessboard::SetStatus(GameStatus s) {
     status = s;
 }
-
 
 int Chessboard::GetValueInBoundariesTable(int position) {
     return boundaries[position];
@@ -86,14 +129,110 @@ Coordinate Chessboard::ConvertOneDimensionPositionToCoordinate(int position) {
     return make_pair(x, y);
 }
 
-DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool justEatableMoves) {
+DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
+    //cout << "get possible moves" << endl;
     int oneDimentionPosition = convertCoordinates(coor);
     DestinationsSet dest;
-    if (this->getPiece(oneDimentionPosition)->GetColor() != this->currentPlayer) {
+    if (!allPlayers && this->getPiece(oneDimentionPosition)->GetColor() != this->currentPlayer) {
         return dest;
     }
+    dest = this->getPiece(oneDimentionPosition)->GetPossibleMoves();
+    King * k = dynamic_cast<King *> (this->getPiece(oneDimentionPosition));
+    if ((this->GetGameStatus1().whiteCheck && this->currentPlayer == WHITE) || (this->currentPlayer == WHITE && k != nullptr)) {
+        DestinationsSet filtered;
+        GameController * gc = GameController::GetInstance();
+        for (pair<int, int> d : dest) {
+            Transition t;
+            Move mv = make_pair(coor, d);
+            t.mv = mv;
+            t.eatenPiece = false;
+            Piece * p = gc->MakeMove(mv, false, true);
+            if (p != nullptr) {
+                t.eatenPiece = true;
+                t.positionOfEatenPiece = this->convertCoordinates(d);
+                t.eatenPieceColor = p->GetColor();
+            }
+            if ( !this->GetGameStatus1().whiteCheck ) {
+                filtered.push_back(d);
+            }
+            undoTransition(t);
+            this->ChangePlayer();
+            this->UpdateCheckStatus();
+        }
+        if (filtered.size() == 0) this->state.stalemate = true;
+        return filtered;
+    }
+    if ((this->GetGameStatus1().blackCheck && this->currentPlayer == BLACK) || (this->currentPlayer == BLACK && k != nullptr)) {
+        DestinationsSet filtered;
+        GameController * gc = GameController::GetInstance();
+        for (pair<int, int> d : dest) {
+            Transition t;
+            Move mv = make_pair(coor, d);
+            t.mv = mv;
+            t.eatenPiece = false;
+            Piece * p = gc->MakeMove(mv, false, true);
+            if (p != nullptr) {
+                t.eatenPiece = true;
+                t.positionOfEatenPiece = this->convertCoordinates(d);
+                t.eatenPieceColor = p->GetColor();
+            }
+            if ( !this->GetGameStatus1().blackCheck ) {
+                filtered.push_back(d);
+            }
+            undoTransition(t);
+            this->ChangePlayer();
+            this->UpdateCheckStatus();
+        }
+        if (filtered.size() == 0) {
+        }
+        return filtered;
+    }
+    return dest;
+}
+
+bool Chessboard::IsGameOver() {
+    return ((this->state.blackCheck || this->state.whiteCheck) && this->state.mate) || this->state.stalemate;
+}
+
+WINNER Chessboard::GetWinner() {
+    if (this->IsGameOver() && this->state.whiteCheck) {
+        return BLACKWINNER;
+    }
+    if (this->IsGameOver() && this->state.blackCheck) {
+        return WHITEWINNER;
+    }
+    else {
+        return EQUAL;
+    }
+}
+
+void Chessboard::undoTransition(Transition & t) {
+    int source = this->convertCoordinates(t.mv.second);
+    int destination = this->convertCoordinates(t.mv.first);
+    Piece * temp = this->board[destination];
+    this->board[destination] = this->board[source];
+    if (t.eatenPiece) {
+        if (t.eatenPieceColor == WHITE) {
+            Piece * eatenPiece = this->eatenByBlack[eatenByBlack.size() - 1];
+            this->board[source] = eatenPiece;
+            this->eatenByBlack.pop_back();
+        } else {
+            Piece * eatenPiece = this->eatenByWhite[eatenByWhite.size() - 1];
+            this->board[source] = eatenPiece;
+            this->eatenByWhite.pop_back();
+        }
+        delete temp;
+    } else {
+        this->board[source] = temp;
+    }
+}
+
+
+DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor) {
+    int oneDimentionPosition = convertCoordinates(coor);
     return this->getPiece(oneDimentionPosition)->GetPossibleMoves();
 }
+
 
 bool Chessboard::IsValidMove(Move mv) {
     int source = convertCoordinates(mv.first);
@@ -142,11 +281,21 @@ int Chessboard::GetPosition(const Piece *p) const {
 void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
     int position = this->convertCoordinates(coordinate);
     if (pieceColor == BLACK) {
-        eatenByBlack.push_back(this->GetPiece(coordinate));
-    }
-    if (pieceColor == WHITE) {
         eatenByWhite.push_back(this->GetPiece(coordinate));
     }
+    if (pieceColor == WHITE) {
+        eatenByBlack.push_back(this->GetPiece(coordinate));
+    }
+//    cout << "eatenByWhite : ";
+//    for (Piece * p : eatenByWhite) {
+//        cout << p->PieceToFEN() << " ";
+//    }
+//    cout << endl;
+//    cout << "eatenByBlack : ";
+//    for (Piece * p : eatenByBlack) {
+//        cout << p->PieceToFEN() << " ";
+//    }
+//    cout << endl;
     this->board[position] = new Piece();
 }
 
@@ -174,11 +323,11 @@ DestinationsSet Chessboard::GetMovablePieces(PieceColor color) {
     return movablePieces;
 }
 
-const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor player) const {
-    if (player == PieceColor::BLACK) {
-        return eatenByBlack;
-    } else {
+const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor color) const {
+    if (color == PieceColor::BLACK) {
         return eatenByWhite;
+    } else {
+        return eatenByBlack;
     }
 }
 
@@ -252,13 +401,12 @@ int Chessboard::SaveGame() {
     string line = this->chessboardToFen();
     savedFen.push_back( line );
     ofstream file (SAVING_FILE);
-    cout << "trying to push" << endl;
-    for (string st : savedFen) {
-        cout << "pushing string line" << endl;
-        file << st << "\n";
+    if (file.is_open()) {
+        for (string st : savedFen) {
+            file << st << "\n";
+        }
+        file.close();
     }
-    file.close();
-    cout << "taille= " << savedFen.size() << endl;
     return savedFen.size();
 }
 
@@ -296,6 +444,7 @@ vector<string> Chessboard::GetBackupFileInformations() {
         while ( getline(file, line) ) {
             fenLines.push_back(line);
         }
+        file.close();
     }
     return fenLines;
 }
@@ -508,8 +657,6 @@ Chessboard::~Chessboard() {
     for (int i = 0; i < eatenByWhite.size(); ++i) {
         delete eatenByWhite[i];
     }
-
-    cout << "deleting chessboard finished" << endl;
 }
 
 bool Chessboard::IsEatingMove(Move mv) {

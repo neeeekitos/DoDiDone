@@ -1,7 +1,3 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
-
 #ifndef E_CHESS_VIEW_H
 #define E_CHESS_VIEW_H
 
@@ -67,7 +63,7 @@ private:
      * @brief Init window with all elements depending on step and game status
      * @param s
      */
-    void interfaceInitialisationWithStatus(GameStatus s);
+    void interfaceInitialisationWithStatus();
 
     /**
      * @brief Init chessboard squares to enable click detection on them
@@ -122,18 +118,67 @@ private:
     void deleteEatenPieces();
 
 
+    /**
+     * @brief Window where to display game
+     */
     sf::RenderWindow *window;
-    std::vector<GraphicElement *> interface;
-    std::vector<Button *> buttons;
-    std::vector<sf::RectangleShape *> boardSquares;
-    std::vector<sf::RectangleShape *> eatenPieces;
-    std::vector<sf::Texture *> boardSquareTextures;
-    std::vector<sf::Texture *> eatenPiecesTextures;
-    std::vector<sf::Text *> texts;
-    sf::Font font;
+
+    /**
+     * @brief Current 2D coordinates of selected square
+     */
     std::pair<int, int> selectedSquare;
+
+    /**
+     * @brief List of 2D coordinates of possible move squares for current
+     * selected square
+     */
     DestinationsSet possibleMovesSelectedSquare;
 
+    /**
+     * @brief All images (background and button images)
+     */
+    std::vector<GraphicElement *> interface;
+
+    /**
+     * @brief Clickable buttons
+     */
+    std::vector<Button *> buttons;
+
+    /**
+     * @brief Chessboard square image containers with sometimes a piece image
+     * and / or an outiline to highlight it
+     */
+    std::vector<sf::RectangleShape *> boardSquares;
+
+    /**
+     * @brief Eaten piece image containers
+     * to display on board sides
+     */
+    std::vector<sf::RectangleShape *> eatenPieces;
+
+    /**
+     * @brief All board pieces images to inject into boardSquares
+     */
+    std::vector<sf::Texture *> boardSquareTextures;
+
+    /**
+     * @brief All etaen pieces images to inject into eatenPieces
+     */
+    std::vector<sf::Texture *> eatenPiecesTextures;
+
+    /**
+     * @brief Game texts
+     */
+    std::vector<sf::Text *> texts;
+
+    /**
+     * @brief Game font
+     */
+    sf::Font font;
+
+    /**
+     * @brief Singleton of View
+     */
     static View *view_;
 
 };
