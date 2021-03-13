@@ -11,6 +11,7 @@
 #include "../view/View.h"
 #include "../model/GameConstants.h"
 
+class AI;
 class GameController {
 
 public:

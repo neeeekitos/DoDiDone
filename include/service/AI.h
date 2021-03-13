@@ -12,6 +12,7 @@
 
 #include "../model/GameConstants.h"
 #include "../model/Chessboard.h"
+#include "../controller/GameController.h"
 
 using namespace std;
 
@@ -24,20 +25,13 @@ const int KNIGHT_W = 50;
 const int QUEEN_W = 90;
 const int KING_W = 900;
 
-typedef struct node
-{
-    Move * move;
-    map<int, Piece*> eatenPieces; // mapping eatenPiece and its position
-    node() {};
-} Node;
-
 class AI {
 public:
     static AI * GetInstance();
     Move DoMove(Chessboard& chessboard);
-    static void CalculateMove(Chessboard& chessboard, Move move, Node& node, bool restoreEatedPiece);
+    static Transition CalculateMove(Move move);
     Move RandomMove(Chessboard& chessboard);
-    int Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizingPlayer);
+    int Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, bool maximizingPlayer);
 
     ~AI();
     AI(const AI&) = delete;

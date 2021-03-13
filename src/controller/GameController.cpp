@@ -70,7 +70,6 @@ Piece * GameController::MakeMove(Move mv) {
     // If we are in AI mode and it's the AI turn to play
     if (this->gameMode == AIPLAYER && c.GetCurrentPlayer() == BLACK) {
         // Generate a move
-
         MakeMove(ai->DoMove(c));
     }
     c.UpdateStatus();

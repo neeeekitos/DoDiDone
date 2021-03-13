@@ -24,12 +24,12 @@ Move AI::DoMove(Chessboard& chessboard) {
         cout << "generating move " << endl;
         bool maxOrMinPlayer = chessboard.GetCurrentPlayer() == WHITE;
         cout << "player is maximiwing (white)" << maxOrMinPlayer << endl;
-        list<Node> bestPath;
-        list<Node> path;
+        list<Transition> bestPath;
+        list<Transition> path;
         Minimax(path, bestPath, DEPTH_MINIMAX, maxOrMinPlayer);
         auto lastElementIt = bestPath.end();
         --lastElementIt;
-        move = *(lastElementIt->move);
+        move = lastElementIt->mv;
     }
     return move;
 }
@@ -81,12 +81,12 @@ int AI::getScore(Chessboard& chessboard, PieceColor pieceColor) {
     return weightCounter;
 }
 
-int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizingPlayer) {
+int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, bool maximizingPlayer) {
 
     Chessboard * board = Chessboard::GetInstance();
 
     PieceColor pieceColor = maximizingPlayer ? WHITE : BLACK;
-
+    cout << "piece color is " << pieceColor << endl;
     if (depth == 0 || board->GameOver(pieceColor)) {
         int eval = evaluate(*board, pieceColor);
         return eval;
@@ -99,21 +99,15 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
-                Node node;
+                Transition t;
 
                 // move piece in the chessboard and remember eated pieces (in some cases)
                 Move possibleMove = make_pair(piece, moveTo);
-                node.move = &possibleMove;
-                if (!board->GetPiece(possibleMove.second)->isEmpty()) {
-//                    cout <<" is eating move, I remember it" << endl;
-                    node.eatenPieces.insert(make_pair(board->convertCoordinates(possibleMove.second), board->GetPiece(possibleMove.second)));
-                }
-                path.push_back(node);
+
 //                cout << "white piece moves " << endl;
-                CalculateMove(*board, possibleMove, node, false);
+                t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                board->ChangePlayer();
                 int eval = Minimax(bestPath, path, depth - 1, false);
                 cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
                      << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
@@ -122,17 +116,14 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
                 if (maxEval == eval) bestMove = possibleMove;
 
                 // undo move
-                path.pop_back();
 //                cout << "undoing move" << endl;
-
-                CalculateMove(*board, make_pair(possibleMove.second, possibleMove.first), node, true);
+                board->undoTransition(t);
 
             }
         }
-
-        Node node;
-        node.move = &bestMove;
-        bestPath.push_back(node);
+        Transition t;
+        t.mv = bestMove;
+        bestPath.push_back(t);
 
         return maxEval;
     } else {
@@ -141,22 +132,15 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
 
-                Node node;
+                Transition t;
 
                 // move piece in the chessboard and remember eated piece (in some cases)
                 Move possibleMove = make_pair(piece, moveTo);
-                node.move = &possibleMove;
-                if (!board->GetPiece(possibleMove.second)->isEmpty()) {
-//                    cout <<" is eating move, i remember it" << endl;
 
-                    node.eatenPieces.insert(make_pair(board->convertCoordinates(possibleMove.second), board->GetPiece(possibleMove.second)));
-                }
-                path.push_back(node);
 //                cout << "black piece moves " << endl;
-                CalculateMove(*board, possibleMove, node, false);
+                t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                board->ChangePlayer();
                 int eval = Minimax(bestPath, path, depth - 1, true);
                 cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
                      << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
@@ -165,47 +149,34 @@ int AI::Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizi
                     && possibleMove.second.first == 0 && possibleMove.second.second == 0) exit(-1);*/
 
                 // undo move
-                path.pop_back();
                 cout << "undoing move" << endl;
-                CalculateMove(*board, make_pair(possibleMove.second, possibleMove.first), node, true);
+                board->undoTransition(t);
 
                 minEval = min(minEval, eval);
                 if (minEval == eval) bestMove = possibleMove;
             }
         }
-        Node node;
-        node.move = &bestMove;
-        bestPath.push_back(node);
+        Transition t;
+        t.mv = bestMove;
+        bestPath.push_back(t);
 
         return minEval;
     }
 }
 
-void AI::CalculateMove(Chessboard &chessboard, Move move, Node& node, bool restoreEatedPiece) {
-
+Transition AI::CalculateMove(Move move) {
 
     Chessboard &c = *Chessboard::GetInstance();
-    c.NotifyMove();
-    c.nextMoveIsPassingAuthorized = false;
+    GameController * controller = GameController::GetInstance();
 
-    // check if it is an eating move
-    if ( !c.GetPiece(move.second)->isEmpty() ) {
-        c.EatPiece(move.second, c.GetPiece(move.second)->GetColor());
-        c.SetPiece(move.second, new Piece());
+    Piece * p = controller->MakeMove(move, false, true);
+    Transition t;
+    t.mv = move;
+    t.eatenPiece = false;
+    if (p != nullptr) {
+        t.eatenPiece = true;
+        t.positionOfEatenPiece = c.convertCoordinates(move.second);
+        t.eatenPieceColor = p->GetColor();
     }
-    Piece *temp = c.GetPiece(move.second);
-    c.SetPiece(move.second, c.GetPiece(move.first));
-    c.SetPiece(move.first, temp);
-
-    if (!c.nextMoveIsPassingAuthorized) {
-        c.inPassingAuthorised = nullptr;
-    }
-
-    // check if the piece was eaten
-    auto it = node.eatenPieces.find(chessboard.convertCoordinates(move.first));
-    if (it != node.eatenPieces.end()) {
-//        cout << "-->>>> restoring eated pieces <<<<--" << endl;
-        Coordinate cor = Chessboard::ConvertOneDimensionPositionToCoordinate(it->first);
-        chessboard.SetPiece(cor, it->second);
-    }
+    return t;
 }
