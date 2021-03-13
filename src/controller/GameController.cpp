@@ -46,7 +46,7 @@ Piece * GameController::MakeMove(Move mv) {
     bool eat = false;
     Piece * eatenPiece;
     c.NotifyMove();
-    c.nextMoveIsPassingAuthorized = false;
+    c.nextMoveInPassingAuthorized = false;
     if ( !c.GetPiece(mv.second)->isEmpty() ) {
         eat = true;
         eatenPiece = c.GetPiece(mv.second);
@@ -57,7 +57,7 @@ Piece * GameController::MakeMove(Move mv) {
     c.SetPiece(mv.second, c.GetPiece(mv.first));
     c.SetPiece(mv.first, temp);
     c.GetPiece(mv.second)->NotifyMove(mv);
-    if (!c.nextMoveIsPassingAuthorized) {
+    if (!c.nextMoveInPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
     }
     c.ChangePlayer();       // Change the current player turn
@@ -81,7 +81,7 @@ Piece * GameController::MakeMove(Move mv, bool updateGeneralState, bool temporar
     bool eat = false;
     Piece * eatenPiece;
     c.NotifyMove();
-    c.nextMoveIsPassingAuthorized = false;
+    c.nextMoveInPassingAuthorized = false;
     if ( !c.GetPiece(mv.second)->isEmpty() ) {
         eat = true;
         eatenPiece = c.GetPiece(mv.second);
@@ -95,7 +95,7 @@ Piece * GameController::MakeMove(Move mv, bool updateGeneralState, bool temporar
         c.GetPiece(mv.second)->NotifyMove(mv);
     }
     //cout << "notified" << endl;
-    if (!c.nextMoveIsPassingAuthorized) {
+    if (!c.nextMoveInPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
     }
     c.ChangePlayer();       // Change the current player turn

@@ -106,7 +106,7 @@ void Pawn::NotifyMove(Move mv) {
                     p->inPassingEatablePawn = mv.second;
                     p->inPassing = true;
                     cb->inPassingAuthorised = p;
-                    cb->nextMoveIsPassingAuthorized = true;
+                    cb->nextMoveInPassingAuthorized = true;
                 }
             }
         }

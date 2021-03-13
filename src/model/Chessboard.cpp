@@ -67,7 +67,7 @@ int Chessboard::GetPositionInBoundariesTable(int position) {
     return positionInBoundariesTable[position];
 }
 
-Status Chessboard::GetGameStatus1() {
+Status Chessboard::GetGameStatus() {
 
     return this->state;
 }
@@ -128,7 +128,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
     }
     dest = this->getPiece(oneDimentionPosition)->GetPossibleMoves();
     King * k = dynamic_cast<King *> (this->getPiece(oneDimentionPosition));
-    if ((this->GetGameStatus1().whiteCheck && this->currentPlayer == WHITE) || (this->currentPlayer == WHITE && k != nullptr)) {
+    if ((this->GetGameStatus().whiteCheck && this->currentPlayer == WHITE) || (this->currentPlayer == WHITE && k != nullptr)) {
         DestinationsSet filtered;
         GameController * gc = GameController::GetInstance();
         for (pair<int, int> d : dest) {
@@ -142,7 +142,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
                 t.positionOfEatenPiece = this->convertCoordinates(d);
                 t.eatenPieceColor = p->GetColor();
             }
-            if ( !this->GetGameStatus1().whiteCheck ) {
+            if ( !this->GetGameStatus().whiteCheck ) {
                 filtered.push_back(d);
             }
             undoTransition(t);
@@ -151,7 +151,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
         }
         return filtered;
     }
-    if ((this->GetGameStatus1().blackCheck && this->currentPlayer == BLACK) || (this->currentPlayer == BLACK && k != nullptr)) {
+    if ((this->GetGameStatus().blackCheck && this->currentPlayer == BLACK) || (this->currentPlayer == BLACK && k != nullptr)) {
         DestinationsSet filtered;
         GameController * gc = GameController::GetInstance();
         for (pair<int, int> d : dest) {
@@ -165,7 +165,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
                 t.positionOfEatenPiece = this->convertCoordinates(d);
                 t.eatenPieceColor = p->GetColor();
             }
-            if ( !this->GetGameStatus1().blackCheck ) {
+            if ( !this->GetGameStatus().blackCheck ) {
                 filtered.push_back(d);
             }
             undoTransition(t);
@@ -349,10 +349,10 @@ string Chessboard::chessboardToFen() {
     str += currentPlayerCar;
 
     string castlingString;
-    if (this->FenCastlingIsPossible(WHITE, KINGSIDE)) castlingString += "K";
-    if (this->FenCastlingIsPossible(WHITE, QUEENSIDE)) castlingString += "Q";
-    if (this->FenCastlingIsPossible(BLACK, KINGSIDE)) castlingString += "k";
-    if (this->FenCastlingIsPossible(BLACK, QUEENSIDE)) castlingString += "q";
+    if (this->CastlingIsPossible(WHITE, KINGSIDE)) castlingString += "K";
+    if (this->CastlingIsPossible(WHITE, QUEENSIDE)) castlingString += "Q";
+    if (this->CastlingIsPossible(BLACK, KINGSIDE)) castlingString += "k";
+    if (this->CastlingIsPossible(BLACK, QUEENSIDE)) castlingString += "q";
     if (castlingString != "") {
         str += " " + castlingString;
     }
@@ -397,22 +397,7 @@ int Chessboard::SaveGame() {
     return savedFen.size();
 }
 
-bool Chessboard::castlingIsPossible(PieceColor color, CastlingSide castlingSide) {
-    int kingInitialIndex = (color == BLACK ? 4 : 58);
-    King * k = dynamic_cast<King *> (this->board[kingInitialIndex]);
-    if (k == NULL || k->IsFirstMoveDone() ) return false;
-    int towerRelativeIndex = (castlingSide == QUEENSIDE ? -4 : 3);
-    Tower * t = dynamic_cast <Tower*> (this->board[kingInitialIndex + towerRelativeIndex]);
-    if (t == NULL || t->IsFirstMoveDone() ) return false;
-    int minIndex = (kingInitialIndex < kingInitialIndex + towerRelativeIndex ? kingInitialIndex : kingInitialIndex + towerRelativeIndex);
-    int maxIndex = (kingInitialIndex < kingInitialIndex + towerRelativeIndex ? kingInitialIndex + towerRelativeIndex : kingInitialIndex);
-    for (int i = minIndex; i <= maxIndex; ++i) {
-        if ( ! this->board[i]->isEmpty() ) return false;
-    }
-    return true;
-}
-
-bool Chessboard::FenCastlingIsPossible(PieceColor color, CastlingSide castlingSide) {
+bool Chessboard::CastlingIsPossible(PieceColor color, CastlingSide castlingSide) {
     int kingInitialIndex = (color == BLACK ? 4 : 60);
     King * k = dynamic_cast<King *> (this->board[kingInitialIndex]);
     if (k == NULL || k->IsFirstMoveDone() ) return false;
