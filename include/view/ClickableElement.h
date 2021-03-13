@@ -1,5 +1,5 @@
 #ifndef E_CHESS_CLICKABLEELEMENT_H
-#define E_CHESS_CLICKABLE_H
+#define E_CHESS_CLICKABLEELEMENT_H
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
@@ -32,4 +32,4 @@ Point2I startPoint;
 Point2I endPoint;
 };
 
-#endif // E_CHESS_CLICKABLE_H
+#endif // E_CHESS_CLICKABLEELEMENT_H
