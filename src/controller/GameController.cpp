@@ -6,7 +6,6 @@
 
 GameController *GameController::gameController_ = nullptr;
 
-
 GameController *GameController::GetInstance() {
     if (GameController::gameController_ == nullptr) {
         GameController::gameController_ = new GameController;
@@ -16,6 +15,7 @@ GameController *GameController::GetInstance() {
 
 GameController::GameController() {
     this->gameMode = UNDEFINED;
+    this->ai = AI::GetInstance();
 }
 
 GameController::~GameController() {
@@ -47,23 +47,31 @@ Piece * GameController::MakeMove(Move mv) {
     Piece * eatenPiece;
     c.NotifyMove();
     c.nextMoveIsPassingAuthorized = false;
+
     if ( !c.GetPiece(mv.second)->isEmpty() ) {
         eat = true;
         eatenPiece = c.GetPiece(mv.second);
         c.EatPiece(mv.second, c.GetPiece(mv.second)->GetColor());
         c.SetPiece(mv.second, new Piece());
     }
+
     Piece *temp = c.GetPiece(mv.second);
     c.SetPiece(mv.second, c.GetPiece(mv.first));
     c.SetPiece(mv.first, temp);
     c.GetPiece(mv.second)->NotifyMove(mv);
+
     if (!c.nextMoveIsPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
     }
-    c.ChangePlayer();       // Change the current player turn
-    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+
+    // Change the current player turn
+    c.ChangePlayer();
+
+    // If we are in AI mode and it's the AI turn to play
+    if (this->gameMode == AIPLAYER && c.GetCurrentPlayer() == BLACK) {
         // Generate a move
-        // this->MakeMove(the generated move)
+
+        MakeMove(ai->DoMove(c));
     }
     c.UpdateStatus();
 
@@ -99,7 +107,7 @@ Piece * GameController::MakeMove(Move mv, bool updateGeneralState, bool temporar
         c.inPassingAuthorised = nullptr;
     }
     c.ChangePlayer();       // Change the current player turn
-    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+    if (this->gameMode == AIPLAYER && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
         // Generate a move
         // this->MakeMove(the generated move)
     }

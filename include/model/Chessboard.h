@@ -53,6 +53,10 @@ public:
 
     static Coordinate ConvertOneDimensionPositionToCoordinate(int position);
 
+    int convertCoordinates(const Coordinate &coor) const ;
+
+    bool GameOver(PieceColor pieceColor);
+
     bool IsValidMove(Move mv);
 
     Piece *GetPiece(Coordinate cor);
@@ -89,6 +93,8 @@ public:
 
     DestinationsSet GetMovablePieces(PieceColor);
 
+    DestinationsSet GetAllPieces (PieceColor color);
+
     string chessboardToFen();
 
     void NotifyMove();
@@ -124,9 +130,9 @@ public:
 
     WINNER GetWinner();
 
-private:
 
-    int convertCoordinates(const Coordinate &coor) const;
+
+private:
 
     Chessboard();
 

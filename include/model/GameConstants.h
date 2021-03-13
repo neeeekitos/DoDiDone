@@ -49,8 +49,13 @@ const int positionInBoundariesTable[64] = {
 
 enum GameMode {
     MULTIPLAYER,
-    AI,
+    AIPLAYER,
     UNDEFINED
+};
+
+enum AIMode{
+    RANDOM,
+    MINIMAX
 };
 
 enum PieceColor {

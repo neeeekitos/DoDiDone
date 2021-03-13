@@ -6,6 +6,7 @@
 #define E_CHESS_GAMECONTROLLER_H
 
 #include <string.h>
+#include "../service/AI.h"
 #include "../model/Chessboard.h"
 #include "../view/View.h"
 #include "../model/GameConstants.h"
@@ -31,7 +32,7 @@ public:
     Piece * MakeMove(Move mv);
 
 
-    DestinationsSet GetMoveablePieces(PieceColor);
+    DestinationsSet GetMovablePieces(PieceColor);
 
     const std::vector<int> &GetSavedGamesIds(vector<int> &result) const;
 
@@ -91,11 +92,10 @@ public:
 private:
 
     GameController();
+    AI * ai;
 
     GameMode gameMode;
-
     static GameController *gameController_;
-
 
 };
 

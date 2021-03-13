@@ -121,7 +121,7 @@ void View::MenuChoices() {
                         interfaceInitialisation(2);
                     } else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         playerCount = 1;
-                        GameController::GetInstance()->SetGameMode(GameMode::AI);
+                        GameController::GetInstance()->SetGameMode(GameMode::AIPLAYER);
                         interfaceInitialisation(2);
                     }
                 }
@@ -276,7 +276,7 @@ void View::interfaceInitialisation(int step) {
 
             //add game mode to interface
             gameModeImg = "2-players.png";
-            if (GameController::GetInstance()->GetGameMode() == GameMode::AI) {
+            if (GameController::GetInstance()->GetGameMode() == GameMode::AIPLAYER) {
                 gameModeImg = "player-vs-bot.png";
             }
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + gameModeImg));
