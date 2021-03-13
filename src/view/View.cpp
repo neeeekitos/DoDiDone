@@ -55,10 +55,13 @@ void View::MenuChoices() {
     bool newGamePressed = false;
     bool changeLoadedGame = false;
     int playerCount = -1;
-    sf::Event event;
-    interfaceInitialisation(0);
+    bool refresh = false;
     vector<int> savedGames;
     int currentSavedGameIndex = 0;
+    sf::Event event;
+
+    interfaceInitialisation(0);
+
     GameController::GetInstance()->GetSavedGamesIds(savedGames);
     auto savedGamesIterator = savedGames.begin();
 
@@ -71,6 +74,7 @@ void View::MenuChoices() {
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //new game
+                        refresh = true;
                         newGamePressed = true;
                         interfaceInitialisation(1);
                     } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
@@ -81,7 +85,7 @@ void View::MenuChoices() {
                                 savedGames.size() >= currentSavedGameIndex ? savedGames[currentSavedGameIndex] : -1);
                         interfaceInitialisation(2);
                     }
-                        //next and previous buttons -> circular course of game ids
+                    //next and previous buttons -> circular course of game ids
                     else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //previous game
                         changeLoadedGame = true;
@@ -105,6 +109,7 @@ void View::MenuChoices() {
                     }
                     //load new game id button image
                     if (changeLoadedGame) {
+                        refresh = true;
                         texts[texts.size() - 1]->setString(to_string(*savedGamesIterator + 1));
                     }
                 } else {
