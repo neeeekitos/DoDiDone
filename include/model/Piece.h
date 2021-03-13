@@ -36,6 +36,8 @@ public:
 
     Piece();
 
+    Piece( Piece& piece);
+
     Piece(PieceColor aColor);
 
     bool isEmpty();

@@ -34,7 +34,7 @@ public:
     Piece * MakeMove(Move mv);
 
 
-    DestinationsSet GetMoveablePieces(PieceColor);
+    DestinationsSet GetMovablePieces(PieceColor);
 
     const std::vector<int> &GetSavedGamesIds(vector<int> &result) const;
 
@@ -95,6 +95,7 @@ private:
 
     GameController();
     AI * ai;
+
     GameMode gameMode;
     static GameController *gameController_;
 

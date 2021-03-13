@@ -663,11 +663,13 @@ bool Chessboard::IsEatingMove(Move mv) {
             this->GetPiece(mv.second)->GetColor() != this->GetPiece(mv.second)->GetColor());
 }
 
-vector<Piece> Chessboard::GetAllPieces(PieceColor color) {
-    vector<Piece> allPieces;
+DestinationsSet Chessboard::GetAllPieces(PieceColor color) {
+    DestinationsSet allPieces;
+
     for (int i = 0; i < CHESSBOARDSIZE; ++i) {
         if (this->board[i]->GetColor() == color) {
-            allPieces.push_back(*board[i]);
+            Coordinate cor = ConvertOneDimensionPositionToCoordinate(i);
+            allPieces.push_back(cor);
         }
     }
     return allPieces;
@@ -676,3 +678,4 @@ vector<Piece> Chessboard::GetAllPieces(PieceColor color) {
 bool Chessboard::GameOver(PieceColor pieceColor) {
     return false;
 }
+

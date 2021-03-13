@@ -5,10 +5,17 @@
 #ifndef E_CHESS_AI_H
 #define E_CHESS_AI_H
 
+#include <map>
+#include <list>
+#include <iostream>
+
+
 #include "../model/GameConstants.h"
 #include "../model/Chessboard.h"
 
-const int DEPTH_MINIMAX = 3;
+using namespace std;
+
+const int DEPTH_MINIMAX = 2;
 
 const int PAWN_W = 10;
 const int BISHOP_W = 30;
@@ -17,21 +24,20 @@ const int KNIGHT_W = 50;
 const int QUEEN_W = 90;
 const int KING_W = 900;
 
-struct node
+typedef struct node
 {
-    Chessboard * chessboard;
-    vector< node* > suc;
+    Move * move;
+    map<int, Piece*> eatenPieces; // mapping eatenPiece and its position
     node() {};
-    node(Chessboard* cb) : chessboard(cb) {}
-};
+} Node;
 
 class AI {
 public:
     static AI * GetInstance();
-    void DoMove(Chessboard& chessboard);
-    static void CalculateMove(Chessboard& chessboard, Move move);
+    Move DoMove(Chessboard& chessboard);
+    static void CalculateMove(Chessboard& chessboard, Move move, Node& node, bool restoreEatedPiece);
     Move RandomMove(Chessboard& chessboard);
-    int Minimax(Chessboard& board, int depth, bool maximizingPlayer);
+    int Minimax(list<Node>& path, list<Node>& bestPath, int depth, bool maximizingPlayer);
 
     ~AI();
     AI(const AI&) = delete;
@@ -44,7 +50,7 @@ private:
 
     vector<Move> AIMovesPath;
     vector<Move> HumanMovesPath;
-    AIMode aiMode;
+    AIMode aiMode = MINIMAX;
     static AI * ai_;
 };
 
