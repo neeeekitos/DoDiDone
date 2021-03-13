@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="e-chess"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 package_source"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 package"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="e-chess">
+				<Option output="/Users/nikitaterekhov/CLionProjects/e-chess/build/e-chess" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 e-chess"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="e-chess/fast">
+				<Option output="/Users/nikitaterekhov/CLionProjects/e-chess/build/e-chess" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nikitaterekhov/CLionProjects/e-chess/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 e-chess/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/nikitaterekhov/CLionProjects/e-chess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/controller/GameController.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Bishop.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Chessboard.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/GameConstants.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/King.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Knight.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Pawn.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Piece.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Queen.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/model/Tower.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/service/AI.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/view/Button.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/view/ClickableElement.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/view/GraphicElement.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/view/Point2I.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/include/view/View.h">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/controller/GameController.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/main.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Bishop.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Chessboard.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/King.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Knight.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Pawn.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Piece.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Queen.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/model/Tower.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/service/AI.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/view/Button.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/view/ClickableElement.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/view/GraphicElement.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/view/Point2I.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/src/view/View.cpp">
+			<Option target="e-chess"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/../../../../usr/local/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/../../../../usr/local/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/../../../../usr/local/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="/Users/nikitaterekhov/CLionProjects/e-chess/../../../../usr/local/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SFML\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

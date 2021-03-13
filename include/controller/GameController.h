@@ -6,6 +6,7 @@
 #define E_CHESS_GAMECONTROLLER_H
 
 #include <string.h>
+#include "../service/AI.h"
 #include "../model/Chessboard.h"
 #include "../view/View.h"
 #include "../model/GameConstants.h"
@@ -14,6 +15,7 @@
  * Represents the controller of the game. This class is charged
  * to change the status of the chessboard
  */
+class AI;
 class GameController {
 
 public:
@@ -130,6 +132,7 @@ private:
      * implementation
      */
     GameController();
+    AI * ai;
 
     /**
      * Represents the game mode
@@ -140,7 +143,6 @@ private:
      * The instance of the game controller
      */
     static GameController *gameController_;
-
 
 };
 

@@ -50,6 +50,8 @@ public:
      * Constructs a piece with the given color
      * @param aColor
      */
+    Piece( Piece& piece);
+
     Piece(PieceColor aColor);
 
     /**

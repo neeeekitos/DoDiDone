@@ -60,10 +60,14 @@ Piece * GameController::MakeMove(Move mv) {
     if (!c.nextMoveInPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
     }
-    c.ChangePlayer();       // Change the current player turn
-    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+
+    // Change the current player turn
+    c.ChangePlayer();
+
+    // If we are in AI mode and it's the AI turn to play
+    if (this->gameMode == AIPLAYER && c.GetCurrentPlayer() == BLACK) {
         // Generate a move
-        // this->MakeMove(the generated move)
+        MakeMove(ai->DoMove(c));
     }
     c.UpdateStatus();
 
@@ -99,7 +103,7 @@ Piece * GameController::MakeMove(Move mv, bool updateGeneralState, bool temporar
         c.inPassingAuthorised = nullptr;
     }
     c.ChangePlayer();       // Change the current player turn
-    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+    if (this->gameMode == AIPLAYER && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
         // Generate a move
         // this->MakeMove(the generated move)
     }
