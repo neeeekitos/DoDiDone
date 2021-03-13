@@ -45,7 +45,7 @@ GameStatus GameController::GetGameStatus() {
 }
 
 Piece * GameController::MakeMove(Move mv) {
-    cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
+    //cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
     Chessboard &c = *Chessboard::GetInstance();
     bool eat = false;
     Piece * eatenPiece;
@@ -61,7 +61,6 @@ Piece * GameController::MakeMove(Move mv) {
     c.SetPiece(mv.second, c.GetPiece(mv.first));
     c.SetPiece(mv.first, temp);
     c.GetPiece(mv.second)->NotifyMove(mv);
-    cout << "notified" << endl;
     if (!c.nextMoveIsPassingAuthorized) {
         c.inPassingAuthorised = nullptr;
     }
@@ -71,8 +70,46 @@ Piece * GameController::MakeMove(Move mv) {
         // this->MakeMove(the generated move)
     }
     c.UpdateStatus();
-    cout << "check ? " << (c.GetGameStatus1().blackCheck || c.GetGameStatus1().whiteCheck) << endl;
-    cout << "mate ? " << c.GetGameStatus1().mate << endl;
+
+    if (eat) {
+        return eatenPiece;
+    } else{
+        return nullptr;
+    }
+
+}
+
+Piece * GameController::MakeMove(Move mv, bool updateGeneralState) {
+    //cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;
+    Chessboard &c = *Chessboard::GetInstance();
+    bool eat = false;
+    Piece * eatenPiece;
+    c.NotifyMove();
+    c.nextMoveIsPassingAuthorized = false;
+    if ( !c.GetPiece(mv.second)->isEmpty() ) {
+        eat = true;
+        eatenPiece = c.GetPiece(mv.second);
+        c.EatPiece(mv.second, c.GetPiece(mv.second)->GetColor());
+        c.SetPiece(mv.second, new Piece());
+    }
+    Piece *temp = c.GetPiece(mv.second);
+    c.SetPiece(mv.second, c.GetPiece(mv.first));
+    c.SetPiece(mv.first, temp);
+    c.GetPiece(mv.second)->NotifyMove(mv);
+    //cout << "notified" << endl;
+    if (!c.nextMoveIsPassingAuthorized) {
+        c.inPassingAuthorised = nullptr;
+    }
+    c.ChangePlayer();       // Change the current player turn
+    if (this->gameMode == AI && c.GetCurrentPlayer() == BLACK) {    // If we are in AI mode and it's the AI turn to play
+        // Generate a move
+        // this->MakeMove(the generated move)
+    }
+    if (updateGeneralState) {
+        c.UpdateStatus();
+    } else {
+        c.UpdateCheckStatus();
+    }
 
     if (eat) {
         return eatenPiece;
@@ -110,6 +147,7 @@ void GameController::LoadGame(int gameId) {
     if (gameId <= vect.size()) {
         c->Load(vect[gameId]);
     }
+    c->UpdateStatus();
 }
 
 PieceColor GameController::GetCurrentPlayer() const {

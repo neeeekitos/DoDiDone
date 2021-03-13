@@ -89,7 +89,6 @@ DestinationsSet Pawn::GetPossibleMoves() {
 }
 
 void Pawn::NotifyMove(Move mv) {
-    cout << "pawn notifying move" << endl;
     int moveLength = mv.second.first - mv.first.first;
     moveLength = (moveLength < 0 ? - moveLength : moveLength);
     Chessboard * cb = Chessboard::GetInstance();

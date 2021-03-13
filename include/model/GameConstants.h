@@ -80,6 +80,12 @@ enum GameStatus {
     BeforeBegin
 };
 
+enum WINNER {
+    BLACKWINNER,
+    WHITEWINNER,
+    EQUAL
+};
+
 
 
 class constantesDeplacement {

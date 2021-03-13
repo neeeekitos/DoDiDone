@@ -74,9 +74,25 @@ GameStatus Chessboard::GetGameStatus() const {
 Status Chessboard::GetGameStatus1() {
 
     return this->state;
+
 }
 
 void Chessboard::UpdateStatus() {
+    this->UpdateCheckStatus();
+
+    if (this->GetMovablePieces(this->currentPlayer).size() == 0) {
+        this->state.stalemate = true;
+        if ((this->currentPlayer == BLACK && this->state.blackCheck) || (this->currentPlayer == WHITE && this->state.whiteCheck)) {
+            this->state.mate = true;
+        }
+    }
+
+}
+
+void Chessboard::UpdateCheckStatus() {
+
+    this->state.whiteCheck = false;
+    this->state.blackCheck = false;
     for (int i = 0; i < CHESSBOARDSIZE; ++i ) {
         Piece * p = this->getPiece(i);
         if ( !p->isEmpty() ) {
@@ -96,11 +112,8 @@ void Chessboard::UpdateStatus() {
         }
     }
 
-//    if (this->GetMovablePieces(this->currentPlayer).size() == 0) {
-//        this->state.stalemate = true;
-//    }
-
 }
+
 
 void Chessboard::SetStatus(GameStatus s) {
     status = s;
@@ -117,13 +130,15 @@ Coordinate Chessboard::ConvertOneDimensionPositionToCoordinate(int position) {
 }
 
 DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
+    //cout << "get possible moves" << endl;
     int oneDimentionPosition = convertCoordinates(coor);
     DestinationsSet dest;
     if (!allPlayers && this->getPiece(oneDimentionPosition)->GetColor() != this->currentPlayer) {
         return dest;
     }
     dest = this->getPiece(oneDimentionPosition)->GetPossibleMoves();
-    if (this->GetGameStatus1().whiteCheck && this->currentPlayer == WHITE) {
+    King * k = dynamic_cast<King *> (this->getPiece(oneDimentionPosition));
+    if ((this->GetGameStatus1().whiteCheck && this->currentPlayer == WHITE) || (this->currentPlayer == WHITE && k != nullptr)) {
         DestinationsSet filtered;
         GameController * gc = GameController::GetInstance();
         for (pair<int, int> d : dest) {
@@ -131,7 +146,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             Move mv = make_pair(coor, d);
             t.mv = mv;
             t.eatenPiece = false;
-            Piece * p = gc->MakeMove(mv);
+            Piece * p = gc->MakeMove(mv, false);
             if (p != nullptr) {
                 t.eatenPiece = true;
                 t.positionOfEatenPiece = this->convertCoordinates(d);
@@ -142,12 +157,12 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             }
             undoTransition(t);
             this->ChangePlayer();
-            this->UpdateStatus();
+            this->UpdateCheckStatus();
         }
         if (filtered.size() == 0) this->state.stalemate = true;
         return filtered;
     }
-    if (this->GetGameStatus1().blackCheck && this->currentPlayer == BLACK) {
+    if ((this->GetGameStatus1().blackCheck && this->currentPlayer == BLACK) || (this->currentPlayer == BLACK && k != nullptr)) {
         DestinationsSet filtered;
         GameController * gc = GameController::GetInstance();
         for (pair<int, int> d : dest) {
@@ -155,7 +170,7 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             Move mv = make_pair(coor, d);
             t.mv = mv;
             t.eatenPiece = false;
-            Piece * p = gc->MakeMove(mv);
+            Piece * p = gc->MakeMove(mv, false);
             if (p != nullptr) {
                 t.eatenPiece = true;
                 t.positionOfEatenPiece = this->convertCoordinates(d);
@@ -166,13 +181,29 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             }
             undoTransition(t);
             this->ChangePlayer();
-            this->UpdateStatus();
+            this->UpdateCheckStatus();
         }
         if (filtered.size() == 0) {
         }
         return filtered;
     }
     return dest;
+}
+
+bool Chessboard::IsGameOver() {
+    return ((this->state.blackCheck || this->state.whiteCheck) && this->state.mate) || this->state.stalemate;
+}
+
+WINNER Chessboard::GetWinner() {
+    if (this->IsGameOver() && this->state.whiteCheck) {
+        return BLACKWINNER;
+    }
+    if (this->IsGameOver() && this->state.blackCheck) {
+        return WHITEWINNER;
+    }
+    if (this->IsGameOver() && ! this->state.stalemate) {
+        return EQUAL;
+    }
 }
 
 void Chessboard::undoTransition(Transition & t) {
@@ -250,10 +281,10 @@ int Chessboard::GetPosition(const Piece *p) const {
 void Chessboard::EatPiece(Coordinate coordinate, PieceColor pieceColor) {
     int position = this->convertCoordinates(coordinate);
     if (pieceColor == BLACK) {
-        eatenByBlack.push_back(this->GetPiece(coordinate));
+        eatenByWhite.push_back(this->GetPiece(coordinate));
     }
     if (pieceColor == WHITE) {
-        eatenByWhite.push_back(this->GetPiece(coordinate));
+        eatenByBlack.push_back(this->GetPiece(coordinate));
     }
 //    cout << "eatenByWhite : ";
 //    for (Piece * p : eatenByWhite) {

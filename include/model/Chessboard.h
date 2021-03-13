@@ -126,6 +126,12 @@ public:
 
     void undoTransition(Transition& t);
 
+    void UpdateCheckStatus();
+
+    bool IsGameOver();
+
+    WINNER GetWinner();
+
 private:
 
     int convertCoordinates(const Coordinate &coor) const;
