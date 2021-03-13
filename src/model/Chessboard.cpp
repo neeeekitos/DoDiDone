@@ -36,6 +36,7 @@ Chessboard::Chessboard() {
     this->shots = 1;
     this->currentPlayer = WHITE;
     this->inPassingAuthorised = nullptr;
+    this->inPassingAuthorised = nullptr;
 
 }
 
@@ -148,7 +149,6 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             this->ChangePlayer();
             this->UpdateCheckStatus();
         }
-        if (filtered.size() == 0) this->state.stalemate = true;
         return filtered;
     }
     if ((this->GetGameStatus1().blackCheck && this->currentPlayer == BLACK) || (this->currentPlayer == BLACK && k != nullptr)) {
@@ -171,8 +171,6 @@ DestinationsSet Chessboard::GetPossibleMoves(Coordinate coor, bool allPlayers) {
             undoTransition(t);
             this->ChangePlayer();
             this->UpdateCheckStatus();
-        }
-        if (filtered.size() == 0) {
         }
         return filtered;
     }
