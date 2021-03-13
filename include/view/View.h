@@ -63,7 +63,7 @@ private:
      * @brief Init window with all elements depending on step and game status
      * @param s
      */
-    void interfaceInitialisationWithStatus(GameStatus s);
+    void interfaceInitialisationWithStatus();
 
     /**
      * @brief Init chessboard squares to enable click detection on them

@@ -75,9 +75,7 @@ void View::MenuChoices() {
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //new game
-                        cout << "ok1" << endl;
                         refresh = true;
-                        cout << "ok2" << endl;
 
                         newGamePressed = true;
                         interfaceInitialisation(1);
@@ -188,11 +186,11 @@ void View::MainLoop() {
                 }
                 if (refresh) {
                     refresh = false;
-                    GameStatus s = GameController::GetInstance()->GetGameStatus();
-                    if (s == GameStatus::GoesOn) {
+                    bool gameOver = Chessboard::GetInstance()->IsGameOver();
+                    if (!gameOver) {
                         displayGameIn(*window, true);
                     } else {
-                        interfaceInitialisationWithStatus(s);
+                        interfaceInitialisationWithStatus();
                         displayGameIn(*window, false);
                     }
                 }
@@ -224,7 +222,7 @@ void View::interfaceInitialisation(int step) {
             buttons.push_back(new Button(p1, p2, ButtonType::NEW_GAME));
 
 
-            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "games/game-empty.png"));
+            interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "game-empty.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
             interface[interface.size() - 1]->setPosition(p1);
@@ -317,9 +315,10 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 3:
+            //black or white wins
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
-            winner = GameController::GetInstance()->GetGameStatus() == GameStatus::WhiteWin ? "white" : "black";
-            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/win.png"));
+            winner = Chessboard::GetInstance()->GetWinner() == WINNER::WHITEWINNER ? "white" : "black";
+            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/wins.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
             interface[interface.size() - 1]->setPosition(p1);
@@ -331,8 +330,9 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 4:
+            //stalemate
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
-            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/pat.png"));
+            interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/stalemate.png"));
             v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
             interface[interface.size() - 1]->setPosition(p1);
@@ -343,13 +343,14 @@ void View::interfaceInitialisation(int step) {
     }
 }
 
-void View::interfaceInitialisationWithStatus(GameStatus s) {
-    switch (s) {
-        case GameStatus::BlackWin:
-        case GameStatus::WhiteWin:
+void View::interfaceInitialisationWithStatus() {
+    WINNER winner = Chessboard::GetInstance()->GetWinner();
+    switch (winner) {
+        case WINNER::BLACKWINNER:
+        case WINNER::WHITEWINNER:
             interfaceInitialisation(3);
             break;
-        case GameStatus::Pat:
+        case WINNER::EQUAL:
             interfaceInitialisation(4);
             break;
         default:

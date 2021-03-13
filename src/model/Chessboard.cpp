@@ -201,7 +201,7 @@ WINNER Chessboard::GetWinner() {
     if (this->IsGameOver() && this->state.blackCheck) {
         return WHITEWINNER;
     }
-    if (this->IsGameOver() && ! this->state.stalemate) {
+    else {
         return EQUAL;
     }
 }
