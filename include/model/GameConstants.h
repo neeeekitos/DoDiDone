@@ -21,6 +21,10 @@ enum CastlingSide{
     KINGSIDE
 };
 
+/**
+ * Represents the boundaries of the chessboard. It allows us to test if a position
+ * overflows from the chessboard
+ */
 const int boundaries [120] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -36,6 +40,10 @@ const int boundaries [120] = {
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
 };
 
+/**
+ * Given a position in the chessboard, this table returns its corresponding
+ * index in the boundaries table
+ */
 const int positionInBoundariesTable[64] = {
         21, 22, 23, 24, 25, 26, 27, 28,
         31, 32, 33, 34, 35, 36, 37, 38,
@@ -47,24 +55,36 @@ const int positionInBoundariesTable[64] = {
         91, 92, 93, 94, 95, 96, 97, 98
 };
 
+/**
+ * Represents the game mode
+ */
 enum GameMode {
     MULTIPLAYER,
     AI,
     UNDEFINED
 };
 
+/**
+ * Represents the color of pieces
+ */
 enum PieceColor {
     EMPTY,
     BLACK,
     WHITE
 };
 
+/**
+ * String table representing the piece colors
+ */
 const string PIECE_COLOR_NAME[3] = {
         "empty",
         "black",
         "white"
 };
 
+/**
+ * Represents the winner status of the game
+ */
 enum WINNER {
     BLACKWINNER,
     WHITEWINNER,
