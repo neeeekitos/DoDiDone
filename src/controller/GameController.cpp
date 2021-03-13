@@ -152,8 +152,8 @@ PieceColor GameController::GetCurrentPlayer() const {
     return Chessboard::GetInstance()->GetCurrentPlayer();
 }
 
-const std::vector<Piece *> &GameController::GetEatenPieces(PieceColor player) {
-    return Chessboard::GetInstance()->GetEatenPieces(player);
+const std::vector<Piece *> &GameController::GetEatenPieces(PieceColor color) {
+    return Chessboard::GetInstance()->GetEatenPieces(color);
 }
 
 
