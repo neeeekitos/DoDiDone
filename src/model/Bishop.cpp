@@ -1,10 +1,4 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
-
 #include "../../include/model/Bishop.h"
-
-// Edited by Rivaldo
 #include <algorithm>
 
 Bishop::Bishop(PieceColor aColor): Piece(aColor) {

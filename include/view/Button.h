@@ -1,7 +1,3 @@
-//
-// Created by lpietropao on 28/02/2021.
-//
-
 #ifndef E_CHESS_BUTTON_H
 #define E_CHESS_BUTTON_H
 

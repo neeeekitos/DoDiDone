@@ -4,8 +4,6 @@
 
 #include "../../include/model/King.h"
 #include "../../include/model/GameConstants.h"
-
-// Edited by Rivaldo
 #include <algorithm>
 
 King::King(PieceColor aColor): Piece(aColor) {

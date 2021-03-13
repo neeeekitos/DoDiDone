@@ -1,9 +1,5 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
-
-#ifndef E_CHESS_CONSTANTESDEPLACEMENT_H
-#define E_CHESS_CONSTANTESDEPLACEMENT_H
+#ifndef E_CHESS_GAMECONSTANTS_H
+#define E_CHESS_GAMECONSTANTS_H
 
 #include <vector>
 #include <string>
@@ -93,4 +89,4 @@ class constantesDeplacement {
 };
 
 
-#endif //E_CHESS_CONSTANTESDEPLACEMENT_H
+#endif //E_CHESS_GAMECONSTANTS_H
