@@ -61,6 +61,7 @@ void View::MenuChoices() {
     sf::Event event;
 
     interfaceInitialisation(0);
+    displayGameIn(*window);
 
     GameController::GetInstance()->GetSavedGamesIds(savedGames);
     auto savedGamesIterator = savedGames.begin();
@@ -74,7 +75,10 @@ void View::MenuChoices() {
                 if (!newGamePressed) {
                     if (buttons[0]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //new game
+                        cout << "ok1" << endl;
                         refresh = true;
+                        cout << "ok2" << endl;
+
                         newGamePressed = true;
                         interfaceInitialisation(1);
                     } else if (buttons[3]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
@@ -85,8 +89,8 @@ void View::MenuChoices() {
                                 savedGames.size() >= currentSavedGameIndex ? savedGames[currentSavedGameIndex] : -1);
                         interfaceInitialisation(2);
                     }
-                    //next and previous buttons -> circular course of game ids
                     else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                        //next and previous buttons -> circular course of game ids
                         //previous game
                         changeLoadedGame = true;
                         if (savedGamesIterator == savedGames.begin()) {
@@ -110,6 +114,7 @@ void View::MenuChoices() {
                     //load new game id button image
                     if (changeLoadedGame) {
                         refresh = true;
+                        changeLoadedGame = false;
                         texts[texts.size() - 1]->setString(to_string(*savedGamesIterator + 1));
                     }
                 } else {
@@ -123,9 +128,12 @@ void View::MenuChoices() {
                         interfaceInitialisation(2);
                     }
                 }
+                if (refresh) {
+                    refresh = false;
+                    displayGameIn(*window);
+                }
             }
         }
-        displayGameIn(*window);
     }
 }
 
@@ -179,6 +187,7 @@ void View::MainLoop() {
                     }
                 }
                 if (refresh) {
+                    refresh = false;
                     GameStatus s = GameController::GetInstance()->GetGameStatus();
                     if (s == GameStatus::GoesOn) {
                         displayGameIn(*window, true);
@@ -247,6 +256,7 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 1:
+            cout << "ok3" << endl;
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/2-players.png"));
