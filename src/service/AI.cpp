@@ -2,6 +2,7 @@
 // Created by Nikita TEREKHOV on 06/03/2021.
 //
 #include "../../include/service/AI.h"
+#include "limits.h"
 
 using namespace std;
 

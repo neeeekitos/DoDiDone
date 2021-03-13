@@ -263,6 +263,20 @@ public:
     const std::vector<Piece *> &GetEatenPieces(PieceColor player) const;
 
     /**
+     * Returns all the pieces of the chessboard
+     * @param color The color of the pieces
+     * @return
+     */
+    DestinationsSet GetAllPieces (PieceColor color);
+
+    /**
+     * Tells if the game is over
+     * @param pieceColor
+     * @return
+     */
+    bool GameOver(PieceColor pieceColor);
+
+    /**
      * Destructor of a chessboard
      */
     virtual ~Chessboard();
@@ -311,8 +325,6 @@ public:
      */
     bool nextMoveInPassingAuthorized;
 
-private:
-
     /**
      * Converts 2 dimensions coordinates to a one dimension position in the
      * chess board
@@ -320,6 +332,8 @@ private:
      * @returno The corresponding position
      */
     int convertCoordinates(const Coordinate &coor) const;
+
+private:
 
     /**
      * The constructor of the chessboard. Note that it is in private as the
