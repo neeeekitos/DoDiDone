@@ -21,7 +21,6 @@ using namespace std;
 Chessboard* Chessboard::chessBoard_ = nullptr;
 
 Chessboard::Chessboard() {
-    status = GameStatus::BeforeBegin;
     this->board = {
         new Tower(BLACK), new Knight(BLACK), new Bishop(BLACK),new Queen(BLACK), new King(BLACK), new Bishop(BLACK), new Knight(BLACK), new Tower(BLACK),
         new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK), new Pawn(BLACK),
@@ -67,14 +66,9 @@ int Chessboard::GetPositionInBoundariesTable(int position) {
     return positionInBoundariesTable[position];
 }
 
-GameStatus Chessboard::GetGameStatus() const {
-    return this->status;
-}
-
 Status Chessboard::GetGameStatus1() {
 
     return this->state;
-
 }
 
 void Chessboard::UpdateStatus() {
@@ -112,11 +106,6 @@ void Chessboard::UpdateCheckStatus() {
         }
     }
 
-}
-
-
-void Chessboard::SetStatus(GameStatus s) {
-    status = s;
 }
 
 int Chessboard::GetValueInBoundariesTable(int position) {

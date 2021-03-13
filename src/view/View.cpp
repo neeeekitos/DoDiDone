@@ -86,8 +86,7 @@ void View::MenuChoices() {
                         GameController::GetInstance()->LoadGame(
                                 savedGames.size() >= currentSavedGameIndex ? savedGames[currentSavedGameIndex] : -1);
                         interfaceInitialisation(2);
-                    }
-                    else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
+                    } else if (buttons[1]->checkPosition(event.mouseButton.x, event.mouseButton.y)) {
                         //next and previous buttons -> circular course of game ids
                         //previous game
                         changeLoadedGame = true;
@@ -187,6 +186,8 @@ void View::MainLoop() {
                 if (refresh) {
                     refresh = false;
                     bool gameOver = Chessboard::GetInstance()->IsGameOver();
+                    cout << gameOver << "----------------------------"
+                         << endl;
                     if (!gameOver) {
                         displayGameIn(*window, true);
                     } else {
@@ -254,7 +255,6 @@ void View::interfaceInitialisation(int step) {
             break;
 
         case 1:
-            cout << "ok3" << endl;
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/2-players.png"));
@@ -385,7 +385,7 @@ void View::displayEatenPieces(PieceColor color, sf::RenderWindow &w) {
             if (index1D < eatenPiecesList.size()) {
                 string pieceName = PIECE_NAME[eatenPiecesList[index1D]->GetType()];
 
-                int shiftX = (color == PieceColor::WHITE) ? 0 :890;
+                int shiftX = (color == PieceColor::WHITE) ? 0 : 890;
                 eatenPieces.push_back(new sf::RectangleShape(sf::Vector2f(SQUARE_WIDTH - SQUARE_OUTLINE_THICKNESS * 2,
                                                                           SQUARE_HEIGHT -
                                                                           SQUARE_OUTLINE_THICKNESS * 2)));

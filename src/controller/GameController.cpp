@@ -27,7 +27,6 @@ GameController::~GameController() {
 
 void GameController::Start() {
     View::GetInstance()->MenuChoices();
-    Chessboard::GetInstance()->SetStatus(GameStatus::GoesOn);
     View::GetInstance()->MainLoop();
 }
 
@@ -40,9 +39,6 @@ GameMode GameController::GetGameMode() {
     return this->gameMode;
 }
 
-GameStatus GameController::GetGameStatus() {
-    return Chessboard::GetInstance()->GetGameStatus();
-}
 
 Piece * GameController::MakeMove(Move mv) {
     //cout << mv.first.first << "-" << mv.first.second << " -> " << mv.second.first << "-" << mv.second.second << endl;

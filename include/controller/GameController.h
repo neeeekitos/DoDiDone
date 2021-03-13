@@ -28,8 +28,6 @@ public:
 
     GameMode GetGameMode();
 
-    GameStatus GetGameStatus();
-
     Piece * MakeMove(Move mv);
 
 

@@ -55,10 +55,6 @@ public:
 
     bool IsValidMove(Move mv);
 
-    GameStatus GetGameStatus() const;
-
-    void SetStatus(GameStatus s);
-
     Piece *GetPiece(Coordinate cor);
 
     void SetPiece(Coordinate &cor, Piece *piece);
@@ -156,8 +152,6 @@ private:
     static inline const string SAVING_PATH = "files/backup/";
 
     static inline const string SAVING_FILE = SAVING_PATH + "save.txt";
-
-    GameStatus status;
 
     Status state;
 };

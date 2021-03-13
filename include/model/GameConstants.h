@@ -65,17 +65,6 @@ const string PIECE_COLOR_NAME[3] = {
         "white"
 };
 
-enum GameStatus {
-    Check,
-    Mate,
-    CastlingPossible,
-    BlackWin,
-    WhiteWin,
-    Pat,
-    GoesOn,
-    BeforeBegin
-};
-
 enum WINNER {
     BLACKWINNER,
     WHITEWINNER,
