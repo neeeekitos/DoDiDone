@@ -323,11 +323,11 @@ DestinationsSet Chessboard::GetMovablePieces(PieceColor color) {
     return movablePieces;
 }
 
-const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor player) const {
-    if (player == PieceColor::BLACK) {
-        return eatenByBlack;
-    } else {
+const std::vector<Piece *> &Chessboard::GetEatenPieces(PieceColor color) const {
+    if (color == PieceColor::BLACK) {
         return eatenByWhite;
+    } else {
+        return eatenByBlack;
     }
 }
 
