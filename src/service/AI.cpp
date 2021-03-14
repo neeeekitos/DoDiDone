@@ -19,6 +19,7 @@ AI::AI() : aiMode(RANDOM) {}
 
 Move AI::DoMove(Chessboard& chessboard) {
 
+    cout << "AI tour ------------------" << endl;
     aiMode = MINIMAX;
     Move move;
     if (aiMode == RANDOM) move = RandomMove(chessboard);
@@ -32,7 +33,6 @@ Move AI::DoMove(Chessboard& chessboard) {
         --lastElementIt;
         move = lastElementIt->mv;
     }
-    chessboard.ChangePlayer();
     return move;
 }
 
@@ -93,6 +93,7 @@ int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
     cout << "piece color is " << pieceColor << endl;
     if (depth == 0 || board->GameOver(pieceColor)) {
         int eval = evaluate(*board, pieceColor);
+
         return eval;
     }
 
@@ -119,10 +120,14 @@ int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
                 cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
                      << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
 
+                board->ChangePlayer();
+
+
                 maxEval = max(maxEval, eval);
                 if (maxEval == eval) bestMove = possibleMove;
 
                 board->undoTransition(t);
+                cout << "undoing transition" << endl;
 
             }
         }
@@ -136,7 +141,9 @@ int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
+                cout << "depth is : " << depth << " , id is :" << cpt << endl;
 
+                cpt++;
                 Transition t;
 
                 // move piece in the chessboard and remember eated piece (in some cases)
@@ -153,7 +160,11 @@ int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
                 /*if (possibleMove.first.first == 0 && possibleMove.first.second == 1
                     && possibleMove.second.first == 0 && possibleMove.second.second == 0) exit(-1);*/
 
+                board->ChangePlayer();
+
                 board->undoTransition(t);
+                cout << "undoing transition" << endl;
+
 
                 minEval = min(minEval, eval);
                 if (minEval == eval) bestMove = possibleMove;
