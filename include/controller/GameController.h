@@ -132,7 +132,6 @@ private:
      * implementation
      */
     GameController();
-    AI * ai;
 
     /**
      * Represents the game mode
