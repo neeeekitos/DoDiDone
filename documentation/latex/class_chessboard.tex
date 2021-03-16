@@ -1,0 +1,592 @@
+\hypertarget{class_chessboard}{}\doxysection{Chessboard Class Reference}
+\label{class_chessboard}\index{Chessboard@{Chessboard}}
+
+
+{\ttfamily \#include $<$Chessboard.\+h$>$}
+
+
+
+Collaboration diagram for Chessboard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_chessboard__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chessboard_a3bf6f2f792cc9ff749f6d0c6f7db9d75}{Chessboard}} (const \mbox{\hyperlink{class_chessboard}{Chessboard}} \&another\+Chess\+Board)=delete
+\item 
+void \mbox{\hyperlink{class_chessboard_a4716a39f4ac528c673cf96869a302938}{operator=}} (const \mbox{\hyperlink{class_chessboard}{Chessboard}} \&a\+Chess\+Board)=delete
+\item 
+\mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_chessboard_a20bf051a44cd433c36fa20d1fd5cd1cb}{Get\+Possible\+Moves}} (\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} coor, bool all\+Players)
+\item 
+int \mbox{\hyperlink{class_chessboard_ad70418af02b77fc70beb7399f6fac65f}{Get\+Value\+In\+Boundaries\+Table}} (int position)
+\item 
+void \mbox{\hyperlink{class_chessboard_a775223484e57712172bcb4a80540c873}{Update\+Status}} ()
+\item 
+\mbox{\hyperlink{struct_status}{Status}} \mbox{\hyperlink{class_chessboard_a5af0c90a273012d7793d5a3ff3749d01}{Get\+Game\+Status}} ()
+\item 
+bool \mbox{\hyperlink{class_chessboard_a7b9b1daa132f9bf6f2eaff2eb74b73b5}{Is\+Valid\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+\item 
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_chessboard_ac99efd3450fbbba2cb2a5772229ed91d}{Get\+Piece}} (\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} cor)
+\item 
+void \mbox{\hyperlink{class_chessboard_a7c867547144dc199b5b53775263a98ec}{Set\+Piece}} (\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} \&cor, \mbox{\hyperlink{class_piece}{Piece}} $\ast$piece)
+\item 
+const \mbox{\hyperlink{class_piece}{Piece}} $\ast$const \mbox{\hyperlink{class_chessboard_a178bcf48fedfa2d9b03ceb464a58659a}{Get\+Piece}} (int position) const
+\item 
+\mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_chessboard_a4802682818f952ec32ab79c81c034d80}{Get\+Possible\+Moves}} (\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} coor)
+\item 
+int \mbox{\hyperlink{class_chessboard_a5123c2f15cbc473bb97153a5a12030dc}{Get\+Position}} (const \mbox{\hyperlink{class_piece}{Piece}} $\ast$p) const
+\item 
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_chessboard_a3de66e198ba4f252e14110010c483150}{get\+Piece}} (int position)
+\item 
+void \mbox{\hyperlink{class_chessboard_ae998fa9ef93b7de1cf7d4d605cefb9ed}{Eat\+Piece}} (\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} coordinate, \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} piece\+Color)
+\item 
+void \mbox{\hyperlink{class_chessboard_aa8d264a9327410d098cb681d7f6c8b76}{Change\+Player}} ()
+\item 
+\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \mbox{\hyperlink{class_chessboard_a94fe9907245c34dec2a071758bc81c5e}{Get\+Current\+Player}} ()
+\item 
+\mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_chessboard_add427bc4c81eeff20b63e296983c7b61}{Get\+Movable\+Pieces}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color)
+\item 
+int \mbox{\hyperlink{class_chessboard_a17faad2117cc15f7839f6f3b862f5ff6}{Get\+Shots}} () const
+\item 
+string \mbox{\hyperlink{class_chessboard_a67e1df2a6a5181e3a47ff1e205d4f798}{chessboard\+To\+Fen}} ()
+\item 
+void \mbox{\hyperlink{class_chessboard_a10a73fe2e42dc299c7467ace78280833}{Notify\+Move}} ()
+\item 
+int \mbox{\hyperlink{class_chessboard_a56f987ec2285be174faad39a153365fc}{Save\+Game}} ()
+\item 
+bool \mbox{\hyperlink{class_chessboard_aad88cba9fb3457bb00195089ab84499c}{Castling\+Is\+Possible}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color, \mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}{Castling\+Side}} castling\+Side)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_chessboard_a5ee263d50e9d26a2c0b5e52b7ea26d45}{Get\+Backup\+File\+Informations}} ()
+\item 
+void \mbox{\hyperlink{class_chessboard_a280d2ee4201441e5f777450c0407f42a}{Load}} (string fen)
+\item 
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_chessboard_aa3f9398678b8ce9a847feda7502b53d6}{Generate\+Piece}} (char fen\+Char)
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} $\ast$ $>$ \& \mbox{\hyperlink{class_chessboard_aa1e43d7f88d65d27eb76ed3a72d82eff}{Get\+Eaten\+Pieces}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} player) const
+\item 
+\mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_chessboard_ae6551a4a0df5649bd6d762528d2c639c}{Get\+All\+Pieces}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color)
+\item 
+bool \mbox{\hyperlink{class_chessboard_aabef30c164ed6be73c75b810e68e142a}{Game\+Over}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} piece\+Color)
+\item 
+virtual \mbox{\hyperlink{class_chessboard_a1ac92e251b7c4cdf89bed6b7d0371ffc}{$\sim$\+Chessboard}} ()
+\item 
+bool \mbox{\hyperlink{class_chessboard_ababb4cbcd616aaeb3f0b16f45ba9a3e2}{Is\+Eating\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+\item 
+void \mbox{\hyperlink{class_chessboard_a81c05fb703cda2396f8789969eb306db}{undo\+Transition}} (\mbox{\hyperlink{struct_transition}{Transition}} \&t)
+\item 
+void \mbox{\hyperlink{class_chessboard_a933e105c7c8e3f3042d6463451538993}{Update\+Check\+Status}} ()
+\item 
+bool \mbox{\hyperlink{class_chessboard_a1750e858922991e2a18e5bf0691cda9a}{Is\+Game\+Over}} ()
+\item 
+\mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}{W\+I\+N\+N\+ER}} \mbox{\hyperlink{class_chessboard_a70f56e488f07836083d240002453e950}{Get\+Winner}} ()
+\item 
+int \mbox{\hyperlink{class_chessboard_abde35e25c3063a144321d20a5c2a5c57}{convert\+Coordinates}} (const \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} \&coor) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_chessboard}{Chessboard}} $\ast$ \mbox{\hyperlink{class_chessboard_aeecd8d3f2668fe46eb6a6f3904d07ec2}{Get\+Instance}} ()
+\item 
+static int \mbox{\hyperlink{class_chessboard_a8cf938b88106b46bad139a66f067680a}{Get\+Position\+In\+Boundaries\+Table}} (int position)
+\item 
+static \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} \mbox{\hyperlink{class_chessboard_ab118c3ef882d2ed6e8b8f4ddd819e065}{Convert\+One\+Dimension\+Position\+To\+Coordinate}} (int position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pawn}{Pawn}} $\ast$ \mbox{\hyperlink{class_chessboard_ac1f99557aa29e8904a526bc1aacd17c3}{in\+Passing\+Authorised}}
+\item 
+bool \mbox{\hyperlink{class_chessboard_a9271af568109174fa6519cfb034a0e82}{next\+Move\+In\+Passing\+Authorized}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_chessboard_a6d3aa947efeb81adf7c219e0046a731f}{operator$<$$<$}} (ostream \&out, \mbox{\hyperlink{class_chessboard}{Chessboard}} \&cb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents the chessboard. It is implemented as a singleton in the while program 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_chessboard_a3bf6f2f792cc9ff749f6d0c6f7db9d75}\label{class_chessboard_a3bf6f2f792cc9ff749f6d0c6f7db9d75}} 
+\index{Chessboard@{Chessboard}!Chessboard@{Chessboard}}
+\index{Chessboard@{Chessboard}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{Chessboard()}{Chessboard()}}
+{\footnotesize\ttfamily Chessboard\+::\+Chessboard (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_chessboard}{Chessboard}} \&}]{another\+Chess\+Board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+This is the copy constructor of the chessboard. As we implemented this class as a singleton, we delete this method to prevent copying the instance 
+\begin{DoxyParams}{Parameters}
+{\em another\+Chess\+Board} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_a1ac92e251b7c4cdf89bed6b7d0371ffc}\label{class_chessboard_a1ac92e251b7c4cdf89bed6b7d0371ffc}} 
+\index{Chessboard@{Chessboard}!````~Chessboard@{$\sim$Chessboard}}
+\index{````~Chessboard@{$\sim$Chessboard}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{$\sim$Chessboard()}{~Chessboard()}}
+{\footnotesize\ttfamily virtual Chessboard\+::$\sim$\+Chessboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor of a chessboard 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_chessboard_aad88cba9fb3457bb00195089ab84499c}\label{class_chessboard_aad88cba9fb3457bb00195089ab84499c}} 
+\index{Chessboard@{Chessboard}!CastlingIsPossible@{CastlingIsPossible}}
+\index{CastlingIsPossible@{CastlingIsPossible}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{CastlingIsPossible()}{CastlingIsPossible()}}
+{\footnotesize\ttfamily bool Chessboard\+::\+Castling\+Is\+Possible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color,  }\item[{\mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}{Castling\+Side}}}]{castling\+Side }\end{DoxyParamCaption})}
+
+This method tells wether the castling of the king of the given color in the given side is possible 
+\begin{DoxyParams}{Parameters}
+{\em color} & The king color \\
+\hline
+{\em castling\+Side} & The castling side to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_aa8d264a9327410d098cb681d7f6c8b76}\label{class_chessboard_aa8d264a9327410d098cb681d7f6c8b76}} 
+\index{Chessboard@{Chessboard}!ChangePlayer@{ChangePlayer}}
+\index{ChangePlayer@{ChangePlayer}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{ChangePlayer()}{ChangePlayer()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Change\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method changes the current player \mbox{\Hypertarget{class_chessboard_a67e1df2a6a5181e3a47ff1e205d4f798}\label{class_chessboard_a67e1df2a6a5181e3a47ff1e205d4f798}} 
+\index{Chessboard@{Chessboard}!chessboardToFen@{chessboardToFen}}
+\index{chessboardToFen@{chessboardToFen}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{chessboardToFen()}{chessboardToFen()}}
+{\footnotesize\ttfamily string Chessboard\+::chessboard\+To\+Fen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Transoforms the current chessboard to its corresponding F\+EN representation \begin{DoxyReturn}{Returns}
+string representing the F\+EN format of the current configuration of the chessboard 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_abde35e25c3063a144321d20a5c2a5c57}\label{class_chessboard_abde35e25c3063a144321d20a5c2a5c57}} 
+\index{Chessboard@{Chessboard}!convertCoordinates@{convertCoordinates}}
+\index{convertCoordinates@{convertCoordinates}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{convertCoordinates()}{convertCoordinates()}}
+{\footnotesize\ttfamily int Chessboard\+::convert\+Coordinates (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} \&}]{coor }\end{DoxyParamCaption}) const}
+
+Converts 2 dimensions coordinates to a one dimension position in the chess board 
+\begin{DoxyParams}{Parameters}
+{\em coor} & The given coordinates @returno The corresponding position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_ab118c3ef882d2ed6e8b8f4ddd819e065}\label{class_chessboard_ab118c3ef882d2ed6e8b8f4ddd819e065}} 
+\index{Chessboard@{Chessboard}!ConvertOneDimensionPositionToCoordinate@{ConvertOneDimensionPositionToCoordinate}}
+\index{ConvertOneDimensionPositionToCoordinate@{ConvertOneDimensionPositionToCoordinate}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{ConvertOneDimensionPositionToCoordinate()}{ConvertOneDimensionPositionToCoordinate()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} Chessboard\+::\+Convert\+One\+Dimension\+Position\+To\+Coordinate (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method converts a one dimension position to 2 dimensions coordinates 
+\begin{DoxyParams}{Parameters}
+{\em position} & The given position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_ae998fa9ef93b7de1cf7d4d605cefb9ed}\label{class_chessboard_ae998fa9ef93b7de1cf7d4d605cefb9ed}} 
+\index{Chessboard@{Chessboard}!EatPiece@{EatPiece}}
+\index{EatPiece@{EatPiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{EatPiece()}{EatPiece()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Eat\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}}]{coordinate,  }\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{piece\+Color }\end{DoxyParamCaption})}
+
+This method simulates eating a piece situated in the given coordinates on the chessboard. It pushes the eated piece to the corresponding vector eaten\+By\+Black/eaten\+By\+White depending on the give piece\+Color parameter 
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & The coordinates of the piece to eat \\
+\hline
+{\em piece\+Color} & The color of the piece to eat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_aabef30c164ed6be73c75b810e68e142a}\label{class_chessboard_aabef30c164ed6be73c75b810e68e142a}} 
+\index{Chessboard@{Chessboard}!GameOver@{GameOver}}
+\index{GameOver@{GameOver}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GameOver()}{GameOver()}}
+{\footnotesize\ttfamily bool Chessboard\+::\+Game\+Over (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{piece\+Color }\end{DoxyParamCaption})}
+
+Tells if the game is over 
+\begin{DoxyParams}{Parameters}
+{\em piece\+Color} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_aa3f9398678b8ce9a847feda7502b53d6}\label{class_chessboard_aa3f9398678b8ce9a847feda7502b53d6}} 
+\index{Chessboard@{Chessboard}!GeneratePiece@{GeneratePiece}}
+\index{GeneratePiece@{GeneratePiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GeneratePiece()}{GeneratePiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Chessboard\+::\+Generate\+Piece (\begin{DoxyParamCaption}\item[{char}]{fen\+Char }\end{DoxyParamCaption})}
+
+It generates a piece that corresponds to the given F\+EN char 
+\begin{DoxyParams}{Parameters}
+{\em fen\+Char} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_ae6551a4a0df5649bd6d762528d2c639c}\label{class_chessboard_ae6551a4a0df5649bd6d762528d2c639c}} 
+\index{Chessboard@{Chessboard}!GetAllPieces@{GetAllPieces}}
+\index{GetAllPieces@{GetAllPieces}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetAllPieces()}{GetAllPieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Chessboard\+::\+Get\+All\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color }\end{DoxyParamCaption})}
+
+Returns all the pieces of the chessboard 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the pieces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a5ee263d50e9d26a2c0b5e52b7ea26d45}\label{class_chessboard_a5ee263d50e9d26a2c0b5e52b7ea26d45}} 
+\index{Chessboard@{Chessboard}!GetBackupFileInformations@{GetBackupFileInformations}}
+\index{GetBackupFileInformations@{GetBackupFileInformations}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetBackupFileInformations()}{GetBackupFileInformations()}}
+{\footnotesize\ttfamily vector$<$string$>$ Chessboard\+::\+Get\+Backup\+File\+Informations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns vector in F\+EN format of all the saved games \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a94fe9907245c34dec2a071758bc81c5e}\label{class_chessboard_a94fe9907245c34dec2a071758bc81c5e}} 
+\index{Chessboard@{Chessboard}!GetCurrentPlayer@{GetCurrentPlayer}}
+\index{GetCurrentPlayer@{GetCurrentPlayer}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPlayer()}{GetCurrentPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} Chessboard\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_aa1e43d7f88d65d27eb76ed3a72d82eff}\label{class_chessboard_aa1e43d7f88d65d27eb76ed3a72d82eff}} 
+\index{Chessboard@{Chessboard}!GetEatenPieces@{GetEatenPieces}}
+\index{GetEatenPieces@{GetEatenPieces}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetEatenPieces()}{GetEatenPieces()}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{class_piece}{Piece}} $\ast$$>$\& Chessboard\+::\+Get\+Eaten\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{player }\end{DoxyParamCaption}) const}
+
+Returns pieces eaten by the given player 
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a5af0c90a273012d7793d5a3ff3749d01}\label{class_chessboard_a5af0c90a273012d7793d5a3ff3749d01}} 
+\index{Chessboard@{Chessboard}!GetGameStatus@{GetGameStatus}}
+\index{GetGameStatus@{GetGameStatus}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetGameStatus()}{GetGameStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_status}{Status}} Chessboard\+::\+Get\+Game\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method returns the current status of the game \begin{DoxyReturn}{Returns}
+A struct representing the flags of status of the game 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_aeecd8d3f2668fe46eb6a6f3904d07ec2}\label{class_chessboard_aeecd8d3f2668fe46eb6a6f3904d07ec2}} 
+\index{Chessboard@{Chessboard}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_chessboard}{Chessboard}}$\ast$ Chessboard\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This returns the singleton instance \begin{DoxyReturn}{Returns}
+a pointer to the singleton instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_add427bc4c81eeff20b63e296983c7b61}\label{class_chessboard_add427bc4c81eeff20b63e296983c7b61}} 
+\index{Chessboard@{Chessboard}!GetMovablePieces@{GetMovablePieces}}
+\index{GetMovablePieces@{GetMovablePieces}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetMovablePieces()}{GetMovablePieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Chessboard\+::\+Get\+Movable\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color }\end{DoxyParamCaption})}
+
+Returns all the movable pieces of the given color 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of movable pieces to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of coordinates of the movable pieces 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_ac99efd3450fbbba2cb2a5772229ed91d}\label{class_chessboard_ac99efd3450fbbba2cb2a5772229ed91d}} 
+\index{Chessboard@{Chessboard}!GetPiece@{GetPiece}}
+\index{GetPiece@{GetPiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPiece()}{GetPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Chessboard\+::\+Get\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}}]{cor }\end{DoxyParamCaption})}
+
+This method returns the piece situated on the given coordinates in the chess board Contract \+: The given coordinates must be valid 
+\begin{DoxyParams}{Parameters}
+{\em cor} & The given coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the piece 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a3de66e198ba4f252e14110010c483150}\label{class_chessboard_a3de66e198ba4f252e14110010c483150}} 
+\index{Chessboard@{Chessboard}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Chessboard\+::get\+Piece (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})}
+
+Returns a pointer to the piece situated on the given one dimension position 
+\begin{DoxyParams}{Parameters}
+{\em position} & The given position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the piece 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a178bcf48fedfa2d9b03ceb464a58659a}\label{class_chessboard_a178bcf48fedfa2d9b03ceb464a58659a}} 
+\index{Chessboard@{Chessboard}!GetPiece@{GetPiece}}
+\index{GetPiece@{GetPiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPiece()}{GetPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_piece}{Piece}}$\ast$ const Chessboard\+::\+Get\+Piece (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption}) const}
+
+This method returns a const pointer to the piece situated in the given one dimension position 
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const pointer to the piece 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a5123c2f15cbc473bb97153a5a12030dc}\label{class_chessboard_a5123c2f15cbc473bb97153a5a12030dc}} 
+\index{Chessboard@{Chessboard}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily int Chessboard\+::\+Get\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_piece}{Piece}} $\ast$}]{p }\end{DoxyParamCaption}) const}
+
+Returns the position of the given piece in the board of pieces 
+\begin{DoxyParams}{Parameters}
+{\em p} & \+: a pointer to a given piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: the 1-\/dimension position of the piece in the chessboard 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a8cf938b88106b46bad139a66f067680a}\label{class_chessboard_a8cf938b88106b46bad139a66f067680a}} 
+\index{Chessboard@{Chessboard}!GetPositionInBoundariesTable@{GetPositionInBoundariesTable}}
+\index{GetPositionInBoundariesTable@{GetPositionInBoundariesTable}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPositionInBoundariesTable()}{GetPositionInBoundariesTable()}}
+{\footnotesize\ttfamily static int Chessboard\+::\+Get\+Position\+In\+Boundaries\+Table (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This method takes a position of a piece in parameter. It returns its corresponding index in the boundaries table (defined in Game\+Constants) 
+\begin{DoxyParams}{Parameters}
+{\em position} & The given position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The The position in boundaries table 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a4802682818f952ec32ab79c81c034d80}\label{class_chessboard_a4802682818f952ec32ab79c81c034d80}} 
+\index{Chessboard@{Chessboard}!GetPossibleMoves@{GetPossibleMoves}}
+\index{GetPossibleMoves@{GetPossibleMoves}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPossibleMoves()}{GetPossibleMoves()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Chessboard\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}}]{coor }\end{DoxyParamCaption})}
+
+Returns the possible moves of the piece situated on the given 2 dimensions coordinates 
+\begin{DoxyParams}{Parameters}
+{\em coor} & The given coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A destinations set representing the possible destinations 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a20bf051a44cd433c36fa20d1fd5cd1cb}\label{class_chessboard_a20bf051a44cd433c36fa20d1fd5cd1cb}} 
+\index{Chessboard@{Chessboard}!GetPossibleMoves@{GetPossibleMoves}}
+\index{GetPossibleMoves@{GetPossibleMoves}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetPossibleMoves()}{GetPossibleMoves()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Chessboard\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}}]{coor,  }\item[{bool}]{all\+Players }\end{DoxyParamCaption})}
+
+This methods gets the possible moves of the piece situated in the corresponding given coordinate 
+\begin{DoxyParams}{Parameters}
+{\em coor} & The coordinates of the piece \\
+\hline
+{\em all\+Players} & This variable tells if we should return the possible moves only if the current player is the same as the piece color, or in all cases \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The possible moves (as destination set) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a17faad2117cc15f7839f6f3b862f5ff6}\label{class_chessboard_a17faad2117cc15f7839f6f3b862f5ff6}} 
+\index{Chessboard@{Chessboard}!GetShots@{GetShots}}
+\index{GetShots@{GetShots}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetShots()}{GetShots()}}
+{\footnotesize\ttfamily int Chessboard\+::\+Get\+Shots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of shots in the game \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_ad70418af02b77fc70beb7399f6fac65f}\label{class_chessboard_ad70418af02b77fc70beb7399f6fac65f}} 
+\index{Chessboard@{Chessboard}!GetValueInBoundariesTable@{GetValueInBoundariesTable}}
+\index{GetValueInBoundariesTable@{GetValueInBoundariesTable}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetValueInBoundariesTable()}{GetValueInBoundariesTable()}}
+{\footnotesize\ttfamily int Chessboard\+::\+Get\+Value\+In\+Boundaries\+Table (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})}
+
+This method takes a position of a piece in parameter. It returns its corresponding \char`\"{}value\char`\"{} in boundaries table 
+\begin{DoxyParams}{Parameters}
+{\em position} & The given position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a70f56e488f07836083d240002453e950}\label{class_chessboard_a70f56e488f07836083d240002453e950}} 
+\index{Chessboard@{Chessboard}!GetWinner@{GetWinner}}
+\index{GetWinner@{GetWinner}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{GetWinner()}{GetWinner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}{W\+I\+N\+N\+ER}} Chessboard\+::\+Get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the winner of the game. This result of this method is only valid if the game is over \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_ababb4cbcd616aaeb3f0b16f45ba9a3e2}\label{class_chessboard_ababb4cbcd616aaeb3f0b16f45ba9a3e2}} 
+\index{Chessboard@{Chessboard}!IsEatingMove@{IsEatingMove}}
+\index{IsEatingMove@{IsEatingMove}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{IsEatingMove()}{IsEatingMove()}}
+{\footnotesize\ttfamily bool Chessboard\+::\+Is\+Eating\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})}
+
+Tells wether the given move allows us to eat a piece 
+\begin{DoxyParams}{Parameters}
+{\em mv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a1750e858922991e2a18e5bf0691cda9a}\label{class_chessboard_a1750e858922991e2a18e5bf0691cda9a}} 
+\index{Chessboard@{Chessboard}!IsGameOver@{IsGameOver}}
+\index{IsGameOver@{IsGameOver}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{IsGameOver()}{IsGameOver()}}
+{\footnotesize\ttfamily bool Chessboard\+::\+Is\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells wether the game is over or not \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a7b9b1daa132f9bf6f2eaff2eb74b73b5}\label{class_chessboard_a7b9b1daa132f9bf6f2eaff2eb74b73b5}} 
+\index{Chessboard@{Chessboard}!IsValidMove@{IsValidMove}}
+\index{IsValidMove@{IsValidMove}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{IsValidMove()}{IsValidMove()}}
+{\footnotesize\ttfamily bool Chessboard\+::\+Is\+Valid\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})}
+
+Tells wether the given move is a valid move Contract \+: The coordinates of the move must be a valid coordinates 
+\begin{DoxyParams}{Parameters}
+{\em mv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a280d2ee4201441e5f777450c0407f42a}\label{class_chessboard_a280d2ee4201441e5f777450c0407f42a}} 
+\index{Chessboard@{Chessboard}!Load@{Load}}
+\index{Load@{Load}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Load (\begin{DoxyParamCaption}\item[{string}]{fen }\end{DoxyParamCaption})}
+
+Loads the game using the given F\+EN string 
+\begin{DoxyParams}{Parameters}
+{\em fen} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_a10a73fe2e42dc299c7467ace78280833}\label{class_chessboard_a10a73fe2e42dc299c7467ace78280833}} 
+\index{Chessboard@{Chessboard}!NotifyMove@{NotifyMove}}
+\index{NotifyMove@{NotifyMove}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Notify\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Notifies the chess board that a move has been done \mbox{\Hypertarget{class_chessboard_a4716a39f4ac528c673cf96869a302938}\label{class_chessboard_a4716a39f4ac528c673cf96869a302938}} 
+\index{Chessboard@{Chessboard}!operator=@{operator=}}
+\index{operator=@{operator=}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Chessboard\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_chessboard}{Chessboard}} \&}]{a\+Chess\+Board }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+This is the affectation operator. In normal time, it calls the copy constructor. Thus, we delete this operator to prevent copying the instance 
+\begin{DoxyParams}{Parameters}
+{\em a\+Chess\+Board} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_a56f987ec2285be174faad39a153365fc}\label{class_chessboard_a56f987ec2285be174faad39a153365fc}} 
+\index{Chessboard@{Chessboard}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{SaveGame()}{SaveGame()}}
+{\footnotesize\ttfamily int Chessboard\+::\+Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Saved the game into a backup file. \begin{DoxyReturn}{Returns}
+The number of saved games 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_chessboard_a7c867547144dc199b5b53775263a98ec}\label{class_chessboard_a7c867547144dc199b5b53775263a98ec}} 
+\index{Chessboard@{Chessboard}!SetPiece@{SetPiece}}
+\index{SetPiece@{SetPiece}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{SetPiece()}{SetPiece()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Set\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} \&}]{cor,  }\item[{\mbox{\hyperlink{class_piece}{Piece}} $\ast$}]{piece }\end{DoxyParamCaption})}
+
+This method replaced the piece situated in the given coordinates by the given piece. It also frees the variable previously being in the given position. 
+\begin{DoxyParams}{Parameters}
+{\em cor} & The given coordinates \\
+\hline
+{\em piece} & The given piece \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_a81c05fb703cda2396f8789969eb306db}\label{class_chessboard_a81c05fb703cda2396f8789969eb306db}} 
+\index{Chessboard@{Chessboard}!undoTransition@{undoTransition}}
+\index{undoTransition@{undoTransition}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{undoTransition()}{undoTransition()}}
+{\footnotesize\ttfamily void Chessboard\+::undo\+Transition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_transition}{Transition}} \&}]{t }\end{DoxyParamCaption})}
+
+Undo a given transition. A transition is a struct made of a move, a position of the eventually eaten piece when doing the move, and the eaten piece color 
+\begin{DoxyParams}{Parameters}
+{\em t} & The given transition \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_chessboard_a933e105c7c8e3f3042d6463451538993}\label{class_chessboard_a933e105c7c8e3f3042d6463451538993}} 
+\index{Chessboard@{Chessboard}!UpdateCheckStatus@{UpdateCheckStatus}}
+\index{UpdateCheckStatus@{UpdateCheckStatus}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{UpdateCheckStatus()}{UpdateCheckStatus()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Update\+Check\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates the \char`\"{}check\char`\"{} status of the current game \mbox{\Hypertarget{class_chessboard_a775223484e57712172bcb4a80540c873}\label{class_chessboard_a775223484e57712172bcb4a80540c873}} 
+\index{Chessboard@{Chessboard}!UpdateStatus@{UpdateStatus}}
+\index{UpdateStatus@{UpdateStatus}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{UpdateStatus()}{UpdateStatus()}}
+{\footnotesize\ttfamily void Chessboard\+::\+Update\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method updates the status of the game (Check, mate, stalemate... etc) 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_chessboard_a6d3aa947efeb81adf7c219e0046a731f}\label{class_chessboard_a6d3aa947efeb81adf7c219e0046a731f}} 
+\index{Chessboard@{Chessboard}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_chessboard}{Chessboard}} \&}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Displays the chess board in console 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em cb} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_chessboard_ac1f99557aa29e8904a526bc1aacd17c3}\label{class_chessboard_ac1f99557aa29e8904a526bc1aacd17c3}} 
+\index{Chessboard@{Chessboard}!inPassingAuthorised@{inPassingAuthorised}}
+\index{inPassingAuthorised@{inPassingAuthorised}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{inPassingAuthorised}{inPassingAuthorised}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pawn}{Pawn}}$\ast$ Chessboard\+::in\+Passing\+Authorised}
+
+Represents an \char`\"{}in passing authorised\char`\"{} pawn if there is one \mbox{\Hypertarget{class_chessboard_a9271af568109174fa6519cfb034a0e82}\label{class_chessboard_a9271af568109174fa6519cfb034a0e82}} 
+\index{Chessboard@{Chessboard}!nextMoveInPassingAuthorized@{nextMoveInPassingAuthorized}}
+\index{nextMoveInPassingAuthorized@{nextMoveInPassingAuthorized}!Chessboard@{Chessboard}}
+\doxysubsubsection{\texorpdfstring{nextMoveInPassingAuthorized}{nextMoveInPassingAuthorized}}
+{\footnotesize\ttfamily bool Chessboard\+::next\+Move\+In\+Passing\+Authorized}
+
+Tells wether the next move allows in passing move to the pawn stored in in\+Passing\+Authorised 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/model/\mbox{\hyperlink{_chessboard_8h}{Chessboard.\+h}}\end{DoxyCompactItemize}

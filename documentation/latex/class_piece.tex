@@ -1,0 +1,214 @@
+\hypertarget{class_piece}{}\doxysection{Piece Class Reference}
+\label{class_piece}\index{Piece@{Piece}}
+
+
+{\ttfamily \#include $<$Piece.\+h$>$}
+
+
+
+Inheritance diagram for Piece\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_piece__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_piece_ac57de5803bbad829b143bc7268267dc1}{Piece}} ()
+\item 
+\mbox{\hyperlink{class_piece_ac3e4a11bc723119a8e6cb6cb6be11eee}{Piece}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color)
+\item 
+bool \mbox{\hyperlink{class_piece_a32226455e312130c625e869675bbab91}{is\+Empty}} ()
+\item 
+virtual char \mbox{\hyperlink{class_piece_a286d695fc92227537cf3c32e57bc4941}{Piece\+To\+F\+EN}} ()
+\item 
+\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \mbox{\hyperlink{class_piece_a382c8ef85474c2b2ff389517e446a6e0}{Get\+Color}} () const
+\item 
+int \mbox{\hyperlink{class_piece_a0c9bb8211c88327c2adc33e398d33a86}{Get\+Type}} () const
+\item 
+const vector$<$ int $>$ \& \mbox{\hyperlink{class_piece_a3c3f3a53931ee72dce53681a6b314a4b}{Get\+Move\+Directions}} () const
+\item 
+bool \mbox{\hyperlink{class_piece_a0e303d2d4169ead638f6921240b9fa62}{Direction\+Is\+Limited}} ()
+\item 
+virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_piece_a2325e264ee361de1c695e54812780473}{Get\+Possible\+Moves}} ()
+\item 
+virtual void \mbox{\hyperlink{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}{Notify\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+\item 
+virtual \mbox{\hyperlink{class_piece_aac0a94ea51973d19707ed9fb01ede838}{$\sim$ Piece}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_piece_a2a3a3b4d30e0500feaf5e2cfc6f43905}{Piece}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color, vector$<$ int $>$ a\+Move\+Directions, bool a\+Direction\+Is\+Limited)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_piece_a0aca0760e87db26fa70f9c85d93b37b3}{move\+Directions}}
+\item 
+bool \mbox{\hyperlink{class_piece_a2091fedcc886b7f789c44e0b006535b8}{direction\+Is\+Limited}}
+\item 
+\mbox{\hyperlink{_piece_8h_a38d4991146e17b79fed3b4fd5db030fb}{P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE}} \mbox{\hyperlink{class_piece_a37374e91c83796e060b7428cfc17fb86}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a generic piece 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_piece_ac57de5803bbad829b143bc7268267dc1}\label{class_piece_ac57de5803bbad829b143bc7268267dc1}} 
+\index{Piece@{Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a piece \mbox{\Hypertarget{class_piece_ac3e4a11bc723119a8e6cb6cb6be11eee}\label{class_piece_ac3e4a11bc723119a8e6cb6cb6be11eee}} 
+\index{Piece@{Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color }\end{DoxyParamCaption})}
+
+Constructs a piece with the given color 
+\begin{DoxyParams}{Parameters}
+{\em a\+Color} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_piece_aac0a94ea51973d19707ed9fb01ede838}\label{class_piece_aac0a94ea51973d19707ed9fb01ede838}} 
+\index{Piece@{Piece}!````~ Piece@{$\sim$ Piece}}
+\index{````~ Piece@{$\sim$ Piece}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{$\sim$ Piece()}{~ Piece()}}
+{\footnotesize\ttfamily virtual Piece\+::$\sim$ \mbox{\hyperlink{class_piece}{Piece}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The destructor of the move \mbox{\Hypertarget{class_piece_a2a3a3b4d30e0500feaf5e2cfc6f43905}\label{class_piece_a2a3a3b4d30e0500feaf5e2cfc6f43905}} 
+\index{Piece@{Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color,  }\item[{vector$<$ int $>$}]{a\+Move\+Directions,  }\item[{bool}]{a\+Direction\+Is\+Limited }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The constructor of the current piece 
+\begin{DoxyParams}{Parameters}
+{\em a\+Color} & The color of the piece \\
+\hline
+{\em a\+Move\+Directions} & The move directions \\
+\hline
+{\em a\+Direction\+Is\+Limited} & If the direction is limited \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_piece_a0e303d2d4169ead638f6921240b9fa62}\label{class_piece_a0e303d2d4169ead638f6921240b9fa62}} 
+\index{Piece@{Piece}!DirectionIsLimited@{DirectionIsLimited}}
+\index{DirectionIsLimited@{DirectionIsLimited}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{DirectionIsLimited()}{DirectionIsLimited()}}
+{\footnotesize\ttfamily bool Piece\+::\+Direction\+Is\+Limited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells wether the direction is limited or unlimited \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_piece_a382c8ef85474c2b2ff389517e446a6e0}\label{class_piece_a382c8ef85474c2b2ff389517e446a6e0}} 
+\index{Piece@{Piece}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} Piece\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the color of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_piece_a3c3f3a53931ee72dce53681a6b314a4b}\label{class_piece_a3c3f3a53931ee72dce53681a6b314a4b}} 
+\index{Piece@{Piece}!GetMoveDirections@{GetMoveDirections}}
+\index{GetMoveDirections@{GetMoveDirections}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{GetMoveDirections()}{GetMoveDirections()}}
+{\footnotesize\ttfamily const vector$<$int$>$\& Piece\+::\+Get\+Move\+Directions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the move direction of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_piece_a2325e264ee361de1c695e54812780473}\label{class_piece_a2325e264ee361de1c695e54812780473}} 
+\index{Piece@{Piece}!GetPossibleMoves@{GetPossibleMoves}}
+\index{GetPossibleMoves@{GetPossibleMoves}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{GetPossibleMoves()}{GetPossibleMoves()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Piece\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the possible moves of the current piece \begin{DoxyReturn}{Returns}
+The coordinates of the possible destinations 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_pawn_abf4bbabb82b14b7cf4574317793ff3ae}{Pawn}}.
+
+\mbox{\Hypertarget{class_piece_a0c9bb8211c88327c2adc33e398d33a86}\label{class_piece_a0c9bb8211c88327c2adc33e398d33a86}} 
+\index{Piece@{Piece}!GetType@{GetType}}
+\index{GetType@{GetType}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily int Piece\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of this piece \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_piece_a32226455e312130c625e869675bbab91}\label{class_piece_a32226455e312130c625e869675bbab91}} 
+\index{Piece@{Piece}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Piece\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells if the occupied block by this piece is empty \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}\label{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}} 
+\index{Piece@{Piece}!NotifyMove@{NotifyMove}}
+\index{NotifyMove@{NotifyMove}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
+{\footnotesize\ttfamily virtual void Piece\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Notify the current piece that it did a move 
+\begin{DoxyParams}{Parameters}
+{\em mv} & The move \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_king_af7a06077e9f3867663a648cedfb53319}{King}}, \mbox{\hyperlink{class_tower_a38fe454cf473a497fed3ffaceda6171c}{Tower}}, and \mbox{\hyperlink{class_pawn_a0a7fafdf7a50cb86ba5029822f30e88f}{Pawn}}.
+
+\mbox{\Hypertarget{class_piece_a286d695fc92227537cf3c32e57bc4941}\label{class_piece_a286d695fc92227537cf3c32e57bc4941}} 
+\index{Piece@{Piece}!PieceToFEN@{PieceToFEN}}
+\index{PieceToFEN@{PieceToFEN}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{PieceToFEN()}{PieceToFEN()}}
+{\footnotesize\ttfamily virtual char Piece\+::\+Piece\+To\+F\+EN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the current piece to its corresponding F\+EN char \begin{DoxyReturn}{Returns}
+The F\+EN char 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_pawn_a78363143169a39e4860556910953d5c1}{Pawn}}, \mbox{\hyperlink{class_bishop_ad32fa3b75abcb94e6e8e450892cb6efc}{Bishop}}, \mbox{\hyperlink{class_king_a468a120a1b004269ae6d0ac1fda139fb}{King}}, \mbox{\hyperlink{class_knight_aeb3ff2eb750ac6f2b9874762520157cb}{Knight}}, \mbox{\hyperlink{class_tower_a1102e35817c99248af9c39bf31d6d022}{Tower}}, and \mbox{\hyperlink{class_queen_a6cfb92bb5ce981b70eba6965dc1e1d99}{Queen}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_piece_a2091fedcc886b7f789c44e0b006535b8}\label{class_piece_a2091fedcc886b7f789c44e0b006535b8}} 
+\index{Piece@{Piece}!directionIsLimited@{directionIsLimited}}
+\index{directionIsLimited@{directionIsLimited}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{directionIsLimited}{directionIsLimited}}
+{\footnotesize\ttfamily bool Piece\+::direction\+Is\+Limited\hspace{0.3cm}{\ttfamily [protected]}}
+
+If the directions are limited or unlimited \mbox{\Hypertarget{class_piece_a0aca0760e87db26fa70f9c85d93b37b3}\label{class_piece_a0aca0760e87db26fa70f9c85d93b37b3}} 
+\index{Piece@{Piece}!moveDirections@{moveDirections}}
+\index{moveDirections@{moveDirections}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{moveDirections}{moveDirections}}
+{\footnotesize\ttfamily vector$<$int$>$ Piece\+::move\+Directions\hspace{0.3cm}{\ttfamily [protected]}}
+
+The move directions of the current piece \mbox{\Hypertarget{class_piece_a37374e91c83796e060b7428cfc17fb86}\label{class_piece_a37374e91c83796e060b7428cfc17fb86}} 
+\index{Piece@{Piece}!type@{type}}
+\index{type@{type}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_piece_8h_a38d4991146e17b79fed3b4fd5db030fb}{P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE}} Piece\+::type\hspace{0.3cm}{\ttfamily [protected]}}
+
+The type of this piece 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/model/\mbox{\hyperlink{_piece_8h}{Piece.\+h}}\end{DoxyCompactItemize}

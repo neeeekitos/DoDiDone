@@ -1,0 +1,87 @@
+\hypertarget{class_a_i}{}\doxysection{AI Class Reference}
+\label{class_a_i}\index{AI@{AI}}
+
+
+{\ttfamily \#include $<$A\+I.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} \mbox{\hyperlink{class_a_i_aa85b32d06209a0dda38c6b514d0f1530}{Do\+Move}} (\mbox{\hyperlink{class_chessboard}{Chessboard}} \&chessboard)
+\item 
+\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} \mbox{\hyperlink{class_a_i_a11afb539393b88e2ba7e133edda3d2de}{Random\+Move}} (\mbox{\hyperlink{class_chessboard}{Chessboard}} \&chessboard)
+\item 
+int \mbox{\hyperlink{class_a_i_a6db8b687c15528d5eb38bbbc6758e7ea}{Minimax}} (list$<$ \mbox{\hyperlink{struct_transition}{Transition}} $>$ \&path, list$<$ \mbox{\hyperlink{struct_transition}{Transition}} $>$ \&best\+Path, int depth, bool maximizing\+Player)
+\item 
+\mbox{\hyperlink{class_a_i_a66a8645f0c27285cd75346f2c2bbfb14}{$\sim$\+AI}} ()
+\item 
+\mbox{\hyperlink{class_a_i_a5ad8bc3f8c1563624696b1df063626f2}{AI}} (const \mbox{\hyperlink{class_a_i}{AI}} \&)=delete
+\item 
+void \mbox{\hyperlink{class_a_i_a4f52e6d99ff630f2a05851a18be85116}{operator=}} (const \mbox{\hyperlink{class_a_i}{AI}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_a_i}{AI}} $\ast$ \mbox{\hyperlink{class_a_i_a786ad6a4c9ee8d45143a10b72781c9a4}{Get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{struct_transition}{Transition}} \mbox{\hyperlink{class_a_i_a842d95a4296426a706c46f4b6f837a33}{Calculate\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} move)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_i_a66a8645f0c27285cd75346f2c2bbfb14}\label{class_a_i_a66a8645f0c27285cd75346f2c2bbfb14}} 
+\index{AI@{AI}!````~AI@{$\sim$AI}}
+\index{````~AI@{$\sim$AI}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{$\sim$AI()}{~AI()}}
+{\footnotesize\ttfamily A\+I\+::$\sim$\+AI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_a_i_a5ad8bc3f8c1563624696b1df063626f2}\label{class_a_i_a5ad8bc3f8c1563624696b1df063626f2}} 
+\index{AI@{AI}!AI@{AI}}
+\index{AI@{AI}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{AI()}{AI()}}
+{\footnotesize\ttfamily A\+I\+::\+AI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_i}{AI}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_i_a842d95a4296426a706c46f4b6f837a33}\label{class_a_i_a842d95a4296426a706c46f4b6f837a33}} 
+\index{AI@{AI}!CalculateMove@{CalculateMove}}
+\index{CalculateMove@{CalculateMove}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{CalculateMove()}{CalculateMove()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_transition}{Transition}} A\+I\+::\+Calculate\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_a_i_aa85b32d06209a0dda38c6b514d0f1530}\label{class_a_i_aa85b32d06209a0dda38c6b514d0f1530}} 
+\index{AI@{AI}!DoMove@{DoMove}}
+\index{DoMove@{DoMove}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{DoMove()}{DoMove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} A\+I\+::\+Do\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chessboard}{Chessboard}} \&}]{chessboard }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_a_i_a786ad6a4c9ee8d45143a10b72781c9a4}\label{class_a_i_a786ad6a4c9ee8d45143a10b72781c9a4}} 
+\index{AI@{AI}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_a_i}{AI}}$\ast$ A\+I\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_a_i_a6db8b687c15528d5eb38bbbc6758e7ea}\label{class_a_i_a6db8b687c15528d5eb38bbbc6758e7ea}} 
+\index{AI@{AI}!Minimax@{Minimax}}
+\index{Minimax@{Minimax}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{Minimax()}{Minimax()}}
+{\footnotesize\ttfamily int A\+I\+::\+Minimax (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{struct_transition}{Transition}} $>$ \&}]{path,  }\item[{list$<$ \mbox{\hyperlink{struct_transition}{Transition}} $>$ \&}]{best\+Path,  }\item[{int}]{depth,  }\item[{bool}]{maximizing\+Player }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_a_i_a4f52e6d99ff630f2a05851a18be85116}\label{class_a_i_a4f52e6d99ff630f2a05851a18be85116}} 
+\index{AI@{AI}!operator=@{operator=}}
+\index{operator=@{operator=}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void A\+I\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_i}{AI}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_a_i_a11afb539393b88e2ba7e133edda3d2de}\label{class_a_i_a11afb539393b88e2ba7e133edda3d2de}} 
+\index{AI@{AI}!RandomMove@{RandomMove}}
+\index{RandomMove@{RandomMove}!AI@{AI}}
+\doxysubsubsection{\texorpdfstring{RandomMove()}{RandomMove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} A\+I\+::\+Random\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chessboard}{Chessboard}} \&}]{chessboard }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/service/\mbox{\hyperlink{_a_i_8h}{A\+I.\+h}}\end{DoxyCompactItemize}

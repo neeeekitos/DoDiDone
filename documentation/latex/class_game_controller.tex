@@ -1,0 +1,226 @@
+\hypertarget{class_game_controller}{}\doxysection{Game\+Controller Class Reference}
+\label{class_game_controller}\index{GameController@{GameController}}
+
+
+{\ttfamily \#include $<$Game\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_controller_a120de8cd5e385ec9766739a70fcd35d1}{Game\+Controller}} (const \mbox{\hyperlink{class_game_controller}{Game\+Controller}} \&another\+Game\+Controller)=delete
+\item 
+void \mbox{\hyperlink{class_game_controller_ae4409daa19740c716a91caed48c34d8c}{operator=}} (const \mbox{\hyperlink{class_game_controller}{Game\+Controller}} \&a\+Game\+Controller)=delete
+\item 
+\mbox{\hyperlink{class_game_controller_aab436961a422d078975bc7a49bdfcab7}{$\sim$\+Game\+Controller}} ()
+\item 
+void \mbox{\hyperlink{class_game_controller_ae6ec6127284825360ac3399cfe604a6e}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_game_controller_ae5e0a22f450c11b3513f346976ccaf13}{Set\+Game\+Mode}} (\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} gm)
+\item 
+\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} \mbox{\hyperlink{class_game_controller_a65900e7e5f59f9a5667cc8b76ebe8b32}{Get\+Game\+Mode}} ()
+\item 
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a064674b038bcdd936282a1dcc183162b}{Make\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+\item 
+const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{class_game_controller_a214de6a9b8858f8b8bd610b1d31169d6}{Get\+Saved\+Games\+Ids}} (vector$<$ int $>$ \&result) const
+\item 
+int \mbox{\hyperlink{class_game_controller_a6f22744d46aebdf86df9170f4d790ecf}{Save\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_game_controller_a51e87f59f841a44b5a08746976206731}{Load\+Game}} (int game\+Id)
+\begin{DoxyCompactList}\small\item\em Load game number $<$game\+Id$>$ into the chessboard Set game mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \mbox{\hyperlink{class_game_controller_a1e737d92366f47a2ab09501dced13471}{Get\+Current\+Player}} () const
+\begin{DoxyCompactList}\small\item\em Get color of current player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_controller_a907af4ab4ca908d7a6a5c2a69ee3a1d3}{Get\+Shots}} () const
+\begin{DoxyCompactList}\small\item\em Get number of turns played. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} $\ast$ $>$ \& \mbox{\hyperlink{class_game_controller_a492978e11d4f1774d386ac33121328be}{Get\+Eaten\+Pieces}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color)
+\item 
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a981db85cba1e69d1b719cd5ee6c98f6e}{Make\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv, bool update\+General\+State, bool temporary\+Move)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_game_controller}{Game\+Controller}} $\ast$ \mbox{\hyperlink{class_game_controller_a65caf6706682a8a508ac1a2a495d3f8c}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_controller_a120de8cd5e385ec9766739a70fcd35d1}\label{class_game_controller_a120de8cd5e385ec9766739a70fcd35d1}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_controller}{Game\+Controller}} \&}]{another\+Game\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+The copy constructor. We must delete it as this class is a singleton 
+\begin{DoxyParams}{Parameters}
+{\em another\+Game\+Controller} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_controller_aab436961a422d078975bc7a49bdfcab7}\label{class_game_controller_aab436961a422d078975bc7a49bdfcab7}} 
+\index{GameController@{GameController}!````~GameController@{$\sim$GameController}}
+\index{````~GameController@{$\sim$GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameController()}{~GameController()}}
+{\footnotesize\ttfamily Game\+Controller\+::$\sim$\+Game\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+A destructor of the \mbox{\hyperlink{class_game_controller}{Game\+Controller}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_controller_a1e737d92366f47a2ab09501dced13471}\label{class_game_controller_a1e737d92366f47a2ab09501dced13471}} 
+\index{GameController@{GameController}!GetCurrentPlayer@{GetCurrentPlayer}}
+\index{GetCurrentPlayer@{GetCurrentPlayer}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPlayer()}{GetCurrentPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} Game\+Controller\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get color of current player. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a492978e11d4f1774d386ac33121328be}\label{class_game_controller_a492978e11d4f1774d386ac33121328be}} 
+\index{GameController@{GameController}!GetEatenPieces@{GetEatenPieces}}
+\index{GetEatenPieces@{GetEatenPieces}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetEatenPieces()}{GetEatenPieces()}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{class_piece}{Piece}} $\ast$$>$\& Game\+Controller\+::\+Get\+Eaten\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color }\end{DoxyParamCaption})}
+
+Returns the eaten pieces of the given color 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the requested eaten pieces \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of eaten pieces 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a65900e7e5f59f9a5667cc8b76ebe8b32}\label{class_game_controller_a65900e7e5f59f9a5667cc8b76ebe8b32}} 
+\index{GameController@{GameController}!GetGameMode@{GetGameMode}}
+\index{GetGameMode@{GetGameMode}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetGameMode()}{GetGameMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} Game\+Controller\+::\+Get\+Game\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the curren game mode \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a65caf6706682a8a508ac1a2a495d3f8c}\label{class_game_controller_a65caf6706682a8a508ac1a2a495d3f8c}} 
+\index{GameController@{GameController}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_game_controller}{Game\+Controller}}$\ast$ Game\+Controller\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the singleton instance of the game \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a214de6a9b8858f8b8bd610b1d31169d6}\label{class_game_controller_a214de6a9b8858f8b8bd610b1d31169d6}} 
+\index{GameController@{GameController}!GetSavedGamesIds@{GetSavedGamesIds}}
+\index{GetSavedGamesIds@{GetSavedGamesIds}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetSavedGamesIds()}{GetSavedGamesIds()}}
+{\footnotesize\ttfamily const std\+::vector$<$int$>$\& Game\+Controller\+::\+Get\+Saved\+Games\+Ids (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{result }\end{DoxyParamCaption}) const}
+
+Pushes the I\+Ds of the saved game parts to the result vector and returns it 
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result vector after putting in it the game I\+Ds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a907af4ab4ca908d7a6a5c2a69ee3a1d3}\label{class_game_controller_a907af4ab4ca908d7a6a5c2a69ee3a1d3}} 
+\index{GameController@{GameController}!GetShots@{GetShots}}
+\index{GetShots@{GetShots}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GetShots()}{GetShots()}}
+{\footnotesize\ttfamily int Game\+Controller\+::\+Get\+Shots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of turns played. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a51e87f59f841a44b5a08746976206731}\label{class_game_controller_a51e87f59f841a44b5a08746976206731}} 
+\index{GameController@{GameController}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{LoadGame()}{LoadGame()}}
+{\footnotesize\ttfamily void Game\+Controller\+::\+Load\+Game (\begin{DoxyParamCaption}\item[{int}]{game\+Id }\end{DoxyParamCaption})}
+
+
+
+Load game number $<$game\+Id$>$ into the chessboard Set game mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Id} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_controller_a064674b038bcdd936282a1dcc183162b}\label{class_game_controller_a064674b038bcdd936282a1dcc183162b}} 
+\index{GameController@{GameController}!MakeMove@{MakeMove}}
+\index{MakeMove@{MakeMove}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{MakeMove()}{MakeMove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})}
+
+Make a move in the chessboard Contract \+: mv is a valid move 
+\begin{DoxyParams}{Parameters}
+{\em mv} & A move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The eventually eaten piece while doing the move. Returns a pointer to the eaten piece if a piece had been eaten, a null pointer otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_a981db85cba1e69d1b719cd5ee6c98f6e}\label{class_game_controller_a981db85cba1e69d1b719cd5ee6c98f6e}} 
+\index{GameController@{GameController}!MakeMove@{MakeMove}}
+\index{MakeMove@{MakeMove}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{MakeMove()}{MakeMove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv,  }\item[{bool}]{update\+General\+State,  }\item[{bool}]{temporary\+Move }\end{DoxyParamCaption})}
+
+This method makes a move in the chessboard Contract \+: mv is a valid move 
+\begin{DoxyParams}{Parameters}
+{\em mv} & The move to perform \\
+\hline
+{\em update\+General\+State} & Tells if we should update the general state (check, mate, ...etc) by doing the move \\
+\hline
+{\em temporary\+Move} & Tells wether this move is a temporary move (It will be undone) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The eventually eaten piece by the move 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_ae4409daa19740c716a91caed48c34d8c}\label{class_game_controller_ae4409daa19740c716a91caed48c34d8c}} 
+\index{GameController@{GameController}!operator=@{operator=}}
+\index{operator=@{operator=}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Game\+Controller\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_controller}{Game\+Controller}} \&}]{a\+Game\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+The affectation operator. In normal time, this operator calls the copy constructor. Thus, we must delete it to prevent copying the singleton instance 
+\begin{DoxyParams}{Parameters}
+{\em a\+Game\+Controller} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_controller_a6f22744d46aebdf86df9170f4d790ecf}\label{class_game_controller_a6f22744d46aebdf86df9170f4d790ecf}} 
+\index{GameController@{GameController}!SaveGame@{SaveGame}}
+\index{SaveGame@{SaveGame}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{SaveGame()}{SaveGame()}}
+{\footnotesize\ttfamily int Game\+Controller\+::\+Save\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Saved the game part \begin{DoxyReturn}{Returns}
+The number of saved game parts 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_controller_ae5e0a22f450c11b3513f346976ccaf13}\label{class_game_controller_ae5e0a22f450c11b3513f346976ccaf13}} 
+\index{GameController@{GameController}!SetGameMode@{SetGameMode}}
+\index{SetGameMode@{SetGameMode}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{SetGameMode()}{SetGameMode()}}
+{\footnotesize\ttfamily void Game\+Controller\+::\+Set\+Game\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}}}]{gm }\end{DoxyParamCaption})}
+
+Sets the game mode into one of the following\+: \mbox{\hyperlink{class_a_i}{AI}} M\+U\+L\+T\+I\+P\+L\+A\+Y\+ER 
+\begin{DoxyParams}{Parameters}
+{\em gm} & The game mode \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_controller_ae6ec6127284825360ac3399cfe604a6e}\label{class_game_controller_ae6ec6127284825360ac3399cfe604a6e}} 
+\index{GameController@{GameController}!Start@{Start}}
+\index{Start@{Start}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Game\+Controller\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts the game 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/controller/\mbox{\hyperlink{_game_controller_8h}{Game\+Controller.\+h}}\end{DoxyCompactItemize}

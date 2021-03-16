@@ -1,0 +1,114 @@
+\hypertarget{class_king}{}\doxysection{King Class Reference}
+\label{class_king}\index{King@{King}}
+
+
+{\ttfamily \#include $<$King.\+h$>$}
+
+
+
+Inheritance diagram for King\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{class_king__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for King\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{class_king__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_king_ac7a820e20220f49bec5e38a95d5cc307}{King}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color)
+\item 
+virtual char \mbox{\hyperlink{class_king_a468a120a1b004269ae6d0ac1fda139fb}{Piece\+To\+F\+EN}} ()
+\item 
+virtual void \mbox{\hyperlink{class_king_af7a06077e9f3867663a648cedfb53319}{Notify\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv) override
+\item 
+bool \mbox{\hyperlink{class_king_a89c84f12415c74c50073b6e38c8231cc}{Is\+First\+Move\+Done}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_king_a4c8a82ae4e0054b03462fd8feafa1ff1}{first\+Move\+Done}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a \mbox{\hyperlink{class_king}{King}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_king_ac7a820e20220f49bec5e38a95d5cc307}\label{class_king_ac7a820e20220f49bec5e38a95d5cc307}} 
+\index{King@{King}!King@{King}}
+\index{King@{King}!King@{King}}
+\doxysubsubsection{\texorpdfstring{King()}{King()}}
+{\footnotesize\ttfamily King\+::\+King (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color }\end{DoxyParamCaption})}
+
+A constructor of a king 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the king \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_king_a89c84f12415c74c50073b6e38c8231cc}\label{class_king_a89c84f12415c74c50073b6e38c8231cc}} 
+\index{King@{King}!IsFirstMoveDone@{IsFirstMoveDone}}
+\index{IsFirstMoveDone@{IsFirstMoveDone}!King@{King}}
+\doxysubsubsection{\texorpdfstring{IsFirstMoveDone()}{IsFirstMoveDone()}}
+{\footnotesize\ttfamily bool King\+::\+Is\+First\+Move\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells wether this king already did its first move \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_king_af7a06077e9f3867663a648cedfb53319}\label{class_king_af7a06077e9f3867663a648cedfb53319}} 
+\index{King@{King}!NotifyMove@{NotifyMove}}
+\index{NotifyMove@{NotifyMove}!King@{King}}
+\doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
+{\footnotesize\ttfamily virtual void King\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This is a service method that allows to notify the king that it did a move 
+\begin{DoxyParams}{Parameters}
+{\em mv} & The move \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}{Piece}}.
+
+\mbox{\Hypertarget{class_king_a468a120a1b004269ae6d0ac1fda139fb}\label{class_king_a468a120a1b004269ae6d0ac1fda139fb}} 
+\index{King@{King}!PieceToFEN@{PieceToFEN}}
+\index{PieceToFEN@{PieceToFEN}!King@{King}}
+\doxysubsubsection{\texorpdfstring{PieceToFEN()}{PieceToFEN()}}
+{\footnotesize\ttfamily virtual char King\+::\+Piece\+To\+F\+EN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the current piece to its corresponding F\+EN char \begin{DoxyReturn}{Returns}
+The F\+EN char 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_piece_a286d695fc92227537cf3c32e57bc4941}{Piece}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_king_a4c8a82ae4e0054b03462fd8feafa1ff1}\label{class_king_a4c8a82ae4e0054b03462fd8feafa1ff1}} 
+\index{King@{King}!firstMoveDone@{firstMoveDone}}
+\index{firstMoveDone@{firstMoveDone}!King@{King}}
+\doxysubsubsection{\texorpdfstring{firstMoveDone}{firstMoveDone}}
+{\footnotesize\ttfamily bool King\+::first\+Move\+Done}
+
+This variable is set to false as long as the king has not moved 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/model/\mbox{\hyperlink{_king_8h}{King.\+h}}\end{DoxyCompactItemize}

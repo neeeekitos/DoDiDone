@@ -1,0 +1,148 @@
+\hypertarget{class_graphic_element}{}\doxysection{Graphic\+Element Class Reference}
+\label{class_graphic_element}\index{GraphicElement@{GraphicElement}}
+
+
+{\ttfamily \#include $<$Graphic\+Element.\+h$>$}
+
+
+
+Collaboration diagram for Graphic\+Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_graphic_element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graphic_element_ae54c1604125aad5c10fe3bfcb5a1e046}{Graphic\+Element}} ()
+\item 
+\mbox{\hyperlink{class_graphic_element_a61ff80b634add82cdab4e7e051fcc790}{$\sim$\+Graphic\+Element}} ()
+\item 
+\mbox{\hyperlink{class_graphic_element_ae98fb2f7833fb5dc90c3a517b5f06542}{Graphic\+Element}} (const string s)
+\item 
+void \mbox{\hyperlink{class_graphic_element_afdc286fe96239082a483d274346e8bb2}{draw}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{class_graphic_element_ac61de538ea656edef4c309f908d8aea3}{set\+Sprite}} (string file\+Name, int lvl)
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{class_graphic_element_a8292d18b702302cdd5a11ec9ce75c78d}{get\+Sprite}} (char state)
+\item 
+void \mbox{\hyperlink{class_graphic_element_a89c5f7fb771641a801b7eb0b3d57f409}{set\+Position}} (\mbox{\hyperlink{class_point2_i}{Point2I}} \mbox{\hyperlink{class_graphic_element_a1233fc4c027108573c8ed32086f25f30}{p}})
+\item 
+\mbox{\hyperlink{class_point2_i}{Point2I}} \mbox{\hyperlink{class_graphic_element_aeef92140a66b6e1ad98b01947caffd8c}{get\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_graphic_element_a00dd6248959f13086d29f1c4b7109d6a}{set\+Rotation}} (float angle)
+\item 
+void \mbox{\hyperlink{class_graphic_element_a53f5a0517a582ae2a0967e6fa4297da7}{set\+Scale}} (float size)
+\item 
+void \mbox{\hyperlink{class_graphic_element_a0a380a98d0a4af166b26715c1c5cca81}{check\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_graphic_element_af98e798b223ee5911ea7cc7977aa6a80}{img}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_graphic_element_a5f9f7331ba2a5a1969ade8f9b7a08cf5}{t}}
+\item 
+\mbox{\hyperlink{class_point2_i}{Point2I}} \mbox{\hyperlink{class_graphic_element_a1233fc4c027108573c8ed32086f25f30}{p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graphic_element_ae54c1604125aad5c10fe3bfcb5a1e046}\label{class_graphic_element_ae54c1604125aad5c10fe3bfcb5a1e046}} 
+\index{GraphicElement@{GraphicElement}!GraphicElement@{GraphicElement}}
+\index{GraphicElement@{GraphicElement}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{GraphicElement()}{GraphicElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Graphic\+Element\+::\+Graphic\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_a61ff80b634add82cdab4e7e051fcc790}\label{class_graphic_element_a61ff80b634add82cdab4e7e051fcc790}} 
+\index{GraphicElement@{GraphicElement}!````~GraphicElement@{$\sim$GraphicElement}}
+\index{````~GraphicElement@{$\sim$GraphicElement}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{$\sim$GraphicElement()}{~GraphicElement()}}
+{\footnotesize\ttfamily Graphic\+Element\+::$\sim$\+Graphic\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_ae98fb2f7833fb5dc90c3a517b5f06542}\label{class_graphic_element_ae98fb2f7833fb5dc90c3a517b5f06542}} 
+\index{GraphicElement@{GraphicElement}!GraphicElement@{GraphicElement}}
+\index{GraphicElement@{GraphicElement}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{GraphicElement()}{GraphicElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Graphic\+Element\+::\+Graphic\+Element (\begin{DoxyParamCaption}\item[{const string}]{s }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graphic_element_a0a380a98d0a4af166b26715c1c5cca81}\label{class_graphic_element_a0a380a98d0a4af166b26715c1c5cca81}} 
+\index{GraphicElement@{GraphicElement}!checkPosition@{checkPosition}}
+\index{checkPosition@{checkPosition}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{checkPosition()}{checkPosition()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::check\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_afdc286fe96239082a483d274346e8bb2}\label{class_graphic_element_afdc286fe96239082a483d274346e8bb2}} 
+\index{GraphicElement@{GraphicElement}!draw@{draw}}
+\index{draw@{draw}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_aeef92140a66b6e1ad98b01947caffd8c}\label{class_graphic_element_aeef92140a66b6e1ad98b01947caffd8c}} 
+\index{GraphicElement@{GraphicElement}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point2_i}{Point2I}} Graphic\+Element\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_a8292d18b702302cdd5a11ec9ce75c78d}\label{class_graphic_element_a8292d18b702302cdd5a11ec9ce75c78d}} 
+\index{GraphicElement@{GraphicElement}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite\& Graphic\+Element\+::get\+Sprite (\begin{DoxyParamCaption}\item[{char}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_a89c5f7fb771641a801b7eb0b3d57f409}\label{class_graphic_element_a89c5f7fb771641a801b7eb0b3d57f409}} 
+\index{GraphicElement@{GraphicElement}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point2_i}{Point2I}}}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_a00dd6248959f13086d29f1c4b7109d6a}\label{class_graphic_element_a00dd6248959f13086d29f1c4b7109d6a}} 
+\index{GraphicElement@{GraphicElement}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_a53f5a0517a582ae2a0967e6fa4297da7}\label{class_graphic_element_a53f5a0517a582ae2a0967e6fa4297da7}} 
+\index{GraphicElement@{GraphicElement}!setScale@{setScale}}
+\index{setScale@{setScale}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_graphic_element_ac61de538ea656edef4c309f908d8aea3}\label{class_graphic_element_ac61de538ea656edef4c309f908d8aea3}} 
+\index{GraphicElement@{GraphicElement}!setSprite@{setSprite}}
+\index{setSprite@{setSprite}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{setSprite()}{setSprite()}}
+{\footnotesize\ttfamily void Graphic\+Element\+::set\+Sprite (\begin{DoxyParamCaption}\item[{string}]{file\+Name,  }\item[{int}]{lvl }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graphic_element_af98e798b223ee5911ea7cc7977aa6a80}\label{class_graphic_element_af98e798b223ee5911ea7cc7977aa6a80}} 
+\index{GraphicElement@{GraphicElement}!img@{img}}
+\index{img@{img}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily sf\+::\+Sprite Graphic\+Element\+::img\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_graphic_element_a1233fc4c027108573c8ed32086f25f30}\label{class_graphic_element_a1233fc4c027108573c8ed32086f25f30}} 
+\index{GraphicElement@{GraphicElement}!p@{p}}
+\index{p@{p}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point2_i}{Point2I}} Graphic\+Element\+::p\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_graphic_element_a5f9f7331ba2a5a1969ade8f9b7a08cf5}\label{class_graphic_element_a5f9f7331ba2a5a1969ade8f9b7a08cf5}} 
+\index{GraphicElement@{GraphicElement}!t@{t}}
+\index{t@{t}!GraphicElement@{GraphicElement}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily sf\+::\+Texture Graphic\+Element\+::t\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/view/\mbox{\hyperlink{_graphic_element_8h}{Graphic\+Element.\+h}}\end{DoxyCompactItemize}

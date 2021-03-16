@@ -1,0 +1,91 @@
+\hypertarget{_a_i_8h}{}\doxysection{include/service/\+AI.h File Reference}
+\label{_a_i_8h}\index{include/service/AI.h@{include/service/AI.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../model/\+Game\+Constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../model/\+Chessboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../controller/\+Game\+Controller.\+h\char`\"{}}\newline
+Include dependency graph for A\+I.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_i_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{_a_i_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_a_i}{AI}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_a_i_8h_aefe54d732dc7b3673e8ad72fa3c95f79}{D\+E\+P\+T\+H\+\_\+\+M\+I\+N\+I\+M\+AX}} = 2
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a972bb9009ffbd40b06c1fc6042b4ae91}{P\+A\+W\+N\+\_\+W}} = 10
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a04814b72cedb062773a00c8eb78ca246}{B\+I\+S\+H\+O\+P\+\_\+W}} = 30
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a9be4db86fb164b63c9d63d318196702e}{T\+O\+W\+E\+R\+\_\+W}} = 30
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a97f226a15f887d70038c7e07b271de9a}{K\+N\+I\+G\+H\+T\+\_\+W}} = 50
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a1b0da20da010d7a79c99092d44724cc1}{Q\+U\+E\+E\+N\+\_\+W}} = 90
+\item 
+const int \mbox{\hyperlink{_a_i_8h_a502b2eaf378a58a4d887271484014a1c}{K\+I\+N\+G\+\_\+W}} = 900
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_a_i_8h_a04814b72cedb062773a00c8eb78ca246}\label{_a_i_8h_a04814b72cedb062773a00c8eb78ca246}} 
+\index{AI.h@{AI.h}!BISHOP\_W@{BISHOP\_W}}
+\index{BISHOP\_W@{BISHOP\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{BISHOP\_W}{BISHOP\_W}}
+{\footnotesize\ttfamily const int B\+I\+S\+H\+O\+P\+\_\+W = 30}
+
+\mbox{\Hypertarget{_a_i_8h_aefe54d732dc7b3673e8ad72fa3c95f79}\label{_a_i_8h_aefe54d732dc7b3673e8ad72fa3c95f79}} 
+\index{AI.h@{AI.h}!DEPTH\_MINIMAX@{DEPTH\_MINIMAX}}
+\index{DEPTH\_MINIMAX@{DEPTH\_MINIMAX}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{DEPTH\_MINIMAX}{DEPTH\_MINIMAX}}
+{\footnotesize\ttfamily const int D\+E\+P\+T\+H\+\_\+\+M\+I\+N\+I\+M\+AX = 2}
+
+\mbox{\Hypertarget{_a_i_8h_a502b2eaf378a58a4d887271484014a1c}\label{_a_i_8h_a502b2eaf378a58a4d887271484014a1c}} 
+\index{AI.h@{AI.h}!KING\_W@{KING\_W}}
+\index{KING\_W@{KING\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{KING\_W}{KING\_W}}
+{\footnotesize\ttfamily const int K\+I\+N\+G\+\_\+W = 900}
+
+\mbox{\Hypertarget{_a_i_8h_a97f226a15f887d70038c7e07b271de9a}\label{_a_i_8h_a97f226a15f887d70038c7e07b271de9a}} 
+\index{AI.h@{AI.h}!KNIGHT\_W@{KNIGHT\_W}}
+\index{KNIGHT\_W@{KNIGHT\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{KNIGHT\_W}{KNIGHT\_W}}
+{\footnotesize\ttfamily const int K\+N\+I\+G\+H\+T\+\_\+W = 50}
+
+\mbox{\Hypertarget{_a_i_8h_a972bb9009ffbd40b06c1fc6042b4ae91}\label{_a_i_8h_a972bb9009ffbd40b06c1fc6042b4ae91}} 
+\index{AI.h@{AI.h}!PAWN\_W@{PAWN\_W}}
+\index{PAWN\_W@{PAWN\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{PAWN\_W}{PAWN\_W}}
+{\footnotesize\ttfamily const int P\+A\+W\+N\+\_\+W = 10}
+
+\mbox{\Hypertarget{_a_i_8h_a1b0da20da010d7a79c99092d44724cc1}\label{_a_i_8h_a1b0da20da010d7a79c99092d44724cc1}} 
+\index{AI.h@{AI.h}!QUEEN\_W@{QUEEN\_W}}
+\index{QUEEN\_W@{QUEEN\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{QUEEN\_W}{QUEEN\_W}}
+{\footnotesize\ttfamily const int Q\+U\+E\+E\+N\+\_\+W = 90}
+
+\mbox{\Hypertarget{_a_i_8h_a9be4db86fb164b63c9d63d318196702e}\label{_a_i_8h_a9be4db86fb164b63c9d63d318196702e}} 
+\index{AI.h@{AI.h}!TOWER\_W@{TOWER\_W}}
+\index{TOWER\_W@{TOWER\_W}!AI.h@{AI.h}}
+\doxysubsubsection{\texorpdfstring{TOWER\_W}{TOWER\_W}}
+{\footnotesize\ttfamily const int T\+O\+W\+E\+R\+\_\+W = 30}
+

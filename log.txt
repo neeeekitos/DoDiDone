@@ -1,0 +1,31 @@
+==13323== Memcheck, a memory error detector
+==13323== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==13323== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==13323== Command: ./build/e-chess
+==13323== Parent PID: 4984
+==13323== 
+==13323== 
+==13323== HEAP SUMMARY:
+==13323==     in use at exit: 400 bytes in 28 blocks
+==13323==   total heap usage: 201 allocs, 173 frees, 84,222 bytes allocated
+==13323== 
+==13323== 400 bytes in 28 blocks are definitely lost in loss record 1 of 1
+==13323==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13323==    by 0x10F993: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (new_allocator.h:114)
+==13323==    by 0x10F804: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (alloc_traits.h:444)
+==13323==    by 0x10F595: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (stl_vector.h:343)
+==13323==    by 0x11093A: void std::vector<int, std::allocator<int> >::_M_range_initialize<int const*>(int const*, int const*, std::forward_iterator_tag) (stl_vector.h:1579)
+==13323==    by 0x1107AD: std::vector<int, std::allocator<int> >::vector(std::initializer_list<int>, std::allocator<int> const&) (stl_vector.h:626)
+==13323==    by 0x11817F: Knight::Knight(PieceColor) (Knight.cpp:10)
+==13323==    by 0x110AA8: Chessboard::Chessboard() (Chessboard.cpp:25)
+==13323==    by 0x1119EF: Chessboard::GetInstance() (Chessboard.cpp:44)
+==13323==    by 0x10FA32: main (main.cpp:12)
+==13323== 
+==13323== LEAK SUMMARY:
+==13323==    definitely lost: 400 bytes in 28 blocks
+==13323==    indirectly lost: 0 bytes in 0 blocks
+==13323==      possibly lost: 0 bytes in 0 blocks
+==13323==    still reachable: 0 bytes in 0 blocks
+==13323==         suppressed: 0 bytes in 0 blocks
+==13323== 
+==13323== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

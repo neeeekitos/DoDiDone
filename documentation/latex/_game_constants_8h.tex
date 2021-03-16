@@ -1,0 +1,264 @@
+\hypertarget{_game_constants_8h}{}\doxysection{include/model/\+Game\+Constants.h File Reference}
+\label{_game_constants_8h}\index{include/model/GameConstants.h@{include/model/GameConstants.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Game\+Constants.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{_game_constants_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_game_constants_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classconstantes_deplacement}{constantes\+Deplacement}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef pair$<$ int, int $>$ \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}
+\item 
+typedef pair$<$ \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}, \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} $>$ \mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} $>$ \mbox{\hyperlink{_game_constants_8h_a1022a223a470b1272335383cb4a5f727}{Move\+Set}}
+\item 
+typedef vector$<$ \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}} $>$ \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}{Castling\+Side}} \{ \mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cab32ded2de0afe0295340fc438d3c3d9b}{Q\+U\+E\+E\+N\+S\+I\+DE}}, 
+\mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cacf07df4569e02837915089d8df30e1c5}{K\+I\+N\+G\+S\+I\+DE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} \{ \mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea403778345700cbd36b5b26352b144f78}{M\+U\+L\+T\+I\+P\+L\+A\+Y\+ER}}, 
+\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea843f56ccba9706ba2c321d095956aa98}{A\+I\+P\+L\+A\+Y\+ER}}, 
+\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea605159e8a4c32319fd69b5d151369d93}{U\+N\+D\+E\+F\+I\+N\+ED}}
+ \}
+\item 
+enum \mbox{\hyperlink{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38fe}{A\+I\+Mode}} \{ \mbox{\hyperlink{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feaa2b65445a3a16f164c5e811064d75726}{R\+A\+N\+D\+OM}}, 
+\mbox{\hyperlink{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a}{M\+I\+N\+I\+M\+AX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \{ \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d}{E\+M\+P\+TY}}, 
+\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985af77fb67151d0c18d397069ad8c271ba3}{B\+L\+A\+CK}}, 
+\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a283fc479650da98250635b9c3c0e7e50}{W\+H\+I\+TE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}{W\+I\+N\+N\+ER}} \{ \mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca0285a21071156e27d28d50281fa5471a}{B\+L\+A\+C\+K\+W\+I\+N\+N\+ER}}, 
+\mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca7d109161a973052fe5b2a6fbe659353e}{W\+H\+I\+T\+E\+W\+I\+N\+N\+ER}}, 
+\mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca59a84258a4cb9025b567ee5139455029}{E\+Q\+U\+AL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_game_constants_8h_ad7c23bda7d18ea65488db4b933b2b918}{C\+H\+E\+S\+S\+G\+A\+M\+E\+S\+I\+ZE}} = 64
+\item 
+const int \mbox{\hyperlink{_game_constants_8h_aa0607c8439e0cd29db01f008b020b938}{boundaries}} \mbox{[}120\mbox{]}
+\item 
+const int \mbox{\hyperlink{_game_constants_8h_a6147023121db3ac889c9c699bf607bb6}{position\+In\+Boundaries\+Table}} \mbox{[}64\mbox{]}
+\item 
+const string \mbox{\hyperlink{_game_constants_8h_a270ee68ed30975311a68c7f7b27d4187}{P\+I\+E\+C\+E\+\_\+\+C\+O\+L\+O\+R\+\_\+\+N\+A\+ME}} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}\label{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}} 
+\index{GameConstants.h@{GameConstants.h}!Coordinate@{Coordinate}}
+\index{Coordinate@{Coordinate}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{Coordinate}{Coordinate}}
+{\footnotesize\ttfamily typedef pair$<$int, int$>$ \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}}
+
+\mbox{\Hypertarget{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}\label{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}} 
+\index{GameConstants.h@{GameConstants.h}!DestinationsSet@{DestinationsSet}}
+\index{DestinationsSet@{DestinationsSet}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{DestinationsSet}{DestinationsSet}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}$>$ \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}}}
+
+\mbox{\Hypertarget{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}\label{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}} 
+\index{GameConstants.h@{GameConstants.h}!Move@{Move}}
+\index{Move@{Move}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{Move}{Move}}
+{\footnotesize\ttfamily typedef pair$<$\mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}, \mbox{\hyperlink{_game_constants_8h_a2370b7f1bc52bf07f5eaf28abb81974a}{Coordinate}}$>$ \mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}
+
+\mbox{\Hypertarget{_game_constants_8h_a1022a223a470b1272335383cb4a5f727}\label{_game_constants_8h_a1022a223a470b1272335383cb4a5f727}} 
+\index{GameConstants.h@{GameConstants.h}!MoveSet@{MoveSet}}
+\index{MoveSet@{MoveSet}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{MoveSet}{MoveSet}}
+{\footnotesize\ttfamily typedef vector$<$\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}$>$ \mbox{\hyperlink{_game_constants_8h_a1022a223a470b1272335383cb4a5f727}{Move\+Set}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38fe}\label{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38fe}} 
+\index{GameConstants.h@{GameConstants.h}!AIMode@{AIMode}}
+\index{AIMode@{AIMode}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{AIMode}{AIMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38fe}{A\+I\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RANDOM@{RANDOM}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!RANDOM@{RANDOM}}}\mbox{\Hypertarget{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feaa2b65445a3a16f164c5e811064d75726}\label{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feaa2b65445a3a16f164c5e811064d75726}} 
+R\+A\+N\+D\+OM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINIMAX@{MINIMAX}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!MINIMAX@{MINIMAX}}}\mbox{\Hypertarget{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a}\label{_game_constants_8h_a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a}} 
+M\+I\+N\+I\+M\+AX&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}\label{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}} 
+\index{GameConstants.h@{GameConstants.h}!CastlingSide@{CastlingSide}}
+\index{CastlingSide@{CastlingSide}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{CastlingSide}{CastlingSide}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77c}{Castling\+Side}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUEENSIDE@{QUEENSIDE}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!QUEENSIDE@{QUEENSIDE}}}\mbox{\Hypertarget{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cab32ded2de0afe0295340fc438d3c3d9b}\label{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cab32ded2de0afe0295340fc438d3c3d9b}} 
+Q\+U\+E\+E\+N\+S\+I\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KINGSIDE@{KINGSIDE}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!KINGSIDE@{KINGSIDE}}}\mbox{\Hypertarget{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cacf07df4569e02837915089d8df30e1c5}\label{_game_constants_8h_abd41c886f05843be6aaa370a6d34e77cacf07df4569e02837915089d8df30e1c5}} 
+K\+I\+N\+G\+S\+I\+DE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}\label{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}} 
+\index{GameConstants.h@{GameConstants.h}!GameMode@{GameMode}}
+\index{GameMode@{GameMode}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{GameMode}{GameMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}}}
+
+Represents the game mode \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MULTIPLAYER@{MULTIPLAYER}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!MULTIPLAYER@{MULTIPLAYER}}}\mbox{\Hypertarget{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea403778345700cbd36b5b26352b144f78}\label{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea403778345700cbd36b5b26352b144f78}} 
+M\+U\+L\+T\+I\+P\+L\+A\+Y\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIPLAYER@{AIPLAYER}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!AIPLAYER@{AIPLAYER}}}\mbox{\Hypertarget{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea843f56ccba9706ba2c321d095956aa98}\label{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea843f56ccba9706ba2c321d095956aa98}} 
+A\+I\+P\+L\+A\+Y\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDEFINED@{UNDEFINED}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!UNDEFINED@{UNDEFINED}}}\mbox{\Hypertarget{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea605159e8a4c32319fd69b5d151369d93}\label{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589dea605159e8a4c32319fd69b5d151369d93}} 
+U\+N\+D\+E\+F\+I\+N\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}\label{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}} 
+\index{GameConstants.h@{GameConstants.h}!PieceColor@{PieceColor}}
+\index{PieceColor@{PieceColor}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{PieceColor}{PieceColor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}
+
+Represents the color of pieces \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY@{EMPTY}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!EMPTY@{EMPTY}}}\mbox{\Hypertarget{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d}\label{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d}} 
+E\+M\+P\+TY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!BLACK@{BLACK}}}\mbox{\Hypertarget{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985af77fb67151d0c18d397069ad8c271ba3}\label{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985af77fb67151d0c18d397069ad8c271ba3}} 
+B\+L\+A\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!WHITE@{WHITE}}}\mbox{\Hypertarget{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a283fc479650da98250635b9c3c0e7e50}\label{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985a283fc479650da98250635b9c3c0e7e50}} 
+W\+H\+I\+TE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}\label{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}} 
+\index{GameConstants.h@{GameConstants.h}!WINNER@{WINNER}}
+\index{WINNER@{WINNER}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{WINNER}{WINNER}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962ec}{W\+I\+N\+N\+ER}}}
+
+Represents the winner status of the game \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACKWINNER@{BLACKWINNER}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!BLACKWINNER@{BLACKWINNER}}}\mbox{\Hypertarget{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca0285a21071156e27d28d50281fa5471a}\label{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca0285a21071156e27d28d50281fa5471a}} 
+B\+L\+A\+C\+K\+W\+I\+N\+N\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITEWINNER@{WHITEWINNER}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!WHITEWINNER@{WHITEWINNER}}}\mbox{\Hypertarget{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca7d109161a973052fe5b2a6fbe659353e}\label{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca7d109161a973052fe5b2a6fbe659353e}} 
+W\+H\+I\+T\+E\+W\+I\+N\+N\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUAL@{EQUAL}!GameConstants.h@{GameConstants.h}}\index{GameConstants.h@{GameConstants.h}!EQUAL@{EQUAL}}}\mbox{\Hypertarget{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca59a84258a4cb9025b567ee5139455029}\label{_game_constants_8h_a8b95e42e120aa8f0951454b79f5962eca59a84258a4cb9025b567ee5139455029}} 
+E\+Q\+U\+AL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_game_constants_8h_aa0607c8439e0cd29db01f008b020b938}\label{_game_constants_8h_aa0607c8439e0cd29db01f008b020b938}} 
+\index{GameConstants.h@{GameConstants.h}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{boundaries}{boundaries}}
+{\footnotesize\ttfamily const int boundaries\mbox{[}120\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1,}
+\DoxyCodeLine{        -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1,}
+\DoxyCodeLine{        -\/1, 0, 1, 2, 3, 4, 5, 6, 7, -\/1,}
+\DoxyCodeLine{        -\/1, 8, 9, 10, 11, 12, 13, 14, 15, -\/1,}
+\DoxyCodeLine{        -\/1, 16, 17, 18, 19, 20, 21, 22, 23, -\/1,}
+\DoxyCodeLine{        -\/1, 24, 25, 26, 27, 28, 29, 30, 31, -\/1,}
+\DoxyCodeLine{        -\/1, 32, 33, 34, 35, 36, 37, 38, 39, -\/1,}
+\DoxyCodeLine{        -\/1, 40, 41, 42, 43, 44, 45, 46, 47, -\/1,}
+\DoxyCodeLine{        -\/1, 48, 49, 50, 51, 52, 53, 54, 55, -\/1,}
+\DoxyCodeLine{        -\/1, 56, 57, 58, 59, 60, 61, 62, 63, -\/1,}
+\DoxyCodeLine{        -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1,}
+\DoxyCodeLine{        -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1, -\/1}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Represents the boundaries of the chessboard. It allows us to test if a position overflows from the chessboard \mbox{\Hypertarget{_game_constants_8h_ad7c23bda7d18ea65488db4b933b2b918}\label{_game_constants_8h_ad7c23bda7d18ea65488db4b933b2b918}} 
+\index{GameConstants.h@{GameConstants.h}!CHESSGAMESIZE@{CHESSGAMESIZE}}
+\index{CHESSGAMESIZE@{CHESSGAMESIZE}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{CHESSGAMESIZE}{CHESSGAMESIZE}}
+{\footnotesize\ttfamily const int C\+H\+E\+S\+S\+G\+A\+M\+E\+S\+I\+ZE = 64}
+
+\mbox{\Hypertarget{_game_constants_8h_a270ee68ed30975311a68c7f7b27d4187}\label{_game_constants_8h_a270ee68ed30975311a68c7f7b27d4187}} 
+\index{GameConstants.h@{GameConstants.h}!PIECE\_COLOR\_NAME@{PIECE\_COLOR\_NAME}}
+\index{PIECE\_COLOR\_NAME@{PIECE\_COLOR\_NAME}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{PIECE\_COLOR\_NAME}{PIECE\_COLOR\_NAME}}
+{\footnotesize\ttfamily const string P\+I\+E\+C\+E\+\_\+\+C\+O\+L\+O\+R\+\_\+\+N\+A\+ME\mbox{[}3\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{"empty"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"black"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"white"}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+String table representing the piece colors \mbox{\Hypertarget{_game_constants_8h_a6147023121db3ac889c9c699bf607bb6}\label{_game_constants_8h_a6147023121db3ac889c9c699bf607bb6}} 
+\index{GameConstants.h@{GameConstants.h}!positionInBoundariesTable@{positionInBoundariesTable}}
+\index{positionInBoundariesTable@{positionInBoundariesTable}!GameConstants.h@{GameConstants.h}}
+\doxysubsubsection{\texorpdfstring{positionInBoundariesTable}{positionInBoundariesTable}}
+{\footnotesize\ttfamily const int position\+In\+Boundaries\+Table\mbox{[}64\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        21, 22, 23, 24, 25, 26, 27, 28,}
+\DoxyCodeLine{        31, 32, 33, 34, 35, 36, 37, 38,}
+\DoxyCodeLine{        41, 42, 43, 44, 45, 46, 47, 48,}
+\DoxyCodeLine{        51, 52, 53, 54, 55, 56, 57, 58,}
+\DoxyCodeLine{        61, 62, 63, 64, 65, 66, 67, 68,}
+\DoxyCodeLine{        71, 72, 73, 74, 75, 76, 77, 78,}
+\DoxyCodeLine{        81, 82, 83, 84, 85, 86, 87, 88,}
+\DoxyCodeLine{        91, 92, 93, 94, 95, 96, 97, 98}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Given a position in the chessboard, this table returns its corresponding index in the boundaries table 

@@ -1,0 +1,13 @@
+<map id="include/model/Piece.h" name="include/model/Piece.h">
+<area shape="rect" id="node1" title=" " alt="" coords="525,5,676,32"/>
+<area shape="rect" id="node2" href="$_chessboard_8h.html" title=" " alt="" coords="308,155,495,181"/>
+<area shape="rect" id="node6" href="$_bishop_8h.html" title=" " alt="" coords="347,229,504,256"/>
+<area shape="rect" id="node7" href="$_king_8h.html" title=" " alt="" coords="529,229,672,256"/>
+<area shape="rect" id="node8" href="$_knight_8h.html" title=" " alt="" coords="696,229,851,256"/>
+<area shape="rect" id="node9" href="$_pawn_8h.html" title=" " alt="" coords="310,80,461,107"/>
+<area shape="rect" id="node10" href="$_queen_8h.html" title=" " alt="" coords="688,80,843,107"/>
+<area shape="rect" id="node11" href="$_tower_8h.html" title=" " alt="" coords="868,80,1018,107"/>
+<area shape="rect" id="node3" href="$_a_i_8h.html" title=" " alt="" coords="25,229,162,256"/>
+<area shape="rect" id="node4" href="$_game_controller_8h.html" title=" " alt="" coords="30,304,157,345"/>
+<area shape="rect" id="node5" href="$_view_8h.html" title=" " alt="" coords="187,229,323,256"/>
+</map>

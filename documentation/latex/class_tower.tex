@@ -1,0 +1,114 @@
+\hypertarget{class_tower}{}\doxysection{Tower Class Reference}
+\label{class_tower}\index{Tower@{Tower}}
+
+
+{\ttfamily \#include $<$Tower.\+h$>$}
+
+
+
+Inheritance diagram for Tower\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=123pt]{class_tower__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tower\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=123pt]{class_tower__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tower_a6b0ddc0d3e2a9da57352e23c0b5844fc}{Tower}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color)
+\item 
+virtual char \mbox{\hyperlink{class_tower_a1102e35817c99248af9c39bf31d6d022}{Piece\+To\+F\+EN}} ()
+\item 
+virtual void \mbox{\hyperlink{class_tower_a38fe454cf473a497fed3ffaceda6171c}{Notify\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv) override
+\item 
+bool \mbox{\hyperlink{class_tower_ab13d457d23a11c6cd068f7cb3d72fada}{Is\+First\+Move\+Done}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_tower_ab9c4b7ac1b405df52793ffd46b091e1e}{first\+Move\+Done}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a tower 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tower_a6b0ddc0d3e2a9da57352e23c0b5844fc}\label{class_tower_a6b0ddc0d3e2a9da57352e23c0b5844fc}} 
+\index{Tower@{Tower}!Tower@{Tower}}
+\index{Tower@{Tower}!Tower@{Tower}}
+\doxysubsubsection{\texorpdfstring{Tower()}{Tower()}}
+{\footnotesize\ttfamily Tower\+::\+Tower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color }\end{DoxyParamCaption})}
+
+Constructor of a tower 
+\begin{DoxyParams}{Parameters}
+{\em a\+Color} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tower_ab13d457d23a11c6cd068f7cb3d72fada}\label{class_tower_ab13d457d23a11c6cd068f7cb3d72fada}} 
+\index{Tower@{Tower}!IsFirstMoveDone@{IsFirstMoveDone}}
+\index{IsFirstMoveDone@{IsFirstMoveDone}!Tower@{Tower}}
+\doxysubsubsection{\texorpdfstring{IsFirstMoveDone()}{IsFirstMoveDone()}}
+{\footnotesize\ttfamily bool Tower\+::\+Is\+First\+Move\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tells wether the tower did its first move \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tower_a38fe454cf473a497fed3ffaceda6171c}\label{class_tower_a38fe454cf473a497fed3ffaceda6171c}} 
+\index{Tower@{Tower}!NotifyMove@{NotifyMove}}
+\index{NotifyMove@{NotifyMove}!Tower@{Tower}}
+\doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
+{\footnotesize\ttfamily virtual void Tower\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Allows to notify this tower that it moved 
+\begin{DoxyParams}{Parameters}
+{\em mv} & The move \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}{Piece}}.
+
+\mbox{\Hypertarget{class_tower_a1102e35817c99248af9c39bf31d6d022}\label{class_tower_a1102e35817c99248af9c39bf31d6d022}} 
+\index{Tower@{Tower}!PieceToFEN@{PieceToFEN}}
+\index{PieceToFEN@{PieceToFEN}!Tower@{Tower}}
+\doxysubsubsection{\texorpdfstring{PieceToFEN()}{PieceToFEN()}}
+{\footnotesize\ttfamily virtual char Tower\+::\+Piece\+To\+F\+EN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts the current piece to its corresponding F\+EN char \begin{DoxyReturn}{Returns}
+The F\+EN char 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_piece_a286d695fc92227537cf3c32e57bc4941}{Piece}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_tower_ab9c4b7ac1b405df52793ffd46b091e1e}\label{class_tower_ab9c4b7ac1b405df52793ffd46b091e1e}} 
+\index{Tower@{Tower}!firstMoveDone@{firstMoveDone}}
+\index{firstMoveDone@{firstMoveDone}!Tower@{Tower}}
+\doxysubsubsection{\texorpdfstring{firstMoveDone}{firstMoveDone}}
+{\footnotesize\ttfamily bool Tower\+::first\+Move\+Done}
+
+This variable is set to false as long as the tower has not moved 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/model/\mbox{\hyperlink{_tower_8h}{Tower.\+h}}\end{DoxyCompactItemize}
