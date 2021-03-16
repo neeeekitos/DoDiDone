@@ -18,16 +18,16 @@ AI * AI::GetInstance() {
 AI::AI() : aiMode(RANDOM) {}
 
 Move AI::DoMove(Chessboard& chessboard) {
+
+    // aiMode can be changed here
     aiMode = MINIMAX;
     Move move;
     if (aiMode == RANDOM) move = RandomMove(chessboard);
     else if (aiMode == MINIMAX) {
         cout << "generating move " << endl;
         bool maxOrMinPlayer = chessboard.GetCurrentPlayer() == WHITE;
-        cout << "player is maximiwing (white)" << maxOrMinPlayer << endl;
         list<Transition> bestPath;
-        list<Transition> path;
-        Minimax(path, bestPath, DEPTH_MINIMAX, maxOrMinPlayer);
+        Minimax(bestPath, DEPTH_MINIMAX, maxOrMinPlayer);
         auto lastElementIt = bestPath.end();
         --lastElementIt;
         move = lastElementIt->mv;
@@ -55,15 +55,8 @@ Move AI::RandomMove(Chessboard& chessboard) {
  * returns Heuristic evaluation
  */
 int AI::evaluate(Chessboard& chessboard, PieceColor pieceColor) {
-
     // positive result if white piece is a current player, negative otherwise
     return getScore(chessboard, WHITE) - getScore(chessboard, BLACK);
-
-    /* if (pieceColor == WHITE)
-         return getScore(chessboard, WHITE) - getScore(chessboard, BLACK);
-     else
-         return getScore(chessboard, BLACK) - getScore(chessboard, WHITE);*/
-
 }
 
 int AI::getScore(Chessboard& chessboard, PieceColor pieceColor) {
@@ -82,14 +75,15 @@ int AI::getScore(Chessboard& chessboard, PieceColor pieceColor) {
     return weightCounter;
 }
 
-int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, bool maximizingPlayer) {
+int AI::Minimax(list<Transition>& bestPath, int depth, bool maximizingPlayer) {
 
     Chessboard * board = Chessboard::GetInstance();
 
     PieceColor pieceColor = maximizingPlayer ? WHITE : BLACK;
-    cout << "piece color is " << pieceColor << endl;
+
     if (depth == 0 || board->GameOver(pieceColor)) {
         int eval = evaluate(*board, pieceColor);
+
         return eval;
     }
 
@@ -105,21 +99,19 @@ int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, b
                 // move piece in the chessboard and remember eated pieces (in some cases)
                 Move possibleMove = make_pair(piece, moveTo);
 
-//                cout << "white piece moves " << endl;
+                // make a temporary move
                 t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                int eval = Minimax(bestPath, path, depth - 1, false);
-                cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
-                     << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
+                int eval = Minimax(bestPath, depth - 1, false);
+//                cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
+//                     << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
+
+                board->ChangePlayer();
+                board->undoTransition(t);
 
                 maxEval = max(maxEval, eval);
                 if (maxEval == eval) bestMove = possibleMove;
-
-                // undo move
-//                cout << "undoing move" << endl;
-                board->undoTransition(t);
-
             }
         }
         Transition t;
@@ -132,25 +124,20 @@ int AI::Minimax(list<Transition>& path, list<Transition>& bestPath, int depth, b
         Move bestMove;
         for (auto piece : movablePieces) {
             for (auto moveTo : board->GetPossibleMoves(piece, false)) {
-
                 Transition t;
 
                 // move piece in the chessboard and remember eated piece (in some cases)
                 Move possibleMove = make_pair(piece, moveTo);
 
-//                cout << "black piece moves " << endl;
+                // make a temporary move
                 t = CalculateMove(possibleMove);
 
                 // evaluate current chessboard configuration
-                int eval = Minimax(bestPath, path, depth - 1, true);
-                cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
-                     << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
+                int eval = Minimax(bestPath, depth - 1, true);
+//                cout << "color " << pieceColor << ", depth : "<< depth << " , eval " << eval << " with possible move is from x=" << possibleMove.first.first << ", y=" << possibleMove.first.second
+//                     << " to x=" << possibleMove.second.first << ", y=" << possibleMove.second.second << endl;
 
-                /*if (possibleMove.first.first == 0 && possibleMove.first.second == 1
-                    && possibleMove.second.first == 0 && possibleMove.second.second == 0) exit(-1);*/
-
-                // undo move
-                cout << "undoing move" << endl;
+                board->ChangePlayer();
                 board->undoTransition(t);
 
                 minEval = min(minEval, eval);

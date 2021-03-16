@@ -8,6 +8,9 @@
 #include "ClickableElement.h"
 #include "Button.h"
 
+/**
+ * @brief Game view
+ */
 class View {
 
 public:

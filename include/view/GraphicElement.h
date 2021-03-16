@@ -14,36 +14,80 @@
 
 using namespace std;
 
+/**
+ * @brief An interface element on which an image can be added
+ */
 class GraphicElement {
 
-
 public:
+
+    /**
+     * @brief Public default constructor of GraphicElement
+     */
     GraphicElement();
 
-    ~GraphicElement();
-
+    /**
+     * @brief Public default constructor of GraphicElement
+     * @param s
+     */
     GraphicElement(const string s);
 
-    void draw(sf::RenderWindow &window);
+    /**
+     * @brief Destructor of GraphicElement
+     */
+    ~GraphicElement();
 
-    void setSprite(string fileName, int lvl);
+    /**
+     * @brief Draw this element into the window
+     * @param window
+     */
+    void Draw(sf::RenderWindow &window);
 
-    sf::Sprite &getSprite(char state);
+    /**
+     * @brief Set image
+     * @param fileName
+     * @param lvl
+     */
+    void SetSprite(string fileName, int lvl);
 
-    void setPosition(Point2I p);
+    /**
+     * @brief Get image
+     * @param state
+     * @return
+     */
+    sf::Sprite &GetSprite(char state);
 
-    Point2I getPosition();
+    /**
+     * @brief Set element position
+     * @param p Left top corner point
+     */
+    void SetPosition(Point2I p);
 
-    void setRotation(float angle);
+    /**
+     * @brief Get element position
+     * @return
+     */
+    Point2I GetPosition();
 
-    void setScale(float size);
+    /**
+     * @brief Set rotation
+     * @param angle
+     */
+    void SetRotation(float angle);
 
-    void checkPosition();
+    /**
+     * @brief Set scale
+     * @param size
+     */
+    void SetScale(float size);
 
 protected:
-sf::Sprite img;
-sf::Texture t;
-Point2I p;
+
+    sf::Sprite img;
+
+    sf::Texture t;
+
+    Point2I p;
 };
 
 #endif // E_CHESS_GRAPHICELEMENT_H

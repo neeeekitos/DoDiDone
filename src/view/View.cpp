@@ -1,6 +1,3 @@
-//
-// Created by lpietropao on 27/02/2021.
-//
 #define WINDOW_W 1100
 #define WINDOW_H 720
 
@@ -214,41 +211,41 @@ void View::interfaceInitialisation(int step) {
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/new-game.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 400);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 400);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::NEW_GAME));
 
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "game-empty.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 225);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
 
             texts.push_back(new sf::Text("1", font, 26));
             texts[texts.size() - 1]->setFillColor(sf::Color(21, 215, 152));
             texts[texts.size() - 1]->setPosition(585, 439);
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "previous.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 - 173, WINDOW_H - v.y - 225);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2 - 150, WINDOW_H - 225);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::PREVIOUS));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "next.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 173, WINDOW_H - v.y - 225);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2 + 200, WINDOW_H - 225);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::NEXT));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "load-game.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 150);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 150);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::LOAD));
             break;
 
@@ -256,17 +253,17 @@ void View::interfaceInitialisation(int step) {
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "/2-players.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 200);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 200);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::TWO_PLAYERS));
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "player-vs-bot.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 400);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H - 400);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::ONE_PLAYER));
             break;
 
@@ -280,11 +277,11 @@ void View::interfaceInitialisation(int step) {
                 gameModeImg = "player-vs-bot.png";
             }
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + gameModeImg));
-            interface[interface.size() - 1]->setPosition(Point2I(815, 0));
+            interface[interface.size() - 1]->SetPosition(Point2I(815, 0));
 
             //add to texts turn count
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "turn-count.png"));
-            interface[interface.size() - 1]->setPosition(Point2I(0, 0));
+            interface[interface.size() - 1]->SetPosition(Point2I(0, 0));
 
             texts.push_back(new sf::Text("", font, 30));
             texts[texts.size() - 1]->setFont(font);
@@ -295,20 +292,20 @@ void View::interfaceInitialisation(int step) {
 
             //add to interface which player should play
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, 0);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
 
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player-black.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
 
             interface.push_back(new GraphicElement(BUTTONS_IMG_BASE_PATH + "save-game.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y);
             p2 = Point2I(WINDOW_W / 2 + v.x / 2, WINDOW_H);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             buttons.push_back(new Button(p1, p2, ButtonType::SAVE));
             break;
 
@@ -317,23 +314,23 @@ void View::interfaceInitialisation(int step) {
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
             winner = Chessboard::GetInstance()->GetWinner() == WINNER::WHITEWINNER ? "white" : "black";
             interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/wins.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
 
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "/current-player-" + winner + ".png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x - 50 / 2, 345);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             break;
 
         case 4:
             //stalemate
             interface.push_back(new GraphicElement(IMG_BASE_PATH + "home.jpeg"));
             interface.push_back(new GraphicElement(STATUS_IMG_BASE_PATH + "/stalemate.png"));
-            v = interface[interface.size() - 1]->getSprite(0).getTexture()->getSize();
+            v = interface[interface.size() - 1]->GetSprite(0).getTexture()->getSize();
             p1 = Point2I(WINDOW_W / 2 - v.x / 2, WINDOW_H - v.y - 300);
-            interface[interface.size() - 1]->setPosition(p1);
+            interface[interface.size() - 1]->SetPosition(p1);
             break;
 
         default:
@@ -421,22 +418,22 @@ void View::displayGameIn(sf::RenderWindow &w, bool gameGoesOn) {
         texts[0]->setString(to_string(GameController::GetInstance()->GetShots()));
 
         if (GameController::GetInstance()->GetCurrentPlayer() == PieceColor::BLACK) {
-            interface[4]->setSprite(
+            interface[4]->SetSprite(
                     IMG_BASE_PATH + "current-player-black.png", 0);
         } else {
-            interface[4]->setSprite(
+            interface[4]->SetSprite(
                     IMG_BASE_PATH + "current-player-white.png", 0);
         }
 
-        sf::Vector2 v = interface[4]->getSprite(0).getTexture()->getSize();
+        sf::Vector2 v = interface[4]->GetSprite(0).getTexture()->getSize();
         Point2I p1 = Point2I(WINDOW_W / 2 - v.x / 2 + 47, 6);
-        interface[4]->setPosition(p1);
+        interface[4]->SetPosition(p1);
     }
 
     //interface elements first
     int size = interface.size();
     for (int i = 0; i < size; i++) {
-        interface.at(i)->draw(w);
+        interface.at(i)->Draw(w);
     }
 
     //text elements
