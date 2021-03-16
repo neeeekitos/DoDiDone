@@ -1,9 +1,5 @@
 \hypertarget{class_game_controller}{}\doxysection{Game\+Controller Class Reference}
 \label{class_game_controller}\index{GameController@{GameController}}
-
-
-{\ttfamily \#include $<$Game\+Controller.\+h$>$}
-
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,11 +11,11 @@ void \mbox{\hyperlink{class_game_controller_ae4409daa19740c716a91caed48c34d8c}{o
 \item 
 void \mbox{\hyperlink{class_game_controller_ae6ec6127284825360ac3399cfe604a6e}{Start}} ()
 \item 
-void \mbox{\hyperlink{class_game_controller_ae5e0a22f450c11b3513f346976ccaf13}{Set\+Game\+Mode}} (\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} gm)
+void \mbox{\hyperlink{class_game_controller_ae5e0a22f450c11b3513f346976ccaf13}{Set\+Game\+Mode}} (Game\+Mode gm)
 \item 
-\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} \mbox{\hyperlink{class_game_controller_a65900e7e5f59f9a5667cc8b76ebe8b32}{Get\+Game\+Mode}} ()
+Game\+Mode \mbox{\hyperlink{class_game_controller_a65900e7e5f59f9a5667cc8b76ebe8b32}{Get\+Game\+Mode}} ()
 \item 
-\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a064674b038bcdd936282a1dcc183162b}{Make\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a064674b038bcdd936282a1dcc183162b}{Make\+Move}} (Move mv)
 \item 
 const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{class_game_controller_a214de6a9b8858f8b8bd610b1d31169d6}{Get\+Saved\+Games\+Ids}} (vector$<$ int $>$ \&result) const
 \item 
@@ -27,13 +23,13 @@ int \mbox{\hyperlink{class_game_controller_a6f22744d46aebdf86df9170f4d790ecf}{Sa
 \item 
 void \mbox{\hyperlink{class_game_controller_a51e87f59f841a44b5a08746976206731}{Load\+Game}} (int game\+Id)
 \begin{DoxyCompactList}\small\item\em Load game number $<$game\+Id$>$ into the chessboard Set game mode. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \mbox{\hyperlink{class_game_controller_a1e737d92366f47a2ab09501dced13471}{Get\+Current\+Player}} () const
+Piece\+Color \mbox{\hyperlink{class_game_controller_a1e737d92366f47a2ab09501dced13471}{Get\+Current\+Player}} () const
 \begin{DoxyCompactList}\small\item\em Get color of current player. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_game_controller_a907af4ab4ca908d7a6a5c2a69ee3a1d3}{Get\+Shots}} () const
 \begin{DoxyCompactList}\small\item\em Get number of turns played. \end{DoxyCompactList}\item 
-const std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} $\ast$ $>$ \& \mbox{\hyperlink{class_game_controller_a492978e11d4f1774d386ac33121328be}{Get\+Eaten\+Pieces}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} color)
+const std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} $\ast$ $>$ \& \mbox{\hyperlink{class_game_controller_a492978e11d4f1774d386ac33121328be}{Get\+Eaten\+Pieces}} (Piece\+Color color)
 \item 
-\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a981db85cba1e69d1b719cd5ee6c98f6e}{Make\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv, bool update\+General\+State, bool temporary\+Move)
+\mbox{\hyperlink{class_piece}{Piece}} $\ast$ \mbox{\hyperlink{class_game_controller_a981db85cba1e69d1b719cd5ee6c98f6e}{Make\+Move}} (Move mv, bool update\+General\+State, bool temporary\+Move)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -67,7 +63,7 @@ A destructor of the \mbox{\hyperlink{class_game_controller}{Game\+Controller}}
 \index{GameController@{GameController}!GetCurrentPlayer@{GetCurrentPlayer}}
 \index{GetCurrentPlayer@{GetCurrentPlayer}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{GetCurrentPlayer()}{GetCurrentPlayer()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} Game\+Controller\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Piece\+Color Game\+Controller\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -80,7 +76,7 @@ Get color of current player.
 \index{GameController@{GameController}!GetEatenPieces@{GetEatenPieces}}
 \index{GetEatenPieces@{GetEatenPieces}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{GetEatenPieces()}{GetEatenPieces()}}
-{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{class_piece}{Piece}} $\ast$$>$\& Game\+Controller\+::\+Get\+Eaten\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{class_piece}{Piece}} $\ast$$>$\& Game\+Controller\+::\+Get\+Eaten\+Pieces (\begin{DoxyParamCaption}\item[{Piece\+Color}]{color }\end{DoxyParamCaption})}
 
 Returns the eaten pieces of the given color 
 \begin{DoxyParams}{Parameters}
@@ -94,7 +90,7 @@ A vector of eaten pieces
 \index{GameController@{GameController}!GetGameMode@{GetGameMode}}
 \index{GetGameMode@{GetGameMode}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{GetGameMode()}{GetGameMode()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}} Game\+Controller\+::\+Get\+Game\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Game\+Mode Game\+Controller\+::\+Get\+Game\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Returns the curren game mode \begin{DoxyReturn}{Returns}
 
@@ -154,7 +150,7 @@ Load game number $<$game\+Id$>$ into the chessboard Set game mode.
 \index{GameController@{GameController}!MakeMove@{MakeMove}}
 \index{MakeMove@{MakeMove}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{MakeMove()}{MakeMove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{Move}]{mv }\end{DoxyParamCaption})}
 
 Make a move in the chessboard Contract \+: mv is a valid move 
 \begin{DoxyParams}{Parameters}
@@ -168,7 +164,7 @@ The eventually eaten piece while doing the move. Returns a pointer to the eaten 
 \index{GameController@{GameController}!MakeMove@{MakeMove}}
 \index{MakeMove@{MakeMove}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{MakeMove()}{MakeMove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv,  }\item[{bool}]{update\+General\+State,  }\item[{bool}]{temporary\+Move }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_piece}{Piece}}$\ast$ Game\+Controller\+::\+Make\+Move (\begin{DoxyParamCaption}\item[{Move}]{mv,  }\item[{bool}]{update\+General\+State,  }\item[{bool}]{temporary\+Move }\end{DoxyParamCaption})}
 
 This method makes a move in the chessboard Contract \+: mv is a valid move 
 \begin{DoxyParams}{Parameters}
@@ -206,7 +202,7 @@ The number of saved game parts
 \index{GameController@{GameController}!SetGameMode@{SetGameMode}}
 \index{SetGameMode@{SetGameMode}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{SetGameMode()}{SetGameMode()}}
-{\footnotesize\ttfamily void Game\+Controller\+::\+Set\+Game\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_aaf5ef5a17b53e9997c837b07015589de}{Game\+Mode}}}]{gm }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Game\+Controller\+::\+Set\+Game\+Mode (\begin{DoxyParamCaption}\item[{Game\+Mode}]{gm }\end{DoxyParamCaption})}
 
 Sets the game mode into one of the following\+: \mbox{\hyperlink{class_a_i}{AI}} M\+U\+L\+T\+I\+P\+L\+A\+Y\+ER 
 \begin{DoxyParams}{Parameters}
@@ -223,4 +219,4 @@ Starts the game
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/controller/\mbox{\hyperlink{_game_controller_8h}{Game\+Controller.\+h}}\end{DoxyCompactItemize}
+/home/yanis/\+Bureau/\+Ecole/insa-\/courses/\+Projects/e-\/chess/include/controller/Game\+Controller.\+h\end{DoxyCompactItemize}

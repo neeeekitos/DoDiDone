@@ -19,13 +19,13 @@ Inheritance diagram for Piece\+:
 \item 
 \mbox{\hyperlink{class_piece_ac57de5803bbad829b143bc7268267dc1}{Piece}} ()
 \item 
-\mbox{\hyperlink{class_piece_ac3e4a11bc723119a8e6cb6cb6be11eee}{Piece}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color)
+\mbox{\hyperlink{class_piece_ac3e4a11bc723119a8e6cb6cb6be11eee}{Piece}} (Piece\+Color a\+Color)
 \item 
 bool \mbox{\hyperlink{class_piece_a32226455e312130c625e869675bbab91}{is\+Empty}} ()
 \item 
 virtual char \mbox{\hyperlink{class_piece_a286d695fc92227537cf3c32e57bc4941}{Piece\+To\+F\+EN}} ()
 \item 
-\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} \mbox{\hyperlink{class_piece_a382c8ef85474c2b2ff389517e446a6e0}{Get\+Color}} () const
+Piece\+Color \mbox{\hyperlink{class_piece_a382c8ef85474c2b2ff389517e446a6e0}{Get\+Color}} () const
 \item 
 int \mbox{\hyperlink{class_piece_a0c9bb8211c88327c2adc33e398d33a86}{Get\+Type}} () const
 \item 
@@ -33,16 +33,16 @@ const vector$<$ int $>$ \& \mbox{\hyperlink{class_piece_a3c3f3a53931ee72dce53681
 \item 
 bool \mbox{\hyperlink{class_piece_a0e303d2d4169ead638f6921240b9fa62}{Direction\+Is\+Limited}} ()
 \item 
-virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_piece_a2325e264ee361de1c695e54812780473}{Get\+Possible\+Moves}} ()
+virtual Destinations\+Set \mbox{\hyperlink{class_piece_a2325e264ee361de1c695e54812780473}{Get\+Possible\+Moves}} ()
 \item 
-virtual void \mbox{\hyperlink{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}{Notify\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+virtual void \mbox{\hyperlink{class_piece_a71ba2c1f5dd48c03fbf1fc160527274f}{Notify\+Move}} (Move mv)
 \item 
 virtual \mbox{\hyperlink{class_piece_aac0a94ea51973d19707ed9fb01ede838}{$\sim$ Piece}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_piece_a2a3a3b4d30e0500feaf5e2cfc6f43905}{Piece}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color, vector$<$ int $>$ a\+Move\+Directions, bool a\+Direction\+Is\+Limited)
+\mbox{\hyperlink{class_piece_a2a3a3b4d30e0500feaf5e2cfc6f43905}{Piece}} (Piece\+Color a\+Color, vector$<$ int $>$ a\+Move\+Directions, bool a\+Direction\+Is\+Limited)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -51,7 +51,7 @@ vector$<$ int $>$ \mbox{\hyperlink{class_piece_a0aca0760e87db26fa70f9c85d93b37b3
 \item 
 bool \mbox{\hyperlink{class_piece_a2091fedcc886b7f789c44e0b006535b8}{direction\+Is\+Limited}}
 \item 
-\mbox{\hyperlink{_piece_8h_a38d4991146e17b79fed3b4fd5db030fb}{P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE}} \mbox{\hyperlink{class_piece_a37374e91c83796e060b7428cfc17fb86}{type}}
+P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE \mbox{\hyperlink{class_piece_a37374e91c83796e060b7428cfc17fb86}{type}}
 \end{DoxyCompactItemize}
 
 
@@ -69,7 +69,7 @@ Constructs a piece \mbox{\Hypertarget{class_piece_ac3e4a11bc723119a8e6cb6cb6be11
 \index{Piece@{Piece}!Piece@{Piece}}
 \index{Piece@{Piece}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{Piece\+Color}]{a\+Color }\end{DoxyParamCaption})}
 
 Constructs a piece with the given color 
 \begin{DoxyParams}{Parameters}
@@ -86,7 +86,7 @@ The destructor of the move \mbox{\Hypertarget{class_piece_a2a3a3b4d30e0500feaf5e
 \index{Piece@{Piece}!Piece@{Piece}}
 \index{Piece@{Piece}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{Piece()}{Piece()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color,  }\item[{vector$<$ int $>$}]{a\+Move\+Directions,  }\item[{bool}]{a\+Direction\+Is\+Limited }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{Piece\+Color}]{a\+Color,  }\item[{vector$<$ int $>$}]{a\+Move\+Directions,  }\item[{bool}]{a\+Direction\+Is\+Limited }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 The constructor of the current piece 
 \begin{DoxyParams}{Parameters}
@@ -113,7 +113,7 @@ Tells wether the direction is limited or unlimited \begin{DoxyReturn}{Returns}
 \index{Piece@{Piece}!GetColor@{GetColor}}
 \index{GetColor@{GetColor}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} Piece\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Piece\+Color Piece\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Returns the color of this piece \begin{DoxyReturn}{Returns}
 
@@ -131,7 +131,7 @@ Returns the move direction of this piece \begin{DoxyReturn}{Returns}
 \index{Piece@{Piece}!GetPossibleMoves@{GetPossibleMoves}}
 \index{GetPossibleMoves@{GetPossibleMoves}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{GetPossibleMoves()}{GetPossibleMoves()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Piece\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual Destinations\+Set Piece\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Returns the possible moves of the current piece \begin{DoxyReturn}{Returns}
 The coordinates of the possible destinations 
@@ -162,7 +162,7 @@ Tells if the occupied block by this piece is empty \begin{DoxyReturn}{Returns}
 \index{Piece@{Piece}!NotifyMove@{NotifyMove}}
 \index{NotifyMove@{NotifyMove}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
-{\footnotesize\ttfamily virtual void Piece\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Piece\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{Move}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Notify the current piece that it did a move 
 \begin{DoxyParams}{Parameters}
@@ -205,10 +205,10 @@ The move directions of the current piece \mbox{\Hypertarget{class_piece_a37374e9
 \index{Piece@{Piece}!type@{type}}
 \index{type@{type}!Piece@{Piece}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_piece_8h_a38d4991146e17b79fed3b4fd5db030fb}{P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE}} Piece\+::type\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily P\+I\+E\+C\+E\+\_\+\+T\+Y\+PE Piece\+::type\hspace{0.3cm}{\ttfamily [protected]}}
 
 The type of this piece 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/model/\mbox{\hyperlink{_piece_8h}{Piece.\+h}}\end{DoxyCompactItemize}
+/home/yanis/\+Bureau/\+Ecole/insa-\/courses/\+Projects/e-\/chess/include/model/Piece.\+h\end{DoxyCompactItemize}

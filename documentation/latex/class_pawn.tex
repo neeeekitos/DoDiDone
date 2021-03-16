@@ -27,13 +27,13 @@ Collaboration diagram for Pawn\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_pawn_ab610c312f81292e048bb1d92637f480f}{Pawn}} (\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}} a\+Color)
+\mbox{\hyperlink{class_pawn_ab610c312f81292e048bb1d92637f480f}{Pawn}} (Piece\+Color a\+Color)
 \item 
 virtual char \mbox{\hyperlink{class_pawn_a78363143169a39e4860556910953d5c1}{Piece\+To\+F\+EN}} ()
 \item 
-virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} \mbox{\hyperlink{class_pawn_abf4bbabb82b14b7cf4574317793ff3ae}{Get\+Possible\+Moves}} ()
+virtual Destinations\+Set \mbox{\hyperlink{class_pawn_abf4bbabb82b14b7cf4574317793ff3ae}{Get\+Possible\+Moves}} ()
 \item 
-virtual void \mbox{\hyperlink{class_pawn_a0a7fafdf7a50cb86ba5029822f30e88f}{Notify\+Move}} (\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}} mv)
+virtual void \mbox{\hyperlink{class_pawn_a0a7fafdf7a50cb86ba5029822f30e88f}{Notify\+Move}} (Move mv)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -53,7 +53,7 @@ Represents a move
 \index{Pawn@{Pawn}!Pawn@{Pawn}}
 \index{Pawn@{Pawn}!Pawn@{Pawn}}
 \doxysubsubsection{\texorpdfstring{Pawn()}{Pawn()}}
-{\footnotesize\ttfamily Pawn\+::\+Pawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_ad7595c48bb74c0dd2a7648712a2d4985}{Piece\+Color}}}]{a\+Color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Pawn\+::\+Pawn (\begin{DoxyParamCaption}\item[{Piece\+Color}]{a\+Color }\end{DoxyParamCaption})}
 
 Default constructor for a pawn 
 \begin{DoxyParams}{Parameters}
@@ -67,7 +67,7 @@ Default constructor for a pawn
 \index{Pawn@{Pawn}!GetPossibleMoves@{GetPossibleMoves}}
 \index{GetPossibleMoves@{GetPossibleMoves}!Pawn@{Pawn}}
 \doxysubsubsection{\texorpdfstring{GetPossibleMoves()}{GetPossibleMoves()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{_game_constants_8h_a0a9083cbc054e2830561fc1683f9b17e}{Destinations\+Set}} Pawn\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual Destinations\+Set Pawn\+::\+Get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Returns the possible moves of the current pawn \begin{DoxyReturn}{Returns}
 
@@ -80,7 +80,7 @@ Reimplemented from \mbox{\hyperlink{class_piece_a2325e264ee361de1c695e5481278047
 \index{Pawn@{Pawn}!NotifyMove@{NotifyMove}}
 \index{NotifyMove@{NotifyMove}!Pawn@{Pawn}}
 \doxysubsubsection{\texorpdfstring{NotifyMove()}{NotifyMove()}}
-{\footnotesize\ttfamily virtual void Pawn\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_constants_8h_adcbcc7912609f8bf1ae0e15c58487f92}{Move}}}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Pawn\+::\+Notify\+Move (\begin{DoxyParamCaption}\item[{Move}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 This is a service method that allows to notify the pawn that it did a move 
 \begin{DoxyParams}{Parameters}
@@ -123,4 +123,4 @@ This variable determines if the current pawn can do an \char`\"{}en passant\char
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/model/\mbox{\hyperlink{_pawn_8h}{Pawn.\+h}}\end{DoxyCompactItemize}
+/home/yanis/\+Bureau/\+Ecole/insa-\/courses/\+Projects/e-\/chess/include/model/Pawn.\+h\end{DoxyCompactItemize}

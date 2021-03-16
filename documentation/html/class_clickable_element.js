@@ -1,7 +1,7 @@
 var class_clickable_element =
 [
     [ "ClickableElement", "class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44", null ],
-    [ "ClickableElement", "class_clickable_element.html#a99f677400dde28333922fcd572ba5414", null ],
+    [ "ClickableElement", "class_clickable_element.html#a9b7e8cd4be325f0546aa0f0f784b4553", null ],
     [ "~ClickableElement", "class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19", null ],
     [ "checkPosition", "class_clickable_element.html#abb9dfe53bbb91ad5e0fc10fd477d6109", null ],
     [ "getEndPoint", "class_clickable_element.html#a73e8a702cedbadf518c83a43de92d972", null ],

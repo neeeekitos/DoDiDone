@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>E-chess: include/model/Piece.h Source File</title>
+<title>E-chess: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/include/model/Piece.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,25 +85,25 @@ $(document).ready(function(){initNavTree('_piece_8h_source.html',''); initResiza
 <div class="title">Piece.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_piece_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_PIECE_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_PIECE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define E_CHESS_PIECE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_constants_8h.html">GameConstants.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;GameConstants.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fb">   12</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fb">PIECE_TYPE</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba1f189a15a64c7c4a1553e876b56c6bf2">   13</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba1f189a15a64c7c4a1553e876b56c6bf2">PAWN</a>,</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac33feb50bf29fe445421480eddc328d4">   14</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac33feb50bf29fe445421480eddc328d4">TOWER</a>,</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba157524408d6f0fc4b7dc5e52f3dd3b80">   15</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba157524408d6f0fc4b7dc5e52f3dd3b80">KING</a>,</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbad4a86ac7d51335fcb5756203a88612d6">   16</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbad4a86ac7d51335fcb5756203a88612d6">KNIGHT</a>,</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba58561257be7e2f96f82c0fdb51d7f964">   17</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba58561257be7e2f96f82c0fdb51d7f964">QUEEN</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba6bc4b5ac244475b6bd2595d608f18814">   18</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba6bc4b5ac244475b6bd2595d608f18814">BISHOP</a>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac157bdf0b85a40d2619cbc8bc1ae5fe2">   19</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">enum</span> PIECE_TYPE {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    PAWN,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    TOWER,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    KING,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    KNIGHT,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QUEEN,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    BISHOP,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    NONE</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_piece_8h.html#af4fd966f82fb0ee7fa10920903e67483">   25</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="_piece_8h.html#af4fd966f82fb0ee7fa10920903e67483">PIECE_NAME</a>[7] = {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> PIECE_NAME[7] = {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="stringliteral">&quot;Pawn&quot;</span>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="stringliteral">&quot;Tower&quot;</span>,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="stringliteral">&quot;King&quot;</span>,</div>
@@ -121,13 +121,13 @@ $(document).ready(function(){initNavTree('_piece_8h_source.html',''); initResiza
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_piece.html">Piece</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_piece.html">Piece</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> aColor);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_piece.html">Piece</a>(PieceColor aColor);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> isEmpty();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">char</span> PieceToFEN();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> GetColor() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    PieceColor GetColor() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> GetType() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
@@ -135,24 +135,24 @@ $(document).ready(function(){initNavTree('_piece_8h_source.html',''); initResiza
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> DirectionIsLimited();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a> GetPossibleMoves ();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> DestinationsSet GetPossibleMoves ();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> NotifyMove (<a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> mv);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> NotifyMove (Move mv);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_piece.html"> Piece</a>();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;private :</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> color = <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d">EMPTY</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    PieceColor color = EMPTY;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_piece.html#a0aca0760e87db26fa70f9c85d93b37b3">  119</a></span>&#160;    vector &lt;int&gt; <a class="code" href="class_piece.html#a0aca0760e87db26fa70f9c85d93b37b3">moveDirections</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_piece.html#a2091fedcc886b7f789c44e0b006535b8">  124</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_piece.html#a2091fedcc886b7f789c44e0b006535b8">directionIsLimited</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_piece.html#a37374e91c83796e060b7428cfc17fb86">  129</a></span>&#160;    <a class="code" href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fb">PIECE_TYPE</a> <a class="code" href="class_piece.html#a37374e91c83796e060b7428cfc17fb86">type</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_piece.html#a37374e91c83796e060b7428cfc17fb86">  129</a></span>&#160;    PIECE_TYPE <a class="code" href="class_piece.html#a37374e91c83796e060b7428cfc17fb86">type</a>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="class_piece.html">Piece</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> aColor, vector&lt;int&gt; aMoveDirections, <span class="keywordtype">bool</span> aDirectionIsLimited);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="class_piece.html">Piece</a>(PieceColor aColor, vector&lt;int&gt; aMoveDirections, <span class="keywordtype">bool</span> aDirectionIsLimited);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;};</div>
@@ -161,28 +161,14 @@ $(document).ready(function(){initNavTree('_piece_8h_source.html',''); initResiza
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif //E_CHESS_PIECE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fba157524408d6f0fc4b7dc5e52f3dd3b80"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba157524408d6f0fc4b7dc5e52f3dd3b80">KING</a></div><div class="ttdeci">@ KING</div><div class="ttdef"><b>Definition:</b> Piece.h:15</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fba58561257be7e2f96f82c0fdb51d7f964"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba58561257be7e2f96f82c0fdb51d7f964">QUEEN</a></div><div class="ttdeci">@ QUEEN</div><div class="ttdef"><b>Definition:</b> Piece.h:17</div></div>
-<div class="ttc" id="a_game_constants_8h_html_ad7595c48bb74c0dd2a7648712a2d4985"><div class="ttname"><a href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a></div><div class="ttdeci">PieceColor</div><div class="ttdef"><b>Definition:</b> GameConstants.h:75</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fba1f189a15a64c7c4a1553e876b56c6bf2"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba1f189a15a64c7c4a1553e876b56c6bf2">PAWN</a></div><div class="ttdeci">@ PAWN</div><div class="ttdef"><b>Definition:</b> Piece.h:13</div></div>
-<div class="ttc" id="a_game_constants_8h_html"><div class="ttname"><a href="_game_constants_8h.html">GameConstants.h</a></div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fb"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fb">PIECE_TYPE</a></div><div class="ttdeci">PIECE_TYPE</div><div class="ttdef"><b>Definition:</b> Piece.h:12</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fba6bc4b5ac244475b6bd2595d608f18814"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fba6bc4b5ac244475b6bd2595d608f18814">BISHOP</a></div><div class="ttdeci">@ BISHOP</div><div class="ttdef"><b>Definition:</b> Piece.h:18</div></div>
 <div class="ttc" id="aclass_piece_html_a37374e91c83796e060b7428cfc17fb86"><div class="ttname"><a href="class_piece.html#a37374e91c83796e060b7428cfc17fb86">Piece::type</a></div><div class="ttdeci">PIECE_TYPE type</div><div class="ttdef"><b>Definition:</b> Piece.h:129</div></div>
 <div class="ttc" id="aclass_piece_html_a0aca0760e87db26fa70f9c85d93b37b3"><div class="ttname"><a href="class_piece.html#a0aca0760e87db26fa70f9c85d93b37b3">Piece::moveDirections</a></div><div class="ttdeci">vector&lt; int &gt; moveDirections</div><div class="ttdef"><b>Definition:</b> Piece.h:119</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a0a9083cbc054e2830561fc1683f9b17e"><div class="ttname"><a href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a></div><div class="ttdeci">vector&lt; Coordinate &gt; DestinationsSet</div><div class="ttdef"><b>Definition:</b> GameConstants.h:17</div></div>
-<div class="ttc" id="a_game_constants_8h_html_ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d"><div class="ttname"><a href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985a2f0d18fc0d0fa4a6cd92dc328501874d">EMPTY</a></div><div class="ttdeci">@ EMPTY</div><div class="ttdef"><b>Definition:</b> GameConstants.h:76</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fbad4a86ac7d51335fcb5756203a88612d6"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbad4a86ac7d51335fcb5756203a88612d6">KNIGHT</a></div><div class="ttdeci">@ KNIGHT</div><div class="ttdef"><b>Definition:</b> Piece.h:16</div></div>
-<div class="ttc" id="a_game_constants_8h_html_adcbcc7912609f8bf1ae0e15c58487f92"><div class="ttname"><a href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a></div><div class="ttdeci">pair&lt; Coordinate, Coordinate &gt; Move</div><div class="ttdef"><b>Definition:</b> GameConstants.h:13</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fbac33feb50bf29fe445421480eddc328d4"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac33feb50bf29fe445421480eddc328d4">TOWER</a></div><div class="ttdeci">@ TOWER</div><div class="ttdef"><b>Definition:</b> Piece.h:14</div></div>
 <div class="ttc" id="aclass_piece_html_a2091fedcc886b7f789c44e0b006535b8"><div class="ttname"><a href="class_piece.html#a2091fedcc886b7f789c44e0b006535b8">Piece::directionIsLimited</a></div><div class="ttdeci">bool directionIsLimited</div><div class="ttdef"><b>Definition:</b> Piece.h:124</div></div>
-<div class="ttc" id="a_piece_8h_html_af4fd966f82fb0ee7fa10920903e67483"><div class="ttname"><a href="_piece_8h.html#af4fd966f82fb0ee7fa10920903e67483">PIECE_NAME</a></div><div class="ttdeci">const string PIECE_NAME[7]</div><div class="ttdef"><b>Definition:</b> Piece.h:25</div></div>
 <div class="ttc" id="aclass_piece_html"><div class="ttname"><a href="class_piece.html">Piece</a></div><div class="ttdef"><b>Definition:</b> Piece.h:40</div></div>
-<div class="ttc" id="a_piece_8h_html_a38d4991146e17b79fed3b4fd5db030fbac157bdf0b85a40d2619cbc8bc1ae5fe2"><div class="ttname"><a href="_piece_8h.html#a38d4991146e17b79fed3b4fd5db030fbac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> Piece.h:19</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_5c067e43b62dc1a915e487a737196819.html">model</a></li><li class="navelem"><a class="el" href="_piece_8h.html">Piece.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_5c067e43b62dc1a915e487a737196819.html">model</a></li><li class="navelem"><b>Piece.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

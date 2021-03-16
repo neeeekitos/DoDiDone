@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queen_266',['Queen',['../class_queen.html#a733e25a45ad47fb4b135f24a02bf3d7c',1,'Queen']]]
+  ['randommove_186',['RandomMove',['../class_a_i.html#a11afb539393b88e2ba7e133edda3d2de',1,'AI']]]
 ];

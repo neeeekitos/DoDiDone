@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>E-chess: include/model/Chessboard.h Source File</title>
+<title>E-chess: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/include/model/Chessboard.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,209 +85,199 @@ $(document).ready(function(){initNavTree('_chessboard_8h_source.html',''); initR
 <div class="title">Chessboard.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_chessboard_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_CHESSBOARD_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_CHESSBOARD_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define E_CHESS_CHESSBOARD_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_constants_8h.html">GameConstants.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_piece_8h.html">Piece.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pawn_8h.html">Pawn.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;GameConstants.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Piece.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Pawn.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_chessboard_8h.html#a511b5944d314e9184a2cfdf5a1904ea3">    9</a></span>&#160;<span class="preprocessor">#define CHESSBOARDSIZE 64</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define CHESSBOARDSIZE 64</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_status.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_status.html">Status</a>{</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_status.html#abca985ee9a8716c57ed78bafb24e8d95">   16</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_status.html#abca985ee9a8716c57ed78bafb24e8d95">blackCheck</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_status.html#a5efa951476d60682bf77938f247deb29">   17</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_status.html#a5efa951476d60682bf77938f247deb29">whiteCheck</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_status.html#acc27dd59f516242c2f38a3a202ffd5a5">   18</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_status.html#acc27dd59f516242c2f38a3a202ffd5a5">mate</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_status.html#a20eb0c22b880b373bba9bd85cb387eb3">   19</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_status.html#a20eb0c22b880b373bba9bd85cb387eb3">stalemate</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> blackCheck;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> whiteCheck;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> mate;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> stalemate;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_transition.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_transition.html">Transition</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_transition.html#af4e4e0ce6dff2821fd3adadebdbb48fa">   31</a></span>&#160;    <a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> <a class="code" href="struct_transition.html#af4e4e0ce6dff2821fd3adadebdbb48fa">mv</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_transition.html#ae73241cc05d04dbf88ea4954868f44a7">   32</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_transition.html#ae73241cc05d04dbf88ea4954868f44a7">eatenPiece</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_transition.html#aa5a1073ce5495af23424552df4de80eb">   33</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_transition.html#aa5a1073ce5495af23424552df4de80eb">positionOfEatenPiece</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_transition.html#a77056b66f0e90a2fad110168054bc10f">   34</a></span>&#160;    <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> <a class="code" href="struct_transition.html#a77056b66f0e90a2fad110168054bc10f">eatenPieceColor</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Move mv;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> eatenPiece;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> positionOfEatenPiece;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    PieceColor eatenPieceColor;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_transition.html">Transition</a>&amp; tr)<span class="keyword"> const</span>{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_chessboard.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chessboard.html">Chessboard</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> (this-&gt;mv.first.first == tr.mv.first.first</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            &amp;&amp; this-&gt;mv.first.second == tr.mv.first.second</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            &amp;&amp; this-&gt;mv.second.first == tr.mv.second.first</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            &amp;&amp; this-&gt;mv.second.second == tr.mv.second.second);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_chessboard.html">Chessboard</a> *<a class="code" href="class_chessboard.html#aeecd8d3f2668fe46eb6a6f3904d07ec2">GetInstance</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_chessboard.html">Chessboard</a>(<span class="keyword">const</span> <a class="code" href="class_chessboard.html">Chessboard</a> &amp;anotherChessBoard) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a4716a39f4ac528c673cf96869a302938">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_chessboard.html">Chessboard</a> &amp;aChessBoard) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_chessboard.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_chessboard.html">Chessboard</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_chessboard.html">Chessboard</a> *<a class="code" href="class_chessboard.html#aeecd8d3f2668fe46eb6a6f3904d07ec2">GetInstance</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_chessboard.html">Chessboard</a>(<span class="keyword">const</span> <a class="code" href="class_chessboard.html">Chessboard</a> &amp;anotherChessBoard) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a> <a class="code" href="class_chessboard.html#a20bf051a44cd433c36fa20d1fd5cd1cb">GetPossibleMoves</a>(<a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> coor, <span class="keywordtype">bool</span> allPlayers);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a8cf938b88106b46bad139a66f067680a">GetPositionInBoundariesTable</a>(<span class="keywordtype">int</span> position);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#ad70418af02b77fc70beb7399f6fac65f">GetValueInBoundariesTable</a>(<span class="keywordtype">int</span> position);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a775223484e57712172bcb4a80540c873">UpdateStatus</a>();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="struct_status.html">Status</a> <a class="code" href="class_chessboard.html#a5af0c90a273012d7793d5a3ff3749d01">GetGameStatus</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> <a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> <a class="code" href="class_chessboard.html#ab118c3ef882d2ed6e8b8f4ddd819e065">ConvertOneDimensionPositionToCoordinate</a>(<span class="keywordtype">int</span> position);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a7b9b1daa132f9bf6f2eaff2eb74b73b5">IsValidMove</a>(<a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> mv);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#ac99efd3450fbbba2cb2a5772229ed91d">GetPiece</a>(<a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> cor);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a7c867547144dc199b5b53775263a98ec">SetPiece</a>(<a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> &amp;cor, <a class="code" href="class_piece.html">Piece</a> *piece);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">friend</span> ostream &amp;<a class="code" href="class_chessboard.html#a6d3aa947efeb81adf7c219e0046a731f">operator&lt;&lt;</a>(ostream &amp;out, <a class="code" href="class_chessboard.html">Chessboard</a> &amp;cb);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_piece.html">Piece</a> *<span class="keyword">const</span> <a class="code" href="class_chessboard.html#ac99efd3450fbbba2cb2a5772229ed91d">GetPiece</a>(<span class="keywordtype">int</span> position) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a> <a class="code" href="class_chessboard.html#a20bf051a44cd433c36fa20d1fd5cd1cb">GetPossibleMoves</a>( <a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> coor);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a5123c2f15cbc473bb97153a5a12030dc">GetPosition</a>(<span class="keyword">const</span> <a class="code" href="class_piece.html">Piece</a> *p) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a4716a39f4ac528c673cf96869a302938">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_chessboard.html">Chessboard</a> &amp;aChessBoard) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    DestinationsSet <a class="code" href="class_chessboard.html#a20bf051a44cd433c36fa20d1fd5cd1cb">GetPossibleMoves</a>(Coordinate coor, <span class="keywordtype">bool</span> allPlayers);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a8cf938b88106b46bad139a66f067680a">GetPositionInBoundariesTable</a>(<span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#ad70418af02b77fc70beb7399f6fac65f">GetValueInBoundariesTable</a>(<span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a775223484e57712172bcb4a80540c873">UpdateStatus</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="struct_status.html">Status</a> <a class="code" href="class_chessboard.html#a5af0c90a273012d7793d5a3ff3749d01">GetGameStatus</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">static</span> Coordinate <a class="code" href="class_chessboard.html#ab118c3ef882d2ed6e8b8f4ddd819e065">ConvertOneDimensionPositionToCoordinate</a>(<span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a7b9b1daa132f9bf6f2eaff2eb74b73b5">IsValidMove</a>(Move mv);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#ac99efd3450fbbba2cb2a5772229ed91d">GetPiece</a>(Coordinate cor);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a7c867547144dc199b5b53775263a98ec">SetPiece</a>(Coordinate &amp;cor, <a class="code" href="class_piece.html">Piece</a> *piece);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">friend</span> ostream &amp;<a class="code" href="class_chessboard.html#a6d3aa947efeb81adf7c219e0046a731f">operator&lt;&lt;</a>(ostream &amp;out, <a class="code" href="class_chessboard.html">Chessboard</a> &amp;cb);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_piece.html">Piece</a> *<span class="keyword">const</span> <a class="code" href="class_chessboard.html#ac99efd3450fbbba2cb2a5772229ed91d">GetPiece</a>(<span class="keywordtype">int</span> position) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    DestinationsSet <a class="code" href="class_chessboard.html#a20bf051a44cd433c36fa20d1fd5cd1cb">GetPossibleMoves</a>( Coordinate coor);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#a3de66e198ba4f252e14110010c483150">getPiece</a>(<span class="keywordtype">int</span> position);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#ae998fa9ef93b7de1cf7d4d605cefb9ed">EatPiece</a>(<a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> coordinate, <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> pieceColor);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#aa8d264a9327410d098cb681d7f6c8b76">ChangePlayer</a>();</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> <a class="code" href="class_chessboard.html#a94fe9907245c34dec2a071758bc81c5e">GetCurrentPlayer</a>();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a> <a class="code" href="class_chessboard.html#add427bc4c81eeff20b63e296983c7b61">GetMovablePieces</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> color);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a5123c2f15cbc473bb97153a5a12030dc">GetPosition</a>(<span class="keyword">const</span> <a class="code" href="class_piece.html">Piece</a> *p) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#a3de66e198ba4f252e14110010c483150">getPiece</a>(<span class="keywordtype">int</span> position);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#ae998fa9ef93b7de1cf7d4d605cefb9ed">EatPiece</a>(Coordinate coordinate, PieceColor pieceColor);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#aa8d264a9327410d098cb681d7f6c8b76">ChangePlayer</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    PieceColor <a class="code" href="class_chessboard.html#a94fe9907245c34dec2a071758bc81c5e">GetCurrentPlayer</a>();</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a17faad2117cc15f7839f6f3b862f5ff6">GetShots</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_chessboard.html#a67e1df2a6a5181e3a47ff1e205d4f798">chessboardToFen</a>();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a10a73fe2e42dc299c7467ace78280833">NotifyMove</a>();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a56f987ec2285be174faad39a153365fc">SaveGame</a>();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#aad88cba9fb3457bb00195089ab84499c">CastlingIsPossible</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> color, <a class="code" href="_game_constants_8h.html#abd41c886f05843be6aaa370a6d34e77c">CastlingSide</a> castlingSide);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    vector&lt;string&gt; <a class="code" href="class_chessboard.html#a5ee263d50e9d26a2c0b5e52b7ea26d45">GetBackupFileInformations</a>();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a280d2ee4201441e5f777450c0407f42a">Load</a>(<span class="keywordtype">string</span> fen);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#aa3f9398678b8ce9a847feda7502b53d6">GeneratePiece</a>(<span class="keywordtype">char</span> fenChar);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    DestinationsSet <a class="code" href="class_chessboard.html#add427bc4c81eeff20b63e296983c7b61">GetMovablePieces</a>(PieceColor color);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a17faad2117cc15f7839f6f3b862f5ff6">GetShots</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_chessboard.html#a67e1df2a6a5181e3a47ff1e205d4f798">chessboardToFen</a>();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a10a73fe2e42dc299c7467ace78280833">NotifyMove</a>();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#a56f987ec2285be174faad39a153365fc">SaveGame</a>();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#aad88cba9fb3457bb00195089ab84499c">CastlingIsPossible</a>(PieceColor color, CastlingSide castlingSide);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    vector&lt;string&gt; <a class="code" href="class_chessboard.html#a5ee263d50e9d26a2c0b5e52b7ea26d45">GetBackupFileInformations</a>();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a280d2ee4201441e5f777450c0407f42a">Load</a>(<span class="keywordtype">string</span> fen);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">const</span> std::vector&lt;Piece *&gt; &amp;<a class="code" href="class_chessboard.html#aa1e43d7f88d65d27eb76ed3a72d82eff">GetEatenPieces</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> player) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="class_piece.html">Piece</a> *<a class="code" href="class_chessboard.html#aa3f9398678b8ce9a847feda7502b53d6">GeneratePiece</a>(<span class="keywordtype">char</span> fenChar);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a> <a class="code" href="class_chessboard.html#ae6551a4a0df5649bd6d762528d2c639c">GetAllPieces</a> (<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> color);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">const</span> std::vector&lt;Piece *&gt; &amp;<a class="code" href="class_chessboard.html#aa1e43d7f88d65d27eb76ed3a72d82eff">GetEatenPieces</a>(PieceColor player) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#aabef30c164ed6be73c75b810e68e142a">GameOver</a>(<a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> pieceColor);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    DestinationsSet <a class="code" href="class_chessboard.html#ae6551a4a0df5649bd6d762528d2c639c">GetAllPieces</a> (PieceColor color);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_chessboard.html#a1ac92e251b7c4cdf89bed6b7d0371ffc">~Chessboard</a>();</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#ababb4cbcd616aaeb3f0b16f45ba9a3e2">IsEatingMove</a>(<a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> mv);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#aabef30c164ed6be73c75b810e68e142a">GameOver</a>(PieceColor pieceColor);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_chessboard.html#a1ac92e251b7c4cdf89bed6b7d0371ffc">~Chessboard</a>();</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a81c05fb703cda2396f8789969eb306db">undoTransition</a>(<a class="code" href="struct_transition.html">Transition</a>&amp; t);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a933e105c7c8e3f3042d6463451538993">UpdateCheckStatus</a>();</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a1750e858922991e2a18e5bf0691cda9a">IsGameOver</a>();</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="_game_constants_8h.html#a8b95e42e120aa8f0951454b79f5962ec">WINNER</a> <a class="code" href="class_chessboard.html#a70f56e488f07836083d240002453e950">GetWinner</a>();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#ababb4cbcd616aaeb3f0b16f45ba9a3e2">IsEatingMove</a>(Move mv);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a81c05fb703cda2396f8789969eb306db">undoTransition</a>(<a class="code" href="struct_transition.html">Transition</a>&amp; t);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_chessboard.html#a933e105c7c8e3f3042d6463451538993">UpdateCheckStatus</a>();</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a1750e858922991e2a18e5bf0691cda9a">IsGameOver</a>();</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">  320</a></span>&#160;    <a class="code" href="class_pawn.html">Pawn</a> *<a class="code" href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">inPassingAuthorised</a>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">  326</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">nextMoveInPassingAuthorized</a>;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#abde35e25c3063a144321d20a5c2a5c57">convertCoordinates</a>(<span class="keyword">const</span> <a class="code" href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a> &amp;coor) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="class_chessboard.html">Chessboard</a>();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_chessboard.html">Chessboard</a> *chessBoard_;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">int</span> shots;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">int</span> halfShots;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> currentPlayer;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    WINNER <a class="code" href="class_chessboard.html#a70f56e488f07836083d240002453e950">GetWinner</a>();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">  327</a></span>&#160;    <a class="code" href="class_pawn.html">Pawn</a> *<a class="code" href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">inPassingAuthorised</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">  333</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">nextMoveInPassingAuthorized</a>;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_chessboard.html#abde35e25c3063a144321d20a5c2a5c57">convertCoordinates</a>(<span class="keyword">const</span> Coordinate &amp;coor) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="class_chessboard.html">Chessboard</a>();</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_chessboard.html">Chessboard</a> *chessBoard_;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordtype">int</span> shots;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">int</span> halfShots;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    vector&lt;Piece *&gt; board;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    vector&lt;Piece *&gt; eatenByBlack;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    vector&lt;Piece *&gt; eatenByWhite;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">string</span> SAVING_PATH = <span class="stringliteral">&quot;files/backup/&quot;</span>;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">string</span> SAVING_FILE = SAVING_PATH + <span class="stringliteral">&quot;save.txt&quot;</span>;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="struct_status.html">Status</a> state;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;};</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif //E_CHESS_CHESSBOARD_H</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    PieceColor currentPlayer;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    vector&lt;Piece *&gt; board;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    vector&lt;Piece *&gt; eatenByBlack;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    vector&lt;Piece *&gt; eatenByWhite;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">string</span> SAVING_PATH = <span class="stringliteral">&quot;files/backup/&quot;</span>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">string</span> SAVING_FILE = SAVING_PATH + <span class="stringliteral">&quot;save.txt&quot;</span>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <a class="code" href="struct_status.html">Status</a> state;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;};</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">#endif //E_CHESS_CHESSBOARD_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_chessboard_html_ac1f99557aa29e8904a526bc1aacd17c3"><div class="ttname"><a href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">Chessboard::inPassingAuthorised</a></div><div class="ttdeci">Pawn * inPassingAuthorised</div><div class="ttdef"><b>Definition:</b> Chessboard.h:320</div></div>
+<div class="ttc" id="aclass_chessboard_html_ac1f99557aa29e8904a526bc1aacd17c3"><div class="ttname"><a href="class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3">Chessboard::inPassingAuthorised</a></div><div class="ttdeci">Pawn * inPassingAuthorised</div><div class="ttdef"><b>Definition:</b> Chessboard.h:327</div></div>
 <div class="ttc" id="aclass_chessboard_html_a20bf051a44cd433c36fa20d1fd5cd1cb"><div class="ttname"><a href="class_chessboard.html#a20bf051a44cd433c36fa20d1fd5cd1cb">Chessboard::GetPossibleMoves</a></div><div class="ttdeci">DestinationsSet GetPossibleMoves(Coordinate coor, bool allPlayers)</div></div>
 <div class="ttc" id="aclass_chessboard_html_a1ac92e251b7c4cdf89bed6b7d0371ffc"><div class="ttname"><a href="class_chessboard.html#a1ac92e251b7c4cdf89bed6b7d0371ffc">Chessboard::~Chessboard</a></div><div class="ttdeci">virtual ~Chessboard()</div></div>
-<div class="ttc" id="aclass_chessboard_html"><div class="ttname"><a href="class_chessboard.html">Chessboard</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:41</div></div>
+<div class="ttc" id="aclass_chessboard_html"><div class="ttname"><a href="class_chessboard.html">Chessboard</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:48</div></div>
 <div class="ttc" id="aclass_chessboard_html_a5af0c90a273012d7793d5a3ff3749d01"><div class="ttname"><a href="class_chessboard.html#a5af0c90a273012d7793d5a3ff3749d01">Chessboard::GetGameStatus</a></div><div class="ttdeci">Status GetGameStatus()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a4716a39f4ac528c673cf96869a302938"><div class="ttname"><a href="class_chessboard.html#a4716a39f4ac528c673cf96869a302938">Chessboard::operator=</a></div><div class="ttdeci">void operator=(const Chessboard &amp;aChessBoard)=delete</div></div>
-<div class="ttc" id="astruct_status_html_a5efa951476d60682bf77938f247deb29"><div class="ttname"><a href="struct_status.html#a5efa951476d60682bf77938f247deb29">Status::whiteCheck</a></div><div class="ttdeci">bool whiteCheck</div><div class="ttdef"><b>Definition:</b> Chessboard.h:17</div></div>
-<div class="ttc" id="a_game_constants_8h_html_ad7595c48bb74c0dd2a7648712a2d4985"><div class="ttname"><a href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a></div><div class="ttdeci">PieceColor</div><div class="ttdef"><b>Definition:</b> GameConstants.h:75</div></div>
-<div class="ttc" id="a_game_constants_8h_html"><div class="ttname"><a href="_game_constants_8h.html">GameConstants.h</a></div></div>
 <div class="ttc" id="aclass_chessboard_html_aeecd8d3f2668fe46eb6a6f3904d07ec2"><div class="ttname"><a href="class_chessboard.html#aeecd8d3f2668fe46eb6a6f3904d07ec2">Chessboard::GetInstance</a></div><div class="ttdeci">static Chessboard * GetInstance()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a56f987ec2285be174faad39a153365fc"><div class="ttname"><a href="class_chessboard.html#a56f987ec2285be174faad39a153365fc">Chessboard::SaveGame</a></div><div class="ttdeci">int SaveGame()</div></div>
 <div class="ttc" id="aclass_chessboard_html_aa8d264a9327410d098cb681d7f6c8b76"><div class="ttname"><a href="class_chessboard.html#aa8d264a9327410d098cb681d7f6c8b76">Chessboard::ChangePlayer</a></div><div class="ttdeci">void ChangePlayer()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a5ee263d50e9d26a2c0b5e52b7ea26d45"><div class="ttname"><a href="class_chessboard.html#a5ee263d50e9d26a2c0b5e52b7ea26d45">Chessboard::GetBackupFileInformations</a></div><div class="ttdeci">vector&lt; string &gt; GetBackupFileInformations()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a10a73fe2e42dc299c7467ace78280833"><div class="ttname"><a href="class_chessboard.html#a10a73fe2e42dc299c7467ace78280833">Chessboard::NotifyMove</a></div><div class="ttdeci">void NotifyMove()</div></div>
-<div class="ttc" id="a_game_constants_8h_html_abd41c886f05843be6aaa370a6d34e77c"><div class="ttname"><a href="_game_constants_8h.html#abd41c886f05843be6aaa370a6d34e77c">CastlingSide</a></div><div class="ttdeci">CastlingSide</div><div class="ttdef"><b>Definition:</b> GameConstants.h:19</div></div>
-<div class="ttc" id="astruct_status_html_a20eb0c22b880b373bba9bd85cb387eb3"><div class="ttname"><a href="struct_status.html#a20eb0c22b880b373bba9bd85cb387eb3">Status::stalemate</a></div><div class="ttdeci">bool stalemate</div><div class="ttdef"><b>Definition:</b> Chessboard.h:19</div></div>
 <div class="ttc" id="aclass_chessboard_html_a81c05fb703cda2396f8789969eb306db"><div class="ttname"><a href="class_chessboard.html#a81c05fb703cda2396f8789969eb306db">Chessboard::undoTransition</a></div><div class="ttdeci">void undoTransition(Transition &amp;t)</div></div>
 <div class="ttc" id="aclass_chessboard_html_aad88cba9fb3457bb00195089ab84499c"><div class="ttname"><a href="class_chessboard.html#aad88cba9fb3457bb00195089ab84499c">Chessboard::CastlingIsPossible</a></div><div class="ttdeci">bool CastlingIsPossible(PieceColor color, CastlingSide castlingSide)</div></div>
 <div class="ttc" id="aclass_chessboard_html_a67e1df2a6a5181e3a47ff1e205d4f798"><div class="ttname"><a href="class_chessboard.html#a67e1df2a6a5181e3a47ff1e205d4f798">Chessboard::chessboardToFen</a></div><div class="ttdeci">string chessboardToFen()</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a8b95e42e120aa8f0951454b79f5962ec"><div class="ttname"><a href="_game_constants_8h.html#a8b95e42e120aa8f0951454b79f5962ec">WINNER</a></div><div class="ttdeci">WINNER</div><div class="ttdef"><b>Definition:</b> GameConstants.h:93</div></div>
 <div class="ttc" id="aclass_chessboard_html_a775223484e57712172bcb4a80540c873"><div class="ttname"><a href="class_chessboard.html#a775223484e57712172bcb4a80540c873">Chessboard::UpdateStatus</a></div><div class="ttdeci">void UpdateStatus()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a94fe9907245c34dec2a071758bc81c5e"><div class="ttname"><a href="class_chessboard.html#a94fe9907245c34dec2a071758bc81c5e">Chessboard::GetCurrentPlayer</a></div><div class="ttdeci">PieceColor GetCurrentPlayer()</div></div>
 <div class="ttc" id="aclass_chessboard_html_a7b9b1daa132f9bf6f2eaff2eb74b73b5"><div class="ttname"><a href="class_chessboard.html#a7b9b1daa132f9bf6f2eaff2eb74b73b5">Chessboard::IsValidMove</a></div><div class="ttdeci">bool IsValidMove(Move mv)</div></div>
 <div class="ttc" id="aclass_chessboard_html_aa3f9398678b8ce9a847feda7502b53d6"><div class="ttname"><a href="class_chessboard.html#aa3f9398678b8ce9a847feda7502b53d6">Chessboard::GeneratePiece</a></div><div class="ttdeci">Piece * GeneratePiece(char fenChar)</div></div>
 <div class="ttc" id="aclass_chessboard_html_aa1e43d7f88d65d27eb76ed3a72d82eff"><div class="ttname"><a href="class_chessboard.html#aa1e43d7f88d65d27eb76ed3a72d82eff">Chessboard::GetEatenPieces</a></div><div class="ttdeci">const std::vector&lt; Piece * &gt; &amp; GetEatenPieces(PieceColor player) const</div></div>
-<div class="ttc" id="aclass_chessboard_html_a9271af568109174fa6519cfb034a0e82"><div class="ttname"><a href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">Chessboard::nextMoveInPassingAuthorized</a></div><div class="ttdeci">bool nextMoveInPassingAuthorized</div><div class="ttdef"><b>Definition:</b> Chessboard.h:326</div></div>
+<div class="ttc" id="aclass_chessboard_html_a9271af568109174fa6519cfb034a0e82"><div class="ttname"><a href="class_chessboard.html#a9271af568109174fa6519cfb034a0e82">Chessboard::nextMoveInPassingAuthorized</a></div><div class="ttdeci">bool nextMoveInPassingAuthorized</div><div class="ttdef"><b>Definition:</b> Chessboard.h:333</div></div>
 <div class="ttc" id="aclass_pawn_html"><div class="ttname"><a href="class_pawn.html">Pawn</a></div><div class="ttdef"><b>Definition:</b> Pawn.h:13</div></div>
-<div class="ttc" id="astruct_status_html_acc27dd59f516242c2f38a3a202ffd5a5"><div class="ttname"><a href="struct_status.html#acc27dd59f516242c2f38a3a202ffd5a5">Status::mate</a></div><div class="ttdeci">bool mate</div><div class="ttdef"><b>Definition:</b> Chessboard.h:18</div></div>
-<div class="ttc" id="a_piece_8h_html"><div class="ttname"><a href="_piece_8h.html">Piece.h</a></div></div>
 <div class="ttc" id="aclass_chessboard_html_a8cf938b88106b46bad139a66f067680a"><div class="ttname"><a href="class_chessboard.html#a8cf938b88106b46bad139a66f067680a">Chessboard::GetPositionInBoundariesTable</a></div><div class="ttdeci">static int GetPositionInBoundariesTable(int position)</div></div>
 <div class="ttc" id="aclass_chessboard_html_a17faad2117cc15f7839f6f3b862f5ff6"><div class="ttname"><a href="class_chessboard.html#a17faad2117cc15f7839f6f3b862f5ff6">Chessboard::GetShots</a></div><div class="ttdeci">int GetShots() const</div></div>
 <div class="ttc" id="aclass_chessboard_html_a70f56e488f07836083d240002453e950"><div class="ttname"><a href="class_chessboard.html#a70f56e488f07836083d240002453e950">Chessboard::GetWinner</a></div><div class="ttdeci">WINNER GetWinner()</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a0a9083cbc054e2830561fc1683f9b17e"><div class="ttname"><a href="_game_constants_8h.html#a0a9083cbc054e2830561fc1683f9b17e">DestinationsSet</a></div><div class="ttdeci">vector&lt; Coordinate &gt; DestinationsSet</div><div class="ttdef"><b>Definition:</b> GameConstants.h:17</div></div>
 <div class="ttc" id="aclass_chessboard_html_ae6551a4a0df5649bd6d762528d2c639c"><div class="ttname"><a href="class_chessboard.html#ae6551a4a0df5649bd6d762528d2c639c">Chessboard::GetAllPieces</a></div><div class="ttdeci">DestinationsSet GetAllPieces(PieceColor color)</div></div>
 <div class="ttc" id="aclass_chessboard_html_a5123c2f15cbc473bb97153a5a12030dc"><div class="ttname"><a href="class_chessboard.html#a5123c2f15cbc473bb97153a5a12030dc">Chessboard::GetPosition</a></div><div class="ttdeci">int GetPosition(const Piece *p) const</div></div>
-<div class="ttc" id="a_pawn_8h_html"><div class="ttname"><a href="_pawn_8h.html">Pawn.h</a></div></div>
 <div class="ttc" id="aclass_chessboard_html_ababb4cbcd616aaeb3f0b16f45ba9a3e2"><div class="ttname"><a href="class_chessboard.html#ababb4cbcd616aaeb3f0b16f45ba9a3e2">Chessboard::IsEatingMove</a></div><div class="ttdeci">bool IsEatingMove(Move mv)</div></div>
-<div class="ttc" id="a_game_constants_8h_html_adcbcc7912609f8bf1ae0e15c58487f92"><div class="ttname"><a href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a></div><div class="ttdeci">pair&lt; Coordinate, Coordinate &gt; Move</div><div class="ttdef"><b>Definition:</b> GameConstants.h:13</div></div>
 <div class="ttc" id="astruct_transition_html"><div class="ttname"><a href="struct_transition.html">Transition</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:30</div></div>
 <div class="ttc" id="aclass_chessboard_html_a280d2ee4201441e5f777450c0407f42a"><div class="ttname"><a href="class_chessboard.html#a280d2ee4201441e5f777450c0407f42a">Chessboard::Load</a></div><div class="ttdeci">void Load(string fen)</div></div>
 <div class="ttc" id="aclass_chessboard_html_ac99efd3450fbbba2cb2a5772229ed91d"><div class="ttname"><a href="class_chessboard.html#ac99efd3450fbbba2cb2a5772229ed91d">Chessboard::GetPiece</a></div><div class="ttdeci">Piece * GetPiece(Coordinate cor)</div></div>
 <div class="ttc" id="aclass_chessboard_html_ab118c3ef882d2ed6e8b8f4ddd819e065"><div class="ttname"><a href="class_chessboard.html#ab118c3ef882d2ed6e8b8f4ddd819e065">Chessboard::ConvertOneDimensionPositionToCoordinate</a></div><div class="ttdeci">static Coordinate ConvertOneDimensionPositionToCoordinate(int position)</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a2370b7f1bc52bf07f5eaf28abb81974a"><div class="ttname"><a href="_game_constants_8h.html#a2370b7f1bc52bf07f5eaf28abb81974a">Coordinate</a></div><div class="ttdeci">pair&lt; int, int &gt; Coordinate</div><div class="ttdef"><b>Definition:</b> GameConstants.h:11</div></div>
 <div class="ttc" id="aclass_chessboard_html_a1750e858922991e2a18e5bf0691cda9a"><div class="ttname"><a href="class_chessboard.html#a1750e858922991e2a18e5bf0691cda9a">Chessboard::IsGameOver</a></div><div class="ttdeci">bool IsGameOver()</div></div>
 <div class="ttc" id="aclass_chessboard_html_aabef30c164ed6be73c75b810e68e142a"><div class="ttname"><a href="class_chessboard.html#aabef30c164ed6be73c75b810e68e142a">Chessboard::GameOver</a></div><div class="ttdeci">bool GameOver(PieceColor pieceColor)</div></div>
-<div class="ttc" id="astruct_status_html_abca985ee9a8716c57ed78bafb24e8d95"><div class="ttname"><a href="struct_status.html#abca985ee9a8716c57ed78bafb24e8d95">Status::blackCheck</a></div><div class="ttdeci">bool blackCheck</div><div class="ttdef"><b>Definition:</b> Chessboard.h:16</div></div>
 <div class="ttc" id="aclass_chessboard_html_a3de66e198ba4f252e14110010c483150"><div class="ttname"><a href="class_chessboard.html#a3de66e198ba4f252e14110010c483150">Chessboard::getPiece</a></div><div class="ttdeci">Piece * getPiece(int position)</div></div>
 <div class="ttc" id="aclass_chessboard_html_abde35e25c3063a144321d20a5c2a5c57"><div class="ttname"><a href="class_chessboard.html#abde35e25c3063a144321d20a5c2a5c57">Chessboard::convertCoordinates</a></div><div class="ttdeci">int convertCoordinates(const Coordinate &amp;coor) const</div></div>
 <div class="ttc" id="aclass_chessboard_html_a6d3aa947efeb81adf7c219e0046a731f"><div class="ttname"><a href="class_chessboard.html#a6d3aa947efeb81adf7c219e0046a731f">Chessboard::operator&lt;&lt;</a></div><div class="ttdeci">friend ostream &amp; operator&lt;&lt;(ostream &amp;out, Chessboard &amp;cb)</div></div>
-<div class="ttc" id="astruct_transition_html_af4e4e0ce6dff2821fd3adadebdbb48fa"><div class="ttname"><a href="struct_transition.html#af4e4e0ce6dff2821fd3adadebdbb48fa">Transition::mv</a></div><div class="ttdeci">Move mv</div><div class="ttdef"><b>Definition:</b> Chessboard.h:31</div></div>
-<div class="ttc" id="astruct_transition_html_a77056b66f0e90a2fad110168054bc10f"><div class="ttname"><a href="struct_transition.html#a77056b66f0e90a2fad110168054bc10f">Transition::eatenPieceColor</a></div><div class="ttdeci">PieceColor eatenPieceColor</div><div class="ttdef"><b>Definition:</b> Chessboard.h:34</div></div>
-<div class="ttc" id="astruct_transition_html_ae73241cc05d04dbf88ea4954868f44a7"><div class="ttname"><a href="struct_transition.html#ae73241cc05d04dbf88ea4954868f44a7">Transition::eatenPiece</a></div><div class="ttdeci">bool eatenPiece</div><div class="ttdef"><b>Definition:</b> Chessboard.h:32</div></div>
 <div class="ttc" id="aclass_chessboard_html_add427bc4c81eeff20b63e296983c7b61"><div class="ttname"><a href="class_chessboard.html#add427bc4c81eeff20b63e296983c7b61">Chessboard::GetMovablePieces</a></div><div class="ttdeci">DestinationsSet GetMovablePieces(PieceColor color)</div></div>
 <div class="ttc" id="aclass_chessboard_html_ae998fa9ef93b7de1cf7d4d605cefb9ed"><div class="ttname"><a href="class_chessboard.html#ae998fa9ef93b7de1cf7d4d605cefb9ed">Chessboard::EatPiece</a></div><div class="ttdeci">void EatPiece(Coordinate coordinate, PieceColor pieceColor)</div></div>
 <div class="ttc" id="astruct_status_html"><div class="ttname"><a href="struct_status.html">Status</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:15</div></div>
 <div class="ttc" id="aclass_chessboard_html_ad70418af02b77fc70beb7399f6fac65f"><div class="ttname"><a href="class_chessboard.html#ad70418af02b77fc70beb7399f6fac65f">Chessboard::GetValueInBoundariesTable</a></div><div class="ttdeci">int GetValueInBoundariesTable(int position)</div></div>
 <div class="ttc" id="aclass_piece_html"><div class="ttname"><a href="class_piece.html">Piece</a></div><div class="ttdef"><b>Definition:</b> Piece.h:40</div></div>
 <div class="ttc" id="aclass_chessboard_html_a933e105c7c8e3f3042d6463451538993"><div class="ttname"><a href="class_chessboard.html#a933e105c7c8e3f3042d6463451538993">Chessboard::UpdateCheckStatus</a></div><div class="ttdeci">void UpdateCheckStatus()</div></div>
-<div class="ttc" id="astruct_transition_html_aa5a1073ce5495af23424552df4de80eb"><div class="ttname"><a href="struct_transition.html#aa5a1073ce5495af23424552df4de80eb">Transition::positionOfEatenPiece</a></div><div class="ttdeci">int positionOfEatenPiece</div><div class="ttdef"><b>Definition:</b> Chessboard.h:33</div></div>
 <div class="ttc" id="aclass_chessboard_html_a7c867547144dc199b5b53775263a98ec"><div class="ttname"><a href="class_chessboard.html#a7c867547144dc199b5b53775263a98ec">Chessboard::SetPiece</a></div><div class="ttdeci">void SetPiece(Coordinate &amp;cor, Piece *piece)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_5c067e43b62dc1a915e487a737196819.html">model</a></li><li class="navelem"><a class="el" href="_chessboard_8h.html">Chessboard.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_5c067e43b62dc1a915e487a737196819.html">model</a></li><li class="navelem"><b>Chessboard.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

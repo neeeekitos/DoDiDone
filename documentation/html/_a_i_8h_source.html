@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>E-chess: include/service/AI.h Source File</title>
+<title>E-chess: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/include/service/AI.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,7 +85,7 @@ $(document).ready(function(){initNavTree('_a_i_8h_source.html',''); initResizabl
 <div class="title">AI.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_i_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by Nikita TEREKHOV on 06/03/2021.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -103,59 +103,52 @@ $(document).ready(function(){initNavTree('_a_i_8h_source.html',''); initResizabl
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_a_i_8h.html#aefe54d732dc7b3673e8ad72fa3c95f79">   19</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#aefe54d732dc7b3673e8ad72fa3c95f79">DEPTH_MINIMAX</a> = 2;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> DEPTH_MINIMAX = 3;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a972bb9009ffbd40b06c1fc6042b4ae91">   21</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a972bb9009ffbd40b06c1fc6042b4ae91">PAWN_W</a> = 10;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a04814b72cedb062773a00c8eb78ca246">   22</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a04814b72cedb062773a00c8eb78ca246">BISHOP_W</a> = 30;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a9be4db86fb164b63c9d63d318196702e">   23</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a9be4db86fb164b63c9d63d318196702e">TOWER_W</a> = 30;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a97f226a15f887d70038c7e07b271de9a">   24</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a97f226a15f887d70038c7e07b271de9a">KNIGHT_W</a> = 50;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a1b0da20da010d7a79c99092d44724cc1">   25</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a1b0da20da010d7a79c99092d44724cc1">QUEEN_W</a> = 90;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_a_i_8h.html#a502b2eaf378a58a4d887271484014a1c">   26</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="_a_i_8h.html#a502b2eaf378a58a4d887271484014a1c">KING_W</a> = 900;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> PAWN_W = 10;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> BISHOP_W = 30;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> TOWER_W = 30;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> KNIGHT_W = 50;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> QUEEN_W = 90;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> KING_W = 900;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_i.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_i.html">AI</a> {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_a_i.html">AI</a> * GetInstance();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> DoMove(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_transition.html">Transition</a> CalculateMove(<a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> move);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a> RandomMove(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> Minimax(list&lt;Transition&gt;&amp; path, list&lt;Transition&gt;&amp; bestPath, <span class="keywordtype">int</span> depth, <span class="keywordtype">bool</span> maximizingPlayer);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_a_i.html">AI</a> * GetInstance();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ~<a class="code" href="class_a_i.html">AI</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_a_i.html">AI</a>(<span class="keyword">const</span> <a class="code" href="class_a_i.html">AI</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> operator= (<span class="keyword">const</span> <a class="code" href="class_a_i.html">AI</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_a_i.html">AI</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> getScore(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard, <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> currentPlayer);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> evaluate(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard, <a class="code" href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a> currentPlayer);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    vector&lt;Move&gt; AIMovesPath;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    vector&lt;Move&gt; HumanMovesPath;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_game_constants_8h.html#a4d1b5e3b240c270ba59463005b6b38fe">AIMode</a> aiMode = <a class="code" href="_game_constants_8h.html#a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a">MINIMAX</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_a_i.html">AI</a> * ai_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif //E_CHESS_AI_H</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    Move DoMove(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_transition.html">Transition</a> CalculateMove(Move move);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Move RandomMove(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> Minimax(list&lt;Transition&gt;&amp; bestPath, <span class="keywordtype">int</span> depth, <span class="keywordtype">bool</span> maximizingPlayer);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ~<a class="code" href="class_a_i.html">AI</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_a_i.html">AI</a>(<span class="keyword">const</span> <a class="code" href="class_a_i.html">AI</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> operator= (<span class="keyword">const</span> <a class="code" href="class_a_i.html">AI</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_a_i.html">AI</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span> getScore(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard, PieceColor currentPlayer);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> evaluate(<a class="code" href="class_chessboard.html">Chessboard</a>&amp; chessboard, PieceColor currentPlayer);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    AIMode aiMode = MINIMAX;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_a_i.html">AI</a> * ai_;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif //E_CHESS_AI_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_a_i_8h_html_a04814b72cedb062773a00c8eb78ca246"><div class="ttname"><a href="_a_i_8h.html#a04814b72cedb062773a00c8eb78ca246">BISHOP_W</a></div><div class="ttdeci">const int BISHOP_W</div><div class="ttdef"><b>Definition:</b> AI.h:22</div></div>
-<div class="ttc" id="aclass_chessboard_html"><div class="ttname"><a href="class_chessboard.html">Chessboard</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:41</div></div>
-<div class="ttc" id="a_a_i_8h_html_a1b0da20da010d7a79c99092d44724cc1"><div class="ttname"><a href="_a_i_8h.html#a1b0da20da010d7a79c99092d44724cc1">QUEEN_W</a></div><div class="ttdeci">const int QUEEN_W</div><div class="ttdef"><b>Definition:</b> AI.h:25</div></div>
-<div class="ttc" id="a_game_constants_8h_html_ad7595c48bb74c0dd2a7648712a2d4985"><div class="ttname"><a href="_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985">PieceColor</a></div><div class="ttdeci">PieceColor</div><div class="ttdef"><b>Definition:</b> GameConstants.h:75</div></div>
-<div class="ttc" id="a_a_i_8h_html_aefe54d732dc7b3673e8ad72fa3c95f79"><div class="ttname"><a href="_a_i_8h.html#aefe54d732dc7b3673e8ad72fa3c95f79">DEPTH_MINIMAX</a></div><div class="ttdeci">const int DEPTH_MINIMAX</div><div class="ttdef"><b>Definition:</b> AI.h:19</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a4d1b5e3b240c270ba59463005b6b38fe"><div class="ttname"><a href="_game_constants_8h.html#a4d1b5e3b240c270ba59463005b6b38fe">AIMode</a></div><div class="ttdeci">AIMode</div><div class="ttdef"><b>Definition:</b> GameConstants.h:67</div></div>
-<div class="ttc" id="a_a_i_8h_html_a9be4db86fb164b63c9d63d318196702e"><div class="ttname"><a href="_a_i_8h.html#a9be4db86fb164b63c9d63d318196702e">TOWER_W</a></div><div class="ttdeci">const int TOWER_W</div><div class="ttdef"><b>Definition:</b> AI.h:23</div></div>
-<div class="ttc" id="a_a_i_8h_html_a972bb9009ffbd40b06c1fc6042b4ae91"><div class="ttname"><a href="_a_i_8h.html#a972bb9009ffbd40b06c1fc6042b4ae91">PAWN_W</a></div><div class="ttdeci">const int PAWN_W</div><div class="ttdef"><b>Definition:</b> AI.h:21</div></div>
-<div class="ttc" id="a_a_i_8h_html_a502b2eaf378a58a4d887271484014a1c"><div class="ttname"><a href="_a_i_8h.html#a502b2eaf378a58a4d887271484014a1c">KING_W</a></div><div class="ttdeci">const int KING_W</div><div class="ttdef"><b>Definition:</b> AI.h:26</div></div>
-<div class="ttc" id="a_game_constants_8h_html_adcbcc7912609f8bf1ae0e15c58487f92"><div class="ttname"><a href="_game_constants_8h.html#adcbcc7912609f8bf1ae0e15c58487f92">Move</a></div><div class="ttdeci">pair&lt; Coordinate, Coordinate &gt; Move</div><div class="ttdef"><b>Definition:</b> GameConstants.h:13</div></div>
+<div class="ttc" id="aclass_chessboard_html"><div class="ttname"><a href="class_chessboard.html">Chessboard</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:48</div></div>
 <div class="ttc" id="astruct_transition_html"><div class="ttname"><a href="struct_transition.html">Transition</a></div><div class="ttdef"><b>Definition:</b> Chessboard.h:30</div></div>
-<div class="ttc" id="a_a_i_8h_html_a97f226a15f887d70038c7e07b271de9a"><div class="ttname"><a href="_a_i_8h.html#a97f226a15f887d70038c7e07b271de9a">KNIGHT_W</a></div><div class="ttdeci">const int KNIGHT_W</div><div class="ttdef"><b>Definition:</b> AI.h:24</div></div>
 <div class="ttc" id="aclass_a_i_html"><div class="ttname"><a href="class_a_i.html">AI</a></div><div class="ttdef"><b>Definition:</b> AI.h:28</div></div>
-<div class="ttc" id="a_game_constants_8h_html_a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a"><div class="ttname"><a href="_game_constants_8h.html#a4d1b5e3b240c270ba59463005b6b38feac69de198510c3cf8ef32531c05d3323a">MINIMAX</a></div><div class="ttdeci">@ MINIMAX</div><div class="ttdef"><b>Definition:</b> GameConstants.h:69</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9e717784aad88beaa4c78266ab8d00b1.html">service</a></li><li class="navelem"><a class="el" href="_a_i_8h.html">AI.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9e717784aad88beaa4c78266ab8d00b1.html">service</a></li><li class="navelem"><b>AI.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

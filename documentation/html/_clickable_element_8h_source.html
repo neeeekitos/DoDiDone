@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>E-chess: include/view/ClickableElement.h Source File</title>
+<title>E-chess: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/include/view/ClickableElement.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,59 +85,60 @@ $(document).ready(function(){initNavTree('_clickable_element_8h_source.html','')
 <div class="title">ClickableElement.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_clickable_element_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_CLICKABLEELEMENT_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_CLICKABLEELEMENT_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define E_CHESS_CLICKABLEELEMENT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_graphic_element_8h.html">GraphicElement.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_clickable_element.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_clickable_element.html">ClickableElement</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement</a>();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;GraphicElement.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_clickable_element.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_clickable_element.html">ClickableElement</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement</a>(<a class="code" href="class_point2_i.html">Point2I</a> d, <a class="code" href="class_point2_i.html">Point2I</a> f);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19">~ClickableElement</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clickable_element.html#a5e39d64355e0140bdc318da184ecdbc3">setStartPoint</a>(<a class="code" href="class_point2_i.html">Point2I</a> p);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_clickable_element.html#a0d724a27e75bf1f9f995f9503fea4ed6">setEndPoint</a>(<a class="code" href="class_point2_i.html">Point2I</a> p);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">virtual</span> <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a73e8a702cedbadf518c83a43de92d972">getEndPoint</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">virtual</span> <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a73fa1d3b1274634db66ddf840afa9058">getStartPoint</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_clickable_element.html#abb9dfe53bbb91ad5e0fc10fd477d6109">checkPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">   31</a></span>&#160;<a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">startPoint</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">   32</a></span>&#160;<a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">endPoint</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // E_CHESS_CLICKABLEELEMENT_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement</a>(<a class="code" href="class_point2_i.html">Point2I</a> s, <a class="code" href="class_point2_i.html">Point2I</a> e);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19">~ClickableElement</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clickable_element.html#a5e39d64355e0140bdc318da184ecdbc3">setStartPoint</a>(<a class="code" href="class_point2_i.html">Point2I</a> p);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clickable_element.html#a0d724a27e75bf1f9f995f9503fea4ed6">setEndPoint</a>(<a class="code" href="class_point2_i.html">Point2I</a> p);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a73e8a702cedbadf518c83a43de92d972">getEndPoint</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a73fa1d3b1274634db66ddf840afa9058">getStartPoint</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_clickable_element.html#abb9dfe53bbb91ad5e0fc10fd477d6109">checkPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">   72</a></span>&#160;    <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">startPoint</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">   77</a></span>&#160;    <a class="code" href="class_point2_i.html">Point2I</a> <a class="code" href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">endPoint</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif // E_CHESS_CLICKABLEELEMENT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_clickable_element_html_a5e39d64355e0140bdc318da184ecdbc3"><div class="ttname"><a href="class_clickable_element.html#a5e39d64355e0140bdc318da184ecdbc3">ClickableElement::setStartPoint</a></div><div class="ttdeci">void setStartPoint(Point2I p)</div></div>
-<div class="ttc" id="aclass_clickable_element_html_a7390e1d03d645d9a1ae734a5b60b4f19"><div class="ttname"><a href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">ClickableElement::startPoint</a></div><div class="ttdeci">Point2I startPoint</div><div class="ttdef"><b>Definition:</b> ClickableElement.h:31</div></div>
-<div class="ttc" id="aclass_clickable_element_html_aa6696415f877a9a3b0c42862a1f73b19"><div class="ttname"><a href="class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19">ClickableElement::~ClickableElement</a></div><div class="ttdeci">~ClickableElement()</div></div>
-<div class="ttc" id="aclass_clickable_element_html"><div class="ttname"><a href="class_clickable_element.html">ClickableElement</a></div><div class="ttdef"><b>Definition:</b> ClickableElement.h:11</div></div>
-<div class="ttc" id="a_graphic_element_8h_html"><div class="ttname"><a href="_graphic_element_8h.html">GraphicElement.h</a></div></div>
-<div class="ttc" id="aclass_point2_i_html"><div class="ttname"><a href="class_point2_i.html">Point2I</a></div><div class="ttdef"><b>Definition:</b> Point2I.h:9</div></div>
-<div class="ttc" id="aclass_clickable_element_html_abb9dfe53bbb91ad5e0fc10fd477d6109"><div class="ttname"><a href="class_clickable_element.html#abb9dfe53bbb91ad5e0fc10fd477d6109">ClickableElement::checkPosition</a></div><div class="ttdeci">bool checkPosition(int x, int y)</div></div>
-<div class="ttc" id="aclass_clickable_element_html_a73e8a702cedbadf518c83a43de92d972"><div class="ttname"><a href="class_clickable_element.html#a73e8a702cedbadf518c83a43de92d972">ClickableElement::getEndPoint</a></div><div class="ttdeci">virtual Point2I getEndPoint()</div></div>
-<div class="ttc" id="aclass_clickable_element_html_a73fa1d3b1274634db66ddf840afa9058"><div class="ttname"><a href="class_clickable_element.html#a73fa1d3b1274634db66ddf840afa9058">ClickableElement::getStartPoint</a></div><div class="ttdeci">virtual Point2I getStartPoint()</div></div>
-<div class="ttc" id="aclass_clickable_element_html_a0d724a27e75bf1f9f995f9503fea4ed6"><div class="ttname"><a href="class_clickable_element.html#a0d724a27e75bf1f9f995f9503fea4ed6">ClickableElement::setEndPoint</a></div><div class="ttdeci">void setEndPoint(Point2I p)</div></div>
-<div class="ttc" id="aclass_clickable_element_html_aa4b8803bab72764195fa49da6c00af44"><div class="ttname"><a href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement::ClickableElement</a></div><div class="ttdeci">ClickableElement()</div></div>
-<div class="ttc" id="aclass_clickable_element_html_a0ee956ebae608be806e5cbe3b0d0849b"><div class="ttname"><a href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">ClickableElement::endPoint</a></div><div class="ttdeci">Point2I endPoint</div><div class="ttdef"><b>Definition:</b> ClickableElement.h:32</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a5e39d64355e0140bdc318da184ecdbc3"><div class="ttname"><a href="class_clickable_element.html#a5e39d64355e0140bdc318da184ecdbc3">ClickableElement::setStartPoint</a></div><div class="ttdeci">void setStartPoint(Point2I p)</div><div class="ttdoc">Set start point to p.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a7390e1d03d645d9a1ae734a5b60b4f19"><div class="ttname"><a href="class_clickable_element.html#a7390e1d03d645d9a1ae734a5b60b4f19">ClickableElement::startPoint</a></div><div class="ttdeci">Point2I startPoint</div><div class="ttdoc">Start point of this ClickableElement.</div><div class="ttdef"><b>Definition:</b> ClickableElement.h:72</div></div>
+<div class="ttc" id="aclass_clickable_element_html_aa6696415f877a9a3b0c42862a1f73b19"><div class="ttname"><a href="class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19">ClickableElement::~ClickableElement</a></div><div class="ttdeci">~ClickableElement()</div><div class="ttdoc">Destructor of ClickableElement.</div></div>
+<div class="ttc" id="aclass_clickable_element_html"><div class="ttname"><a href="class_clickable_element.html">ClickableElement</a></div><div class="ttdoc">A clickable element.</div><div class="ttdef"><b>Definition:</b> ClickableElement.h:13</div></div>
+<div class="ttc" id="aclass_point2_i_html"><div class="ttname"><a href="class_point2_i.html">Point2I</a></div><div class="ttdoc">Represents a 2D point with integer coordinates.</div><div class="ttdef"><b>Definition:</b> Point2I.h:7</div></div>
+<div class="ttc" id="aclass_clickable_element_html_abb9dfe53bbb91ad5e0fc10fd477d6109"><div class="ttname"><a href="class_clickable_element.html#abb9dfe53bbb91ad5e0fc10fd477d6109">ClickableElement::checkPosition</a></div><div class="ttdeci">bool checkPosition(int x, int y)</div><div class="ttdoc">Check if a point with {x, y} coordinates is inside this ClickableElement.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a73e8a702cedbadf518c83a43de92d972"><div class="ttname"><a href="class_clickable_element.html#a73e8a702cedbadf518c83a43de92d972">ClickableElement::getEndPoint</a></div><div class="ttdeci">virtual Point2I getEndPoint()</div><div class="ttdoc">Get end point.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a73fa1d3b1274634db66ddf840afa9058"><div class="ttname"><a href="class_clickable_element.html#a73fa1d3b1274634db66ddf840afa9058">ClickableElement::getStartPoint</a></div><div class="ttdeci">virtual Point2I getStartPoint()</div><div class="ttdoc">Get start point.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a0d724a27e75bf1f9f995f9503fea4ed6"><div class="ttname"><a href="class_clickable_element.html#a0d724a27e75bf1f9f995f9503fea4ed6">ClickableElement::setEndPoint</a></div><div class="ttdeci">void setEndPoint(Point2I p)</div><div class="ttdoc">Set end point to p.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_aa4b8803bab72764195fa49da6c00af44"><div class="ttname"><a href="class_clickable_element.html#aa4b8803bab72764195fa49da6c00af44">ClickableElement::ClickableElement</a></div><div class="ttdeci">ClickableElement()</div><div class="ttdoc">Public default constructor of ClickableElement.</div></div>
+<div class="ttc" id="aclass_clickable_element_html_a0ee956ebae608be806e5cbe3b0d0849b"><div class="ttname"><a href="class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b">ClickableElement::endPoint</a></div><div class="ttdeci">Point2I endPoint</div><div class="ttdoc">End point of this ClickableElement.</div><div class="ttdef"><b>Definition:</b> ClickableElement.h:77</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d03cbfd2f64df20252359f4b8046046f.html">view</a></li><li class="navelem"><a class="el" href="_clickable_element_8h.html">ClickableElement.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d03cbfd2f64df20252359f4b8046046f.html">view</a></li><li class="navelem"><b>ClickableElement.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

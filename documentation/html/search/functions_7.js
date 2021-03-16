@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['king_251',['King',['../class_king.html#ac7a820e20220f49bec5e38a95d5cc307',1,'King']]],
-  ['knight_252',['Knight',['../class_knight.html#ae9ca30e7b96ba6e49701152dd811113e',1,'Knight']]]
+  ['load_172',['Load',['../class_chessboard.html#a280d2ee4201441e5f777450c0407f42a',1,'Chessboard']]],
+  ['loadgame_173',['LoadGame',['../class_game_controller.html#a51e87f59f841a44b5a08746976206731',1,'GameController']]]
 ];

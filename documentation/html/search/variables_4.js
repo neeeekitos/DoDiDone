@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['firstmove_302',['firstMove',['../class_pawn.html#a5013cbf554652cfa8871332a18854139',1,'Pawn']]],
-  ['firstmovedone_303',['firstMoveDone',['../class_king.html#a4c8a82ae4e0054b03462fd8feafa1ff1',1,'King::firstMoveDone()'],['../class_tower.html#ab9c4b7ac1b405df52793ffd46b091e1e',1,'Tower::firstMoveDone()']]]
+  ['movedirections_218',['moveDirections',['../class_piece.html#a0aca0760e87db26fa70f9c85d93b37b3',1,'Piece']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['chessgamesize_296',['CHESSGAMESIZE',['../_game_constants_8h.html#ad7c23bda7d18ea65488db4b933b2b918',1,'GameConstants.h']]]
+  ['endpoint_213',['endPoint',['../class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b',1,'ClickableElement']]]
 ];

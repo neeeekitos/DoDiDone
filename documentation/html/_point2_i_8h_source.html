@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>E-chess: include/view/Point2I.h Source File</title>
+<title>E-chess: /home/yanis/Bureau/Ecole/insa-courses/Projects/e-chess/include/view/Point2I.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,45 +85,51 @@ $(document).ready(function(){initNavTree('_point2_i_8h_source.html',''); initRes
 <div class="title">Point2I.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_point2_i_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_POINT2I_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef E_CHESS_POINT2I_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define E_CHESS_POINT2I_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_point2_i.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_point2_i.html">Point2I</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_point2_i.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_point2_i.html">Point2I</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_point2_i.html">Point2I</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_point2_i.html">Point2I</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ~<a class="code" href="class_point2_i.html">Point2I</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> getX();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> getY();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setX(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_point2_i.html#ac31f01cee7cd6f277c5810c317941bdf">Point2I</a>(<span class="keywordtype">int</span> xCoord, <span class="keywordtype">int</span> yCoord);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_point2_i.html#ac31f01cee7cd6f277c5810c317941bdf">Point2I</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> setY(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span> operator==(<a class="code" href="class_point2_i.html">Point2I</a> <span class="keyword">const</span> &amp;p);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> x;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> y;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // E_CHESS_POINT2I_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_point2_i.html#ab47466f45709eb5a4888c48e3c5ce46f">~Point2I</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_point2_i.html#a33961715be0d211ebcda96d22161f455">GetX</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_point2_i.html#a90c4b53bcbac673cea8b4f1456fc0a29">GetY</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_point2_i.html#ae7a2391627ec741f1be30d7b60de89bc">SetX</a>(<span class="keywordtype">int</span> xCoord);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_point2_i.html#a2b53feeca16ee2935f11cc2773bd3330">SetY</a>(<span class="keywordtype">int</span> yCoord);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_point2_i.html#a92eeac0589eacaf234c1c132e842f06e">operator==</a>(<a class="code" href="class_point2_i.html">Point2I</a> <span class="keyword">const</span> &amp;p);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> x;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> y;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif // E_CHESS_POINT2I_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_point2_i_html"><div class="ttname"><a href="class_point2_i.html">Point2I</a></div><div class="ttdef"><b>Definition:</b> Point2I.h:9</div></div>
+<div class="ttc" id="aclass_point2_i_html_ae7a2391627ec741f1be30d7b60de89bc"><div class="ttname"><a href="class_point2_i.html#ae7a2391627ec741f1be30d7b60de89bc">Point2I::SetX</a></div><div class="ttdeci">void SetX(int xCoord)</div><div class="ttdoc">Set x coordinate.</div></div>
+<div class="ttc" id="aclass_point2_i_html_ac31f01cee7cd6f277c5810c317941bdf"><div class="ttname"><a href="class_point2_i.html#ac31f01cee7cd6f277c5810c317941bdf">Point2I::Point2I</a></div><div class="ttdeci">Point2I()</div><div class="ttdoc">Default constrcutor of Poitn2I.</div></div>
+<div class="ttc" id="aclass_point2_i_html"><div class="ttname"><a href="class_point2_i.html">Point2I</a></div><div class="ttdoc">Represents a 2D point with integer coordinates.</div><div class="ttdef"><b>Definition:</b> Point2I.h:7</div></div>
+<div class="ttc" id="aclass_point2_i_html_a2b53feeca16ee2935f11cc2773bd3330"><div class="ttname"><a href="class_point2_i.html#a2b53feeca16ee2935f11cc2773bd3330">Point2I::SetY</a></div><div class="ttdeci">void SetY(int yCoord)</div><div class="ttdoc">Set y coordinate.</div></div>
+<div class="ttc" id="aclass_point2_i_html_ab47466f45709eb5a4888c48e3c5ce46f"><div class="ttname"><a href="class_point2_i.html#ab47466f45709eb5a4888c48e3c5ce46f">Point2I::~Point2I</a></div><div class="ttdeci">~Point2I()</div><div class="ttdoc">Destructor of Point2I.</div></div>
+<div class="ttc" id="aclass_point2_i_html_a92eeac0589eacaf234c1c132e842f06e"><div class="ttname"><a href="class_point2_i.html#a92eeac0589eacaf234c1c132e842f06e">Point2I::operator==</a></div><div class="ttdeci">bool operator==(Point2I const &amp;p)</div><div class="ttdoc">Operator==.</div></div>
+<div class="ttc" id="aclass_point2_i_html_a33961715be0d211ebcda96d22161f455"><div class="ttname"><a href="class_point2_i.html#a33961715be0d211ebcda96d22161f455">Point2I::GetX</a></div><div class="ttdeci">int GetX()</div><div class="ttdoc">Get x coordinate.</div></div>
+<div class="ttc" id="aclass_point2_i_html_a90c4b53bcbac673cea8b4f1456fc0a29"><div class="ttname"><a href="class_point2_i.html#a90c4b53bcbac673cea8b4f1456fc0a29">Point2I::GetY</a></div><div class="ttdeci">int GetY()</div><div class="ttdoc">Get y coordinate.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d03cbfd2f64df20252359f4b8046046f.html">view</a></li><li class="navelem"><a class="el" href="_point2_i_8h.html">Point2I.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_d03cbfd2f64df20252359f4b8046046f.html">view</a></li><li class="navelem"><b>Point2I.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

@@ -1,5 +1,5 @@
 <map id="Button" name="Button">
-<area shape="rect" id="node1" title=" " alt="" coords="37,185,97,212"/>
-<area shape="rect" id="node2" href="$class_clickable_element.html" title=" " alt="" coords="5,109,129,136"/>
-<area shape="rect" id="node3" href="$class_point2_i.html" title=" " alt="" coords="36,5,99,32"/>
+<area shape="rect" id="node1" title="Clickable button." alt="" coords="37,185,97,212"/>
+<area shape="rect" id="node2" href="$class_clickable_element.html" title="A clickable element." alt="" coords="5,109,129,136"/>
+<area shape="rect" id="node3" href="$class_point2_i.html" title="Represents a 2D point with integer coordinates." alt="" coords="36,5,99,32"/>
 </map>

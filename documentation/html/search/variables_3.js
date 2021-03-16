@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['eatenpiece_299',['eatenPiece',['../struct_transition.html#ae73241cc05d04dbf88ea4954868f44a7',1,'Transition']]],
-  ['eatenpiececolor_300',['eatenPieceColor',['../struct_transition.html#a77056b66f0e90a2fad110168054bc10f',1,'Transition']]],
-  ['endpoint_301',['endPoint',['../class_clickable_element.html#a0ee956ebae608be806e5cbe3b0d0849b',1,'ClickableElement']]]
+  ['inpassing_216',['inPassing',['../class_pawn.html#a4935a992759c0aa29b76e3f022752507',1,'Pawn']]],
+  ['inpassingauthorised_217',['inPassingAuthorised',['../class_chessboard.html#ac1f99557aa29e8904a526bc1aacd17c3',1,'Chessboard']]]
 ];

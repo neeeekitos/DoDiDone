@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['white_156',['WHITE',['../_game_constants_8h.html#ad7595c48bb74c0dd2a7648712a2d4985a283fc479650da98250635b9c3c0e7e50',1,'GameConstants.h']]],
-  ['whitecheck_157',['whiteCheck',['../struct_status.html#a5efa951476d60682bf77938f247deb29',1,'Status']]],
-  ['whitewinner_158',['WHITEWINNER',['../_game_constants_8h.html#a8b95e42e120aa8f0951454b79f5962eca7d109161a973052fe5b2a6fbe659353e',1,'GameConstants.h']]],
-  ['winner_159',['WINNER',['../_game_constants_8h.html#a8b95e42e120aa8f0951454b79f5962ec',1,'GameConstants.h']]]
+  ['_7e_20piece_96',['~ Piece',['../class_piece.html#aac0a94ea51973d19707ed9fb01ede838',1,'Piece']]],
+  ['_7ebutton_97',['~Button',['../class_button.html#a2a001eb9c3cc8ae54768a850dd345002',1,'Button']]],
+  ['_7echessboard_98',['~Chessboard',['../class_chessboard.html#a1ac92e251b7c4cdf89bed6b7d0371ffc',1,'Chessboard']]],
+  ['_7eclickableelement_99',['~ClickableElement',['../class_clickable_element.html#aa6696415f877a9a3b0c42862a1f73b19',1,'ClickableElement']]],
+  ['_7egamecontroller_100',['~GameController',['../class_game_controller.html#aab436961a422d078975bc7a49bdfcab7',1,'GameController']]],
+  ['_7egraphicelement_101',['~GraphicElement',['../class_graphic_element.html#a61ff80b634add82cdab4e7e051fcc790',1,'GraphicElement']]],
+  ['_7epoint2i_102',['~Point2I',['../class_point2_i.html#ab47466f45709eb5a4888c48e3c5ce46f',1,'Point2I']]],
+  ['_7eview_103',['~View',['../class_view.html#ad0dc854db9aabbea98a334dec89f785c',1,'View']]]
 ];
